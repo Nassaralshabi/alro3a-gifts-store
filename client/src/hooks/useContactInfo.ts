@@ -10,6 +10,9 @@ const fallback = {
 };
 
 export function useContactInfo() {
-  const { data, isLoading } = trpc.store.catalog.contact.useQuery();
+  const { data, isLoading } = trpc.store.catalog.contact.useQuery(undefined, {
+    staleTime: 10 * 60 * 1000,
+    refetchOnWindowFocus: false,
+  });
   return { ...fallback, ...data, isLoading };
 }
