@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { filterCatalogProducts } from "./catalogFilters";
+import { filterCatalogProducts, getCatalogPage } from "./catalogFilters";
 import type { CatalogProduct } from "@shared/store/types";
 
 const catalog: CatalogProduct[] = [
@@ -17,5 +17,10 @@ describe("filterCatalogProducts", () => {
   it("sorts priced products while keeping price-on-request products last", () => {
     expect(filterCatalogProducts(catalog, "all", "", "asc").map(item => item.product.slug)).toEqual(["board", "gift", "custom"]);
     expect(filterCatalogProducts(catalog, "all", "", "desc").map(item => item.product.slug)).toEqual(["gift", "board", "custom"]);
+  });
+
+  it("returns only the requested first page of products", () => {
+    expect(getCatalogPage(catalog, 2).map(item => item.product.slug)).toEqual(["gift", "board"]);
+    expect(getCatalogPage(catalog, 0)).toEqual([]);
   });
 });
