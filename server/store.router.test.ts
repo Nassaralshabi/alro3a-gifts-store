@@ -25,6 +25,25 @@ function anonymousContext(): TrpcContext {
   return { user: null, req: {} as TrpcContext["req"], res: {} as TrpcContext["res"] };
 }
 
+function localAdminContext(): TrpcContext {
+  return {
+    user: null,
+    adminUser: {
+      id: 1,
+      openId: "local-admin-console",
+      name: "admin",
+      email: null,
+      loginMethod: "local",
+      role: "admin",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      lastSignedIn: new Date(),
+    },
+    req: {} as TrpcContext["req"],
+    res: {} as TrpcContext["res"],
+  };
+}
+
 describe("internal store router", () => {
   it("returns public categories and featured catalog products", async () => {
     const caller = appRouter.createCaller(anonymousContext());
@@ -47,5 +66,28 @@ describe("internal store router", () => {
     expect(image.mimeType).toBe("image/png");
     expect(image.extension).toBe("png");
     expect(() => decodeImage("data:application/pdf;base64,aGVsbG8=")).toThrow("Only PNG, JPEG, WEBP and GIF images are accepted.");
+  });
+
+  it("allows the local admin to save an editable product price and media path", async () => {
+    const caller = appRouter.createCaller(localAdminContext());
+    await caller.store.admin.saveProduct({
+      id: 7,
+      categoryId: 3,
+      slug: "sliding-gift-box-30x20",
+      titleAr: "بوكس سحاب 30 × 20 × 6 سم",
+      titleEn: "Sliding Gift Box 30 × 20 × 6 cm",
+      descriptionAr: "وصف اختبار",
+      descriptionEn: "Test description",
+      price: "89.50",
+      imageUrl: "/manus-storage/alrawaa-sliding-box-reference_286aefc0.png",
+      isFeatured: true,
+      isAvailable: true,
+      sortOrder: 10,
+    });
+    expect(db.saveProduct).toHaveBeenCalledWith(expect.objectContaining({
+      id: 7,
+      price: "89.50",
+      imageUrl: "/manus-storage/alrawaa-sliding-box-reference_286aefc0.png",
+    }));
   });
 });
