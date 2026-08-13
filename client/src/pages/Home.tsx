@@ -1,33 +1,44 @@
-import { useAuth } from "@/_core/hooks/useAuth";
+import ProductCard from "@/components/ProductCard";
+import StoreShell from "@/components/StoreShell";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { useLocale } from "@/contexts/LocaleContext";
+import { trpc } from "@/lib/trpc";
+import { ArrowUpLeft, Award, BadgeCheck, Boxes, Gift, HeartHandshake, Loader2, MessageCircleMore, PackageOpen, Paintbrush, Plane, Sparkles, Stamp, Truck } from "lucide-react";
+import { Link } from "wouter";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
- */
+const WHATSAPP_URL = "https://wa.me/971521401021";
+const HERO_IMAGE = "/manus-storage/social-2_de273aa2.jpg";
+const FEATURE_IMAGE = "/manus-storage/social-3_0108449b.jpg";
+
+const services = [
+  { slug: "promotional-gifts", icon: Gift, ar: "هدايا إعلانية", en: "Promotional gifts", arText: "هدايا تحمل علامتك أو رسالتك الخاصة.", enText: "Gifts made with your brand or message." },
+  { slug: "occasion-stationery", icon: Stamp, ar: "مطبوعات المناسبات", en: "Occasion stationery", arText: "دعوات، توزيعات، وبطاقات لكل لحظة.", enText: "Invites, favours and cards for every moment." },
+  { slug: "boxes-packaging", icon: Boxes, ar: "بوكسات وتغليف", en: "Boxes & packaging", arText: "تغليف يرفع من قيمة الهدية وتفاصيلها.", enText: "Packaging that elevates every gift detail." },
+  { slug: "custom-printing", icon: Paintbrush, ar: "طباعة حسب الطلب", en: "Custom printing", arText: "من الفكرة إلى تنفيذ يحاكي ذوقك.", enText: "From your idea to a finish that feels like you." },
+  { slug: "stands-boards", icon: Award, ar: "ستاندات ولوحات", en: "Stands & boards", arText: "لوحات تصوير وستاندات للاحتفالات والتخرج.", enText: "Photo boards and stands for celebrations." },
+  { slug: "engraving-details", icon: Sparkles, ar: "حفر وتفاصيل", en: "Engraving & details", arText: "لمسات مميزة على المعاليق والهدايا.", enText: "Distinctive touches for keychains and gifts." },
+];
+
 export default function Home() {
-  // The useAuth hook provides authentication state.
-  // To implement login/logout, call logout(), or start login from an event
-  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
-  // startLogin() during render (no href={startLogin()}) — it mints a one-time
-  // nonce cookie and must run only at the moment of navigation.
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
+  const { isArabic } = useLocale();
+  const { data: products = [], isLoading } = trpc.store.catalog.products.useQuery({ featuredOnly: true });
+  const steps = isArabic ? ["أرسلي فكرتك", "اختاري تفاصيلك", "استلميها بسعادة"] : ["Share your idea", "Choose your details", "Receive it with joy"];
 
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  return <StoreShell>
+    <section className="relative overflow-hidden bg-[#f2edf5]">
+      <div className="hero-orbit hero-orbit-one" /><div className="hero-orbit hero-orbit-two" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:px-8 md:py-20 lg:grid-cols-[1.05fr_.95fr] lg:py-24">
+        <div className="max-w-2xl"><p className="inline-flex items-center gap-2 rounded-full border border-[#d8c8e1] bg-white/75 px-3 py-1.5 text-xs font-bold text-[#7953a2]"><Sparkles className="h-3.5 w-3.5" />{isArabic ? "نطبع الفكرة… ونصنع الذكرى" : "We print the idea, then make the memory"}</p><h1 className="mt-5 font-display text-[2.8rem] leading-[1.08] tracking-tight text-[#24233a] sm:text-6xl lg:text-7xl">{isArabic ? <>هديتك <span className="text-[#7953a2]">تشبهك،</span><br />وتفاصيلها تحكي عنك.</> : <>Gifts that feel <span className="text-[#7953a2]">like you,</span><br />in every detail.</>}</h1><p className="mt-6 max-w-xl text-base leading-8 text-[#6d6561] sm:text-lg">{isArabic ? "من أجمل المناسبات إلى الهدايا الإعلانية، نجهّز مطبوعات وهدايا مخصصة تُصنع بعناية في عجمان وتصل إلى كل الإمارات." : "From special occasions to promotional gifts, we craft custom print and gift details in Ajman and deliver across the UAE."}</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild className="h-12 rounded-xl bg-[#7953a2] px-5 text-sm hover:bg-[#654287]"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircleMore />{isArabic ? "اطلبي فكرتك الآن" : "Start your request"}</a></Button><Button asChild variant="outline" className="h-12 rounded-xl border-[#cdbbd6] bg-white/70 px-5 text-sm text-[#4f3a61] hover:bg-white"><Link href="/shop">{isArabic ? "استكشفي المتجر" : "Explore the shop"}<ArrowUpLeft /></Link></Button></div><div className="mt-10 flex flex-wrap gap-5 text-xs font-bold text-[#615a56]"><span className="inline-flex items-center gap-2"><Truck className="h-4 w-4 text-[#7953a2]" />{isArabic ? "توصيل لجميع الإمارات" : "UAE-wide delivery"}</span><span className="inline-flex items-center gap-2"><HeartHandshake className="h-4 w-4 text-[#7953a2]" />{isArabic ? "تصميم حسب طلبك" : "Made around your request"}</span></div></div>
+        <div className="relative mx-auto w-full max-w-md"><div className="absolute -inset-4 rotate-6 rounded-[2.4rem] bg-[#dcb65c]/45" /><div className="absolute -inset-3 -rotate-3 rounded-[2.3rem] border border-white/80 bg-white/60" /><div className="relative overflow-hidden rounded-[2rem] bg-white p-3 shadow-[0_30px_70px_-35px_rgba(65,40,85,.65)]"><img src={HERO_IMAGE} alt={isArabic ? "لوحة تصوير تخرج مخصصة من مطبعة الروعة" : "A custom graduation photo board by Al Rawaa Printing"} className="aspect-[4/5] w-full rounded-[1.4rem] object-cover" /><div className="absolute bottom-7 start-7 rounded-2xl bg-[#24233a]/90 px-4 py-3 text-white backdrop-blur"><span className="block text-[10px] font-bold uppercase tracking-[.15em] text-[#dcb65c]">{isArabic ? "تصميم حسب الطلب" : "MADE TO ORDER"}</span><span className="mt-1 block font-display text-xl">{isArabic ? "لوحات التصوير" : "Photo boards"}</span></div></div><div className="absolute -bottom-6 -start-10 grid h-20 w-20 place-items-center rounded-3xl border-4 border-[#fffdf8] bg-[#7953a2] text-[#f8f0e6] shadow-xl"><Gift className="h-8 w-8" /></div></div>
+      </div>
+    </section>
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
-  );
+    <section id="services" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24"><div className="flex flex-wrap items-end justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-[0.2em] text-[#a27ab2]">{isArabic ? "خدماتنا" : "OUR SERVICES"}</p><h2 className="mt-3 font-display text-4xl text-[#24233a] sm:text-5xl">{isArabic ? "كل ما تحتاجه مناسبتك" : "Everything your occasion needs"}</h2></div><Link href="/contact" className="group inline-flex items-center gap-1 text-sm font-bold text-[#7953a2]">{isArabic ? "اطلبي خدمة خاصة" : "Request something special"}<ArrowUpLeft className="h-4 w-4 transition group-hover:-translate-y-1 group-hover:translate-x-1" /></Link></div><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{services.map(service => <Link key={service.ar} href={`/services/${service.slug}`} className="group rounded-3xl border border-[#e9e3d6] bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-[#b99cca] hover:shadow-[0_20px_48px_-35px_rgba(62,39,82,.45)]"><div className="grid h-12 w-12 place-items-center rounded-2xl bg-[#f0eaf5] text-[#7953a2] transition group-hover:bg-[#7953a2] group-hover:text-white"><service.icon className="h-5 w-5" /></div><h3 className="mt-5 font-display text-2xl text-[#24233a]">{isArabic ? service.ar : service.en}</h3><p className="mt-2 text-sm leading-6 text-[#766f69]">{isArabic ? service.arText : service.enText}</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#7953a2]">{isArabic ? "عرض التفاصيل" : "View details"}<ArrowUpLeft className="h-3.5 w-3.5" /></span></Link>)}</div></section>
+
+    <section className="bg-[#24233a] px-5 py-14 text-white sm:px-8 lg:py-20"><div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[.85fr_1.15fr]"><div className="relative mx-auto w-full max-w-sm"><div className="absolute -inset-3 rounded-[2rem] bg-[#dcb65c]/50 blur-sm" /><img src={FEATURE_IMAGE} alt={isArabic ? "ستاند تهنئة للتخرج مخصص" : "Custom graduation congratulations stand"} className="relative aspect-[4/5] w-full rounded-[2rem] object-cover" /></div><div><p className="text-xs font-black uppercase tracking-[0.2em] text-[#dcb65c]">{isArabic ? "تفاصيل تصنع الفرق" : "DETAILS THAT MATTER"}</p><h2 className="mt-4 max-w-xl font-display text-4xl leading-tight sm:text-5xl">{isArabic ? "مو كل هدية تُنسى؛ البعض منها يبقى في الذاكرة." : "Not every gift is forgotten; some become part of the memory."}</h2><p className="mt-5 max-w-xl text-sm leading-8 text-[#ded6d1] sm:text-base">{isArabic ? "ننسق الألوان، النصوص، واللمسات الأخيرة لنقدم لك قطعة حقيقية تعبر عن المناسبة وصاحبها." : "We arrange colours, copy and finishing touches into a real piece that speaks to the occasion and the person behind it."}</p><div className="mt-8 grid gap-3 sm:grid-cols-3">{steps.map((step, index) => <div key={step} className="rounded-2xl border border-white/10 bg-white/5 p-4"><span className="text-xs font-black text-[#dcb65c]">0{index + 1}</span><p className="mt-2 text-sm font-bold">{step}</p></div>)}</div></div></div></section>
+
+    <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24"><div className="flex flex-wrap items-end justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-[0.2em] text-[#a27ab2]">{isArabic ? "مختارات المتجر" : "SHOP HIGHLIGHTS"}</p><h2 className="mt-3 font-display text-4xl text-[#24233a] sm:text-5xl">{isArabic ? "جاهزة لتكون جزءًا من قصتك" : "Ready to become part of your story"}</h2></div><Link href="/shop" className="inline-flex items-center gap-1 rounded-full bg-[#f0eaf5] px-4 py-2 text-sm font-bold text-[#7953a2] hover:bg-[#e4d6ed]">{isArabic ? "كل المنتجات" : "All products"}<ArrowUpLeft className="h-4 w-4" /></Link></div>{isLoading ? <div className="grid min-h-48 place-items-center"><Loader2 className="h-7 w-7 animate-spin text-[#7953a2]" /></div> : products.length ? <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{products.map(product => <ProductCard key={product.product.id} product={product} />)}</div> : <div className="mt-10 grid gap-5 rounded-[2rem] bg-[#f0eaf5] p-7 md:grid-cols-[1fr_auto] md:items-center md:p-10"><div className="flex gap-4"><div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-[#7953a2]"><PackageOpen className="h-5 w-5" /></div><div><h3 className="font-display text-2xl">{isArabic ? "نجهز كتالوجنا الإلكتروني" : "We are preparing our online catalogue"}</h3><p className="mt-2 max-w-xl text-sm leading-7 text-[#766f69]">{isArabic ? "إلى أن تكتمل المنتجات المضافة، يمكننا تنفيذ طلبك الخاص مباشرة عبر واتساب." : "Until the product catalogue is filled, we can prepare your custom request directly on WhatsApp."}</p></div></div><Button asChild className="h-11 rounded-xl bg-[#7953a2] hover:bg-[#654287]"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer">{isArabic ? "تواصلي الآن" : "Message us"}<ArrowUpLeft /></a></Button></div>}</section>
+
+    <section className="border-t border-[#e9e3d6] bg-[#fff9ef] px-5 py-16 sm:px-8"><div className="mx-auto max-w-3xl text-center"><div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#dcb65c] text-[#24233a]"><Plane className="h-6 w-6" /></div><h2 className="mt-5 font-display text-4xl text-[#24233a] sm:text-5xl">{isArabic ? "نوصّل فرحتك لكل الإمارات" : "We deliver your joy across the UAE"}</h2><p className="mt-4 text-sm leading-7 text-[#706763] sm:text-base">{isArabic ? "شاركي معنا الفكرة، المناسبة والكمية، والباقي علينا." : "Share your idea, occasion and quantity — we will take care of the rest."}</p><Button asChild className="mt-7 h-12 rounded-xl bg-[#24233a] px-6 hover:bg-[#7953a2]"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircleMore />{isArabic ? "ابدئي طلبك" : "Start your order"}</a></Button></div></section>
+  </StoreShell>;
 }

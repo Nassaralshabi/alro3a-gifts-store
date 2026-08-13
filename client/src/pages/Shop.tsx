@@ -1,0 +1,14 @@
+import ProductCard from "@/components/ProductCard";
+import StoreShell from "@/components/StoreShell";
+import { Button } from "@/components/ui/button";
+import { useLocale } from "@/contexts/LocaleContext";
+import { trpc } from "@/lib/trpc";
+import { ArrowUpLeft, Loader2, MessageCircleMore, PackageOpen } from "lucide-react";
+
+const WHATSAPP_URL = "https://wa.me/971521401021";
+
+export default function Shop() {
+  const { isArabic } = useLocale();
+  const { data: products = [], isLoading } = trpc.store.catalog.products.useQuery();
+  return <StoreShell><section className="border-b border-[#e9e3d6] bg-[#f0eaf5] px-5 py-16 sm:px-8"><div className="mx-auto max-w-7xl"><p className="text-xs font-black uppercase tracking-[0.2em] text-[#7953a2]">{isArabic ? "الكتالوج" : "THE CATALOGUE"}</p><h1 className="mt-3 max-w-2xl font-display text-4xl leading-tight text-[#24233a] sm:text-6xl">{isArabic ? "اختاري تفصيلة تليق بمناسبتك" : "Choose a detail made for your moment"}</h1><p className="mt-5 max-w-xl text-sm leading-7 text-[#6d6561] sm:text-base">{isArabic ? "استكشفي المنتجات، ثم أرسلي طلبك مباشرة وسنتواصل معك عبر واتساب لتأكيد التفاصيل." : "Explore the products, then send your request. We will confirm the details with you on WhatsApp."}</p></div></section><section className="mx-auto max-w-7xl px-5 py-14 sm:px-8">{isLoading ? <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{Array.from({ length: 4 }).map((_, index) => <div key={index} className="overflow-hidden rounded-[1.6rem] border border-[#e9e3d6] bg-white"><div className="aspect-square animate-pulse bg-[#f0eaf5]" /><div className="space-y-3 p-5"><div className="h-3 w-1/3 animate-pulse rounded bg-[#f0eaf5]" /><div className="h-5 w-3/4 animate-pulse rounded bg-[#f0eaf5]" /></div></div>)}</div> : products.length ? <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">{products.map(product => <ProductCard key={product.product.id} product={product} />)}</div> : <div className="mx-auto max-w-xl rounded-[2rem] border border-dashed border-[#d6c9dd] bg-white px-7 py-14 text-center"><div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-[#f0eaf5] text-[#7953a2]"><PackageOpen className="h-7 w-7" /></div><h2 className="mt-5 font-display text-2xl text-[#24233a]">{isArabic ? "الكتالوج يتجهز الآن" : "The catalogue is being prepared"}</h2><p className="mt-3 text-sm leading-7 text-[#766f69]">{isArabic ? "نستقبل حاليًا طلبات الهدايا والطباعة حسب الفكرة والكمية والمناسبة." : "We are currently taking custom orders based on your idea, quantity and occasion."}</p><Button asChild className="mt-6 h-11 rounded-xl bg-[#7953a2] hover:bg-[#654287]"><a href={WHATSAPP_URL} target="_blank" rel="noreferrer"><MessageCircleMore />{isArabic ? "اطلبي عبر واتساب" : "Order via WhatsApp"}<ArrowUpLeft /></a></Button></div>}</section></StoreShell>;
+}
