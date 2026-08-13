@@ -1,5 +1,6 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import DashboardLayout from "@/components/DashboardLayout";
+import AdminAccessPanel from "@/components/AdminAccessPanel";
+import MediaPanel from "@/components/MediaPanel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,11 +21,9 @@ function Metric({ icon: Icon, label, value, tone }: { icon: typeof ShoppingBag; 
 
 export default function Admin() {
   const { isArabic } = useLocale();
-  const { user } = useAuth();
   const [location] = useLocation();
   const section = location.split("/")[2] || "overview";
-  if (user && user.role !== "admin") return <DashboardLayout><div className="mx-auto max-w-xl rounded-3xl border border-[#f0dede] bg-white p-8 text-center"><h1 className="font-display text-3xl">{isArabic ? "هذه الصفحة للمدير فقط" : "This page is for administrators only"}</h1><p className="mt-3 text-sm text-[#766f69]">{isArabic ? "يجب أن يدخل مالك المشروع بالحساب المعين كمدير." : "The project owner must sign in with the assigned administrator account."}</p></div></DashboardLayout>;
-  return <DashboardLayout>{section === "products" ? <ProductsPanel /> : section === "categories" ? <CategoriesPanel /> : section === "orders" ? <OrdersPanel /> : section === "contact" ? <ContactSettingsPanel /> : section === "content" ? <ContentPanel /> : <OverviewPanel />}</DashboardLayout>;
+  return <DashboardLayout>{section === "products" ? <ProductsPanel /> : section === "categories" ? <CategoriesPanel /> : section === "orders" ? <OrdersPanel /> : section === "contact" ? <ContactSettingsPanel /> : section === "media" ? <MediaPanel /> : section === "access" ? <AdminAccessPanel /> : section === "content" ? <ContentPanel /> : <OverviewPanel />}</DashboardLayout>;
 }
 
 function OverviewPanel() {

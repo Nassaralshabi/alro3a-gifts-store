@@ -1,6 +1,8 @@
 import { and, asc, desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
+import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import {
+  adminCredentials,
   categories,
   type Category,
   type InsertUser,
@@ -32,6 +34,58 @@ async function requireDb() {
   return db;
 }
 
+const LOCAL_ADMIN_OPEN_ID = "local-admin-console";
+const DEFAULT_LOCAL_ADMIN_USERNAME = "admin";
+const DEFAULT_LOCAL_ADMIN_PASSWORD = "admin";
+
+function hashLocalPassword(password: string) {
+  const salt = randomBytes(16).toString("hex");
+  const derived = scryptSync(password, salt, 64).toString("hex");
+  return `scrypt$${salt}$${derived}`;
+}
+
+function verifyLocalPassword(password: string, encoded: string) {
+  const [algorithm, salt, stored] = encoded.split("$");
+  if (algorithm !== "scrypt" || !salt || !stored) return false;
+  const derived = scryptSync(password, salt, 64);
+  const expected = Buffer.from(stored, "hex");
+  return expected.length === derived.length && timingSafeEqual(expected, derived);
+}
+
+export async function ensureLocalAdmin() {
+  const db = await requireDb();
+  let credential = (await db.select().from(adminCredentials).limit(1))[0];
+  if (!credential) {
+    const passwordHash = hashLocalPassword(DEFAULT_LOCAL_ADMIN_PASSWORD);
+    const created = await db.insert(adminCredentials).values({ username: DEFAULT_LOCAL_ADMIN_USERNAME, passwordHash });
+    credential = (await db.select().from(adminCredentials).where(eq(adminCredentials.id, Number(created[0].insertId))).limit(1))[0]!;
+  }
+  await db.insert(users).values({ openId: LOCAL_ADMIN_OPEN_ID, name: credential.username, loginMethod: "local", role: "admin", lastSignedIn: new Date() }).onDuplicateKeyUpdate({ set: { name: credential.username, loginMethod: "local", role: "admin", lastSignedIn: new Date() } });
+  return credential;
+}
+
+export async function verifyLocalAdmin(username: string, password: string) {
+  const credential = await ensureLocalAdmin();
+  if (credential.username !== username || !verifyLocalPassword(password, credential.passwordHash)) return null;
+  const user = await getUserByOpenId(LOCAL_ADMIN_OPEN_ID);
+  if (!user) throw new Error("Local admin user was not created");
+  return { user, username: credential.username };
+}
+
+export async function getLocalAdminProfile() {
+  const credential = await ensureLocalAdmin();
+  return { username: credential.username };
+}
+
+export async function updateLocalAdminCredentials(input: { currentPassword: string; username: string; password: string }) {
+  const credential = await ensureLocalAdmin();
+  if (!verifyLocalPassword(input.currentPassword, credential.passwordHash)) return false;
+  const db = await requireDb();
+  await db.update(adminCredentials).set({ username: input.username, passwordHash: hashLocalPassword(input.password) }).where(eq(adminCredentials.id, credential.id));
+  await db.update(users).set({ name: input.username, lastSignedIn: new Date() }).where(eq(users.openId, LOCAL_ADMIN_OPEN_ID));
+  return true;
+}
+
 export async function upsertUser(user: InsertUser): Promise<void> {
   if (!user.openId) throw new Error("User openId is required for upsert");
   const db = await requireDb();
@@ -43,8 +97,13 @@ export async function upsertUser(user: InsertUser): Promise<void> {
       updateSet[field] = user[field] ?? null;
     }
   }
-  values.role = user.role ?? (user.openId === ENV.ownerOpenId ? "admin" : "user");
-  updateSet.role = values.role;
+  if (user.role !== undefined) {
+    values.role = user.role;
+    updateSet.role = user.role;
+  } else if (user.openId === ENV.ownerOpenId) {
+    values.role = "admin";
+    updateSet.role = "admin";
+  }
   await db.insert(users).values(values).onDuplicateKeyUpdate({ set: updateSet });
 }
 
@@ -228,6 +287,20 @@ export async function getPublicContactInfo() {
     addressEn: value.contact_address_en || "Al Rawda 3, Ajman",
     instagram,
     instagramUrl: `https://www.instagram.com/${instagram.replace(/^@/, "")}/`,
+  };
+}
+
+export async function getPublicHomeContent() {
+  const content = await listContent();
+  const value = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
+  return {
+    logoImage: value.brand_logo_image || null,
+    heroImage: value.home_hero_image || null,
+    promoImage: value.home_promo_image || null,
+    heroTitleAr: value.home_hero_title_ar || null,
+    heroTitleEn: value.home_hero_title_en || null,
+    heroSubtitleAr: value.home_hero_subtitle_ar || null,
+    heroSubtitleEn: value.home_hero_subtitle_en || null,
   };
 }
 

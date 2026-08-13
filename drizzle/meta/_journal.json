@@ -15,6 +15,13 @@
       "when": 1786634943175,
       "tag": "0001_watery_sally_floyd",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1786642574283,
+      "tag": "0002_serious_terror",
+      "breakpoints": true
     }
   ]
 }

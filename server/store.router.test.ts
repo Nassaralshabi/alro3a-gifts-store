@@ -18,6 +18,7 @@ vi.mock("./db", () => ({
 
 import * as db from "./db";
 import { appRouter } from "./routers";
+import { decodeImage } from "./routers/store";
 import type { TrpcContext } from "./_core/context";
 
 function anonymousContext(): TrpcContext {
@@ -39,5 +40,12 @@ describe("internal store router", () => {
     const order = await caller.store.orders.create({ customerName: "أمل", customerPhone: "0521401021", quantity: 2, notes: "ألوان بنفسجية", language: "ar" });
     expect(order).toMatchObject({ id: 41, status: "new", quantity: 2, language: "ar" });
     expect(db.createOrder).toHaveBeenCalledWith(expect.objectContaining({ customerName: "أمل", quantity: 2, language: "ar" }));
+  });
+
+  it("accepts supported image data and rejects unsupported uploads before storage", () => {
+    const image = decodeImage("data:image/png;base64,aGVsbG8=");
+    expect(image.mimeType).toBe("image/png");
+    expect(image.extension).toBe("png");
+    expect(() => decodeImage("data:application/pdf;base64,aGVsbG8=")).toThrow("Only PNG, JPEG, WEBP and GIF images are accepted.");
   });
 });
