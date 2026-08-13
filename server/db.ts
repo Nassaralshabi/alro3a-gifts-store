@@ -154,16 +154,17 @@ export async function saveCategory(input: CategorySave & { id?: number }) {
   return (await db.select().from(categories).where(eq(categories.slug, input.slug)).limit(1))[0];
 }
 
-export async function listPublicProducts(categorySlug?: string) {
+export async function listPublicProducts(categorySlug?: string, featuredOnly = false, limit?: number) {
   const db = await requireDb();
   const base = db
     .select({ product: products, categorySlug: categories.slug, categoryTitleAr: categories.titleAr, categoryTitleEn: categories.titleEn })
     .from(products)
     .leftJoin(categories, eq(products.categoryId, categories.id));
-  const filter = categorySlug
-    ? and(eq(products.isAvailable, true), eq(categories.slug, categorySlug))
-    : eq(products.isAvailable, true);
-  return base.where(filter).orderBy(desc(products.isFeatured), asc(products.sortOrder), desc(products.createdAt));
+  const filters = [eq(products.isAvailable, true)];
+  if (categorySlug) filters.push(eq(categories.slug, categorySlug));
+  if (featuredOnly) filters.push(eq(products.isFeatured, true));
+  const query = base.where(and(...filters)).orderBy(desc(products.isFeatured), asc(products.sortOrder), desc(products.createdAt));
+  return limit ? query.limit(limit) : query;
 }
 
 export async function listAdminProducts() {

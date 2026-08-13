@@ -51,7 +51,7 @@ describe("internal store router", () => {
     const products = await caller.store.catalog.products({ featuredOnly: true });
     expect(categories[0]?.slug).toBe("stands-boards");
     expect(products).toHaveLength(1);
-    expect(db.listPublicProducts).toHaveBeenCalledWith(undefined);
+    expect(db.listPublicProducts).toHaveBeenCalledWith(undefined, true, undefined);
   });
 
   it("records a custom request with its selected language and quantity", async () => {
