@@ -16,3 +16,7 @@ export function filterCatalogProducts(products: CatalogProduct[], category: stri
     return priceOrder === "asc" ? firstPrice - secondPrice : secondPrice - firstPrice;
   });
 }
+
+export function getCatalogPage<T>(items: T[], visibleCount: number): T[] {
+  return items.slice(0, Math.max(0, visibleCount));
+}
