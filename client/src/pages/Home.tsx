@@ -1,14 +1,16 @@
 import ProductCard from "@/components/ProductCard";
 import StoreShell from "@/components/StoreShell";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useContactInfo } from "@/hooks/useContactInfo";
 import { trpc } from "@/lib/trpc";
-import { ArrowLeft, ArrowUpLeft, Award, Boxes, Gift, LayoutPanelTop, Package, Paintbrush, Sparkles, Stamp, Tag, Truck, type LucideIcon } from "lucide-react";
+import { ArrowLeft, ArrowUpLeft, Award, Boxes, ChevronLeft, ChevronRight, Gift, LayoutPanelTop, Package, Paintbrush, Pause, Play, Sparkles, Stamp, Tag, Truck, type LucideIcon } from "lucide-react";
 import { Link } from "wouter";
 
 const FALLBACK_HERO_IMAGE = "/manus-storage/social-2_de273aa2.jpg";
 const FALLBACK_PROMO_IMAGE = "/manus-storage/social-3_0108449b.jpg";
+const PRIMARY_HERO_IMAGE = "/manus-storage/alro3a-hero-gifts-stationery_48aa6e7e.jpg";
 
 type HomeCategory = { slug: string; ar: string; en: string; Icon: LucideIcon };
 
@@ -28,6 +30,48 @@ function SectionTitle({ eyebrow, title, href = "/shop", action }: { eyebrow: str
   return <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-black uppercase tracking-[.2em] text-[#8c719c]">{eyebrow}</p><h2 className="mt-2 font-display text-2xl text-[#24233a] sm:text-3xl">{title}</h2></div><Link href={href} className="inline-flex shrink-0 items-center gap-1 text-sm font-bold text-[#7953a2] hover:text-[#5e3c80]">{action}<ArrowUpLeft className="h-4 w-4" /></Link></div>;
 }
 
+type HeroSlide = { src: string; altAr: string; altEn: string; badgeAr: string; badgeEn: string; titleAr: string; titleEn: string };
+
+function HeroCarousel({ slides, isArabic }: { slides: HeroSlide[]; isArabic: boolean }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    updatePreference();
+    mediaQuery.addEventListener("change", updatePreference);
+    return () => mediaQuery.removeEventListener("change", updatePreference);
+  }, []);
+
+  useEffect(() => {
+    setActiveIndex(index => slides.length ? index % slides.length : 0);
+  }, [slides.length]);
+
+  useEffect(() => {
+    if (slides.length < 2 || isPaused || prefersReducedMotion) return;
+    const timer = window.setInterval(() => setActiveIndex(index => (index + 1) % slides.length), 6000);
+    return () => window.clearInterval(timer);
+  }, [isPaused, prefersReducedMotion, slides.length]);
+
+  if (!slides.length) return null;
+  const activeSlide = slides[activeIndex] ?? slides[0];
+  const goTo = (index: number) => setActiveIndex((index + slides.length) % slides.length);
+  const previousLabel = isArabic ? "الصورة السابقة" : "Previous image";
+  const nextLabel = isArabic ? "الصورة التالية" : "Next image";
+  const toggleLabel = isPaused ? (isArabic ? "تشغيل العرض" : "Play slideshow") : (isArabic ? "إيقاف العرض" : "Pause slideshow");
+
+  return <div className="relative h-full w-full" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocus={() => setIsPaused(true)} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setIsPaused(false); }}>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_30%,rgba(255,255,255,.85),transparent_45%)]" />
+    <div className="relative h-full w-full overflow-hidden rounded-xl shadow-[0_25px_50px_-28px_rgba(36,35,58,.75)]" aria-live="polite">
+      {slides.map((slide, index) => <img key={`${slide.src}-${index}`} src={slide.src} alt={isArabic ? slide.altAr : slide.altEn} width={960} height={720} loading={index === 0 ? "eager" : "lazy"} decoding="async" fetchPriority={index === 0 ? "high" : "low"} className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"}`} />)}
+      <span className="absolute bottom-4 start-4 rounded-xl bg-[#24233a]/95 px-4 py-3 text-white shadow-lg sm:bottom-6 sm:start-6"><span className="block text-[10px] font-bold tracking-[.15em] text-[#dcb65c]">{isArabic ? activeSlide.badgeAr : activeSlide.badgeEn}</span><span className="mt-1 block font-display text-lg">{isArabic ? activeSlide.titleAr : activeSlide.titleEn}</span></span>
+      {slides.length > 1 && <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 sm:inset-x-6 sm:bottom-6"><div className="flex items-center gap-1.5" role="tablist" aria-label={isArabic ? "صور الغلاف" : "Hero images"}>{slides.map((slide, index) => <button key={`${slide.src}-dot`} type="button" role="tab" aria-selected={index === activeIndex} aria-label={`${isArabic ? "الصورة" : "Image"} ${index + 1}`} onClick={() => goTo(index)} className={`h-2 rounded-full transition-all ${index === activeIndex ? "w-7 bg-white" : "w-2 bg-white/60 hover:bg-white"}`} />)}</div><div className="flex items-center gap-1"><button type="button" onClick={() => goTo(activeIndex - 1)} aria-label={previousLabel} className="grid h-8 w-8 place-items-center rounded-full bg-white/90 text-[#24233a] transition hover:bg-white"><ChevronLeft className="h-4 w-4" /></button><button type="button" onClick={() => goTo(activeIndex + 1)} aria-label={nextLabel} className="grid h-8 w-8 place-items-center rounded-full bg-white/90 text-[#24233a] transition hover:bg-white"><ChevronRight className="h-4 w-4" /></button><button type="button" onClick={() => setIsPaused(paused => !paused)} aria-label={toggleLabel} className="grid h-8 w-8 place-items-center rounded-full bg-white/90 text-[#24233a] transition hover:bg-white">{isPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}</button></div></div>}
+    </div>
+  </div>;
+}
+
 export default function Home() {
   const { isArabic } = useLocale();
   const contact = useContactInfo();
@@ -40,6 +84,16 @@ export default function Home() {
   const title = isArabic ? homeContent?.heroTitleAr || "مطبوعات وهدايا تليق بتفاصيلك" : homeContent?.heroTitleEn || "Printing and gifts made for your details";
   const subtitle = isArabic ? homeContent?.heroSubtitleAr || "استكشفي تشكيلات الهدايا، المطبوعات، البوكسات واللوحات، واحتفظي بما يعجبك في سلة طلب واحدة." : homeContent?.heroSubtitleEn || "Explore gifts, print pieces, boxes and boards, then collect your selections in one request cart.";
   const displayCategories: HomeCategory[] = siteCategories.length ? siteCategories.map(category => ({ slug: category.slug, ar: category.titleAr, en: category.titleEn, Icon: categoryIcons[category.icon] || Sparkles })) : fallbackCategories;
+  const heroSlides = useMemo<HeroSlide[]>(() => {
+    const productSlides = products.slice(0, 3).filter(entry => entry.product.imageUrl).map(entry => ({ src: entry.product.imageUrl as string, altAr: entry.product.titleAr, altEn: entry.product.titleEn, badgeAr: "من تشكيلتنا", badgeEn: "FROM OUR COLLECTION", titleAr: entry.product.titleAr, titleEn: entry.product.titleEn }));
+    const slides: HeroSlide[] = [
+      { src: PRIMARY_HERO_IMAGE, altAr: "تشكيلة هدايا ومطبوعات من الروعة", altEn: "Al Rawaa gifts and custom printing collection", badgeAr: "هدايا بطابعك", badgeEn: "GIFTS MADE YOUR WAY", titleAr: "تفاصيل تُهدى وتُحفظ", titleEn: "Details made to give and keep" },
+      { src: heroImage, altAr: "بانر مخصص من مطبعة الروعة", altEn: "Custom banner by Al Rawaa", badgeAr: "الأكثر طلبًا", badgeEn: "POPULAR PICK", titleAr: "لوحات التصوير", titleEn: "Photo boards" },
+      { src: promoImage, altAr: "هدايا ومطبوعات للمناسبات", altEn: "Gifts and prints for occasions", badgeAr: "مناسباتك", badgeEn: "OCCASIONS", titleAr: "اطبعي فرحتك بطابعك", titleEn: "Print your celebration" },
+      ...productSlides,
+    ];
+    return slides.filter((slide, index, all) => all.findIndex(candidate => candidate.src === slide.src) === index);
+  }, [heroImage, isArabic, products, promoImage]);
 
   return <StoreShell logoUrl={homeContent?.logoImage}>
     <section className="border-b border-[#e9e3d6] bg-[#faf8fb]">
@@ -57,9 +111,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-5 text-xs font-bold text-[#615a56]"><span className="inline-flex items-center gap-2"><Truck className="h-4 w-4 text-[#7953a2]" />{isArabic ? "توصيل لكل الإمارات" : "UAE-wide delivery"}</span><span className="inline-flex items-center gap-2"><Package className="h-4 w-4 text-[#7953a2]" />{isArabic ? "سلة طلب موحدة" : "One request cart"}</span></div>
           </div>
           <div className="relative order-1 min-h-[280px] p-6 lg:order-2 lg:p-9">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_30%,rgba(255,255,255,.85),transparent_45%)]" />
-            <img src={heroImage} alt={isArabic ? "بانر مخصص من مطبعة الروعة" : "Custom banner by Al Rawaa"} width={960} height={720} decoding="async" fetchPriority="high" className="relative h-full w-full rounded-xl object-cover shadow-[0_25px_50px_-28px_rgba(36,35,58,.75)]" />
-            <span className="absolute bottom-10 start-10 rounded-xl bg-[#24233a] px-4 py-3 text-white shadow-lg"><span className="block text-[10px] font-bold tracking-[.15em] text-[#dcb65c]">{isArabic ? "الأكثر طلبًا" : "POPULAR PICK"}</span><span className="mt-1 block font-display text-lg">{isArabic ? "لوحات التصوير" : "Photo boards"}</span></span>
+            <HeroCarousel slides={heroSlides} isArabic={isArabic} />
           </div>
         </div>
       </div>
