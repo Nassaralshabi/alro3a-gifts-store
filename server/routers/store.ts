@@ -2,6 +2,7 @@ import { TRPCError } from "@trpc/server";
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import * as db from "../db";
+import { notifyOwner } from "../_core/notification";
 import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 import { storagePut } from "../storage";
 
@@ -56,7 +57,25 @@ export const storeRouter = router({
     }),
   }),
   orders: router({
-    create: publicProcedure.input(z.object({ productId: z.number().int().positive().nullable().optional(), customerName: z.string().trim().min(2).max(160), customerPhone: z.string().trim().min(7).max(32), quantity: z.number().int().min(1).max(999).default(1), notes: z.string().trim().max(5000).nullable().optional(), language: languageSchema })).mutation(({ input }) => db.createOrder(input)),
+    create: publicProcedure.input(z.object({ productId: z.number().int().positive().nullable().optional(), customerName: z.string().trim().min(2).max(160), customerPhone: z.string().trim().min(7).max(32), quantity: z.number().int().min(1).max(999).default(1), notes: z.string().trim().max(5000).nullable().optional(), language: languageSchema })).mutation(async ({ input }) => {
+      const order = await db.createOrder(input);
+      const productName = order.productTitle || (input.language === "ar" ? "طلب مخصص" : "Custom request");
+      const content = [
+        `العميل: ${order.customerName}`,
+        `الهاتف: ${order.customerPhone}`,
+        `المنتج: ${productName}`,
+        `الكمية: ${order.quantity}`,
+        order.notes ? `ملاحظات: ${order.notes}` : null,
+      ].filter(Boolean).join("\n");
+
+      try {
+        await notifyOwner({ title: `طلب جديد #${order.id}`, content });
+      } catch (error) {
+        console.warn("[Orders] Owner notification failed after order creation:", error);
+      }
+
+      return order;
+    }),
   }),
   admin: router({
     dashboard: adminProcedure.query(() => db.getDashboardStats()),

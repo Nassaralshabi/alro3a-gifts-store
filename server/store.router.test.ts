@@ -16,7 +16,12 @@ vi.mock("./db", () => ({
   saveContent: vi.fn(),
 }));
 
+vi.mock("./_core/notification", () => ({
+  notifyOwner: vi.fn(async () => true),
+}));
+
 import * as db from "./db";
+import { notifyOwner } from "./_core/notification";
 import { appRouter } from "./routers";
 import { decodeImage } from "./routers/store";
 import type { TrpcContext } from "./_core/context";
@@ -59,6 +64,10 @@ describe("internal store router", () => {
     const order = await caller.store.orders.create({ customerName: "أمل", customerPhone: "0521401021", quantity: 2, notes: "ألوان بنفسجية", language: "ar" });
     expect(order).toMatchObject({ id: 41, status: "new", quantity: 2, language: "ar" });
     expect(db.createOrder).toHaveBeenCalledWith(expect.objectContaining({ customerName: "أمل", quantity: 2, language: "ar" }));
+    expect(notifyOwner).toHaveBeenCalledWith(expect.objectContaining({
+      title: "طلب جديد #41",
+      content: expect.stringContaining("العميل: أمل"),
+    }));
   });
 
   it("accepts supported image data and rejects unsupported uploads before storage", () => {
