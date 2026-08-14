@@ -1,6 +1,6 @@
 import ProductCard from "@/components/ProductCard";
 import StoreShell from "@/components/StoreShell";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useContactInfo } from "@/hooks/useContactInfo";
@@ -8,9 +8,8 @@ import { trpc } from "@/lib/trpc";
 import { ArrowLeft, ArrowUpLeft, Award, Boxes, ChevronLeft, ChevronRight, Gift, LayoutPanelTop, Package, Paintbrush, Pause, Play, Sparkles, Stamp, Tag, Truck, type LucideIcon } from "lucide-react";
 import { Link } from "wouter";
 
-const FALLBACK_HERO_IMAGE = "/manus-storage/social-2_de273aa2.jpg";
-const FALLBACK_PROMO_IMAGE = "/manus-storage/social-3_0108449b.jpg";
-const PRIMARY_HERO_IMAGE = "/manus-storage/alro3a-hero-gifts-stationery_48aa6e7e.jpg";
+const HERO_GRADUATION_IMAGE = "/manus-storage/hero-graduation-uae_bc00c190.jpg";
+const HERO_EID_IMAGE = "/manus-storage/hero-eid-uae_e516e79a.jpg";
 
 type HomeCategory = { slug: string; ar: string; en: string; Icon: LucideIcon };
 
@@ -79,21 +78,14 @@ export default function Home() {
   const { data: siteCategories = [] } = trpc.store.catalog.categories.useQuery(undefined, queryOptions);
   const { data: homeContent } = trpc.store.catalog.homeContent.useQuery(undefined, queryOptions);
 
-  const heroImage = homeContent?.heroImage || FALLBACK_HERO_IMAGE;
-  const promoImage = homeContent?.promoImage || FALLBACK_PROMO_IMAGE;
   const title = isArabic ? homeContent?.heroTitleAr || "مطبوعات وهدايا تليق بتفاصيلك" : homeContent?.heroTitleEn || "Printing and gifts made for your details";
   const subtitle = isArabic ? homeContent?.heroSubtitleAr || "استكشفي تشكيلات الهدايا، المطبوعات، البوكسات واللوحات، واحتفظي بما يعجبك في سلة طلب واحدة." : homeContent?.heroSubtitleEn || "Explore gifts, print pieces, boxes and boards, then collect your selections in one request cart.";
+  const promoImage = homeContent?.promoImage || HERO_EID_IMAGE;
   const displayCategories: HomeCategory[] = siteCategories.length ? siteCategories.map(category => ({ slug: category.slug, ar: category.titleAr, en: category.titleEn, Icon: categoryIcons[category.icon] || Sparkles })) : fallbackCategories;
-  const heroSlides = useMemo<HeroSlide[]>(() => {
-    const productSlides = products.slice(0, 3).filter(entry => entry.product.imageUrl).map(entry => ({ src: entry.product.imageUrl as string, altAr: entry.product.titleAr, altEn: entry.product.titleEn, badgeAr: "من تشكيلتنا", badgeEn: "FROM OUR COLLECTION", titleAr: entry.product.titleAr, titleEn: entry.product.titleEn }));
-    const slides: HeroSlide[] = [
-      { src: PRIMARY_HERO_IMAGE, altAr: "تشكيلة هدايا ومطبوعات من الروعة", altEn: "Al Rawaa gifts and custom printing collection", badgeAr: "هدايا بطابعك", badgeEn: "GIFTS MADE YOUR WAY", titleAr: "تفاصيل تُهدى وتُحفظ", titleEn: "Details made to give and keep" },
-      { src: heroImage, altAr: "بانر مخصص من مطبعة الروعة", altEn: "Custom banner by Al Rawaa", badgeAr: "الأكثر طلبًا", badgeEn: "POPULAR PICK", titleAr: "لوحات التصوير", titleEn: "Photo boards" },
-      { src: promoImage, altAr: "هدايا ومطبوعات للمناسبات", altEn: "Gifts and prints for occasions", badgeAr: "مناسباتك", badgeEn: "OCCASIONS", titleAr: "اطبعي فرحتك بطابعك", titleEn: "Print your celebration" },
-      ...productSlides,
-    ];
-    return slides.filter((slide, index, all) => all.findIndex(candidate => candidate.src === slide.src) === index);
-  }, [heroImage, isArabic, products, promoImage]);
+  const heroSlides: HeroSlide[] = [
+    { src: HERO_GRADUATION_IMAGE, altAr: "هدايا ومطبوعات التخرج من الروعة", altEn: "Al Rawaa graduation gifts and printing", badgeAr: "موسم التخرج", badgeEn: "GRADUATION SEASON", titleAr: "هدايا تخرّج تبقى ذكرى", titleEn: "Graduation gifts to remember" },
+    { src: HERO_EID_IMAGE, altAr: "بوكسات وهدايا العيد في الإمارات", altEn: "Eid gift boxes and favors in the UAE", badgeAr: "أعياد الإمارات", badgeEn: "UAE EID GIFTING", titleAr: "توزيعات العيد بطابعك", titleEn: "Eid favors made your way" },
+  ];
 
   return <StoreShell logoUrl={homeContent?.logoImage}>
     <section className="border-b border-[#e9e3d6] bg-[#faf8fb]">
