@@ -75,6 +75,7 @@ export default function Home() {
   const { isArabic } = useLocale();
   const contact = useContactInfo();
   const { data: products = [], isLoading, isError, refetch } = trpc.store.catalog.products.useQuery({ featuredOnly: true, limit: 8 }, queryOptions);
+  const { data: boardsProducts = [] } = trpc.store.catalog.products.useQuery({ categorySlug: "stands-boards" }, queryOptions);
   const { data: siteCategories = [] } = trpc.store.catalog.categories.useQuery(undefined, queryOptions);
   const { data: homeContent } = trpc.store.catalog.homeContent.useQuery(undefined, queryOptions);
 
@@ -117,6 +118,19 @@ export default function Home() {
       <Link href="/services/occasion-stationery" className="group relative min-h-56 overflow-hidden rounded-2xl bg-[#24233a] p-7 text-white"><img src={promoImage} alt="" width={960} height={560} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-35 transition duration-500 group-hover:scale-105" /><div className="absolute inset-0 bg-gradient-to-l from-[#24233a]/95 to-[#24233a]/35" /><div className="relative max-w-sm"><p className="text-xs font-black uppercase tracking-[.2em] text-[#dcb65c]">{isArabic ? "مناسباتك" : "OCCASIONS"}</p><h2 className="mt-3 font-display text-3xl">{isArabic ? "اطبعي فرحتك بطابعك" : "Print your celebration your way"}</h2><span className="mt-6 inline-flex items-center gap-1 text-sm font-bold">{isArabic ? "اكتشفي التفاصيل" : "Discover details"}<ArrowUpLeft className="h-4 w-4" /></span></div></Link>
       <Link href="/services/boxes-packaging" className="group relative min-h-56 overflow-hidden rounded-2xl bg-[#dcb65c] p-7 text-[#24233a]"><div className="absolute -bottom-20 -end-12 h-64 w-64 rounded-full border-[24px] border-white/45" /><div className="relative max-w-sm"><p className="text-xs font-black uppercase tracking-[.2em] text-[#6a4a23]">{isArabic ? "تغليف وهدايا" : "PACKAGING"}</p><h2 className="mt-3 font-display text-3xl">{isArabic ? "بوكسات تُكمل شكل الهدية" : "Boxes that complete the gift"}</h2><span className="mt-6 inline-flex items-center gap-1 text-sm font-bold">{isArabic ? "عرض البوكسات" : "View boxes"}<ArrowUpLeft className="h-4 w-4" /></span></div></Link>
     </section>
+
+    {boardsProducts.length > 0 && <section className="border-y border-[#eee9e1] bg-[#fffdf8] [contain-intrinsic-size:auto_540px] [content-visibility:auto]">
+      <div className="mx-auto max-w-[1440px] px-4 py-10 sm:px-8">
+        <SectionTitle eyebrow={isArabic ? "تفاصيل كبيرة لمناسباتك" : "BIG MOMENTS, BEAUTIFULLY MADE"} title={isArabic ? "بنرات ولوحات تُلفت الأنظار" : "Banners & boards that stand out"} href="/services/stands-boards" action={isArabic ? "عرض كل اللوحات" : "View all boards"} />
+        <div className="mt-7 grid gap-5 md:grid-cols-2">
+          {boardsProducts.slice(0, 2).map(({ product }) => <Link key={product.id} href={`/products/${product.slug}`} className="group relative min-h-72 overflow-hidden rounded-2xl bg-[#24233a] shadow-[0_18px_32px_-26px_rgba(36,35,58,.78)]">
+            <img src={product.imageUrl || HERO_GRADUATION_IMAGE} alt={isArabic ? product.titleAr : product.titleEn} width={960} height={640} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#24233a]/90 via-[#24233a]/22 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 text-white"><span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[10px] font-black uppercase tracking-[.16em] text-[#f2d98e]"><LayoutPanelTop className="h-3.5 w-3.5" />{isArabic ? "حسب الطلب" : "MADE TO ORDER"}</span><h3 className="mt-3 font-display text-3xl">{isArabic ? product.titleAr : product.titleEn}</h3><span className="mt-4 inline-flex items-center gap-1 text-sm font-bold">{isArabic ? "شاهدي التفاصيل" : "View details"}<ArrowUpLeft className="h-4 w-4" /></span></div>
+          </Link>)}
+        </div>
+      </div>
+    </section>}
 
     <section className="mx-auto max-w-[1440px] px-4 py-10 [contain-intrinsic-size:auto_720px] [content-visibility:auto] sm:px-8">
       <SectionTitle eyebrow={isArabic ? "مختارات الروعة" : "AL RAWAA PICKS"} title={isArabic ? "منتجات جاهزة لتُضاف لطلبك" : "Products ready for your request"} action={isArabic ? "عرض الكل" : "View all"} />
