@@ -20,7 +20,7 @@
 
 | الأصل المخزن في الموقع | صفحة المصدر | مجموعة المنتجات المرتبطة | المنتجات/المسارات |
 | --- | --- | --- | --- |
-| `/manus-storage/paper-cup-8oz-source_a020c196.png` | https://weej.sa/ar/NAePNRy | أكواب ورقية | `custom-paper-cup-classic`، `custom-paper-cup-lid`، `custom-cup-sleeve` |
+| `/manus-storage/paper-cup-8oz-source-optimized_c46cb2e7.webp` | https://weej.sa/ar/NAePNRy | أكواب ورقية | `custom-paper-cup-classic`، `custom-paper-cup-lid`، `custom-cup-sleeve` |
 | `/manus-storage/round-sticker-7cm-source_0b26681e.jpg` | https://weej.sa/ar/qPjmVZ | ستيكرات وليبلات | `custom-sticker-sheet-a6`، `custom-sticker-sheet-a5`، `round-logo-stickers-5cm` |
 | `/manus-storage/thank-you-card-10x7-source_4db9df15.jpg` | https://weej.sa/en/ARoRwe | بطاقات مطبوعة | `coated-business-cards`، `thank-you-cards-10x7`، `folded-special-cut-card-6x16` |
 
