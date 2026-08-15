@@ -41,34 +41,34 @@
 }
 
 :root {
-  --radius: 0.9rem;
-  --background: oklch(0.99 0.004 85);
-  --foreground: oklch(0.23 0.025 295);
+  --radius: 0.55rem;
+  --background: oklch(0.985 0.003 230);
+  --foreground: oklch(0.25 0.03 230);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.23 0.025 295);
+  --card-foreground: oklch(0.25 0.03 230);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.23 0.025 295);
-  --primary: oklch(0.48 0.13 315);
-  --primary-foreground: oklch(0.98 0.01 92);
-  --secondary: oklch(0.95 0.03 310);
-  --secondary-foreground: oklch(0.3 0.04 305);
-  --muted: oklch(0.96 0.01 85);
-  --muted-foreground: oklch(0.52 0.02 65);
-  --accent: oklch(0.95 0.03 310);
-  --accent-foreground: oklch(0.3 0.04 305);
+  --popover-foreground: oklch(0.25 0.03 230);
+  --primary: oklch(0.47 0.09 204);
+  --primary-foreground: oklch(0.985 0.005 210);
+  --secondary: oklch(0.95 0.014 205);
+  --secondary-foreground: oklch(0.32 0.045 206);
+  --muted: oklch(0.96 0.006 225);
+  --muted-foreground: oklch(0.52 0.024 220);
+  --accent: oklch(0.91 0.06 78);
+  --accent-foreground: oklch(0.34 0.055 70);
   --destructive: oklch(0.56 0.2 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.9 0.012 80);
-  --input: oklch(0.9 0.012 80);
-  --ring: oklch(0.48 0.13 315);
-  --sidebar: oklch(0.99 0.004 85);
-  --sidebar-foreground: oklch(0.23 0.025 295);
-  --sidebar-primary: oklch(0.48 0.13 315);
-  --sidebar-primary-foreground: oklch(0.98 0.01 92);
-  --sidebar-accent: oklch(0.95 0.03 310);
-  --sidebar-accent-foreground: oklch(0.3 0.04 305);
-  --sidebar-border: oklch(0.9 0.012 80);
-  --sidebar-ring: oklch(0.48 0.13 315);
+  --border: oklch(0.9 0.01 220);
+  --input: oklch(0.9 0.01 220);
+  --ring: oklch(0.47 0.09 204);
+  --sidebar: oklch(0.985 0.003 230);
+  --sidebar-foreground: oklch(0.25 0.03 230);
+  --sidebar-primary: oklch(0.47 0.09 204);
+  --sidebar-primary-foreground: oklch(0.985 0.005 210);
+  --sidebar-accent: oklch(0.95 0.014 205);
+  --sidebar-accent-foreground: oklch(0.32 0.045 206);
+  --sidebar-border: oklch(0.9 0.01 220);
+  --sidebar-ring: oklch(0.47 0.09 204);
 }
 
 @layer base {
@@ -76,21 +76,21 @@
   html { scroll-behavior: smooth; }
   body { @apply bg-background font-sans text-foreground antialiased; }
   button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), [type="reset"]:not(:disabled), a[href], select:not(:disabled), input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled) { @apply cursor-pointer; }
-  ::selection { background: #d9c4e5; color: #24233a; }
+  ::selection { background: #cde9e9; color: #102d36; }
 }
 
 @layer components {
   .font-display { font-family: var(--font-display); }
-  .hero-orbit { position: absolute; border-radius: 999px; border: 1px solid rgb(121 83 162 / 0.16); pointer-events: none; }
-  .hero-orbit-one { width: 32rem; height: 32rem; inset-inline-end: -14rem; top: -12rem; }
-  .hero-orbit-two { width: 18rem; height: 18rem; inset-inline-start: -8rem; bottom: -9rem; border-color: rgb(220 182 92 / 0.45); }
+  .raed-container { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: 1rem; }
+  .raed-kicker { color: #1b7b86; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+  .raed-section { border-block: 1px solid #e4ecee; background: #fff; }
+  .raed-section-muted { background: #f4f8f9; }
+  .raed-gradient-overlay { background: linear-gradient(90deg, rgba(8, 39, 49, 0.9) 0%, rgba(8, 39, 49, 0.52) 44%, rgba(8, 39, 49, 0.08) 100%); }
+  [dir="rtl"] .raed-gradient-overlay { background: linear-gradient(270deg, rgba(8, 39, 49, 0.9) 0%, rgba(8, 39, 49, 0.52) 44%, rgba(8, 39, 49, 0.08) 100%); }
 }
 
+@media (min-width: 640px) { .raed-container { padding-inline: 2rem; } }
 @media (prefers-reduced-motion: no-preference) {
-  .hero-orbit-one { animation: drift 13s ease-in-out infinite alternate; }
-  .hero-orbit-two { animation: drift 10s ease-in-out infinite alternate-reverse; }
   button, a { transition-duration: 160ms; transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
   button:active { transform: scale(0.97); }
 }
-
-@keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, 18px, 0); } }
