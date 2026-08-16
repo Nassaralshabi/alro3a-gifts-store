@@ -193,6 +193,12 @@ export async function getProductById(id: number) {
   return result[0];
 }
 
+export async function updateProductImageBySlug(slug: string, imageUrl: string) {
+  const db = await requireDb();
+  const result = await db.update(products).set({ imageUrl }).where(eq(products.slug, slug));
+  return result[0]?.affectedRows === 1;
+}
+
 export type ProductSave = {
   id?: number;
   categoryId?: number | null;

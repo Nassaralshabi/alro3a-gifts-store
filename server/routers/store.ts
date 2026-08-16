@@ -1,4 +1,5 @@
 import { TRPCError } from "@trpc/server";
+import { unzipSync } from "fflate";
 import { randomUUID } from "node:crypto";
 import { z } from "zod";
 import * as db from "../db";
@@ -33,6 +34,46 @@ const productInput = z.object({
   sortOrder: z.number().int().min(0).max(9999).default(0),
 });
 const imageUploadInput = z.object({ dataUrl: z.string().min(32).max(6_000_000), fileName: z.string().trim().min(1).max(160).optional() });
+const archiveUploadInput = z.object({ dataUrl: z.string().min(64).max(80_000_000), fileName: z.string().trim().min(1).max(180).optional(), previewOnly: z.boolean().default(false) });
+const supportedArchiveImages = new Map([
+  ["png", { mimeType: "image/png", extension: "png" }],
+  ["jpg", { mimeType: "image/jpeg", extension: "jpg" }],
+  ["jpeg", { mimeType: "image/jpeg", extension: "jpg" }],
+  ["webp", { mimeType: "image/webp", extension: "webp" }],
+  ["gif", { mimeType: "image/gif", extension: "gif" }],
+]);
+
+export function normalizeArchiveSlug(value: string) {
+  return value.trim().toLowerCase().replace(/\.[a-z0-9]+$/i, "").replace(/[_\s]+/g, "-").replace(/[^a-z0-9-]/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+}
+
+function normalizeArabicKey(value: string) {
+  return value.normalize("NFKC").replace(/\.[a-z0-9]+$/i, "").replace(/[—–-]/g, "-").replace(/[_\s]+/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function decodeArchiveName(value: string) {
+  return /[ÃÂØÙ]/.test(value) ? Buffer.from(value, "latin1").toString("utf8") : value;
+}
+
+function archiveArabicKey(entryName: string) {
+  const parts = decodeArchiveName(entryName).split("/");
+  const fileName = parts.pop() || entryName;
+  const folder = parts.pop() || "";
+  const index = fileName.match(/(\d+)(?:\.[a-z0-9]+)$/i)?.[1];
+  return index ? `${normalizeArabicKey(folder)}-${Number(index)}` : "";
+}
+
+function decodeArchive(dataUrl: string) {
+  const match = /^data:application\/(?:zip|x-zip-compressed);base64,([A-Za-z0-9+/=]+)$/.exec(dataUrl);
+  if (!match) throw new TRPCError({ code: "BAD_REQUEST", message: "Only ZIP archives are accepted." });
+  const data = Buffer.from(match[1], "base64");
+  if (data.byteLength > 50 * 1024 * 1024) throw new TRPCError({ code: "PAYLOAD_TOO_LARGE", message: "ZIP archive must not exceed 50 MB." });
+  try {
+    return unzipSync(data);
+  } catch {
+    throw new TRPCError({ code: "BAD_REQUEST", message: "The ZIP archive could not be opened." });
+  }
+}
 
 export function decodeImage(dataUrl: string) {
   const match = /^data:(image\/(?:png|jpe?g|webp|gif));base64,([A-Za-z0-9+/=]+)$/.exec(dataUrl);
@@ -91,6 +132,48 @@ export const storeRouter = router({
       const image = decodeImage(input.dataUrl);
       const baseName = (input.fileName || "image").replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 72) || "image";
       return storagePut(`store-media/${ctx.user.id}/${baseName}-${randomUUID()}.${image.extension}`, image.data, image.mimeType);
+    }),
+    importImageArchive: adminProcedure.input(archiveUploadInput).mutation(async ({ input, ctx }) => {
+      const archive = decodeArchive(input.dataUrl);
+      const products = await db.listAdminProducts();
+      const productBySlug = new Map(products.map(entry => [entry.product.slug, entry.product]));
+      const productByArabicKey = new Map<string, typeof products[number]["product"]>();
+      for (const entry of products) {
+        const match = entry.product.titleAr.match(/^(.+?)\s*[—–-]\s*نموذج\s*(\d+)$/);
+        if (match) productByArabicKey.set(`${normalizeArabicKey(match[1])}-${Number(match[2])}`, entry.product);
+      }
+      const matched: Array<{ fileName: string; slug: string; productId: number; imageUrl: string }> = [];
+      const unmatched: string[] = [];
+      const invalid: string[] = [];
+      const duplicateSlugs = new Set<string>();
+      const seenSlugs = new Set<string>();
+      let imageCount = 0;
+      let totalBytes = 0;
+      for (const [entryName, bytes] of Object.entries(archive)) {
+        const decodedEntryName = decodeArchiveName(entryName);
+        if (decodedEntryName.endsWith("/") || decodedEntryName.startsWith("__MACOSX/")) continue;
+        if (++imageCount > 300) throw new TRPCError({ code: "PAYLOAD_TOO_LARGE", message: "The archive may contain at most 300 files." });
+        totalBytes += bytes.byteLength;
+        if (bytes.byteLength > 4 * 1024 * 1024 || totalBytes > 100 * 1024 * 1024) throw new TRPCError({ code: "PAYLOAD_TOO_LARGE", message: "Extracted images exceed the 100 MB safety limit." });
+        const fileName = decodedEntryName.split("/").pop() || decodedEntryName;
+        const extension = fileName.split(".").pop()?.toLowerCase() || "";
+        const image = supportedArchiveImages.get(extension);
+        if (!image) { invalid.push(fileName); continue; }
+        const slug = normalizeArchiveSlug(fileName);
+        const product = productBySlug.get(slug) || productByArabicKey.get(archiveArabicKey(entryName));
+        if (!product) { unmatched.push(fileName); continue; }
+        const productSlug = product.slug;
+        if (seenSlugs.has(productSlug)) { duplicateSlugs.add(productSlug); continue; }
+        seenSlugs.add(productSlug);
+        let imageUrl = "";
+        if (!input.previewOnly) {
+          const stored = await storagePut(`store-media/${ctx.user.id}/bulk-${productSlug}-${randomUUID()}.${image.extension}`, Buffer.from(bytes), image.mimeType);
+          await db.updateProductImageBySlug(productSlug, stored.url);
+          imageUrl = stored.url;
+        }
+        matched.push({ fileName, slug: productSlug, productId: product.id, imageUrl });
+      }
+      return { fileName: input.fileName || "archive.zip", previewOnly: input.previewOnly, totalEntries: imageCount, matched, unmatched, invalid, duplicateSlugs: Array.from(duplicateSlugs) };
     }),
   }),
 });

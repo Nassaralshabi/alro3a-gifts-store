@@ -23,7 +23,7 @@ vi.mock("./_core/notification", () => ({
 import * as db from "./db";
 import { notifyOwner } from "./_core/notification";
 import { appRouter } from "./routers";
-import { decodeImage } from "./routers/store";
+import { decodeImage, normalizeArchiveSlug } from "./routers/store";
 import type { TrpcContext } from "./_core/context";
 
 function anonymousContext(): TrpcContext {
@@ -69,6 +69,11 @@ describe("internal store router", () => {
       title: "طلب جديد #41",
       content: expect.stringContaining("العميل: أمل"),
     }));
+  });
+
+  it("normalizes bulk archive filenames into product slugs", () => {
+    expect(normalizeArchiveSlug("Al_Rawaa Gift Box 30x20.JPG")).toBe("al-rawaa-gift-box-30x20");
+    expect(normalizeArchiveSlug("  sticker-pack__01.webp ")).toBe("sticker-pack-01");
   });
 
   it("accepts supported image data and rejects unsupported uploads before storage", () => {
