@@ -3,6 +3,22 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("./db", () => ({
   listPublicCategories: vi.fn(async () => [{ id: 1, slug: "stands-boards", titleAr: "ستاندات ولوحات", titleEn: "Stands & Boards" }]),
   listPublicProducts: vi.fn(async () => [{ product: { id: 1, titleAr: "لوحة تصوير", titleEn: "Photo board", imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null, isFeatured: true } }]),
+  getPublicHomeContent: vi.fn(async () => ({
+    logoImage: null,
+    heroImage: "/manus-storage/Banners_Homepage_001_bbd0c9fe.webp",
+    heroImages: [
+      "/manus-storage/Banners_Homepage_001_bbd0c9fe.webp",
+      "/manus-storage/Banners_Homepage_002_f4bcf24d.webp",
+      "/manus-storage/Banners_Homepage_003_0deaabac.webp",
+      "/manus-storage/Banners_Homepage_004_4a5b9a38.webp",
+      "/manus-storage/Banners_Homepage_005_acd24f42.jpg",
+    ],
+    promoImage: null,
+    heroTitleAr: null,
+    heroTitleEn: null,
+    heroSubtitleAr: null,
+    heroSubtitleEn: null,
+  })),
   getProductBySlug: vi.fn(async () => ({ product: { id: 1, slug: "graduation-photo-board", isAvailable: true } })),
   createOrder: vi.fn(async input => ({ id: 41, ...input, status: "new" })),
   getDashboardStats: vi.fn(async () => ({ products: 1, orders: 1, newOrders: 1, categories: 1 })),
@@ -58,6 +74,21 @@ describe("internal store router", () => {
     expect(products).toHaveLength(1);
     expect(products[0]?.product).toMatchObject({ imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null });
     expect(db.listPublicProducts).toHaveBeenCalledWith(undefined, true, undefined);
+  });
+
+  it("provides the archive banner set through the public homepage content route", async () => {
+    const caller = appRouter.createCaller(anonymousContext());
+    const content = await caller.store.catalog.homeContent();
+
+    expect(content.heroImages).toHaveLength(5);
+    expect(content.heroImages).toEqual([
+      "/manus-storage/Banners_Homepage_001_bbd0c9fe.webp",
+      "/manus-storage/Banners_Homepage_002_f4bcf24d.webp",
+      "/manus-storage/Banners_Homepage_003_0deaabac.webp",
+      "/manus-storage/Banners_Homepage_004_4a5b9a38.webp",
+      "/manus-storage/Banners_Homepage_005_acd24f42.jpg",
+    ]);
+    expect(db.getPublicHomeContent).toHaveBeenCalledTimes(1);
   });
 
   it("records a custom request with its selected language and quantity", async () => {
