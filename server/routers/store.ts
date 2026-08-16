@@ -92,6 +92,7 @@ export const storeRouter = router({
     homeContent: publicProcedure.query(() => db.getPublicHomeContent()),
     homeCatalog: publicProcedure.query(() => db.getHomeCatalog()),
     products: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), featuredOnly: z.boolean().optional(), limit: z.number().int().positive().max(100).optional() }).optional()).query(({ input }) => db.listPublicProducts(input?.categorySlug, input?.featuredOnly, input?.limit)),
+    productsPage: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), query: z.string().trim().min(1).max(120).optional(), priceOrder: z.enum(["default", "asc", "desc"]).optional(), cursor: z.number().int().min(0).optional(), limit: z.number().int().min(1).max(24).optional() })).query(({ input }) => db.getPublicProductsPage(input)),
     productBySlug: publicProcedure.input(z.object({ slug: z.string().min(2) })).query(async ({ input }) => {
       const product = await db.getProductBySlug(input.slug);
       if (!product || !product.product.isAvailable) throw new TRPCError({ code: "NOT_FOUND" });

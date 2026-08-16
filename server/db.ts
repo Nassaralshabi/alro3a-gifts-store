@@ -1,4 +1,4 @@
-import { and, asc, desc, eq, like, or } from "drizzle-orm";
+import { and, asc, count, desc, eq, like, or, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import {
@@ -167,6 +167,46 @@ export async function listPublicProducts(categorySlug?: string, featuredOnly = f
   return limit ? query.limit(limit) : query;
 }
 
+export type PublicCatalogPageInput = {
+  categorySlug?: string;
+  query?: string;
+  priceOrder?: "default" | "asc" | "desc";
+  cursor?: number;
+  limit?: number;
+};
+
+export async function getPublicProductsPage(input: PublicCatalogPageInput = {}) {
+  const db = await requireDb();
+  const limit = Math.min(Math.max(input.limit ?? 12, 1), 24);
+  const cursor = Math.max(input.cursor ?? 0, 0);
+  const filters = [eq(products.isAvailable, true)];
+  if (input.categorySlug) filters.push(eq(categories.slug, input.categorySlug));
+  if (input.query) {
+    const term = `%${input.query}%`;
+    filters.push(or(like(products.titleAr, term), like(products.titleEn, term))!);
+  }
+  const ordering = input.priceOrder === "asc"
+    ? [sql`CASE WHEN ${products.price} IS NULL THEN 1 ELSE 0 END`, asc(products.price), asc(products.sortOrder), desc(products.createdAt)]
+    : input.priceOrder === "desc"
+      ? [sql`CASE WHEN ${products.price} IS NULL THEN 1 ELSE 0 END`, desc(products.price), asc(products.sortOrder), desc(products.createdAt)]
+      : [desc(products.isFeatured), asc(products.sortOrder), desc(products.createdAt)];
+  const base = db
+    .select({ product: products, categorySlug: categories.slug, categoryTitleAr: categories.titleAr, categoryTitleEn: categories.titleEn })
+    .from(products)
+    .leftJoin(categories, eq(products.categoryId, categories.id))
+    .where(and(...filters));
+  const [rows, totals] = await Promise.all([
+    base.orderBy(...ordering).limit(limit + 1).offset(cursor),
+    db.select({ total: count() }).from(products).leftJoin(categories, eq(products.categoryId, categories.id)).where(and(...filters)),
+  ]);
+  const hasMore = rows.length > limit;
+  return {
+    items: rows.slice(0, limit),
+    total: Number(totals[0]?.total ?? 0),
+    nextCursor: hasMore ? cursor + limit : null,
+  };
+}
+
 export async function listPublicBundleProducts(limit = 8) {
   const db = await requireDb();
   return db
@@ -183,9 +223,9 @@ const HOME_SECTION_SLUGS = ["occasion-stationery", "boxes-packaging", "custom-pr
 export async function getHomeCatalog() {
   const [categories, featured, bundles, ...sectionProducts] = await Promise.all([
     listPublicCategories(),
-    listPublicProducts(undefined, true, 8),
-    listPublicBundleProducts(8),
-    ...HOME_SECTION_SLUGS.map(slug => listPublicProducts(slug, false, 8)),
+    listPublicProducts(undefined, true, 4),
+    listPublicBundleProducts(4),
+    ...HOME_SECTION_SLUGS.map(slug => listPublicProducts(slug, false, 4)),
   ]);
   return {
     categories,

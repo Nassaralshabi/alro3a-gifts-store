@@ -43,6 +43,17 @@ function HeroCarousel({ slides, isArabic, children }: { slides: HeroSlide[]; isA
     const timer = window.setInterval(() => setActiveIndex(index => (index + 1) % slides.length), 6000);
     return () => window.clearInterval(timer);
   }, [isPaused, prefersReducedMotion, slides.length]);
+  useEffect(() => {
+    if (slides.length < 2 || prefersReducedMotion) return;
+    const timer = window.setTimeout(() => {
+      const nextSlide = slides[(activeIndex + 1) % slides.length];
+      if (!nextSlide) return;
+      const image = new Image();
+      image.decoding = "async";
+      image.src = nextSlide.src;
+    }, 1200);
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, prefersReducedMotion, slides]);
 
   if (!slides.length) return null;
   const activeSlide = slides[activeIndex] ?? slides[0];
@@ -50,7 +61,7 @@ function HeroCarousel({ slides, isArabic, children }: { slides: HeroSlide[]; isA
   const toggleLabel = isPaused ? (isArabic ? "تشغيل العرض" : "Play slideshow") : (isArabic ? "إيقاف العرض" : "Pause slideshow");
 
   return <div className="relative min-h-[350px] overflow-hidden bg-[#102f39] sm:min-h-[430px]" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocus={() => setIsPaused(true)} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setIsPaused(false); }}>
-    {slides.map((slide, index) => <img key={`${slide.src}-${index}`} src={slide.src} alt={isArabic ? slide.altAr : slide.altEn} width={1920} height={880} loading={index === 0 ? "eager" : "lazy"} decoding="async" fetchPriority={index === 0 ? "high" : "low"} className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${index === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"}`} />)}
+    <img key={activeSlide.src} src={activeSlide.src} alt={isArabic ? activeSlide.altAr : activeSlide.altEn} width={1920} height={880} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
     <div className="raed-gradient-overlay absolute inset-0" />
     <div className="relative z-10 flex min-h-[350px] items-center sm:min-h-[430px]">{children(activeSlide)}</div>
     <div className="absolute inset-x-0 bottom-0 z-20"><div className="raed-container flex items-end justify-between pb-5"><div className="flex items-center gap-2" role="tablist" aria-label={isArabic ? "صور الغلاف" : "Hero images"}>{slides.map((slide, index) => <button key={`${slide.src}-dot`} type="button" role="tab" aria-selected={index === activeIndex} aria-label={`${isArabic ? "الصورة" : "Image"} ${index + 1}`} onClick={() => goTo(index)} className={`h-1.5 rounded-full transition-all ${index === activeIndex ? "w-9 bg-[#f2bd66]" : "w-4 bg-white/70 hover:bg-white"}`} />)}</div><div className="flex items-center gap-1.5"><button type="button" onClick={() => goTo(activeIndex - 1)} aria-label={isArabic ? "الصورة السابقة" : "Previous image"} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]"><ChevronRight className="h-4 w-4" /></button><button type="button" onClick={() => goTo(activeIndex + 1)} aria-label={isArabic ? "الصورة التالية" : "Next image"} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]"><ChevronLeft className="h-4 w-4" /></button><button type="button" onClick={() => setIsPaused(paused => !paused)} aria-label={toggleLabel} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]">{isPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}</button></div></div></div>

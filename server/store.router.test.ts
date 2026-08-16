@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("./db", () => ({
   listPublicCategories: vi.fn(async () => [{ id: 1, slug: "stands-boards", titleAr: "ستاندات ولوحات", titleEn: "Stands & Boards" }]),
   listPublicProducts: vi.fn(async () => [{ product: { id: 1, titleAr: "لوحة تصوير", titleEn: "Photo board", imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null, isFeatured: true } }]),
+  getPublicProductsPage: vi.fn(async () => ({ items: [{ product: { id: 1, titleAr: "لوحة تصوير", titleEn: "Photo board", imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null, isFeatured: true } }], total: 1, nextCursor: null })),
   getHomeCatalog: vi.fn(async () => ({
     categories: [{ id: 1, slug: "boxes-packaging", titleAr: "بوكسات وتغليف", titleEn: "Boxes & Packaging", icon: "Boxes" }],
     featured: [{ product: { id: 1, slug: "gift-box", titleAr: "بوكس هدايا", titleEn: "Gift box", imageUrl: "/manus-storage/gift-box.jpg", price: null, isFeatured: true } }],
@@ -87,6 +88,22 @@ describe("internal store router", () => {
     expect(products).toHaveLength(1);
     expect(products[0]?.product).toMatchObject({ imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null });
     expect(db.listPublicProducts).toHaveBeenCalledWith(undefined, true, undefined);
+  });
+
+  it("returns one compact catalog page instead of the complete catalog payload", async () => {
+    const caller = appRouter.createCaller(anonymousContext());
+    const page = await caller.store.catalog.productsPage({ categorySlug: "stands-boards", query: "لوحة", priceOrder: "default", limit: 12 });
+
+    expect(page).toMatchObject({ total: 1, nextCursor: null });
+    expect(page.items).toHaveLength(1);
+    expect(db.getPublicProductsPage).toHaveBeenCalledWith({ categorySlug: "stands-boards", query: "لوحة", priceOrder: "default", limit: 12 });
+  });
+
+  it("surfaces a temporary catalog-page failure so the interface can offer a retry action", async () => {
+    vi.mocked(db.getPublicProductsPage).mockRejectedValueOnce(new Error("temporary catalog outage"));
+    const caller = appRouter.createCaller(anonymousContext());
+
+    await expect(caller.store.catalog.productsPage({ limit: 12, priceOrder: "default" })).rejects.toThrow("temporary catalog outage");
   });
 
   it("provides the archive banner set through the public homepage content route", async () => {
