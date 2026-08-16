@@ -13,6 +13,13 @@ vi.mock("./db", () => ({
       "/manus-storage/Banners_Homepage_004_4a5b9a38.webp",
       "/manus-storage/Banners_Homepage_005_acd24f42.jpg",
     ],
+    heroSlides: [
+      { image: "/manus-storage/Banners_Homepage_001_bbd0c9fe.webp", badgeAr: "هديتك تحكي الكثير", badgeEn: "EVERY GIFT TELLS A STORY", titleAr: "هديتك تبدأ بتفصيلة لا تُنسى", titleEn: "Start with an unforgettable detail", subtitleAr: "اختاري هدية مصممة لمناسبتك.", subtitleEn: "Choose a gift made for your occasion." },
+      { image: "/manus-storage/Banners_Homepage_002_f4bcf24d.webp", badgeAr: "أفكارك تُطبع بإتقان", badgeEn: "IDEAS, PRINTED BEAUTIFULLY", titleAr: "حوّلي فكرتك إلى هدية ملموسة", titleEn: "Turn your idea into something tangible", subtitleAr: "من التصميم إلى التغليف، نرتّب لك التفاصيل.", subtitleEn: "From design to wrapping, we bring the details together." },
+      { image: "/manus-storage/Banners_Homepage_003_0deaabac.webp", badgeAr: "لكل مناسبة لمستها", badgeEn: "A TOUCH FOR EVERY OCCASION", titleAr: "لحظاتك تستحق أن تُحفظ", titleEn: "Make your moments last", subtitleAr: "توزيعات وبطاقات تترك ذكرى جميلة.", subtitleEn: "Favors and cards made to leave a beautiful memory." },
+      { image: "/manus-storage/Banners_Homepage_004_4a5b9a38.webp", badgeAr: "لمن يعني لك الكثير", badgeEn: "FOR SOMEONE SPECIAL", titleAr: "تفاصيل خاصة لمن تحبين", titleEn: "A special touch for someone you love", subtitleAr: "هدايا وتغليف حسب الطلب، جاهزة لتصل بأجمل صورة.", subtitleEn: "Custom gifts and wrapping, prepared to arrive beautifully." },
+      { image: "/manus-storage/Banners_Homepage_005_acd24f42.jpg", badgeAr: "احتفال أجمل يبدأ من هنا", badgeEn: "A BRIGHTER CELEBRATION STARTS HERE", titleAr: "اجعلي كل مناسبة أجمل", titleEn: "Make every celebration brighter", subtitleAr: "اكتشفي تصاميم وهدايا تضيف الفرح إلى كل احتفال.", subtitleEn: "Discover designs and gifts that bring more joy to every celebration." },
+    ],
     promoImage: null,
     heroTitleAr: null,
     heroTitleEn: null,
@@ -88,6 +95,11 @@ describe("internal store router", () => {
       "/manus-storage/Banners_Homepage_004_4a5b9a38.webp",
       "/manus-storage/Banners_Homepage_005_acd24f42.jpg",
     ]);
+    expect(content.heroSlides).toHaveLength(5);
+    expect(content.heroSlides[1]).toMatchObject({
+      titleAr: "حوّلي فكرتك إلى هدية ملموسة",
+      subtitleEn: "From design to wrapping, we bring the details together.",
+    });
     expect(db.getPublicHomeContent).toHaveBeenCalledTimes(1);
   });
 
