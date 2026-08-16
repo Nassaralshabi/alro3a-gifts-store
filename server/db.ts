@@ -1,4 +1,4 @@
-import { and, asc, desc, eq } from "drizzle-orm";
+import { and, asc, desc, eq, like, or } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import {
@@ -165,6 +165,34 @@ export async function listPublicProducts(categorySlug?: string, featuredOnly = f
   if (featuredOnly) filters.push(eq(products.isFeatured, true));
   const query = base.where(and(...filters)).orderBy(desc(products.isFeatured), asc(products.sortOrder), desc(products.createdAt));
   return limit ? query.limit(limit) : query;
+}
+
+export async function listPublicBundleProducts(limit = 8) {
+  const db = await requireDb();
+  return db
+    .select({ product: products, categorySlug: categories.slug, categoryTitleAr: categories.titleAr, categoryTitleEn: categories.titleEn })
+    .from(products)
+    .leftJoin(categories, eq(products.categoryId, categories.id))
+    .where(and(eq(products.isAvailable, true), eq(categories.slug, "boxes-packaging"), or(like(products.titleAr, "%بكج%"), like(products.titleAr, "%عرض%"))))
+    .orderBy(desc(products.isFeatured), asc(products.sortOrder), desc(products.createdAt))
+    .limit(limit);
+}
+
+const HOME_SECTION_SLUGS = ["occasion-stationery", "boxes-packaging", "custom-printing", "stickers-labels", "paper-bags", "promotional-gifts"] as const;
+
+export async function getHomeCatalog() {
+  const [categories, featured, bundles, ...sectionProducts] = await Promise.all([
+    listPublicCategories(),
+    listPublicProducts(undefined, true, 8),
+    listPublicBundleProducts(8),
+    ...HOME_SECTION_SLUGS.map(slug => listPublicProducts(slug, false, 8)),
+  ]);
+  return {
+    categories,
+    featured,
+    bundles,
+    sections: HOME_SECTION_SLUGS.map((slug, index) => ({ slug, products: sectionProducts[index] || [] })),
+  };
 }
 
 export async function listAdminProducts() {

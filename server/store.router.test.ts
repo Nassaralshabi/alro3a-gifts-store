@@ -3,6 +3,12 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("./db", () => ({
   listPublicCategories: vi.fn(async () => [{ id: 1, slug: "stands-boards", titleAr: "ستاندات ولوحات", titleEn: "Stands & Boards" }]),
   listPublicProducts: vi.fn(async () => [{ product: { id: 1, titleAr: "لوحة تصوير", titleEn: "Photo board", imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null, isFeatured: true } }]),
+  getHomeCatalog: vi.fn(async () => ({
+    categories: [{ id: 1, slug: "boxes-packaging", titleAr: "بوكسات وتغليف", titleEn: "Boxes & Packaging", icon: "Boxes" }],
+    featured: [{ product: { id: 1, slug: "gift-box", titleAr: "بوكس هدايا", titleEn: "Gift box", imageUrl: "/manus-storage/gift-box.jpg", price: null, isFeatured: true } }],
+    bundles: [{ product: { id: 2, slug: "gift-package", titleAr: "بكج هدية", titleEn: "Gift package", imageUrl: "/manus-storage/gift-package.jpg", price: null, isFeatured: false } }],
+    sections: [{ slug: "boxes-packaging", products: [{ product: { id: 1, slug: "gift-box", titleAr: "بوكس هدايا", titleEn: "Gift box", imageUrl: "/manus-storage/gift-box.jpg", price: null, isFeatured: true } }]}],
+  })),
   getPublicHomeContent: vi.fn(async () => ({
     logoImage: null,
     heroImage: "/manus-storage/Banners_Homepage_001_bbd0c9fe.webp",
@@ -101,6 +107,17 @@ describe("internal store router", () => {
       subtitleEn: "From design to wrapping, we bring the details together.",
     });
     expect(db.getPublicHomeContent).toHaveBeenCalledTimes(1);
+  });
+
+  it("provides a compact catalogue payload for homepage product discovery", async () => {
+    const caller = appRouter.createCaller(anonymousContext());
+    const catalog = await caller.store.catalog.homeCatalog();
+
+    expect(catalog.categories[0]).toMatchObject({ slug: "boxes-packaging", icon: "Boxes" });
+    expect(catalog.featured).toHaveLength(1);
+    expect(catalog.bundles[0]?.product.titleAr).toBe("بكج هدية");
+    expect(catalog.sections[0]).toMatchObject({ slug: "boxes-packaging" });
+    expect(db.getHomeCatalog).toHaveBeenCalledTimes(1);
   });
 
   it("records a custom request with its selected language and quantity", async () => {

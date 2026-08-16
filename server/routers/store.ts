@@ -90,6 +90,7 @@ export const storeRouter = router({
     categories: publicProcedure.query(() => db.listPublicCategories()),
     contact: publicProcedure.query(() => db.getPublicContactInfo()),
     homeContent: publicProcedure.query(() => db.getPublicHomeContent()),
+    homeCatalog: publicProcedure.query(() => db.getHomeCatalog()),
     products: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), featuredOnly: z.boolean().optional(), limit: z.number().int().positive().max(100).optional() }).optional()).query(({ input }) => db.listPublicProducts(input?.categorySlug, input?.featuredOnly, input?.limit)),
     productBySlug: publicProcedure.input(z.object({ slug: z.string().min(2) })).query(async ({ input }) => {
       const product = await db.getProductBySlug(input.slug);

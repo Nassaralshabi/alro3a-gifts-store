@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { filterCatalogProducts, getCatalogPage } from "./catalogFilters";
+import { filterCatalogProducts, getCatalogPage, getCatalogUrlFilters } from "./catalogFilters";
 import type { CatalogProduct } from "@shared/store/types";
 
 const catalog: CatalogProduct[] = [
@@ -22,5 +22,10 @@ describe("filterCatalogProducts", () => {
   it("returns only the requested first page of products", () => {
     expect(getCatalogPage(catalog, 2).map(item => item.product.slug)).toEqual(["gift", "board"]);
     expect(getCatalogPage(catalog, 0)).toEqual([]);
+  });
+
+  it("reads category links and search terms from catalogue URLs", () => {
+    expect(getCatalogUrlFilters("?category=gifts&search=%D9%87%D8%AF%D9%8A%D8%A9")).toEqual({ category: "gifts", query: "هدية" });
+    expect(getCatalogUrlFilters("")).toEqual({ category: "all", query: "" });
   });
 });

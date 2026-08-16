@@ -2,6 +2,14 @@ import type { CatalogProduct } from "@shared/store/types";
 
 export type PriceOrder = "default" | "asc" | "desc";
 
+export function getCatalogUrlFilters(search: string) {
+  const params = new URLSearchParams(search.startsWith("?") ? search : `?${search}`);
+  return {
+    category: params.get("category")?.trim() || "all",
+    query: params.get("search")?.trim().toLocaleLowerCase() || "",
+  };
+}
+
 export function filterCatalogProducts(products: CatalogProduct[], category: string, query: string, priceOrder: PriceOrder): CatalogProduct[] {
   const filtered = products.filter(entry => {
     const searchable = `${entry.product.titleAr} ${entry.product.titleEn} ${entry.categoryTitleAr || ""} ${entry.categoryTitleEn || ""}`.toLocaleLowerCase();
