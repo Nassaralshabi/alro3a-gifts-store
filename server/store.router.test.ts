@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 
 vi.mock("./db", () => ({
   listPublicCategories: vi.fn(async () => [{ id: 1, slug: "stands-boards", titleAr: "ستاندات ولوحات", titleEn: "Stands & Boards" }]),
-  listPublicProducts: vi.fn(async () => [{ product: { id: 1, titleAr: "لوحة تصوير", titleEn: "Photo board", isFeatured: true } }]),
+  listPublicProducts: vi.fn(async () => [{ product: { id: 1, titleAr: "لوحة تصوير", titleEn: "Photo board", imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null, isFeatured: true } }]),
   getProductBySlug: vi.fn(async () => ({ product: { id: 1, slug: "graduation-photo-board", isAvailable: true } })),
   createOrder: vi.fn(async input => ({ id: 41, ...input, status: "new" })),
   getDashboardStats: vi.fn(async () => ({ products: 1, orders: 1, newOrders: 1, categories: 1 })),
@@ -50,12 +50,13 @@ function localAdminContext(): TrpcContext {
 }
 
 describe("internal store router", () => {
-  it("returns public categories and featured catalog products", async () => {
+  it("returns public categories and catalog products with a storage image when pricing is confirmed later", async () => {
     const caller = appRouter.createCaller(anonymousContext());
     const categories = await caller.store.catalog.categories();
     const products = await caller.store.catalog.products({ featuredOnly: true });
     expect(categories[0]?.slug).toBe("stands-boards");
     expect(products).toHaveLength(1);
+    expect(products[0]?.product).toMatchObject({ imageUrl: "/manus-storage/imported-photo-board_1234.jpg", price: null });
     expect(db.listPublicProducts).toHaveBeenCalledWith(undefined, true, undefined);
   });
 
