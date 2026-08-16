@@ -22,6 +22,9 @@ export default function Shop() {
   const { data: products = [], isLoading } = trpc.store.catalog.products.useQuery(undefined, catalogQueryOptions);
   const { data: categories = [] } = trpc.store.catalog.categories.useQuery(undefined, catalogQueryOptions);
   const visibleProducts = useMemo(() => filterCatalogProducts(products, category, query, priceOrder), [products, category, query, priceOrder]);
+  useEffect(() => {
+    if (query) setCategory("all");
+  }, [query]);
   useEffect(() => setVisibleCount(12), [category, query, priceOrder, products.length]);
   const displayedProducts = getCatalogPage(visibleProducts, visibleCount);
 
