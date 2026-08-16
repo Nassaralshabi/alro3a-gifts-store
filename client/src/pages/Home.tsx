@@ -74,10 +74,16 @@ export default function Home() {
   const subtitle = isArabic ? homeContent?.heroSubtitleAr || "من اللوحات والتوزيعات إلى البوكسات والهدايا، نصمّم تفاصيل مناسبتك بعناية." : homeContent?.heroSubtitleEn || "From boards and favors to gift boxes, we craft every detail of your occasion.";
   const promoImage = homeContent?.promoImage || HERO_EID_IMAGE;
   const displayCategories: HomeCategory[] = siteCategories.length ? siteCategories.map(category => ({ slug: category.slug, ar: category.titleAr, en: category.titleEn, Icon: categoryIcons[category.icon] || Sparkles })) : fallbackCategories;
-  const heroSlides: HeroSlide[] = [
-    { src: HERO_GRADUATION_IMAGE, altAr: "هدايا ومطبوعات التخرج من الروعة", altEn: "Al Rawaa graduation gifts and printing", badgeAr: "موسم التخرج", badgeEn: "GRADUATION SEASON", titleAr: "هدايا تخرّج تبقى ذكرى", titleEn: "Graduation gifts to remember" },
-    { src: HERO_EID_IMAGE, altAr: "بوكسات وهدايا العيد في الإمارات", altEn: "Eid gift boxes and favors in the UAE", badgeAr: "أعياد الإمارات", badgeEn: "UAE EID GIFTING", titleAr: "توزيعات العيد بطابعك", titleEn: "Eid favors made your way" },
-  ];
+  const configuredHeroImages = homeContent?.heroImages?.length ? homeContent.heroImages : [HERO_GRADUATION_IMAGE, HERO_EID_IMAGE];
+  const heroSlides: HeroSlide[] = configuredHeroImages.map((src, index) => ({
+    src,
+    altAr: `بانر مطبعة الروعة ${index + 1}`,
+    altEn: `Al Rawaa printing banner ${index + 1}`,
+    badgeAr: index === 0 ? "اختيارات الروعة" : "تصاميم حسب الطلب",
+    badgeEn: index === 0 ? "AL RAWAA PICKS" : "MADE TO ORDER",
+    titleAr: title,
+    titleEn: homeContent?.heroTitleEn || "Gifts and printing made for your details",
+  }));
   const featuredProduct = products[0];
   const featuredProductTitle = featuredProduct ? (isArabic ? featuredProduct.product.titleAr : featuredProduct.product.titleEn) : "";
   const featuredProductImage = featuredProduct?.product.imageUrl || HERO_GRADUATION_IMAGE;

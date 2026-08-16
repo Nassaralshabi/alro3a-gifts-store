@@ -300,9 +300,11 @@ export async function getPublicContactInfo() {
 export async function getPublicHomeContent() {
   const content = await listContent();
   const value = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
+  const heroImages = [1, 2, 3, 4, 5].map(index => value[`home_hero_image_${index}`]).filter(Boolean);
   return {
     logoImage: value.brand_logo_image || null,
-    heroImage: value.home_hero_image || null,
+    heroImage: value.home_hero_image || heroImages[0] || null,
+    heroImages,
     promoImage: value.home_promo_image || null,
     heroTitleAr: value.home_hero_title_ar || null,
     heroTitleEn: value.home_hero_title_en || null,
