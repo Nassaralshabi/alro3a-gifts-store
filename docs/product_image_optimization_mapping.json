@@ -1,0 +1,281 @@
+{
+  "summary": {
+    "selected": 30,
+    "originalBytes": 33948447,
+    "optimizedBytes": 1087132,
+    "savedBytes": 32861315,
+    "savedPercent": 96.8
+  },
+  "images": [
+    {
+      "slug": "chocolate-favor-box-8x5",
+      "originalUrl": "/manus-storage/alrawaa-chocolate-box_986639ac.png",
+      "originalBytes": 180826,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/chocolate-favor-box-8x5-900.webp",
+      "optimizedBytes": 22670
+    },
+    {
+      "slug": "coated-business-cards",
+      "originalUrl": "/manus-storage/product-eid-business-cards_691e29ed.jpg",
+      "originalBytes": 582240,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/coated-business-cards-900.webp",
+      "optimizedBytes": 79624
+    },
+    {
+      "slug": "cup-holder-box-10x10",
+      "originalUrl": "/manus-storage/alrawaa-cup-holder_01ccf8c3.png",
+      "originalBytes": 124354,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/cup-holder-box-10x10-900.webp",
+      "optimizedBytes": 15924
+    },
+    {
+      "slug": "cup-sweets-box-19x11",
+      "originalUrl": "/manus-storage/alrawaa-cup-sweets-box_4754efdf.png",
+      "originalBytes": 234306,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/cup-sweets-box-19x11-900.webp",
+      "optimizedBytes": 30984
+    },
+    {
+      "slug": "custom-celebration-stand",
+      "originalUrl": "/manus-storage/product-graduation-stand_8dd4c1b6.jpg",
+      "originalBytes": 232210,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-celebration-stand-900.webp",
+      "optimizedBytes": 35238
+    },
+    {
+      "slug": "custom-cup-sleeve",
+      "originalUrl": "/manus-storage/product-graduation-cup-sleeve_328235e9.jpg",
+      "originalBytes": 247226,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-cup-sleeve-900.webp",
+      "optimizedBytes": 32356
+    },
+    {
+      "slug": "custom-gift-boxes",
+      "originalUrl": "/manus-storage/product-eid-gift-box_9f081a80.jpg",
+      "originalBytes": 513588,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-gift-boxes-900.webp",
+      "optimizedBytes": 84614
+    },
+    {
+      "slug": "custom-occasion-cards",
+      "originalUrl": "/manus-storage/product-graduation-cards_de20c742.jpg",
+      "originalBytes": 592694,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-occasion-cards-900.webp",
+      "optimizedBytes": 70718
+    },
+    {
+      "slug": "custom-paper-cup-lid",
+      "originalUrl": "/manus-storage/product-eid-cup-lid_10ab6a32.jpg",
+      "originalBytes": 283034,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-paper-cup-lid-900.webp",
+      "optimizedBytes": 44748
+    },
+    {
+      "slug": "custom-printing-service",
+      "originalUrl": "/manus-storage/product-graduation-printing_eafd22ca.jpg",
+      "originalBytes": 719914,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-printing-service-900.webp",
+      "optimizedBytes": 63844
+    },
+    {
+      "slug": "custom-sticker-sheet-a5",
+      "originalUrl": "/manus-storage/product-eid-sticker-sheet_64fab939.jpg",
+      "originalBytes": 850796,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-sticker-sheet-a5-900.webp",
+      "optimizedBytes": 105378
+    },
+    {
+      "slug": "favors-box-15x13",
+      "originalUrl": "/manus-storage/alrawaa-favors-box_1fadd669.png",
+      "originalBytes": 183158,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/favors-box-15x13-900.webp",
+      "optimizedBytes": 21192
+    },
+    {
+      "slug": "folded-special-cut-card-6x16",
+      "originalUrl": "/manus-storage/product-eid-folded-card_e7ac1098.jpg",
+      "originalBytes": 325894,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/folded-special-cut-card-6x16-900.webp",
+      "optimizedBytes": 45660
+    },
+    {
+      "slug": "paper-bag-abaya",
+      "originalUrl": "/manus-storage/alrawaa-bag-abaya_92e84937.png",
+      "originalBytes": 2611629,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-abaya-900.webp",
+      "optimizedBytes": 16734
+    },
+    {
+      "slug": "paper-bag-landscape-19x26",
+      "originalUrl": "/manus-storage/alrawaa-bag-landscape-19x26_f1276432.png",
+      "originalBytes": 2544106,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-19x26-900.webp",
+      "optimizedBytes": 16816
+    },
+    {
+      "slug": "paper-bag-landscape-22x32",
+      "originalUrl": "/manus-storage/alrawaa-bag-landscape-22x32_776b9da1.png",
+      "originalBytes": 2350989,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-22x32-900.webp",
+      "optimizedBytes": 11696
+    },
+    {
+      "slug": "paper-bag-landscape-22x33",
+      "originalUrl": "/manus-storage/alrawaa-bag-landscape-22x33_aedaa2fb.png",
+      "originalBytes": 3228373,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-22x33-900.webp",
+      "optimizedBytes": 11588
+    },
+    {
+      "slug": "paper-bag-landscape-42x22",
+      "originalUrl": "/manus-storage/alrawaa-bag-landscape-42x22_12f54b8a.png",
+      "originalBytes": 3385065,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-42x22-900.webp",
+      "optimizedBytes": 11860
+    },
+    {
+      "slug": "paper-bag-portrait-30x20",
+      "originalUrl": "/manus-storage/alrawaa-bag-portrait-30x20_8e7bc527.png",
+      "originalBytes": 2247522,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-30x20-900.webp",
+      "optimizedBytes": 10110
+    },
+    {
+      "slug": "paper-bag-portrait-40x28",
+      "originalUrl": "/manus-storage/alrawaa-bag-portrait-40x28_9293ed87.png",
+      "originalBytes": 4278857,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-40x28-900.webp",
+      "optimizedBytes": 17234
+    },
+    {
+      "slug": "paper-bag-portrait-small",
+      "originalUrl": "/manus-storage/alrawaa-bag-portrait-small_1e44c489.png",
+      "originalBytes": 2256677,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-small-900.webp",
+      "optimizedBytes": 8720
+    },
+    {
+      "slug": "paper-bag-top-flap",
+      "originalUrl": "/manus-storage/alrawaa-bag-top-flap_de82745e.png",
+      "originalBytes": 3525831,
+      "originalWidth": 2176,
+      "originalHeight": 1632,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-top-flap-900.webp",
+      "optimizedBytes": 10038
+    },
+    {
+      "slug": "personalised-gift-details",
+      "originalUrl": "/manus-storage/product-eid-engraved-gift_fdf9d4f0.jpg",
+      "originalBytes": 656746,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/personalised-gift-details-900.webp",
+      "optimizedBytes": 88270
+    },
+    {
+      "slug": "round-logo-stickers-5cm",
+      "originalUrl": "/manus-storage/product-graduation-logo-stickers_25c73991.jpg",
+      "originalBytes": 489860,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/round-logo-stickers-5cm-900.webp",
+      "optimizedBytes": 74316
+    },
+    {
+      "slug": "sliding-gift-box-30x20",
+      "originalUrl": "/manus-storage/alrawaa-sliding-box-reference_286aefc0.png",
+      "originalBytes": 159758,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/sliding-gift-box-30x20-900.webp",
+      "optimizedBytes": 19738
+    },
+    {
+      "slug": "thank-you-cards-10x7",
+      "originalUrl": "/manus-storage/product-graduation-thank-you-cards_d17b2076.jpg",
+      "originalBytes": 509148,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/thank-you-cards-10x7-900.webp",
+      "optimizedBytes": 43588
+    },
+    {
+      "slug": "triangle-gift-box-17x15",
+      "originalUrl": "/manus-storage/alrawaa-triangle-box_f822a955.png",
+      "originalBytes": 287870,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/triangle-gift-box-17x15-900.webp",
+      "optimizedBytes": 24172
+    },
+    {
+      "slug": "weej-import-117",
+      "originalUrl": "/manus-storage/store-media/390001/bulk-weej-import-117-46c3ca8c-5d95-4713-af62-a37836589b09_b0bb155c.png",
+      "originalBytes": 90094,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-117-900.webp",
+      "optimizedBytes": 18192
+    },
+    {
+      "slug": "weej-import-118",
+      "originalUrl": "/manus-storage/store-media/390001/bulk-weej-import-118-6fa1ec02-44ff-4be3-9969-a12dd1883ce5_f8b57bb0.png",
+      "originalBytes": 90094,
+      "originalWidth": 1920,
+      "originalHeight": 1920,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-118-900.webp",
+      "optimizedBytes": 18192
+    },
+    {
+      "slug": "weej-import-158",
+      "originalUrl": "/manus-storage/store-media/390001/bulk-weej-import-158-53cb2351-18db-4d14-874f-ac4f1522dca5_9fc61f81.jpg",
+      "originalBytes": 165588,
+      "originalWidth": 1242,
+      "originalHeight": 2208,
+      "optimizedPath": "/home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-158-900.webp",
+      "optimizedBytes": 32918
+    }
+  ]
+}
