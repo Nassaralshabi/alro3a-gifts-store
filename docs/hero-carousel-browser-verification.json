@@ -1,0 +1,8 @@
+{
+  "initial": "الصورة 1",
+  "afterNext": "الصورة 2",
+  "afterPrevious": "الصورة 1",
+  "afterPause": "الصورة 1",
+  "afterResume": "الصورة 2",
+  "passed": true
+}

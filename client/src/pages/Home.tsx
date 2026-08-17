@@ -3,7 +3,9 @@ import StoreShell from "@/components/StoreShell";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useContactInfo } from "@/hooks/useContactInfo";
+import { getHeroSlideIndex, HERO_AUTOPLAY_DELAY, shouldAutoAdvance } from "@/lib/heroCarousel";
 import { trpc } from "@/lib/trpc";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowUpLeft, Check, ChevronLeft, ChevronRight, Pause, Play, Sparkles, Tag, Truck, type LucideIcon } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "wouter";
@@ -27,8 +29,9 @@ const sectionCopy: Record<string, SectionCopy> = {
 
 function HeroCarousel({ slides, isArabic, children }: { slides: HeroSlide[]; isArabic: boolean; children: (slide: HeroSlide) => ReactNode }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isManuallyPaused, setIsManuallyPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const isPaused = isManuallyPaused;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -39,8 +42,8 @@ function HeroCarousel({ slides, isArabic, children }: { slides: HeroSlide[]; isA
   }, []);
   useEffect(() => setActiveIndex(index => slides.length ? index % slides.length : 0), [slides.length]);
   useEffect(() => {
-    if (slides.length < 2 || isPaused || prefersReducedMotion) return;
-    const timer = window.setInterval(() => setActiveIndex(index => (index + 1) % slides.length), 6000);
+    if (!shouldAutoAdvance(slides.length, isPaused, prefersReducedMotion)) return;
+    const timer = window.setInterval(() => setActiveIndex(index => getHeroSlideIndex(index, 1, slides.length)), HERO_AUTOPLAY_DELAY);
     return () => window.clearInterval(timer);
   }, [isPaused, prefersReducedMotion, slides.length]);
   useEffect(() => {
@@ -57,14 +60,16 @@ function HeroCarousel({ slides, isArabic, children }: { slides: HeroSlide[]; isA
 
   if (!slides.length) return null;
   const activeSlide = slides[activeIndex] ?? slides[0];
-  const goTo = (index: number) => setActiveIndex((index + slides.length) % slides.length);
-  const toggleLabel = isPaused ? (isArabic ? "تشغيل العرض" : "Play slideshow") : (isArabic ? "إيقاف العرض" : "Pause slideshow");
+  const goTo = (index: number) => setActiveIndex(getHeroSlideIndex(index, 0, slides.length));
+  const toggleLabel = isManuallyPaused ? (isArabic ? "تشغيل العرض" : "Play slideshow") : (isArabic ? "إيقاف العرض" : "Pause slideshow");
 
-  return <div className="relative min-h-[350px] overflow-hidden bg-[#102f39] sm:min-h-[430px]" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onFocus={() => setIsPaused(true)} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setIsPaused(false); }}>
-    <img key={activeSlide.src} src={activeSlide.src} alt={isArabic ? activeSlide.altAr : activeSlide.altEn} width={1920} height={880} loading="eager" decoding="async" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
+  return <div className="relative min-h-[350px] overflow-hidden bg-[#102f39] sm:min-h-[430px]">
+    <AnimatePresence initial={false}>
+      <motion.img key={activeSlide.src} src={activeSlide.src} alt={isArabic ? activeSlide.altAr : activeSlide.altEn} width={1920} height={880} loading="eager" decoding="async" fetchPriority="high" initial={{ opacity: 0, scale: 1.02 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.01 }} transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }} className="absolute inset-0 h-full w-full object-cover will-change-transform" />
+    </AnimatePresence>
     <div className="raed-gradient-overlay absolute inset-0" />
     <div className="relative z-10 flex min-h-[350px] items-center sm:min-h-[430px]">{children(activeSlide)}</div>
-    <div className="absolute inset-x-0 bottom-0 z-20"><div className="raed-container flex items-end justify-between pb-5"><div className="flex items-center gap-2" role="tablist" aria-label={isArabic ? "صور الغلاف" : "Hero images"}>{slides.map((slide, index) => <button key={`${slide.src}-dot`} type="button" role="tab" aria-selected={index === activeIndex} aria-label={`${isArabic ? "الصورة" : "Image"} ${index + 1}`} onClick={() => goTo(index)} className={`h-1.5 rounded-full transition-all ${index === activeIndex ? "w-9 bg-[#f2bd66]" : "w-4 bg-white/70 hover:bg-white"}`} />)}</div><div className="flex items-center gap-1.5"><button type="button" onClick={() => goTo(activeIndex - 1)} aria-label={isArabic ? "الصورة السابقة" : "Previous image"} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]"><ChevronRight className="h-4 w-4" /></button><button type="button" onClick={() => goTo(activeIndex + 1)} aria-label={isArabic ? "الصورة التالية" : "Next image"} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]"><ChevronLeft className="h-4 w-4" /></button><button type="button" onClick={() => setIsPaused(paused => !paused)} aria-label={toggleLabel} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]">{isPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}</button></div></div></div>
+    <div className="absolute inset-x-0 bottom-0 z-20"><div className="raed-container flex items-end justify-between pb-5"><div className="flex items-center gap-2" role="tablist" aria-label={isArabic ? "صور الغلاف" : "Hero images"}>{slides.map((slide, index) => <button key={`${slide.src}-dot`} type="button" role="tab" aria-selected={index === activeIndex} aria-label={`${isArabic ? "الصورة" : "Image"} ${index + 1}`} onClick={() => goTo(index)} className={`h-1.5 rounded-full transition-all ${index === activeIndex ? "w-9 bg-[#f2bd66]" : "w-4 bg-white/70 hover:bg-white"}`} />)}</div><div className="flex items-center gap-1.5"><button type="button" onClick={() => goTo(activeIndex - 1)} aria-label={isArabic ? "الصورة السابقة" : "Previous image"} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]"><ChevronRight className="h-4 w-4" /></button><button type="button" onClick={() => goTo(activeIndex + 1)} aria-label={isArabic ? "الصورة التالية" : "Next image"} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]"><ChevronLeft className="h-4 w-4" /></button><button type="button" onClick={() => setIsManuallyPaused(paused => !paused)} aria-label={toggleLabel} className="grid h-9 w-9 place-items-center rounded-md bg-white/95 text-[#17323b]">{isManuallyPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}</button></div></div></div>
   </div>;
 }
 
