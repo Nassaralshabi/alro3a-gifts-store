@@ -207,6 +207,28 @@ export async function getPublicProductsPage(input: PublicCatalogPageInput = {}) 
   };
 }
 
+export async function getPublicSearchSuggestions(query: string) {
+  const db = await requireDb();
+  const normalized = query.trim();
+  const term = `%${normalized}%`;
+  const [productMatches, categoryMatches] = await Promise.all([
+    db
+      .select({ product: products, categorySlug: categories.slug, categoryTitleAr: categories.titleAr, categoryTitleEn: categories.titleEn })
+      .from(products)
+      .leftJoin(categories, eq(products.categoryId, categories.id))
+      .where(and(eq(products.isAvailable, true), or(like(products.titleAr, term), like(products.titleEn, term))!))
+      .orderBy(desc(products.isFeatured), asc(products.sortOrder), desc(products.createdAt))
+      .limit(6),
+    db
+      .select({ id: categories.id, slug: categories.slug, titleAr: categories.titleAr, titleEn: categories.titleEn, icon: categories.icon })
+      .from(categories)
+      .where(and(eq(categories.isActive, true), or(like(categories.titleAr, term), like(categories.titleEn, term))!))
+      .orderBy(asc(categories.sortOrder), asc(categories.titleAr))
+      .limit(4),
+  ]);
+  return { products: productMatches, categories: categoryMatches };
+}
+
 export async function listPublicBundleProducts(limit = 8) {
   const db = await requireDb();
   return db
