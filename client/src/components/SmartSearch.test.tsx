@@ -34,6 +34,15 @@ describe("SmartSearch", () => {
     vi.restoreAllMocks();
   });
 
+  it("shows popular searches on focus before typing and navigates from a selected suggestion", () => {
+    render(<SmartSearch />);
+    const input = screen.getByRole("combobox");
+    fireEvent.focus(input);
+    expect(screen.getByRole("region", { name: "عمليات بحث شائعة" })).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "بوكسات هدايا" }));
+    expect(mocks.setLocation).toHaveBeenCalledWith("/shop?search=%D8%A8%D9%88%D9%83%D8%B3");
+  });
+
   it("debounces suggestions, exposes matching products and categories, then navigates the selected result", () => {
     render(<SmartSearch />);
     const input = screen.getByRole("combobox");

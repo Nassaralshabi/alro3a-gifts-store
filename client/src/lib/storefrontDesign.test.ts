@@ -23,7 +23,7 @@ describe("storefront design refresh", () => {
     expect(shell).toContain("aria-label={isArabic ? \"فتح القائمة\"");
     expect(card).toContain("rounded-[1.15rem]");
     expect(smartSearch).toContain('role="combobox"');
-    expect(smartSearch).toContain('role="listbox"');
+    expect(smartSearch).toContain('"region" : "listbox"');
     expect(smartSearch).toContain('event.key !== "ArrowDown"');
     expect(smartSearch).toContain('event.key === "Escape"');
     expect(smartSearch).toContain("SEARCH_DEBOUNCE_MS");

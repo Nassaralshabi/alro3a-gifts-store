@@ -11,6 +11,12 @@ async function inspectSearch({ viewport, mobile }) {
   await page.goto(baseUrl, { waitUntil: "networkidle" });
   if (mobile) await page.getByRole("button", { name: "البحث" }).click();
   const searchInput = page.locator('input[role="combobox"]:visible');
+  await searchInput.focus();
+  const commonSearches = page.getByRole("region", { name: "عمليات بحث شائعة" });
+  await commonSearches.waitFor({ state: "visible" });
+  const commonSearchCount = await commonSearches.getByRole("button").count();
+  if (commonSearchCount < 5) throw new Error(`Expected five popular searches, found ${commonSearchCount}.`);
+  await page.screenshot({ path: `/home/ubuntu/screenshots/smart-search-common-${mobile ? "mobile" : "desktop"}.png` });
   await searchInput.fill("بوكسات");
   await page.waitForTimeout(360);
   const suggestionList = page.getByRole("listbox");
@@ -22,7 +28,7 @@ async function inspectSearch({ viewport, mobile }) {
   await page.waitForURL(/\/products\//);
   const productPath = new URL(page.url()).pathname;
   await context.close();
-  return { viewport, productPath, suggestionCount: optionCount, browserErrors };
+  return { viewport, productPath, suggestionCount: optionCount, commonSearchCount, browserErrors };
 }
 
 const desktop = await inspectSearch({ viewport: { width: 1280, height: 720 }, mobile: false });
@@ -41,4 +47,4 @@ await categoryContext.close();
 await browser.close();
 
 if (desktop.browserErrors.length || mobile.browserErrors.length) throw new Error(`Browser console errors: ${[...desktop.browserErrors, ...mobile.browserErrors].join(" | ")}`);
-console.log(JSON.stringify({ desktop: { suggestionCount: desktop.suggestionCount, productPath: desktop.productPath }, mobile: { suggestionCount: mobile.suggestionCount, productPath: mobile.productPath }, categoryPath }, null, 2));
+console.log(JSON.stringify({ desktop: { commonSearchCount: desktop.commonSearchCount, suggestionCount: desktop.suggestionCount, productPath: desktop.productPath }, mobile: { commonSearchCount: mobile.commonSearchCount, suggestionCount: mobile.suggestionCount, productPath: mobile.productPath }, categoryPath }, null, 2));
