@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
-import { getHeroSlideIndex, shouldAutoAdvance } from "./heroCarousel";
+import { getHeroSlideIndex, HERO_AUTOPLAY_DELAY, shouldAutoAdvance } from "./heroCarousel";
 
 describe("hero carousel controls", () => {
   it("cycles forward for automatic playback and wraps after the final slide", () => {
@@ -15,6 +15,7 @@ describe("hero carousel controls", () => {
   });
 
   it("autoplays only when multiple slides are available and motion is permitted", () => {
+    expect(HERO_AUTOPLAY_DELAY).toBe(2000);
     expect(shouldAutoAdvance(5, false, false)).toBe(true);
     expect(shouldAutoAdvance(1, false, false)).toBe(false);
     expect(shouldAutoAdvance(5, true, false)).toBe(false);

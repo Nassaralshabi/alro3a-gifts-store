@@ -11,10 +11,10 @@ for (const device of [{ name: "desktop", viewport: { width: 1280, height: 720 },
   page.on("console", message => { if (message.type() === "error") errors.push(message.text()); });
   await page.goto(baseUrl, { waitUntil: "networkidle" });
   const activeBefore = await page.locator('[role="tab"][aria-selected="true"]').getAttribute("aria-label");
-  await page.waitForTimeout(5600);
+  await page.waitForTimeout(2400);
   const activeAfter = await page.locator('[role="tab"][aria-selected="true"]').getAttribute("aria-label");
   const heroResources = await page.evaluate(() => performance.getEntriesByType("resource").map(entry => ({ name: entry.name, transferSize: entry.transferSize })).filter(entry => /banner|hero/i.test(entry.name)));
-  reports.push({ device: device.name, activeBefore, activeAfter, automaticallyAdvanced: activeBefore !== activeAfter, heroResources, consoleErrors: errors });
+  reports.push({ device: device.name, waitMs: 2400, activeBefore, activeAfter, automaticallyAdvanced: activeBefore !== activeAfter, heroResources, consoleErrors: errors });
   await context.close();
 }
 
