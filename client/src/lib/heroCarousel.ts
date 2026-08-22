@@ -1,4 +1,4 @@
-export const HERO_AUTOPLAY_DELAY = 2000;
+export const HERO_AUTOPLAY_DELAY = 2400;
 
 export function getHeroSlideIndex(activeIndex: number, offset: number, slideCount: number) {
   if (slideCount <= 0) return 0;

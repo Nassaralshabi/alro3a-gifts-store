@@ -15,7 +15,7 @@ describe("hero carousel controls", () => {
   });
 
   it("autoplays only when multiple slides are available and motion is permitted", () => {
-    expect(HERO_AUTOPLAY_DELAY).toBe(2000);
+    expect(HERO_AUTOPLAY_DELAY).toBe(2400);
     expect(shouldAutoAdvance(5, false, false)).toBe(true);
     expect(shouldAutoAdvance(1, false, false)).toBe(false);
     expect(shouldAutoAdvance(5, true, false)).toBe(false);
@@ -30,6 +30,7 @@ describe("hero carousel controls", () => {
     expect(homeSource).toContain("const HERO_BRAND_LOGO");
     expect(homeSource).toContain("absolute right-4 top-4 z-20");
     expect(homeSource).toContain('alt={isArabic ? "شعار مطبعة الروعة" : "Al Rawaa Printing logo"}');
+    expect(homeSource).toContain('activeSlide.src.includes("uae-national-day-gift-set")');
     expect(brandBadgePosition).toBeGreaterThan(activeSlideTransitionEnd);
   });
 });

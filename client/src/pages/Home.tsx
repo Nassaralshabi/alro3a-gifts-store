@@ -66,7 +66,7 @@ function HeroCarousel({ slides, isArabic, children }: { slides: HeroSlide[]; isA
 
   return <div className="hero-panel relative min-h-[350px] overflow-hidden bg-[#102f39] sm:min-h-[430px]">
     <AnimatePresence initial={false}>
-      <motion.img key={activeSlide.src} src={activeSlide.src} alt={isArabic ? activeSlide.altAr : activeSlide.altEn} width={1920} height={880} loading="eager" decoding="async" fetchPriority="high" initial={{ opacity: 0, scale: 1.02 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.01 }} transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }} className="absolute inset-0 h-full w-full object-cover will-change-transform" />
+      <motion.img key={activeSlide.src} src={activeSlide.src} alt={isArabic ? activeSlide.altAr : activeSlide.altEn} width={1920} height={880} loading="eager" decoding="async" fetchPriority="high" initial={{ opacity: 0, scale: 1.02 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.01 }} transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }} className={`absolute inset-0 h-full w-full will-change-transform ${activeSlide.src.includes("uae-national-day-gift-set") ? "bg-[#f6f8f4] object-contain" : "object-cover"}`} />
     </AnimatePresence>
     <div className="raed-gradient-overlay absolute inset-0" />
     <div className="hero-brand-badge absolute right-4 top-4 z-20 rounded-xl border border-white/30 bg-[#102f39]/90 p-1.5 shadow-[0_10px_28px_-12px_rgba(4,27,34,.85)] backdrop-blur-sm sm:right-6 sm:top-6"><img src={HERO_BRAND_LOGO} alt={isArabic ? "شعار مطبعة الروعة" : "Al Rawaa Printing logo"} width={96} height={96} className="h-11 w-11 rounded-lg object-cover sm:h-12 sm:w-12" /></div>
