@@ -7,7 +7,7 @@ import { Heart, Instagram, Languages, MapPin, Menu, Phone, Search, ShoppingBag, 
 import { lazy, ReactNode, Suspense, useState } from "react";
 import { Link } from "wouter";
 
-const FALLBACK_LOGO_URL = "/manus-storage/social-1_e277342a.jpg";
+const FALLBACK_LOGO_URL = "/manus-storage/alrawhaa-logo_cfae3a03.webp";
 const RequestCartDrawer = lazy(() => import("@/components/RequestCartDrawer"));
 const navItems = [
   { href: "/shop?category=promotional-gifts", ar: "هدايا إعلانية", en: "Promotional gifts" },
