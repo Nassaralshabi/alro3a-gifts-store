@@ -59,3 +59,23 @@ Work Log:
 Stage Summary:
 - الفرع محدث ومؤمّن. الثغرة الحرجة أُصلحت مع ترقية أمنية.
 - تقرير التدقيق المهني الكامل قُدّم للمستخدم مع خارطة طريق مقترحة.
+
+---
+Task ID: 8
+Agent: Super Z (main agent)
+Task: تنفيذ خارطة الطريق كاملة (6 تحسينات)
+
+Work Log:
+1. SEO: 262 صفحة منتج SSG (/product/[slug]) بـ generateStaticParams + JSON-LD Product + OG/Twitter/canonical + next/image + AddToCart مشترك مع localStorage المتجر (اختبرت: أضفت من صفحة SEO → ظهرت في سلة المتجر) + /shop و/contact حقيقية + sitemap (273 رابطاً) + robots (حذفت robots.txt القديم المتعارض).
+2. نسخ احتياطي: scripts/backup.ts → backups/*.tar.gz (9.21MB مُختبر) + احتفاظ 14 + أمر bun run backup + جدولة cron موثقة.
+3. بريد: src/lib/mailer.ts (nodemailer، env-driven، fails soft، بريد عربي HTML) + دمج fire-and-forget في API الطلبات.
+4. تقسيم: storefront 886→~270 (هيكل) + store/bits+screens+cart + admin/managers (~500 سطر منفصل) — أصلحت أثناء الفحص: useMemo ناقص (اكتشفه ErrorBoundary!) + FALLBACK import + مفاتيح ترجمة setPhone/setWa/setIg + نوع createOrder + نوع mailer transport.
+5. اختبارات: vitest + 14 اختباراً (rateLimit 5: عتبة/حجب/استقلالية/تصفير، imageSniff 9: توقيعات حقيقية/ملفات مزيفة/SVG/فارغة) — 14/14 ناجحة.
+6. CI/CD: .github/workflows/ci.yml (lint + typecheck بـ tsconfig.check + اختبارات + بناء إنتاجي) على push لـ main وfullstack-nextjs.
+- فحص نهائي: SPA كامل + متجر + أدمن + صفحة منتج SEO + health + robots + sitemap = كلها 200 وتعمل.
+- typecheck src نظيف 100% + lint نظيف + اختبارات خضراء.
+- الدفع: commit 68fbdd8 → فرع fullstack-nextjs.
+
+Stage Summary:
+- خارطة الطريق منفذة بالكامل 6/6 بأدلة اختبار لكل بند.
+- الموقع الآن: قابل للفهرسة في Google (273 صفحة) + مؤمّن + مُختبر + CI + نسخ احتياطي + بريد.
