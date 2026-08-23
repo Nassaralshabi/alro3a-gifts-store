@@ -34,6 +34,8 @@ describe("واجهة HTML المستقلة", () => {
   it("يعرّف المسارات الأساسية للواجهة ويعرض حقل الفئة الذي يعيده الخادم", () => {
     const viteSource = projectFile("server", "_core", "vite.ts");
     const adminSource = projectFile("client", "vanilla", "admin.js");
+    const storeSource = projectFile("client", "vanilla", "store.js");
+    const storeRouterSource = projectFile("server", "routers", "store.ts");
 
     expect(viteSource).toContain('app.get(["/", "/shop"');
     expect(viteSource).toContain('app.get(["/admin", "/admin/:section"]');
@@ -41,5 +43,9 @@ describe("واجهة HTML المستقلة", () => {
     expect(viteSource).toContain('"/contact"');
     expect(viteSource).toContain('"/products/:slug"');
     expect(adminSource).toContain("entry.categoryTitleAr || entry.category?.titleAr");
+    expect(storeRouterSource).toContain("priceRange: z.enum");
+    expect(storeSource).toContain('id="price-range"');
+    expect(storeSource).toContain("function reviewCart(form)");
+    expect(storeSource).toContain("data-confirm-order");
   });
 });

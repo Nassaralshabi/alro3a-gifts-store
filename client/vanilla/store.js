@@ -1,7 +1,7 @@
 import { esc, trpc, whatsapp } from "./api.js";
 
 const app = document.querySelector("#app");
-const state = { categories: [], products: [], contact: null, home: null, cart: JSON.parse(localStorage.getItem("alrawaa-html-cart") || "[]"), language: localStorage.getItem("alrawaa-html-language") || "ar", category: "", query: "", priceOrder: "default", currentProduct: null, nextCursor: null, totalProducts: 0 };
+const state = { categories: [], products: [], contact: null, home: null, cart: JSON.parse(localStorage.getItem("alrawaa-html-cart") || "[]"), language: localStorage.getItem("alrawaa-html-language") || "ar", category: "", query: "", priceOrder: "default", priceRange: "all", currentProduct: null, nextCursor: null, totalProducts: 0 };
 const copy = (ar, en) => state.language === "ar" ? ar : en;
 const title = entry => copy(entry.titleAr, entry.titleEn);
 const price = value => value ? `${Number(value).toLocaleString(state.language === "ar" ? "ar-AE" : "en-AE")} AED` : copy("السعر حسب التفاصيل المطلوبة", "Price on request");
@@ -35,7 +35,7 @@ function renderContact() {
 }
 
 async function loadProducts(append = false) {
-  const input = { categorySlug: state.category || undefined, query: state.query || undefined, priceOrder: state.priceOrder, cursor: append ? state.nextCursor ?? undefined : 0, limit: 24 };
+  const input = { categorySlug: state.category || undefined, query: state.query || undefined, priceOrder: state.priceOrder, priceRange: state.priceRange, cursor: append ? state.nextCursor ?? undefined : 0, limit: 24 };
   const response = await trpc("store.catalog.productsPage", input);
   state.products = append ? [...state.products, ...(response.items || [])] : (response.items || []);
   state.nextCursor = response.nextCursor ?? null;
@@ -47,7 +47,7 @@ async function renderShop(append = false) {
   const categoryName = state.categories.find(category => category.slug === state.category);
   const resultsLabel = copy(`عرض ${state.products.length} من ${state.totalProducts} منتج`, `Showing ${state.products.length} of ${state.totalProducts} products`);
   const more = state.nextCursor === null ? "" : `<div class="section"><button class="button secondary" data-load-more>${esc(copy("تحميل المزيد", "Load more"))}</button></div>`;
-  renderShell(`<section class="section container"><div class="section-head"><div><span class="eyebrow">${esc(copy("الكتالوج", "CATALOG"))}</span><h1>${esc(categoryName ? title(categoryName) : copy("كل المنتجات", "All products"))}</h1><p>${esc(copy("ابحث، صفِّ النتائج، وأضف المنتجات إلى سلة الطلب.", "Search, filter and add products to your request cart."))}</p><p class="price" aria-live="polite">${esc(resultsLabel)}</p></div></div><div class="toolbar"><input class="input" id="search" value="${esc(state.query)}" placeholder="${esc(copy("ابحث عن هدية أو مطبوعة…", "Search gifts or printing…"))}"><select class="select" id="order"><option value="default">${esc(copy("الترتيب الافتراضي", "Default order"))}</option><option value="asc" ${state.priceOrder === "asc" ? "selected" : ""}>${esc(copy("السعر من الأقل", "Price: low first"))}</option><option value="desc" ${state.priceOrder === "desc" ? "selected" : ""}>${esc(copy("السعر من الأعلى", "Price: high first"))}</option></select></div><div class="grid">${state.products.map(card).join("") || `<div class="empty">${esc(copy("لا توجد منتجات مطابقة. جرّب كلمة بحث أو فئة مختلفة.", "No matching products. Try another search or category."))}</div>`}</div>${more}</section>`);
+  renderShell(`<section class="section container"><div class="section-head"><div><span class="eyebrow">${esc(copy("الكتالوج", "CATALOG"))}</span><h1>${esc(categoryName ? title(categoryName) : copy("كل المنتجات", "All products"))}</h1><p>${esc(copy("ابحث، صفِّ النتائج، وأضف المنتجات إلى سلة الطلب.", "Search, filter and add products to your request cart."))}</p><p class="price" aria-live="polite">${esc(resultsLabel)}</p></div></div><div class="toolbar"><input class="input" id="search" value="${esc(state.query)}" placeholder="${esc(copy("ابحث عن هدية أو مطبوعة…", "Search gifts or printing…"))}"><select class="select" id="price-range" aria-label="${esc(copy("نطاق السعر", "Price range"))}"><option value="all">${esc(copy("كل الأسعار", "All prices"))}</option><option value="under-75" ${state.priceRange === "under-75" ? "selected" : ""}>${esc(copy("حتى 75 د.إ", "Up to AED 75"))}</option><option value="75-150" ${state.priceRange === "75-150" ? "selected" : ""}>${esc(copy("من 75 إلى 150 د.إ", "AED 75–150"))}</option><option value="over-150" ${state.priceRange === "over-150" ? "selected" : ""}>${esc(copy("أكثر من 150 د.إ", "Over AED 150"))}</option><option value="on-request" ${state.priceRange === "on-request" ? "selected" : ""}>${esc(copy("السعر حسب الطلب", "Price on request"))}</option></select><select class="select" id="order"><option value="default">${esc(copy("الترتيب الافتراضي", "Default order"))}</option><option value="asc" ${state.priceOrder === "asc" ? "selected" : ""}>${esc(copy("السعر من الأقل", "Price: low first"))}</option><option value="desc" ${state.priceOrder === "desc" ? "selected" : ""}>${esc(copy("السعر من الأعلى", "Price: high first"))}</option></select></div><div class="grid">${state.products.map(card).join("") || `<div class="empty">${esc(copy("لا توجد منتجات مطابقة. جرّب كلمة بحث أو فئة مختلفة.", "No matching products. Try another search or category."))}</div>`}</div>${more}</section>`);
 }
 
 async function openProduct(slug) {
@@ -62,8 +62,17 @@ async function openProduct(slug) {
 function renderCart() {
   const drawer = document.querySelector("#cart-drawer");
   const lines = state.cart.map(item => `<div class="cart-line"><img src="${esc(item.imageUrl || "")}" alt=""><div><b>${esc(title(item))}</b><br><small>${esc(price(item.price))}</small></div><div class="count"><button data-minus="${item.id}">−</button><span>${item.quantity}</span><button data-plus="${item.id}">+</button></div></div>`).join("");
-  drawer.innerHTML = `<aside class="drawer-box" dir="${state.language === "ar" ? "rtl" : "ltr"}"><div class="section-head"><h2>${esc(copy("سلة الطلب", "Request cart"))}</h2><button class="icon-button" data-close-cart>×</button></div>${lines || `<div class="empty">${esc(copy("السلة فارغة حاليًا.", "Your cart is empty."))}</div>`}${state.cart.length ? `<form id="checkout"><input class="input" required name="name" placeholder="${esc(copy("الاسم", "Name"))}"><input class="input" required name="phone" placeholder="${esc(copy("رقم الهاتف", "Phone number"))}"><textarea class="textarea" name="notes" placeholder="${esc(copy("تفاصيل الطلب أو المناسبة", "Occasion or request details"))}"></textarea><button class="button" type="submit">${esc(copy("إرسال الطلب عبر واتساب", "Send request on WhatsApp"))}</button></form>` : ""}</aside>`;
+  drawer.innerHTML = `<aside class="drawer-box" dir="${state.language === "ar" ? "rtl" : "ltr"}"><div class="section-head"><h2>${esc(copy("سلة الطلب", "Request cart"))}</h2><button class="icon-button" data-close-cart>×</button></div>${lines || `<div class="empty">${esc(copy("السلة فارغة حاليًا.", "Your cart is empty."))}</div>`}${state.cart.length ? `<form id="checkout"><input class="input" required name="name" placeholder="${esc(copy("الاسم", "Name"))}"><input class="input" required name="phone" placeholder="${esc(copy("رقم الهاتف", "Phone number"))}"><textarea class="textarea" name="notes" placeholder="${esc(copy("تفاصيل الطلب أو المناسبة", "Occasion or request details"))}"></textarea><button class="button" type="submit">${esc(copy("مراجعة الطلب", "Review request"))}</button></form>` : ""}</aside>`;
   drawer.classList.add("open");
+}
+
+function reviewCart(form) {
+  if (!form.reportValidity()) return;
+  const customerName = form.name.value.trim(); const customerPhone = form.phone.value.trim(); const notes = form.notes.value.trim();
+  const items = state.cart.map(item => `<div class="cart-line"><img src="${esc(item.imageUrl || "")}" alt=""><div><b>${esc(title(item))}</b><br><small>${esc(price(item.price))} · ${esc(copy("الكمية", "Qty"))}: ${item.quantity}</small></div></div>`).join("");
+  const modal = document.querySelector("#product-modal");
+  modal.innerHTML = `<div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="review-title" dir="${state.language === "ar" ? "rtl" : "ltr"}"><button class="icon-button" data-close-modal aria-label="${esc(copy("إغلاق", "Close"))}">×</button><span class="eyebrow">${esc(copy("مراجعة قبل الإرسال", "REVIEW BEFORE SENDING"))}</span><h1 id="review-title">${esc(copy("ملخص طلبك", "Your request summary"))}</h1><div class="admin-panel"><p><b>${esc(copy("الاسم", "Name"))}:</b> ${esc(customerName)}</p><p><b>${esc(copy("الهاتف", "Phone"))}:</b> ${esc(customerPhone)}</p><p><b>${esc(copy("التفاصيل", "Details"))}:</b> ${esc(notes || "—")}</p></div><div>${items}</div><p class="price">${esc(copy(`عدد المنتجات: ${state.cart.length} · إجمالي القطع: ${state.cart.reduce((sum, item) => sum + item.quantity, 0)}`, `Products: ${state.cart.length} · Total items: ${state.cart.reduce((sum, item) => sum + item.quantity, 0)}`))}</p><p>${esc(copy("سيُحفظ الطلب أولًا، ثم تُفتح رسالة واتساب بالتفاصيل نفسها.", "The request will be saved first, then WhatsApp will open with the same details."))}</p><button class="button" data-confirm-order>${esc(copy("تأكيد وحفظ الطلب ثم فتح واتساب", "Confirm, save and open WhatsApp"))}</button></div>`;
+  modal.classList.add("open");
 }
 
 async function submitCart(form) {
@@ -78,12 +87,13 @@ async function submitCart(form) {
 function addProduct(id) { const product = state.currentProduct; if (!product || Number(product.id) !== Number(id)) return; const item = state.cart.find(entry => entry.id === product.id); if (item) item.quantity += 1; else state.cart.push({ ...product, quantity: 1 }); saveCart(); document.querySelector("#product-modal").classList.remove("open"); showToast(copy("تمت إضافة المنتج إلى السلة.", "Product added to cart.")); renderHome(); }
 
 document.addEventListener("click", async event => {
-  const target = event.target.closest("[data-product],[data-category],[data-shop],[data-cart],[data-language],[data-close-modal],[data-close-cart],[data-add],[data-plus],[data-minus],[data-load-more]"); if (!target) return;
+  const target = event.target.closest("[data-product],[data-category],[data-shop],[data-cart],[data-language],[data-close-modal],[data-close-cart],[data-add],[data-plus],[data-minus],[data-load-more],[data-confirm-order]"); if (!target) return;
   if (target.dataset.product) return openProduct(target.dataset.product);
   if (target.dataset.category !== undefined) { state.category = target.dataset.category; state.query = ""; return renderShop(); }
   if (target.hasAttribute("data-shop")) return renderShop();
   if (target.hasAttribute("data-load-more")) return renderShop(true);
   if (target.hasAttribute("data-cart")) return renderCart();
+  if (target.hasAttribute("data-confirm-order")) { const form = document.querySelector("#checkout"); if (form) return submitCart(form).catch(error => showToast(error.message)); }
   if (target.hasAttribute("data-language")) { state.language = state.language === "ar" ? "en" : "ar"; localStorage.setItem("alrawaa-html-language", state.language); return renderHome(); }
   if (target.hasAttribute("data-close-modal")) return document.querySelector("#product-modal").classList.remove("open");
   if (target.hasAttribute("data-close-cart")) return document.querySelector("#cart-drawer").classList.remove("open");
@@ -91,9 +101,9 @@ document.addEventListener("click", async event => {
   const item = state.cart.find(entry => String(entry.id) === (target.dataset.plus || target.dataset.minus)); if (!item) return; item.quantity += target.dataset.plus ? 1 : -1; if (item.quantity < 1) state.cart = state.cart.filter(entry => entry !== item); saveCart(); renderCart();
 });
 
-document.addEventListener("change", event => { if (event.target.id === "order") { state.priceOrder = event.target.value; renderShop(); } });
+document.addEventListener("change", event => { if (event.target.id === "order") { state.priceOrder = event.target.value; renderShop(); } if (event.target.id === "price-range") { state.priceRange = event.target.value; renderShop(); } });
 document.addEventListener("keydown", event => { if (event.target.id === "search" && event.key === "Enter") { state.query = event.target.value.trim(); renderShop(); } });
-document.addEventListener("submit", event => { if (event.target.id === "checkout") { event.preventDefault(); submitCart(event.target).catch(error => showToast(error.message)); } });
+document.addEventListener("submit", event => { if (event.target.id === "checkout") { event.preventDefault(); reviewCart(event.target); } });
 
 async function init() {
   try { const [contact, categories, home] = await Promise.all([trpc("store.catalog.contact"), trpc("store.catalog.categories"), trpc("store.catalog.homeContent")]); state.contact = contact; state.categories = categories; state.home = home; await loadProducts(); const productMatch = /^\/products\/([^/]+)$/.exec(location.pathname); const serviceMatch = /^\/services\/([^/]+)$/.exec(location.pathname); if (productMatch) { renderHome(); openProduct(productMatch[1]); } else if (serviceMatch) { state.category = serviceMatch[1]; renderShop(); } else if (location.pathname === "/shop") renderShop(); else if (location.pathname === "/contact") renderContact(); else renderHome(); } catch (error) { app.innerHTML = `<div class="container section"><div class="empty">${esc(error.message || "تعذر تحميل المتجر")}</div></div>`; }

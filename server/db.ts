@@ -1,4 +1,4 @@
-import { and, asc, count, desc, eq, like, or, sql } from "drizzle-orm";
+import { and, asc, count, desc, eq, gt, isNull, like, lte, or, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import {
@@ -179,6 +179,7 @@ export type PublicCatalogPageInput = {
   categorySlug?: string;
   query?: string;
   priceOrder?: "default" | "asc" | "desc";
+  priceRange?: "all" | "under-75" | "75-150" | "over-150" | "on-request";
   cursor?: number;
   limit?: number;
 };
@@ -193,6 +194,10 @@ export async function getPublicProductsPage(input: PublicCatalogPageInput = {}) 
     const term = `%${input.query}%`;
     filters.push(or(like(products.titleAr, term), like(products.titleEn, term))!);
   }
+  if (input.priceRange === "under-75") filters.push(lte(products.price, "75.00"));
+  if (input.priceRange === "75-150") filters.push(and(gt(products.price, "75.00"), lte(products.price, "150.00"))!);
+  if (input.priceRange === "over-150") filters.push(gt(products.price, "150.00"));
+  if (input.priceRange === "on-request") filters.push(isNull(products.price));
   const ordering = input.priceOrder === "asc"
     ? [sql`CASE WHEN ${products.price} IS NULL THEN 1 ELSE 0 END`, asc(products.price), asc(products.sortOrder), desc(products.createdAt)]
     : input.priceOrder === "desc"
