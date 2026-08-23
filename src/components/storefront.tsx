@@ -691,20 +691,20 @@ export default function Storefront() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#33393e]">
-      {/* topbar */}
-      <div className="bg-white border-b border-[#e4e7e9] text-[#4b555d] text-[11px] py-1.5">
+      {/* topbar — dark charcoal touch */}
+      <div className="bg-gradient-to-l from-[#1e2328] via-[#23282d] to-[#2c343b] border-b border-black/20 text-[#c9d1d6] text-[11.5px] font-semibold py-1.5 shadow-[inset_0_-1px_0_rgba(255,255,255,.04)]">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl flex items-center justify-between gap-3">
-          <span className="hidden md:inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#9a6b13]" />{addr}</span>
+          <span className="hidden md:inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#f2bd66]" />{addr}</span>
           <div className="flex items-center gap-4">
-            <a href="#/contact" className="hover:text-[#33393e]">{T("policy")}</a>
-            <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-[#33393e]"><Phone className="w-3.5 h-3.5 text-[#9a6b13]" /><span dir="ltr">{phone}</span></a>
-            <button onClick={toggleLang} className="inline-flex items-center gap-1.5 font-extrabold hover:text-[#33393e]"><Languages className="w-3.5 h-3.5" />{isAr ? "English" : "العربية"}</button>
+            <a href="#/contact" className="hover:text-[#f2bd66] transition-colors">{T("policy")}</a>
+            <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-[#f2bd66] transition-colors"><Phone className="w-3.5 h-3.5 text-[#f2bd66]" /><span dir="ltr">{phone}</span></a>
+            <button onClick={toggleLang} className="inline-flex items-center gap-1.5 font-extrabold hover:text-[#f2bd66] transition-colors"><Languages className="w-3.5 h-3.5" />{isAr ? "English" : "العربية"}</button>
           </div>
         </div>
       </div>
 
       {/* header */}
-      <header className="sticky top-0 z-50 bg-white border-b border-[#e4e7e9] shadow-[0_8px_22px_-20px_rgba(35,41,46,.35)]">
+      <header className="sticky top-0 z-50 bg-white border-b border-[#d5dbdf] shadow-[0_10px_32px_-14px_rgba(30,35,40,.35)]">
         <div className="container mx-auto px-4 sm:px-6 max-w-6xl flex items-center gap-2.5 min-h-16 py-2">
           <a href="#/" className="flex items-center gap-2.5 shrink-0">
             { }
@@ -780,44 +780,75 @@ export default function Storefront() {
         )}
       </main>
 
-      {/* footer */}
-      <footer className="mt-14 bg-[#f2f4f5] border-t border-[#e4e7e9] text-[#4b555d] relative">
-        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-l from-[#9aa5ac] via-[#c3cbd1] to-[#f2bd66]" />
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl grid gap-9 py-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1fr]">
-          <div>
-            <div className="flex items-center gap-3">
-              { }
-              <img src={logo} alt="" className="w-11 h-11 rounded-xl object-cover" />
-              <span className="text-xl text-[#33393e]">{siteName}</span>
+      {/* footer — dark premium redesign */}
+      <footer className="mt-14 bg-gradient-to-b from-[#333a40] via-[#23282d] to-[#181d21] text-[#c9d1d6] relative overflow-hidden">
+        {/* top gold accent line */}
+        <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-l from-[#45505a] via-[#8a959c] to-[#f2bd66]" />
+        {/* decorative glow */}
+        <div className="absolute -top-24 -end-24 w-72 h-72 rounded-full bg-[radial-gradient(circle,rgba(242,189,102,.12),transparent_70%)] pointer-events-none" />
+        <div className="absolute -bottom-28 -start-20 w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.05),transparent_70%)] pointer-events-none" />
+
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative">
+          {/* brand row */}
+          <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="grid place-items-center w-12 h-12 rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur-sm p-1">
+                  { }
+                  <img src={logo} alt="" className="w-full h-full rounded-xl object-cover" />
+                </span>
+                <div>
+                  <span className="block text-xl text-white">{siteName}</span>
+                  <span className="block text-[10px] font-extrabold tracking-[.16em] uppercase text-[#f2bd66]">{tagline}</span>
+                </div>
+              </div>
+              <p className="mt-5 max-w-md text-[13px] leading-loose text-[#a7b1b8]">{T("fAbout")}</p>
+              <a href={`https://instagram.com/${settingsVal("contact.instagram") || "alro3a.gifts"}`} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-[13px] font-extrabold text-[#f2bd66] hover:text-white transition-colors"><Instagram className="w-4 h-4" />@{settingsVal("contact.instagram") || "alro3a.gifts"}</a>
             </div>
-            <p className="mt-4 max-w-md text-[13px] leading-loose text-[#5d6870]">{T("fAbout")}</p>
-            <a href={`https://instagram.com/${settingsVal("contact.instagram") || "alro3a.gifts"}`} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-[13px] font-extrabold text-[#9a6b13] hover:text-[#33393e]"><Instagram className="w-4 h-4" />@{settingsVal("contact.instagram") || "alro3a.gifts"}</a>
+
+            <div>
+              <h3 className="font-extrabold text-[#f2bd66] text-[13px] flex items-center gap-2 before:content-[''] before:w-4 before:h-[3px] before:rounded-full before:bg-[#f2bd66]">{T("fExplore")}</h3>
+              <nav className="grid gap-3 mt-4 text-[13px]">
+                <a href="#/" className="text-[#a7b1b8] hover:text-white hover:ps-1 transition-all">{T("fHome")}</a>
+                <a href="#/shop" className="text-[#a7b1b8] hover:text-white hover:ps-1 transition-all">{T("allProducts")}</a>
+                {cats.slice(0, 3).map((c) => <a key={c.id} href={`#/shop?cat=${c.slug}`} className="text-[#a7b1b8] hover:text-white hover:ps-1 transition-all">{L(lang, c.titleAr, c.titleEn)}</a>)}
+              </nav>
+            </div>
+
+            <div>
+              <h3 className="font-extrabold text-[#f2bd66] text-[13px] flex items-center gap-2 before:content-[''] before:w-4 before:h-[3px] before:rounded-full before:bg-[#f2bd66]">{T("fHelp")}</h3>
+              <nav className="grid gap-3 mt-4 text-[13px]">
+                <a href="#/contact" className="text-[#a7b1b8] hover:text-white hover:ps-1 transition-all">{T("policy")}</a>
+                <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="text-[#a7b1b8] hover:text-white hover:ps-1 transition-all">{isAr ? "طلب مخصص عبر واتساب" : "Custom request on WhatsApp"}</a>
+                <button onClick={() => setCartOpen(true)} className="text-start text-[#a7b1b8] hover:text-white hover:ps-1 transition-all">{T("cart")}</button>
+                <a href="#/admin" className="text-[#a7b1b8] hover:text-white hover:ps-1 transition-all">{T("account")}</a>
+              </nav>
+            </div>
+
+            <div>
+              <h3 className="font-extrabold text-[#f2bd66] text-[13px] flex items-center gap-2 before:content-[''] before:w-4 before:h-[3px] before:rounded-full before:bg-[#f2bd66]">{T("fContact")}</h3>
+              <div className="grid gap-4 mt-4 text-[13px] leading-relaxed">
+                <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="flex gap-3 items-start group">
+                  <span className="grid place-items-center w-8 h-8 rounded-lg bg-white/10 ring-1 ring-white/15 text-[#f2bd66] shrink-0 group-hover:bg-[#f2bd66] group-hover:text-[#23282d] transition-colors"><Phone className="w-4 h-4" /></span>
+                  <span className="pt-1"><span dir="ltr" className="block text-white font-bold">{phone}</span><span className="text-[11px] text-[#8a959c]">{isAr ? "اتصال / واتساب" : "Call / WhatsApp"}</span></span>
+                </a>
+                <div className="flex gap-3 items-start">
+                  <span className="grid place-items-center w-8 h-8 rounded-lg bg-white/10 ring-1 ring-white/15 text-[#f2bd66] shrink-0"><MapPin className="w-4 h-4" /></span>
+                  <span className="pt-1 text-[#a7b1b8]">{addr}<br /><span className="text-[11px] text-[#8a959c]">{T("fDeliver")}</span></span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 className="font-extrabold text-[#9a6b13] text-[13px]">{T("fExplore")}</h3>
-            <nav className="grid gap-3 mt-4 text-[13px]">
-              <a href="#/" className="hover:text-[#33393e]">{T("fHome")}</a>
-              <a href="#/shop" className="hover:text-[#33393e]">{T("allProducts")}</a>
-              {cats.slice(0, 3).map((c) => <a key={c.id} href={`#/shop?cat=${c.slug}`} className="hover:text-[#33393e]">{L(lang, c.titleAr, c.titleEn)}</a>)}
-            </nav>
-          </div>
-          <div>
-            <h3 className="font-extrabold text-[#9a6b13] text-[13px]">{T("fHelp")}</h3>
-            <nav className="grid gap-3 mt-4 text-[13px]">
-              <a href="#/contact" className="hover:text-[#33393e]">{T("policy")}</a>
-              <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="hover:text-[#33393e]">{isAr ? "طلب مخصص عبر واتساب" : "Custom request on WhatsApp"}</a>
-              <button onClick={() => setCartOpen(true)} className="text-start hover:text-[#33393e]">{T("cart")}</button>
-            </nav>
-          </div>
-          <div>
-            <h3 className="font-extrabold text-[#9a6b13] text-[13px]">{T("fContact")}</h3>
-            <div className="grid gap-3.5 mt-4 text-[13px] leading-relaxed">
-              <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer" className="flex gap-2 hover:text-[#33393e]"><Phone className="w-4 h-4 text-[#9a6b13] mt-1" /><span dir="ltr">{phone}</span></a>
-              <div className="flex gap-2"><MapPin className="w-4 h-4 text-[#9a6b13] mt-0.5" /><span>{addr}<br />{T("fDeliver")}</span></div>
+
+          {/* bottom bar */}
+          <div className="border-t border-white/10 py-5 flex flex-wrap items-center justify-between gap-3">
+            <p className="text-[11px] text-[#8a959c]">© {new Date().getFullYear()} <span className="text-[#c9d1d6] font-bold">{siteName}</span> — {T("fRights")}</p>
+            <div className="flex items-center gap-1.5 text-[10px] font-extrabold text-[#8a959c]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#f2bd66]"></span>
+              {isAr ? "صُنع بعناية في الإمارات" : "Crafted with care in the UAE"}
             </div>
           </div>
         </div>
-        <div className="border-t border-[#e4e7e9] py-5 text-center text-[11px] text-[#8a949b]">© {new Date().getFullYear()} {siteName} — {T("fRights")}</div>
       </footer>
 
       {/* mobile menu */}
