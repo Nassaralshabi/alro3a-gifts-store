@@ -366,6 +366,32 @@ export async function getDashboardStats() {
   };
 }
 
+export async function getAdminOperationsOverview() {
+  const [allProducts, allOrders, allCategories] = await Promise.all([listAdminProducts(), listOrders(), listAllCategories()]);
+  const statusCounts = {
+    new: allOrders.filter(order => order.status === "new").length,
+    contacted: allOrders.filter(order => order.status === "contacted").length,
+    confirmed: allOrders.filter(order => order.status === "confirmed").length,
+    completed: allOrders.filter(order => order.status === "completed").length,
+    cancelled: allOrders.filter(order => order.status === "cancelled").length,
+  };
+  const availableProducts = allProducts.filter(entry => entry.product.isAvailable).length;
+  return {
+    summary: {
+      products: allProducts.length,
+      availableProducts,
+      hiddenProducts: allProducts.length - availableProducts,
+      categories: allCategories.length,
+      orders: allOrders.length,
+      newOrders: statusCounts.new,
+      activeOrders: statusCounts.new + statusCounts.contacted + statusCounts.confirmed,
+    },
+    statusCounts,
+    awaitingOrders: allOrders.filter(order => order.status === "new" || order.status === "contacted").slice(0, 5),
+    recentOrders: allOrders.slice(0, 5),
+  };
+}
+
 export async function listContent() {
   const db = await requireDb();
   return db.select().from(siteContent).orderBy(asc(siteContent.contentKey));

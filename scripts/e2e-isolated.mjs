@@ -65,6 +65,12 @@ const liveSettings = {
   hero: { badgeAr: "شارة اختبار حية", titleAr: "عنوان حي معزول", subtitleAr: "وصف حي معزول" },
 };
 const appearance = { headerBackground: "#FFFEFC", headerText: "#17323B", footerBackground: "#102F39", footerText: "#EDF8F8" };
+const operationsOverview = {
+  summary: { products: 73, availableProducts: 73, hiddenProducts: 0, categories: 1, orders: 2, newOrders: 1, activeOrders: 2 },
+  statusCounts: { new: 1, contacted: 1, confirmed: 0, completed: 0, cancelled: 0 },
+  awaitingOrders: [{ id: 910001, customerName: "طلب اختبار معزول", customerPhone: "0500000000", productTitle: "منتج تجريبي معزول", quantity: 2, status: "new", createdAt: "2026-08-23T00:00:00.000Z" }],
+  recentOrders: [{ id: 910001, customerName: "طلب اختبار معزول", customerPhone: "0500000000", productTitle: "منتج تجريبي معزول", quantity: 2, status: "new", createdAt: "2026-08-23T00:00:00.000Z" }],
+};
 
 function resultFor(procedure, authenticatedAdmin = null, input = {}) {
   if (procedure === "store.catalog.categories") return categories;
@@ -80,6 +86,8 @@ function resultFor(procedure, authenticatedAdmin = null, input = {}) {
   if (procedure === "auth.adminMe") return authenticatedAdmin;
   if (procedure === "auth.me") return null;
   if (procedure === "store.admin.liveSettings") return liveSettings;
+  if (procedure === "store.admin.operationsOverview") return operationsOverview;
+  if (procedure === "store.admin.orders") return operationsOverview.recentOrders;
   return null;
 }
 
@@ -180,6 +188,19 @@ async function run() {
     assert(await appearancePage.getByText("لوحات ألوان مقترحة").count() === 0, "عاد إلى لوحة الإدارة عنصر لوحات الألوان غير المطلوب.");
     assert(appearanceErrors.length === 0, `ظهرت أخطاء في صفحة ألوان المتجر: ${appearanceErrors.join(" | ")} | طلبات فاشلة: ${appearanceFailures.join(" | ")}`);
     await appearancePage.close();
+
+    const overviewPage = await context.newPage();
+    const overviewErrors = [];
+    overviewPage.on("console", message => { if (message.type() === "error") overviewErrors.push(message.text()); });
+    await installIsolatedApi(overviewPage, writes, isolatedAdmin);
+    await overviewPage.goto(`${baseUrl}/admin`, { waitUntil: "networkidle" });
+    await overviewPage.getByRole("heading", { name: "إدارة واضحة لقرارات أسرع" }).waitFor();
+    await overviewPage.getByText("طلبات تحتاج إجراء").waitFor();
+    await overviewPage.getByText("طلب اختبار معزول").waitFor();
+    await overviewPage.getByRole("button", { name: /متابعة الطلبات/ }).click();
+    await overviewPage.getByRole("heading", { name: "طلبات العملاء" }).waitFor();
+    assert(overviewErrors.length === 0, `ظهرت أخطاء في مركز العمليات: ${overviewErrors.join(" | ")}`);
+    await overviewPage.close();
 
     const mobileContext = await browser.newContext({ viewport: { width: 375, height: 812 }, isMobile: true });
     const mobilePage = await mobileContext.newPage();

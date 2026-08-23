@@ -38,6 +38,12 @@ vi.mock("./db", () => ({
   getProductBySlug: vi.fn(async () => ({ product: { id: 1, slug: "graduation-photo-board", isAvailable: true } })),
   createOrder: vi.fn(async input => ({ id: 41, ...input, status: "new" })),
   getDashboardStats: vi.fn(async () => ({ products: 1, orders: 1, newOrders: 1, categories: 1 })),
+  getAdminOperationsOverview: vi.fn(async () => ({
+    summary: { products: 1, availableProducts: 1, hiddenProducts: 0, categories: 1, orders: 1, newOrders: 1, activeOrders: 1 },
+    statusCounts: { new: 1, contacted: 0, confirmed: 0, completed: 0, cancelled: 0 },
+    awaitingOrders: [{ id: 1, customerName: "عميل اختبار", customerPhone: "0521401021", productTitle: "بوكس اختبار", quantity: 1, status: "new", createdAt: new Date() }],
+    recentOrders: [{ id: 1, customerName: "عميل اختبار", customerPhone: "0521401021", productTitle: "بوكس اختبار", quantity: 1, status: "new", createdAt: new Date() }],
+  })),
   listAllCategories: vi.fn(async () => []),
   saveCategory: vi.fn(),
   listAdminProducts: vi.fn(async () => []),
@@ -232,5 +238,16 @@ describe("internal store router", () => {
     expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "appearance_header_background", valueAr: "#FFFEFC", valueEn: null });
     expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "appearance_footer_text", valueAr: "#EDF8F8", valueEn: null });
     await expect(adminCaller.store.admin.saveAppearance({ headerBackground: "#FFFFFF", headerText: "#FFFFFF", footerBackground: "#102F39", footerText: "#EDF8F8" })).rejects.toThrow();
+  });
+
+  it("exposes real operational summaries only to an administrator", async () => {
+    const anonymousCaller = appRouter.createCaller(anonymousContext());
+    await expect(anonymousCaller.store.admin.operationsOverview()).rejects.toMatchObject({ code: "FORBIDDEN" });
+
+    const adminCaller = appRouter.createCaller(localAdminContext());
+    const overview = await adminCaller.store.admin.operationsOverview();
+    expect(overview.summary).toMatchObject({ products: 1, activeOrders: 1, newOrders: 1 });
+    expect(overview.awaitingOrders[0]).toMatchObject({ customerName: "عميل اختبار", status: "new" });
+    expect(db.getAdminOperationsOverview).toHaveBeenCalledTimes(1);
   });
 });

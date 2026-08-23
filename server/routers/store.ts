@@ -156,6 +156,7 @@ export const storeRouter = router({
   }),
   admin: router({
     dashboard: adminProcedure.query(() => db.getDashboardStats()),
+    operationsOverview: adminProcedure.query(() => db.getAdminOperationsOverview()),
     categories: adminProcedure.query(() => db.listAllCategories()),
     saveCategory: adminProcedure.input(categoryInput).mutation(({ input }) => db.saveCategory(input)),
     products: adminProcedure.query(() => db.listAdminProducts()),
