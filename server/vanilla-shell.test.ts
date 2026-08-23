@@ -44,8 +44,11 @@ describe("واجهة HTML المستقلة", () => {
     expect(viteSource).toContain('"/products/:slug"');
     expect(adminSource).toContain("entry.categoryTitleAr || entry.category?.titleAr");
     expect(storeRouterSource).toContain("priceRange: z.enum");
+    expect(storeRouterSource).toContain("occasion: z.union");
     expect(storeSource).toContain('id="price-range"');
+    expect(storeSource).toContain('id="occasion"');
     expect(storeSource).toContain("function reviewCart(form)");
     expect(storeSource).toContain("data-confirm-order");
+    expect(adminSource).toContain('name="occasionTags"');
   });
 });

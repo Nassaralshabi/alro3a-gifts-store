@@ -8,6 +8,7 @@ import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 import { storagePut } from "../storage";
 
 const languageSchema = z.enum(["ar", "en"]);
+const occasionTagSchema = z.enum(["birthday", "graduation", "wedding", "newborn"]);
 const categoryInput = z.object({
   id: z.number().int().positive().optional(),
   slug: z.string().trim().min(2).max(96).regex(/^[a-z0-9-]+$/),
@@ -28,6 +29,7 @@ const productInput = z.object({
   descriptionAr: z.string().max(5000).nullable().optional(),
   descriptionEn: z.string().max(5000).nullable().optional(),
   price: z.string().regex(/^\d+(\.\d{1,2})?$/).nullable().optional(),
+  occasionTags: z.array(occasionTagSchema).max(4).default([]),
   imageUrl: z.string().max(2048).refine(value => value.startsWith("/manus-storage/") || /^https?:\/\//.test(value), "Image URL must be a storage path or an absolute URL.").nullable().optional(),
   isFeatured: z.boolean().default(false),
   isAvailable: z.boolean().default(true),
@@ -115,7 +117,7 @@ export const storeRouter = router({
     homeContent: publicProcedure.query(() => db.getPublicHomeContent()),
     homeCatalog: publicProcedure.query(() => db.getHomeCatalog()),
     products: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), featuredOnly: z.boolean().optional(), limit: z.number().int().positive().max(100).optional() }).optional()).query(({ input }) => db.listPublicProducts(input?.categorySlug, input?.featuredOnly, input?.limit)),
-    productsPage: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), query: z.string().trim().min(1).max(120).optional(), priceOrder: z.enum(["default", "asc", "desc"]).optional(), priceRange: z.enum(["all", "under-75", "75-150", "over-150", "on-request"]).optional(), cursor: z.number().int().min(0).optional(), limit: z.number().int().min(1).max(24).optional() })).query(({ input }) => db.getPublicProductsPage(input)),
+    productsPage: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), query: z.string().trim().min(1).max(120).optional(), priceOrder: z.enum(["default", "asc", "desc"]).optional(), priceRange: z.enum(["all", "under-75", "75-150", "over-150", "on-request"]).optional(), occasion: z.union([z.literal("all"), occasionTagSchema]).optional(), cursor: z.number().int().min(0).optional(), limit: z.number().int().min(1).max(24).optional() })).query(({ input }) => db.getPublicProductsPage(input)),
     suggestions: publicProcedure.input(z.object({ query: z.string().trim().min(2).max(80) })).query(({ input }) => db.getPublicSearchSuggestions(input.query)),
     productBySlug: publicProcedure.input(z.object({ slug: z.string().min(2) })).query(async ({ input }) => {
       const product = await db.getProductBySlug(input.slug);

@@ -180,6 +180,7 @@ export type PublicCatalogPageInput = {
   query?: string;
   priceOrder?: "default" | "asc" | "desc";
   priceRange?: "all" | "under-75" | "75-150" | "over-150" | "on-request";
+  occasion?: "all" | "birthday" | "graduation" | "wedding" | "newborn";
   cursor?: number;
   limit?: number;
 };
@@ -198,6 +199,7 @@ export async function getPublicProductsPage(input: PublicCatalogPageInput = {}) 
   if (input.priceRange === "75-150") filters.push(and(gt(products.price, "75.00"), lte(products.price, "150.00"))!);
   if (input.priceRange === "over-150") filters.push(gt(products.price, "150.00"));
   if (input.priceRange === "on-request") filters.push(isNull(products.price));
+  if (input.occasion && input.occasion !== "all") filters.push(like(products.occasionTags, `%${input.occasion}%`));
   const ordering = input.priceOrder === "asc"
     ? [sql`CASE WHEN ${products.price} IS NULL THEN 1 ELSE 0 END`, asc(products.price), asc(products.sortOrder), desc(products.createdAt)]
     : input.priceOrder === "desc"
@@ -311,6 +313,7 @@ export type ProductSave = {
   descriptionAr?: string | null;
   descriptionEn?: string | null;
   price?: string | null;
+  occasionTags?: Array<"birthday" | "graduation" | "wedding" | "newborn">;
   imageUrl?: string | null;
   isFeatured: boolean;
   isAvailable: boolean;
@@ -327,6 +330,7 @@ export async function saveProduct(input: ProductSave) {
     descriptionAr: input.descriptionAr ?? null,
     descriptionEn: input.descriptionEn ?? null,
     price: input.price ?? null,
+    occasionTags: Array.from(new Set(input.occasionTags ?? [])).join(","),
     imageUrl: input.imageUrl ?? null,
     isFeatured: input.isFeatured,
     isAvailable: input.isAvailable,
