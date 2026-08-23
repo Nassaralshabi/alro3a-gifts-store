@@ -7,6 +7,16 @@ import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
 
 export async function setupVite(app: Express, server: Server) {
+  const vanillaDir = path.resolve(import.meta.dirname, "../..", "client", "vanilla");
+  app.get(["/", "/shop", "/contact", "/services/:slug", "/products/:slug"], (_req, res) => res.sendFile(path.join(vanillaDir, "index.html")));
+  app.get(["/admin", "/admin/:section"], (_req, res) => res.sendFile(path.join(vanillaDir, "admin.html")));
+  app.get(["/html.html", "/vanilla/index.html"], (_req, res) => res.sendFile(path.join(vanillaDir, "index.html")));
+  app.get(["/admin.html", "/vanilla/admin.html"], (_req, res) => res.sendFile(path.join(vanillaDir, "admin.html")));
+  app.get("/vanilla/:asset", (req, res, next) => {
+    const asset = req.params.asset;
+    if (!asset || !["store.css", "api.js", "store.js", "admin.js"].includes(asset)) return next();
+    res.sendFile(path.join(vanillaDir, asset));
+  });
   const serverOptions = {
     middlewareMode: true,
     hmr: { server },
@@ -58,6 +68,8 @@ export function serveStatic(app: Express) {
     );
   }
 
+  app.get(["/", "/shop", "/contact", "/services/:slug", "/products/:slug", "/html.html", "/vanilla/index.html"], (_req, res) => res.sendFile(path.resolve(distPath, "vanilla", "index.html")));
+  app.get(["/admin", "/admin/:section", "/admin.html", "/vanilla/admin.html"], (_req, res) => res.sendFile(path.resolve(distPath, "vanilla", "admin.html")));
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist

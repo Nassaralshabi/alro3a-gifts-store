@@ -168,6 +168,11 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
     rollupOptions: {
+      input: {
+        app: path.resolve(import.meta.dirname, "client/index.html"),
+        html: path.resolve(import.meta.dirname, "client/vanilla/index.html"),
+        admin: path.resolve(import.meta.dirname, "client/vanilla/admin.html"),
+      },
       output: {
         manualChunks: {
           "react-vendor": ["react", "react-dom", "wouter", "@tanstack/react-query"],
