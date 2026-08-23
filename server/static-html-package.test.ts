@@ -11,6 +11,8 @@ describe("قوالب حزمة HTML الثابتة", () => {
 
     expect(index).toContain('id="boot-loader"');
     expect(index).toContain('src="assets/logo.webp"');
+    expect(index).toContain("family=Alexandria");
+    expect(index).toContain("family=Marhey");
     expect(index).toContain('prefers-reduced-motion:reduce');
     expect(index).toContain('setAttribute("data-loaded", "true")');
   });
@@ -20,6 +22,7 @@ describe("قوالب حزمة HTML الثابتة", () => {
     const guide = readStaticFile("FULL_STATIC_HTML_INSTALLATION.md");
 
     expect(admin).toContain('id="boot-loader"');
+    expect(admin).toContain("family=Alexandria");
     expect(admin).toContain("LocalStorage");
     expect(guide).toContain("ليست** لوحة إدارة حية أو محمية");
     expect(guide).toContain("262");

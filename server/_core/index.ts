@@ -4,7 +4,7 @@ import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
-import { applySecurityHeaders, createApiRateLimiter } from "./security";
+import { applySecurityHeaders, ARCHIVE_BODY_LIMIT, createApiRateLimiter, getJsonBodyLimit, STANDARD_BODY_LIMIT } from "./security";
 import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
@@ -35,9 +35,10 @@ async function startServer() {
   app.set("trust proxy", 1);
   app.disable("x-powered-by");
   app.use(applySecurityHeaders);
-  // Configure body parser with larger size limit for file uploads
-  app.use(express.json({ limit: "50mb" }));
-  app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  const standardJson = express.json({ limit: STANDARD_BODY_LIMIT });
+  const archiveJson = express.json({ limit: ARCHIVE_BODY_LIMIT });
+  app.use((req, res, next) => (getJsonBodyLimit(req.originalUrl || req.url) === ARCHIVE_BODY_LIMIT ? archiveJson : standardJson)(req, res, next));
+  app.use(express.urlencoded({ limit: STANDARD_BODY_LIMIT, extended: true }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
   // tRPC API

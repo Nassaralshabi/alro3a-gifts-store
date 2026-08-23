@@ -9,6 +9,7 @@ function source(path: string) {
 describe("storefront design refresh", () => {
   it("keeps responsive design hooks for the hero, navigation, catalogue filters, and product cards", () => {
     const css = source("client/src/index.css");
+    const documentTemplate = source("client/index.html");
     const home = source("client/src/pages/Home.tsx");
     const shop = source("client/src/pages/Shop.tsx");
     const shell = source("client/src/components/StoreShell.tsx");
@@ -16,6 +17,9 @@ describe("storefront design refresh", () => {
     const smartSearch = source("client/src/components/SmartSearch.tsx");
 
     expect(css).toContain(".hero-panel .raed-gradient-overlay");
+    expect(documentTemplate).toContain("family=Alexandria");
+    expect(documentTemplate).toContain("family=Marhey");
+    expect(documentTemplate).toContain("display=swap");
     expect(home).toContain("hero-panel");
     expect(home).toContain("hero-brand-badge");
     expect(shop).toContain("aria-pressed={category === \"all\"}");

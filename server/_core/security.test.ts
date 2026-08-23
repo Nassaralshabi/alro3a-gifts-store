@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Request, Response } from "express";
-import { applySecurityHeaders, createApiRateLimiter } from "./security";
+import { applySecurityHeaders, ARCHIVE_BODY_LIMIT, createApiRateLimiter, getJsonBodyLimit, STANDARD_BODY_LIMIT } from "./security";
 
 function makeResponse() {
   const headers = new Map<string, string>();
@@ -42,6 +42,8 @@ describe("security middleware", () => {
     expect(headers.get("X-Frame-Options")).toBe("DENY");
     expect(headers.get("Referrer-Policy")).toBe("strict-origin-when-cross-origin");
     expect(headers.get("Permissions-Policy")).toContain("camera=()");
+    expect(headers.get("Content-Security-Policy")).toContain("default-src 'self'");
+    expect(headers.get("Content-Security-Policy")).toContain("frame-ancestors 'none'");
   });
 
   it("limits repeated local administrator login attempts more strictly than normal catalog reads", () => {
@@ -68,5 +70,26 @@ describe("security middleware", () => {
     let advanced = false;
     limiter(loginRequest, reset.response, () => { advanced = true; });
     expect(advanced).toBe(true);
+  });
+
+  it("applies a narrow request limit to archive imports", () => {
+    const limiter = createApiRateLimiter(() => 1_000);
+    const archiveRequest = makeRequest("/api/trpc/store.admin.importImageArchive?batch=1");
+
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const { response, getStatus } = makeResponse();
+      limiter(archiveRequest, response, () => undefined);
+      expect(getStatus()).toBe(200);
+    }
+
+    const blocked = makeResponse();
+    limiter(archiveRequest, blocked.response, () => undefined);
+    expect(blocked.getStatus()).toBe(429);
+    expect(blocked.headers.get("X-RateLimit-Limit")).toBe("2");
+  });
+
+  it("keeps general request bodies small while allowing the bounded admin archive flow", () => {
+    expect(getJsonBodyLimit("/api/trpc/store.catalog.products?batch=1")).toBe(STANDARD_BODY_LIMIT);
+    expect(getJsonBodyLimit("/api/trpc/store.admin.importImageArchive?batch=1")).toBe(ARCHIVE_BODY_LIMIT);
   });
 });
