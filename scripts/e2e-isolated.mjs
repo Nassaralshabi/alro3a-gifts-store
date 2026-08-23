@@ -16,6 +16,7 @@ const assert = (condition, message) => { if (!condition) throw new Error(message
 function responseFor(procedure, input = {}) {
   if (procedure === "store.catalog.categories") return categories;
   if (procedure === "store.catalog.contact") return contact;
+  if (procedure === "store.catalog.appearance") return { headerBackground: "#FFFFFF", headerText: "#17323B", footerBackground: "#FFFFFF", footerText: "#17323B" };
   if (procedure === "store.catalog.homeContent") return { heroImages: [product.imageUrl] };
   if (procedure === "store.catalog.productsPage") {
     const cursor = typeof input.cursor === "number" ? input.cursor : 0;
@@ -53,6 +54,8 @@ try {
   await page.goto(`${baseUrl}/shop`, { waitUntil: "networkidle" });
   await page.getByRole("heading", { name: "كل المنتجات" }).waitFor();
   await page.getByRole("button", { name: /منتج تجريبي معزول/ }).waitFor();
+  const surfaces = await page.evaluate(() => ({ header: getComputedStyle(document.querySelector(".header")).backgroundColor, footer: getComputedStyle(document.querySelector(".footer")).backgroundColor }));
+  assert(surfaces.header === "rgb(255, 255, 255)" && surfaces.footer === "rgb(255, 255, 255)", `لم تُطبق الخلفية البيضاء الافتراضية: ${JSON.stringify(surfaces)}`);
   await page.getByRole("button", { name: "هدايا إعلانية", exact: true }).click();
   await page.getByRole("heading", { name: "هدايا إعلانية" }).waitFor();
   const search = page.getByPlaceholder("ابحث عن هدية أو مطبوعة…");
@@ -79,7 +82,7 @@ try {
   assert(dimensions.scrollWidth <= dimensions.width, `ظهر تمرير أفقي في الهاتف: ${JSON.stringify(dimensions)}`);
   await mobileContext.close();
   await context.close();
-  console.log(JSON.stringify({ isolatedCategories: categories.length, isolatedProducts: productCount, firstBatch, interceptedWrites: writes, consoleErrors }, null, 2));
+  console.log(JSON.stringify({ isolatedCategories: categories.length, isolatedProducts: productCount, firstBatch, surfaces, interceptedWrites: writes, consoleErrors }, null, 2));
 } finally {
   await browser.close();
 }

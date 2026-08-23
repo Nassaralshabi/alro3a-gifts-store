@@ -3,7 +3,7 @@ import { esc, trpc, whatsapp } from "./api.js";
 const app = document.querySelector("#app");
 const MOBILE_CATALOG_PAGE_SIZE = 9;
 const DESKTOP_CATALOG_PAGE_SIZE = 24;
-const state = { categories: [], products: [], contact: null, home: null, cart: JSON.parse(localStorage.getItem("alrawaa-html-cart") || "[]"), language: localStorage.getItem("alrawaa-html-language") || "ar", category: "", query: "", priceOrder: "default", priceRange: "all", occasion: "all", currentProduct: null, nextCursor: null, totalProducts: 0, catalogObserver: null, catalogLoading: false };
+const state = { categories: [], products: [], contact: null, home: null, appearance: null, cart: JSON.parse(localStorage.getItem("alrawaa-html-cart") || "[]"), language: localStorage.getItem("alrawaa-html-language") || "ar", category: "", query: "", priceOrder: "default", priceRange: "all", occasion: "all", currentProduct: null, nextCursor: null, totalProducts: 0, catalogObserver: null, catalogLoading: false };
 const copy = (ar, en) => state.language === "ar" ? ar : en;
 const title = entry => copy(entry.titleAr, entry.titleEn);
 const price = value => value ? `${Number(value).toLocaleString(state.language === "ar" ? "ar-AE" : "en-AE")} AED` : copy("السعر حسب التفاصيل المطلوبة", "Price on request");
@@ -14,6 +14,7 @@ const catalogPageSize = () => isMobileCatalog() ? MOBILE_CATALOG_PAGE_SIZE : DES
 function defaultMessage() { return state.language === "ar" ? state.contact.whatsappDefaultMessageAr : state.contact.whatsappDefaultMessageEn; }
 function showToast(message) { const element = document.createElement("div"); element.className = "toast"; element.textContent = message; document.body.append(element); setTimeout(() => element.remove(), 3200); }
 function heroImage() { return state.home?.heroImages?.[0] || "/manus-storage/hero-graduation-uae_bc00c190.jpg"; }
+function applyAppearance() { const appearance = state.appearance; if (!appearance) return; const root = document.documentElement.style; root.setProperty("--header-bg", appearance.headerBackground); root.setProperty("--header-text", appearance.headerText); root.setProperty("--footer-bg", appearance.footerBackground); root.setProperty("--footer-text", appearance.footerText); }
 
 function card(entry) {
   const product = entry.product || entry;
@@ -127,6 +128,6 @@ document.addEventListener("keydown", event => { if (event.target.id === "search"
 document.addEventListener("submit", event => { if (event.target.id === "checkout") { event.preventDefault(); reviewCart(event.target); } });
 
 async function init() {
-  try { const [contact, categories, home] = await Promise.all([trpc("store.catalog.contact"), trpc("store.catalog.categories"), trpc("store.catalog.homeContent")]); state.contact = contact; state.categories = categories; state.home = home; await loadProducts(); const productMatch = /^\/products\/([^/]+)$/.exec(location.pathname); const serviceMatch = /^\/services\/([^/]+)$/.exec(location.pathname); if (productMatch) { renderHome(); openProduct(productMatch[1]); } else if (serviceMatch) { state.category = serviceMatch[1]; renderShop(); } else if (location.pathname === "/shop") renderShop(); else if (location.pathname === "/contact") renderContact(); else renderHome(); } catch (error) { app.innerHTML = `<div class="container section"><div class="empty">${esc(error.message || "تعذر تحميل المتجر")}</div></div>`; }
+  try { const [contact, categories, home, appearance] = await Promise.all([trpc("store.catalog.contact"), trpc("store.catalog.categories"), trpc("store.catalog.homeContent"), trpc("store.catalog.appearance")]); state.contact = contact; state.categories = categories; state.home = home; state.appearance = appearance; applyAppearance(); await loadProducts(); const productMatch = /^\/products\/([^/]+)$/.exec(location.pathname); const serviceMatch = /^\/services\/([^/]+)$/.exec(location.pathname); if (productMatch) { renderHome(); openProduct(productMatch[1]); } else if (serviceMatch) { state.category = serviceMatch[1]; renderShop(); } else if (location.pathname === "/shop") renderShop(); else if (location.pathname === "/contact") renderContact(); else renderHome(); } catch (error) { app.innerHTML = `<div class="container section"><div class="empty">${esc(error.message || "تعذر تحميل المتجر")}</div></div>`; }
 }
 init();

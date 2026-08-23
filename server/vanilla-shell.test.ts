@@ -60,10 +60,24 @@ describe("واجهة HTML المستقلة", () => {
 
     expect(storeHtml).toContain('href="/vanilla/light-theme.css"');
     expect(adminHtml).toContain('href="/vanilla/light-theme.css"');
-    expect(lightTheme).toContain(".topbar,.footer,.admin-sidebar{background:#fff");
+    expect(lightTheme).toContain("--footer-bg:#fff");
+    expect(lightTheme).toContain(".footer{background:var(--footer-bg)");
     expect(lightTheme).toContain(".button{background:#fff");
     expect(storeSource).toContain("const MOBILE_CATALOG_PAGE_SIZE = 9");
     expect(storeSource).toContain("data-catalog-sentinel");
     expect(storeSource).toContain("function observeMobileCatalog()");
+    expect(storeSource).toContain("store.catalog.appearance");
+    expect(storeSource).toContain("function applyAppearance()");
+  });
+
+  it("يوفر لوحة تحكم محمية بألوان الرأس والتذييل المتباينة", () => {
+    const adminSource = projectFile("client", "vanilla", "admin.js");
+    const storeRouterSource = projectFile("server", "routers", "store.ts");
+
+    expect(adminSource).toContain("ألوان المتجر");
+    expect(adminSource).toContain("appearance-form");
+    expect(adminSource).toContain("store.admin.saveAppearance");
+    expect(storeRouterSource).toContain("saveAppearance: storeAdminProcedure");
+    expect(storeRouterSource).toContain("Text color must have sufficient contrast");
   });
 });
