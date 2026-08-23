@@ -1,1 +1,0 @@
-ALTER TABLE `products` ADD `occasionTags` varchar(256) DEFAULT '' NOT NULL;

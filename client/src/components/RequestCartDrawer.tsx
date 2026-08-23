@@ -5,7 +5,6 @@ import { useLocale } from "@/contexts/LocaleContext";
 import { useRequestCart } from "@/contexts/RequestCartContext";
 import { useContactInfo } from "@/hooks/useContactInfo";
 import { formatMoney } from "@/lib/format";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { trpc } from "@/lib/trpc";
 import { Check, Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import { FormEvent, useState } from "react";
@@ -30,7 +29,7 @@ export default function RequestCartDrawer() {
       const lines = items.map(({ entry, quantity }) => `• ${isArabic ? entry.product.titleAr : entry.product.titleEn} × ${quantity}`).join("\n");
       const reference = orders.map(order => `#${order.id}`).join("، ");
       const message = isArabic ? `مرحباً مطبعة الروعة، أرسلت سلة طلب جديدة (${reference})\nالاسم: ${customerName}\nالهاتف: ${customerPhone}\n\nالمنتجات:\n${lines}\n\nالتفاصيل: ${notes || "—"}` : `Hello Al Rawaa Printing, I sent a new request cart (${reference})\nName: ${customerName}\nPhone: ${customerPhone}\n\nProducts:\n${lines}\n\nNotes: ${notes || "—"}`;
-      window.open(buildWhatsAppLink(contact.whatsappUrl, message), "_blank", "noopener,noreferrer");
+      window.open(`${contact.whatsappUrl}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
       toast.success(isArabic ? "تم حفظ طلبك وتجهيز رسالة واتساب" : "Your request was saved and WhatsApp is ready");
       clearCart(); setCheckout(false); closeCart();
     } catch { toast.error(isArabic ? "تعذر حفظ الطلب. يرجى إعادة المحاولة." : "We could not save your request. Please try again."); }

@@ -1,4 +1,4 @@
-import { and, asc, count, desc, eq, gt, isNull, like, lte, or, sql } from "drizzle-orm";
+import { and, asc, count, desc, eq, like, or, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
 import {
@@ -74,15 +74,7 @@ export async function verifyLocalAdmin(username: string, password: string) {
 
 export async function getLocalAdminProfile() {
   const credential = await ensureLocalAdmin();
-  return {
-    username: credential.username,
-    requiresCredentialUpdate: verifyLocalPassword(DEFAULT_LOCAL_ADMIN_PASSWORD, credential.passwordHash),
-  };
-}
-
-export async function isLocalAdminUsingDefaultPassword() {
-  const credential = await ensureLocalAdmin();
-  return verifyLocalPassword(DEFAULT_LOCAL_ADMIN_PASSWORD, credential.passwordHash);
+  return { username: credential.username };
 }
 
 export async function updateLocalAdminCredentials(input: { currentPassword: string; username: string; password: string }) {
@@ -179,8 +171,6 @@ export type PublicCatalogPageInput = {
   categorySlug?: string;
   query?: string;
   priceOrder?: "default" | "asc" | "desc";
-  priceRange?: "all" | "under-75" | "75-150" | "over-150" | "on-request";
-  occasion?: "all" | "birthday" | "graduation" | "wedding" | "newborn";
   cursor?: number;
   limit?: number;
 };
@@ -195,11 +185,6 @@ export async function getPublicProductsPage(input: PublicCatalogPageInput = {}) 
     const term = `%${input.query}%`;
     filters.push(or(like(products.titleAr, term), like(products.titleEn, term))!);
   }
-  if (input.priceRange === "under-75") filters.push(lte(products.price, "75.00"));
-  if (input.priceRange === "75-150") filters.push(and(gt(products.price, "75.00"), lte(products.price, "150.00"))!);
-  if (input.priceRange === "over-150") filters.push(gt(products.price, "150.00"));
-  if (input.priceRange === "on-request") filters.push(isNull(products.price));
-  if (input.occasion && input.occasion !== "all") filters.push(like(products.occasionTags, `%${input.occasion}%`));
   const ordering = input.priceOrder === "asc"
     ? [sql`CASE WHEN ${products.price} IS NULL THEN 1 ELSE 0 END`, asc(products.price), asc(products.sortOrder), desc(products.createdAt)]
     : input.priceOrder === "desc"
@@ -313,7 +298,6 @@ export type ProductSave = {
   descriptionAr?: string | null;
   descriptionEn?: string | null;
   price?: string | null;
-  occasionTags?: Array<"birthday" | "graduation" | "wedding" | "newborn">;
   imageUrl?: string | null;
   isFeatured: boolean;
   isAvailable: boolean;
@@ -330,7 +314,6 @@ export async function saveProduct(input: ProductSave) {
     descriptionAr: input.descriptionAr ?? null,
     descriptionEn: input.descriptionEn ?? null,
     price: input.price ?? null,
-    occasionTags: Array.from(new Set(input.occasionTags ?? [])).join(","),
     imageUrl: input.imageUrl ?? null,
     isFeatured: input.isFeatured,
     isAvailable: input.isAvailable,
@@ -394,36 +377,13 @@ export async function getPublicContactInfo() {
   const phone = value.contact_phone || "0521401021";
   const whatsappNumber = value.contact_whatsapp || "971521401021";
   const instagram = value.contact_instagram || "alro3a.gifts";
-  const defaultWhatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`;
-  let whatsappUrl = defaultWhatsappUrl;
-  if (value.contact_whatsapp_link) {
-    try {
-      const candidate = new URL(value.contact_whatsapp_link);
-      if (candidate.protocol === "https:" && ["wa.me", "api.whatsapp.com", "web.whatsapp.com"].includes(candidate.hostname)) whatsappUrl = candidate.toString();
-    } catch {
-      // Invalid custom links fall back to the configured WhatsApp number.
-    }
-  }
   return {
     phone,
-    whatsappUrl,
-    whatsappDefaultMessageAr: value.contact_whatsapp_message_ar || "",
-    whatsappDefaultMessageEn: value.contact_whatsapp_message_en || "",
+    whatsappUrl: `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`,
     addressAr: value.contact_address_ar || "عجمان، الروضة 3",
     addressEn: value.contact_address_en || "Al Rawda 3, Ajman",
     instagram,
     instagramUrl: `https://www.instagram.com/${instagram.replace(/^@/, "")}/`,
-  };
-}
-
-export async function getPublicAppearance() {
-  const content = await listContent();
-  const value = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
-  return {
-    headerBackground: value.appearance_header_background || "#FFFFFF",
-    headerText: value.appearance_header_text || "#17323B",
-    footerBackground: value.appearance_footer_background || "#FFFFFF",
-    footerText: value.appearance_footer_text || "#17323B",
   };
 }
 

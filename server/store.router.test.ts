@@ -34,7 +34,6 @@ vi.mock("./db", () => ({
     heroSubtitleAr: null,
     heroSubtitleEn: null,
   })),
-  getPublicAppearance: vi.fn(async () => ({ headerBackground: "#FFFFFF", headerText: "#17323B", footerBackground: "#FFFFFF", footerText: "#17323B" })),
   getProductBySlug: vi.fn(async () => ({ product: { id: 1, slug: "graduation-photo-board", isAvailable: true } })),
   createOrder: vi.fn(async input => ({ id: 41, ...input, status: "new" })),
   getDashboardStats: vi.fn(async () => ({ products: 1, orders: 1, newOrders: 1, categories: 1 })),
@@ -46,7 +45,6 @@ vi.mock("./db", () => ({
   updateOrderStatus: vi.fn(),
   listContent: vi.fn(async () => []),
   saveContent: vi.fn(),
-  isLocalAdminUsingDefaultPassword: vi.fn(async () => false),
 }));
 
 vi.mock("./_core/notification", () => ({
@@ -195,13 +193,6 @@ describe("internal store router", () => {
     }));
   });
 
-  it("blocks store administration until the temporary local password is changed", async () => {
-    vi.mocked(db.isLocalAdminUsingDefaultPassword).mockResolvedValueOnce(true);
-    const caller = appRouter.createCaller(localAdminContext());
-
-    await expect(caller.store.admin.dashboard()).rejects.toMatchObject({ code: "FORBIDDEN" });
-  });
-
   it("rejects the focused live-settings contract without an administrator session", async () => {
     const caller = appRouter.createCaller(anonymousContext());
     await expect(caller.store.admin.liveSettings()).rejects.toMatchObject({ code: "FORBIDDEN" });
@@ -228,16 +219,5 @@ describe("internal store router", () => {
     expect(db.saveContent).toHaveBeenCalledTimes(7);
     expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "home_hero_title_ar_1", valueAr: "عنوان مباشر", valueEn: null });
     expect(db.saveContent).not.toHaveBeenCalledWith(expect.objectContaining({ contentKey: "unapproved_key" }));
-  });
-
-  it("returns white appearance defaults and saves only high-contrast header and footer colors", async () => {
-    const caller = appRouter.createCaller(localAdminContext());
-    const appearance = await caller.store.admin.appearance();
-    expect(appearance).toEqual({ headerBackground: "#FFFFFF", headerText: "#17323B", footerBackground: "#FFFFFF", footerText: "#17323B" });
-
-    await caller.store.admin.saveAppearance({ headerBackground: "#17323B", headerText: "#FFFFFF", footerBackground: "#FFFFFF", footerText: "#17323B" });
-    expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "appearance_header_background", valueAr: "#17323B", valueEn: null });
-    expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "appearance_footer_text", valueAr: "#17323B", valueEn: null });
-    await expect(caller.store.admin.saveAppearance({ headerBackground: "#FFFFFF", headerText: "#FFFFFF", footerBackground: "#FFFFFF", footerText: "#17323B" })).rejects.toThrow();
   });
 });

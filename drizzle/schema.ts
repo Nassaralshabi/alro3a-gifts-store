@@ -48,7 +48,6 @@ export const products = mysqlTable("products", {
   descriptionAr: text("descriptionAr"),
   descriptionEn: text("descriptionEn"),
   price: decimal("price", { precision: 10, scale: 2 }),
-  occasionTags: varchar("occasionTags", { length: 256 }).default("").notNull(),
   imageUrl: varchar("imageUrl", { length: 2048 }),
   isFeatured: boolean("isFeatured").default(false).notNull(),
   isAvailable: boolean("isAvailable").default(true).notNull(),

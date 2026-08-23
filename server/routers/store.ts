@@ -8,7 +8,6 @@ import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 import { storagePut } from "../storage";
 
 const languageSchema = z.enum(["ar", "en"]);
-const occasionTagSchema = z.enum(["birthday", "graduation", "wedding", "newborn"]);
 const categoryInput = z.object({
   id: z.number().int().positive().optional(),
   slug: z.string().trim().min(2).max(96).regex(/^[a-z0-9-]+$/),
@@ -29,7 +28,6 @@ const productInput = z.object({
   descriptionAr: z.string().max(5000).nullable().optional(),
   descriptionEn: z.string().max(5000).nullable().optional(),
   price: z.string().regex(/^\d+(\.\d{1,2})?$/).nullable().optional(),
-  occasionTags: z.array(occasionTagSchema).max(4).default([]),
   imageUrl: z.string().max(2048).refine(value => value.startsWith("/manus-storage/") || /^https?:\/\//.test(value), "Image URL must be a storage path or an absolute URL.").nullable().optional(),
   isFeatured: z.boolean().default(false),
   isAvailable: z.boolean().default(true),
@@ -47,25 +45,6 @@ const liveSettingsInput = z.object({
     titleAr: z.string().trim().min(2).max(180),
     subtitleAr: z.string().trim().min(2).max(400),
   }),
-});
-const colorHexSchema = z.string().trim().regex(/^#[0-9A-Fa-f]{6}$/, "Use a six-digit hexadecimal color.").transform(value => value.toUpperCase());
-const colorLuminance = (value: string) => {
-  const channels = [1, 3, 5].map(position => Number.parseInt(value.slice(position, position + 2), 16) / 255).map(channel => channel <= 0.03928 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4);
-  return (channels[0] * 0.2126) + (channels[1] * 0.7152) + (channels[2] * 0.0722);
-};
-const colorContrast = (first: string, second: string) => {
-  const [lighter, darker] = [colorLuminance(first), colorLuminance(second)].sort((a, b) => b - a);
-  return (lighter + 0.05) / (darker + 0.05);
-};
-const appearanceInput = z.object({
-  headerBackground: colorHexSchema,
-  headerText: colorHexSchema,
-  footerBackground: colorHexSchema,
-  footerText: colorHexSchema,
-}).superRefine((appearance, context) => {
-  for (const [background, text, path] of [[appearance.headerBackground, appearance.headerText, ["headerText"]], [appearance.footerBackground, appearance.footerText, ["footerText"]]] as const) {
-    if (colorContrast(background, text) < 4.5) context.addIssue({ code: "custom", path: [...path], message: "Text color must have sufficient contrast with its background." });
-  }
 });
 const imageUploadInput = z.object({ dataUrl: z.string().min(32).max(6_000_000), fileName: z.string().trim().min(1).max(160).optional() });
 const archiveUploadInput = z.object({ dataUrl: z.string().min(64).max(80_000_000), fileName: z.string().trim().min(1).max(180).optional(), previewOnly: z.boolean().default(false) });
@@ -119,25 +98,14 @@ export function decodeImage(dataUrl: string) {
   return { data, mimeType, extension };
 }
 
-const storeAdminProcedure = adminProcedure.use(async ({ ctx, next }) => {
-  if (ctx.adminUser?.openId === "local-admin-console" && await db.isLocalAdminUsingDefaultPassword()) {
-    throw new TRPCError({
-      code: "FORBIDDEN",
-      message: "Change the temporary administrator credentials before managing store data.",
-    });
-  }
-  return next();
-});
-
 export const storeRouter = router({
   catalog: router({
     categories: publicProcedure.query(() => db.listPublicCategories()),
     contact: publicProcedure.query(() => db.getPublicContactInfo()),
-    appearance: publicProcedure.query(() => db.getPublicAppearance()),
     homeContent: publicProcedure.query(() => db.getPublicHomeContent()),
     homeCatalog: publicProcedure.query(() => db.getHomeCatalog()),
     products: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), featuredOnly: z.boolean().optional(), limit: z.number().int().positive().max(100).optional() }).optional()).query(({ input }) => db.listPublicProducts(input?.categorySlug, input?.featuredOnly, input?.limit)),
-    productsPage: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), query: z.string().trim().min(1).max(120).optional(), priceOrder: z.enum(["default", "asc", "desc"]).optional(), priceRange: z.enum(["all", "under-75", "75-150", "over-150", "on-request"]).optional(), occasion: z.union([z.literal("all"), occasionTagSchema]).optional(), cursor: z.number().int().min(0).optional(), limit: z.number().int().min(1).max(24).optional() })).query(({ input }) => db.getPublicProductsPage(input)),
+    productsPage: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), query: z.string().trim().min(1).max(120).optional(), priceOrder: z.enum(["default", "asc", "desc"]).optional(), cursor: z.number().int().min(0).optional(), limit: z.number().int().min(1).max(24).optional() })).query(({ input }) => db.getPublicProductsPage(input)),
     suggestions: publicProcedure.input(z.object({ query: z.string().trim().min(2).max(80) })).query(({ input }) => db.getPublicSearchSuggestions(input.query)),
     productBySlug: publicProcedure.input(z.object({ slug: z.string().min(2) })).query(async ({ input }) => {
       const product = await db.getProductBySlug(input.slug);
@@ -167,27 +135,16 @@ export const storeRouter = router({
     }),
   }),
   admin: router({
-    dashboard: storeAdminProcedure.query(() => db.getDashboardStats()),
-    categories: storeAdminProcedure.query(() => db.listAllCategories()),
-    saveCategory: storeAdminProcedure.input(categoryInput).mutation(({ input }) => db.saveCategory(input)),
-    products: storeAdminProcedure.query(() => db.listAdminProducts()),
-    saveProduct: storeAdminProcedure.input(productInput).mutation(({ input }) => db.saveProduct(input)),
-    orders: storeAdminProcedure.query(() => db.listOrders()),
-    updateOrderStatus: storeAdminProcedure.input(z.object({ id: z.number().int().positive(), status: z.enum(["new", "contacted", "confirmed", "completed", "cancelled"]) })).mutation(({ input }) => db.updateOrderStatus(input.id, input.status)),
-    content: storeAdminProcedure.query(() => db.listContent()),
-    saveContent: storeAdminProcedure.input(z.object({ contentKey: z.string().trim().min(2).max(96), valueAr: z.string().max(5000).nullable().optional(), valueEn: z.string().max(5000).nullable().optional() })).mutation(({ input }) => db.saveContent(input)),
-    appearance: storeAdminProcedure.query(() => db.getPublicAppearance()),
-    saveAppearance: storeAdminProcedure.input(appearanceInput).mutation(async ({ input }) => {
-      const entries = [
-        ["appearance_header_background", input.headerBackground],
-        ["appearance_header_text", input.headerText],
-        ["appearance_footer_background", input.footerBackground],
-        ["appearance_footer_text", input.footerText],
-      ] as const;
-      await Promise.all(entries.map(([contentKey, valueAr]) => db.saveContent({ contentKey, valueAr, valueEn: null })));
-      return { success: true } as const;
-    }),
-    liveSettings: storeAdminProcedure.query(async () => {
+    dashboard: adminProcedure.query(() => db.getDashboardStats()),
+    categories: adminProcedure.query(() => db.listAllCategories()),
+    saveCategory: adminProcedure.input(categoryInput).mutation(({ input }) => db.saveCategory(input)),
+    products: adminProcedure.query(() => db.listAdminProducts()),
+    saveProduct: adminProcedure.input(productInput).mutation(({ input }) => db.saveProduct(input)),
+    orders: adminProcedure.query(() => db.listOrders()),
+    updateOrderStatus: adminProcedure.input(z.object({ id: z.number().int().positive(), status: z.enum(["new", "contacted", "confirmed", "completed", "cancelled"]) })).mutation(({ input }) => db.updateOrderStatus(input.id, input.status)),
+    content: adminProcedure.query(() => db.listContent()),
+    saveContent: adminProcedure.input(z.object({ contentKey: z.string().trim().min(2).max(96), valueAr: z.string().max(5000).nullable().optional(), valueEn: z.string().max(5000).nullable().optional() })).mutation(({ input }) => db.saveContent(input)),
+    liveSettings: adminProcedure.query(async () => {
       const content = await db.listContent();
       const values = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
       return {
@@ -204,7 +161,7 @@ export const storeRouter = router({
         },
       };
     }),
-    saveLiveSettings: storeAdminProcedure.input(liveSettingsInput).mutation(async ({ input }) => {
+    saveLiveSettings: adminProcedure.input(liveSettingsInput).mutation(async ({ input }) => {
       const entries = [
         ["contact_phone", input.contact.phone],
         ["contact_whatsapp", input.contact.whatsapp],
@@ -217,12 +174,12 @@ export const storeRouter = router({
       await Promise.all(entries.map(([contentKey, valueAr]) => db.saveContent({ contentKey, valueAr, valueEn: null })));
       return { success: true } as const;
     }),
-    uploadImage: storeAdminProcedure.input(imageUploadInput).mutation(async ({ input, ctx }) => {
+    uploadImage: adminProcedure.input(imageUploadInput).mutation(async ({ input, ctx }) => {
       const image = decodeImage(input.dataUrl);
       const baseName = (input.fileName || "image").replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 72) || "image";
       return storagePut(`store-media/${ctx.user.id}/${baseName}-${randomUUID()}.${image.extension}`, image.data, image.mimeType);
     }),
-    importImageArchive: storeAdminProcedure.input(archiveUploadInput).mutation(async ({ input, ctx }) => {
+    importImageArchive: adminProcedure.input(archiveUploadInput).mutation(async ({ input, ctx }) => {
       const archive = decodeArchive(input.dataUrl);
       const products = await db.listAdminProducts();
       const productBySlug = new Map(products.map(entry => [entry.product.slug, entry.product]));
