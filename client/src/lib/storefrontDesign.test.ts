@@ -16,12 +16,15 @@ describe("storefront design refresh", () => {
     const card = source("client/src/components/ProductCard.tsx");
     const smartSearch = source("client/src/components/SmartSearch.tsx");
 
-    expect(css).toContain(".hero-panel .raed-gradient-overlay");
     expect(documentTemplate).toContain("family=Alexandria");
     expect(documentTemplate).toContain("family=Marhey");
     expect(documentTemplate).toContain("display=swap");
     expect(home).toContain("hero-panel");
     expect(home).toContain("hero-brand-badge");
+    expect(home).toContain("object-contain will-change-transform");
+    expect(home).toContain('className="border-t border-[#dbe9eb] bg-white"');
+    expect(home).not.toContain("raed-gradient-overlay");
+    expect(home).not.toContain("Discover products");
     expect(shop).toContain("aria-pressed={category === \"all\"}");
     expect(shop).toContain("rounded-[1.25rem]");
     expect(shell).toContain("aria-label={isArabic ? \"فتح القائمة\"");

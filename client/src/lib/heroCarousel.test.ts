@@ -30,7 +30,8 @@ describe("hero carousel controls", () => {
     expect(homeSource).toContain("const HERO_BRAND_LOGO");
     expect(homeSource).toContain("absolute right-4 top-4 z-20");
     expect(homeSource).toContain('alt={isArabic ? "شعار مطبعة الروعة" : "Al Rawaa Printing logo"}');
-    expect(homeSource).toContain('activeSlide.src.includes("uae-national-day-gift-set")');
+    expect(homeSource).toContain("object-contain will-change-transform");
+    expect(homeSource).not.toContain("raed-gradient-overlay");
     expect(brandBadgePosition).toBeGreaterThan(activeSlideTransitionEnd);
   });
 });
