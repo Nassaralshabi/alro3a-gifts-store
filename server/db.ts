@@ -385,9 +385,21 @@ export async function getPublicContactInfo() {
   const phone = value.contact_phone || "0521401021";
   const whatsappNumber = value.contact_whatsapp || "971521401021";
   const instagram = value.contact_instagram || "alro3a.gifts";
+  const defaultWhatsappUrl = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`;
+  let whatsappUrl = defaultWhatsappUrl;
+  if (value.contact_whatsapp_link) {
+    try {
+      const candidate = new URL(value.contact_whatsapp_link);
+      if (candidate.protocol === "https:" && ["wa.me", "api.whatsapp.com", "web.whatsapp.com"].includes(candidate.hostname)) whatsappUrl = candidate.toString();
+    } catch {
+      // Invalid custom links fall back to the configured WhatsApp number.
+    }
+  }
   return {
     phone,
-    whatsappUrl: `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`,
+    whatsappUrl,
+    whatsappDefaultMessageAr: value.contact_whatsapp_message_ar || "",
+    whatsappDefaultMessageEn: value.contact_whatsapp_message_en || "",
     addressAr: value.contact_address_ar || "عجمان، الروضة 3",
     addressEn: value.contact_address_en || "Al Rawda 3, Ajman",
     instagram,

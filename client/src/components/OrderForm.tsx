@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useContactInfo } from "@/hooks/useContactInfo";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { trpc } from "@/lib/trpc";
 import type { InternalProduct } from "@shared/store/types";
 import { MessageCircleMore } from "lucide-react";
@@ -20,7 +21,7 @@ export default function OrderForm({ product }: { product?: InternalProduct }) {
     onSuccess: order => {
       const productTitle = product ? (isArabic ? product.titleAr : product.titleEn) : (isArabic ? "طلب مخصص" : "Custom request");
       const message = isArabic ? `مرحباً مطبعة الروعة، لدي طلب جديد رقم #${order.id}\nالمنتج: ${productTitle}\nالاسم: ${customerName}\nالهاتف: ${customerPhone}\nالكمية: ${quantity}\nالتفاصيل: ${notes || "—"}` : `Hello Al Rawaa Printing, I have a new request #${order.id}\nProduct: ${productTitle}\nName: ${customerName}\nPhone: ${customerPhone}\nQuantity: ${quantity}\nDetails: ${notes || "—"}`;
-      window.open(`${contact.whatsappUrl}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+      window.open(buildWhatsAppLink(contact.whatsappUrl, message), "_blank", "noopener,noreferrer");
       toast.success(isArabic ? "تم حفظ طلبك وتجهيز رسالة واتساب" : "Your request was saved and WhatsApp is ready");
       setNotes("");
     },
