@@ -1,0 +1,58 @@
+{
+  "domain": "alro3agift-v6dgouz7.manus.space",
+  "period": {
+    "six_months": "2026-02 to 2026-07",
+    "three_months": "2026-05 to 2026-07"
+  },
+  "metrics": {
+    "global_rank": {
+      "status": "ok",
+      "data": {
+        "code": "failed_precondition",
+        "message": "Credit check passed but current user has insufficient Manus credits. Request was stooped before API call."
+      }
+    },
+    "visits_total": {
+      "status": "ok",
+      "data": {
+        "code": "failed_precondition",
+        "message": "Credit check passed but current user has insufficient Manus credits. Request was stooped before API call."
+      }
+    },
+    "unique_visits": {
+      "status": "ok",
+      "data": {
+        "code": "failed_precondition",
+        "message": "Credit check passed but current user has insufficient Manus credits. Request was stooped before API call."
+      }
+    },
+    "bounce_rate": {
+      "status": "ok",
+      "data": {
+        "code": "failed_precondition",
+        "message": "Credit check passed but current user has insufficient Manus credits. Request was stooped before API call."
+      }
+    },
+    "traffic_sources_desktop": {
+      "status": "ok",
+      "data": {
+        "code": "failed_precondition",
+        "message": "Credit check passed but current user has insufficient Manus credits. Request was stooped before API call."
+      }
+    },
+    "traffic_sources_mobile": {
+      "status": "ok",
+      "data": {
+        "code": "failed_precondition",
+        "message": "Credit check passed but current user has insufficient Manus credits. Request was stooped before API call."
+      }
+    },
+    "countries": {
+      "status": "ok",
+      "data": {
+        "code": "failed_precondition",
+        "message": "Credit check passed but current user has insufficient Manus credits. Request was stooped before API call."
+      }
+    }
+  }
+}

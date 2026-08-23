@@ -1,0 +1,2633 @@
+{
+  "summary": {
+    "products": 262,
+    "inspected": 262,
+    "successful": 262,
+    "errors": 0,
+    "totalBytes": 5127516,
+    "over150KB": 0,
+    "over1200px": 0
+  },
+  "images": [
+    {
+      "slug": "chocolate-favor-box-8x5",
+      "imageUrl": "/manus-storage/chocolate-favor-box-8x5-900_7612afc0.webp",
+      "status": "ok",
+      "bytes": 22670,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "coated-business-cards",
+      "imageUrl": "/manus-storage/coated-business-cards-900_26dd87e5.webp",
+      "status": "ok",
+      "bytes": 79624,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "cup-holder-box-10x10",
+      "imageUrl": "/manus-storage/cup-holder-box-10x10-900_f2344568.webp",
+      "status": "ok",
+      "bytes": 15924,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "cup-sweets-box-19x11",
+      "imageUrl": "/manus-storage/cup-sweets-box-19x11-900_e625e253.webp",
+      "status": "ok",
+      "bytes": 30984,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-celebration-stand",
+      "imageUrl": "/manus-storage/custom-celebration-stand-900_588b6e64.webp",
+      "status": "ok",
+      "bytes": 35238,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-cup-sleeve",
+      "imageUrl": "/manus-storage/custom-cup-sleeve-900_c5002e81.webp",
+      "status": "ok",
+      "bytes": 32356,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-gift-boxes",
+      "imageUrl": "/manus-storage/custom-gift-boxes-900_263e73d0.webp",
+      "status": "ok",
+      "bytes": 84614,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-occasion-cards",
+      "imageUrl": "/manus-storage/custom-occasion-cards-900_35178e22.webp",
+      "status": "ok",
+      "bytes": 70718,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-paper-cup-classic",
+      "imageUrl": "/manus-storage/paper-cup-8oz-source-optimized_c46cb2e7.webp",
+      "status": "ok",
+      "bytes": 8704,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-paper-cup-lid",
+      "imageUrl": "/manus-storage/custom-paper-cup-lid-900_56011585.webp",
+      "status": "ok",
+      "bytes": 44748,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-printing-service",
+      "imageUrl": "/manus-storage/custom-printing-service-900_c0174e88.webp",
+      "status": "ok",
+      "bytes": 63844,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-promotional-gifts",
+      "imageUrl": "/manus-storage/social-1_e277342a.jpg",
+      "status": "ok",
+      "bytes": 13346,
+      "format": "JPEG",
+      "width": 320,
+      "height": 320,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-sticker-sheet-a5",
+      "imageUrl": "/manus-storage/custom-sticker-sheet-a5-900_5963726b.webp",
+      "status": "ok",
+      "bytes": 105378,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "custom-sticker-sheet-a6",
+      "imageUrl": "/manus-storage/round-sticker-7cm-source_0b26681e.jpg",
+      "status": "ok",
+      "bytes": 14560,
+      "format": "JPEG",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "favors-box-15x13",
+      "imageUrl": "/manus-storage/favors-box-15x13-900_8be4e44d.webp",
+      "status": "ok",
+      "bytes": 21192,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "folded-special-cut-card-6x16",
+      "imageUrl": "/manus-storage/folded-special-cut-card-6x16-900_a3da7a1f.webp",
+      "status": "ok",
+      "bytes": 45660,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "graduation-photo-board",
+      "imageUrl": "/manus-storage/social-2_de273aa2.jpg",
+      "status": "ok",
+      "bytes": 12643,
+      "format": "JPEG",
+      "width": 240,
+      "height": 320,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-abaya",
+      "imageUrl": "/manus-storage/paper-bag-abaya-900_aff1e144.webp",
+      "status": "ok",
+      "bytes": 16734,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-landscape-19x26",
+      "imageUrl": "/manus-storage/paper-bag-landscape-19x26-900_45d5c909.webp",
+      "status": "ok",
+      "bytes": 16816,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-landscape-22x32",
+      "imageUrl": "/manus-storage/paper-bag-landscape-22x32-900_14eebbaf.webp",
+      "status": "ok",
+      "bytes": 11696,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-landscape-22x33",
+      "imageUrl": "/manus-storage/paper-bag-landscape-22x33-900_8dbe2a0f.webp",
+      "status": "ok",
+      "bytes": 11588,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-landscape-42x22",
+      "imageUrl": "/manus-storage/paper-bag-landscape-42x22-900_f01ac242.webp",
+      "status": "ok",
+      "bytes": 11860,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-portrait-30x20",
+      "imageUrl": "/manus-storage/paper-bag-portrait-30x20-900_24b24aa0.webp",
+      "status": "ok",
+      "bytes": 10110,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-portrait-40x28",
+      "imageUrl": "/manus-storage/paper-bag-portrait-40x28-900_81486a00.webp",
+      "status": "ok",
+      "bytes": 17234,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-portrait-small",
+      "imageUrl": "/manus-storage/paper-bag-portrait-small-900_967506e7.webp",
+      "status": "ok",
+      "bytes": 8720,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "paper-bag-top-flap",
+      "imageUrl": "/manus-storage/paper-bag-top-flap-900_b57afe4a.webp",
+      "status": "ok",
+      "bytes": 10038,
+      "format": "WEBP",
+      "width": 900,
+      "height": 675,
+      "mode": "RGB"
+    },
+    {
+      "slug": "personalised-gift-details",
+      "imageUrl": "/manus-storage/personalised-gift-details-900_6a8bf210.webp",
+      "status": "ok",
+      "bytes": 88270,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "round-logo-stickers-5cm",
+      "imageUrl": "/manus-storage/round-logo-stickers-5cm-900_ad171864.webp",
+      "status": "ok",
+      "bytes": 74316,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "sliding-gift-box-30x20",
+      "imageUrl": "/manus-storage/sliding-gift-box-30x20-900_4e7e9b52.webp",
+      "status": "ok",
+      "bytes": 19738,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "thank-you-cards-10x7",
+      "imageUrl": "/manus-storage/thank-you-cards-10x7-900_171cb70e.webp",
+      "status": "ok",
+      "bytes": 43588,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "triangle-gift-box-17x15",
+      "imageUrl": "/manus-storage/triangle-gift-box-17x15-900_12580e8a.webp",
+      "status": "ok",
+      "bytes": 24172,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-001",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-001-21cbde7b-3253-44ba-9a8b-78d48e33c5c4_b07d133e.jpg",
+      "status": "ok",
+      "bytes": 17198,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-002",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-002-febe7abb-aed7-49cf-aebb-883ab55c6059_732eacb1.png",
+      "status": "ok",
+      "bytes": 19962,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-003",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-003-c7de9d4d-3d9e-4180-997e-848726d86f5d_a5f5176b.png",
+      "status": "ok",
+      "bytes": 21568,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-004",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-004-cd339ca4-cc3d-47ff-8b80-e4d19dd7db7a_2efb746e.png",
+      "status": "ok",
+      "bytes": 17160,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-005",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-005-009d55cf-c217-4d14-adf4-cdec9bfc0941_d68e4424.jpg",
+      "status": "ok",
+      "bytes": 9596,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-006",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-006-fba4db5c-5a70-4b09-a6aa-97574fe703fa_a6aeaf3e.png",
+      "status": "ok",
+      "bytes": 10078,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-007",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-007-1058642e-d4e6-42cb-9ba0-6db069438374_e637a2ed.jpg",
+      "status": "ok",
+      "bytes": 7094,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-008",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-008-3f874340-cbba-4442-b81c-2590778c270f_d9e4a2d5.jpg",
+      "status": "ok",
+      "bytes": 8740,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-009",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-009-075301a1-dc4e-4aca-8af3-cf1cf9083937_d51e6522.png",
+      "status": "ok",
+      "bytes": 14966,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-010",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-010-0041be23-821a-4143-9c84-10327e257b52_e06af37e.jpg",
+      "status": "ok",
+      "bytes": 6802,
+      "format": "WEBP",
+      "width": 500,
+      "height": 375,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-011",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-011-e6d44ae7-5c6c-4bcd-ab1b-6bc0f7c20d80_80209a82.jpg",
+      "status": "ok",
+      "bytes": 12138,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-012",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-012-b169604b-5bfc-4c1e-8302-cb89f6b05681_0aed474a.jpg",
+      "status": "ok",
+      "bytes": 6702,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-013",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-013-25cd5a68-0b06-4b90-9b79-edf800c8d87e_17d553a1.png",
+      "status": "ok",
+      "bytes": 10284,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-014",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-014-2371a901-4976-4891-8ad5-6582f547ea0f_ef067120.png",
+      "status": "ok",
+      "bytes": 45520,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-015",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-015-bf7c80fa-ffc9-4002-bddc-eec3777cc535_7b368449.png",
+      "status": "ok",
+      "bytes": 28434,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-016",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-016-042e7c1a-612d-424d-99a0-431ced352ebe_2ca5b9a2.jpg",
+      "status": "ok",
+      "bytes": 7200,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-017",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-017-9c125860-434c-4617-8091-f8ebf68e419c_4bc84407.jpg",
+      "status": "ok",
+      "bytes": 29761,
+      "format": "JPEG",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-018",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-018-1789c894-63f4-4aa4-b325-16d484832349_b908e2cd.jpg",
+      "status": "ok",
+      "bytes": 6690,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-019",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-019-4288c238-ba3c-4f9c-ba64-e97dc2dd3f53_9424f1f1.jpg",
+      "status": "ok",
+      "bytes": 11338,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-020",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-020-00902195-74ce-4039-b1ea-8644f59d496c_65e36f29.jpg",
+      "status": "ok",
+      "bytes": 24898,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-021",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-021-9965568a-6a07-4a7d-a5ad-919f9cbec497_f5179cef.jpg",
+      "status": "ok",
+      "bytes": 22634,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-022",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-022-080947ce-7075-46ad-a472-4d79baae63d1_0a1dce69.jpg",
+      "status": "ok",
+      "bytes": 18674,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-023",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-023-26040b0c-d01b-4c68-8d7e-a5a68441468d_6d2d6d30.jpg",
+      "status": "ok",
+      "bytes": 22944,
+      "format": "WEBP",
+      "width": 499,
+      "height": 499,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-024",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-024-90d48ef6-6606-4d00-8164-ac2d53759ac5_62dc08cc.png",
+      "status": "ok",
+      "bytes": 8674,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-025",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-025-ff5df52d-1245-462b-8bed-7037c086e187_06680de6.jpg",
+      "status": "ok",
+      "bytes": 10828,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-026",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-026-e692af85-14b3-41ea-8175-cd8239356f82_f7827fff.jpg",
+      "status": "ok",
+      "bytes": 10826,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-027",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-027-57268706-413a-4056-9119-e2a8e323b8e3_99e6e0ac.jpg",
+      "status": "ok",
+      "bytes": 11006,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-028",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-028-c8967c8b-d663-47fa-bc9c-4b3146594c2c_8269b3de.png",
+      "status": "ok",
+      "bytes": 7220,
+      "format": "WEBP",
+      "width": 500,
+      "height": 333,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-029",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-029-62458b00-ccc1-4f7a-a2bb-64c7c30bf7cd_4c32df00.jpg",
+      "status": "ok",
+      "bytes": 10362,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-030",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-030-dfc61a12-af3e-4f1a-8ada-07ace87bc912_55a31cfb.jpg",
+      "status": "ok",
+      "bytes": 13132,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-031",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-031-3e0184aa-1e4b-4362-a807-046c1cebeb19_6f0943ea.jpg",
+      "status": "ok",
+      "bytes": 14016,
+      "format": "WEBP",
+      "width": 500,
+      "height": 333,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-032",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-032-1d366185-f030-486c-9e6b-9f1cca68a291_9a39e0da.jpg",
+      "status": "ok",
+      "bytes": 10198,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-033",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-033-101442aa-7337-4c78-b058-1133d32864a5_840d4e75.jpg",
+      "status": "ok",
+      "bytes": 10714,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-034",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-034-a3db768f-c694-45ab-9c08-6650dd60d83a_e9a101c4.jpg",
+      "status": "ok",
+      "bytes": 8680,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-035",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-035-34f61c71-16d4-4418-b9d5-987b33311a25_532e59c7.jpg",
+      "status": "ok",
+      "bytes": 32294,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-036",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-036-d68379c5-d721-45b6-91a3-6d3991d7f583_bf5dca37.jpg",
+      "status": "ok",
+      "bytes": 10994,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-037",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-037-aecfef0a-5015-413b-bd9c-cc05cdbff20b_d7e14d25.jpg",
+      "status": "ok",
+      "bytes": 13020,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-038",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-038-c5b95d11-d154-4a8a-85b7-4703b3c2504a_1fcd0c7c.jpg",
+      "status": "ok",
+      "bytes": 8102,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-039",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-039-73c4bdef-f80e-4636-ad76-bb4d777cb3d2_695b74ea.jpg",
+      "status": "ok",
+      "bytes": 7248,
+      "format": "WEBP",
+      "width": 500,
+      "height": 375,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-040",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-040-6e96050a-b951-4a5e-9333-ba4ed382fe5b_305b48ff.png",
+      "status": "ok",
+      "bytes": 25842,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGBA"
+    },
+    {
+      "slug": "weej-import-041",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-041-60b832c4-7420-430f-bc38-4d150a6e39cc_9333e5f2.png",
+      "status": "ok",
+      "bytes": 31950,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-042",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-042-7da4fc53-f1c4-46ed-ac80-23d04d0d8bb5_76a3fe4a.jpg",
+      "status": "ok",
+      "bytes": 30314,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-043",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-043-34bd921e-92ff-4c11-954e-ae8520d9a878_6244228f.jpg",
+      "status": "ok",
+      "bytes": 24944,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-044",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-044-cadb72e3-d39e-4077-97ef-ce873d8d7900_c20752bb.png",
+      "status": "ok",
+      "bytes": 33654,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-045",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-045-74d574ef-d091-45c6-8276-b6b462754d75_b42351f2.jpg",
+      "status": "ok",
+      "bytes": 38056,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-046",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-046-98ad8d9d-9fc3-477c-9582-01e9e935f6df_1f160772.jpg",
+      "status": "ok",
+      "bytes": 50024,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-047",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-047-11278823-9e6a-470b-a288-8e00bf178f7a_99fc949d.jpg",
+      "status": "ok",
+      "bytes": 23962,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-048",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-048-a9514c68-bde0-4ce0-b0c6-c925d8b6b9e4_90965787.jpg",
+      "status": "ok",
+      "bytes": 37350,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-049",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-049-bd3faf32-ba9d-4bbc-aa02-e4972faa1705_f0036ebe.jpg",
+      "status": "ok",
+      "bytes": 16270,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-050",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-050-290a2da9-4e67-4b69-8fff-125aafc6a28a_61716520.jpg",
+      "status": "ok",
+      "bytes": 10914,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-051",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-051-acc3ee18-5954-4b1a-a5b7-060944ad7ce7_c01b5403.jpg",
+      "status": "ok",
+      "bytes": 5574,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-052",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-052-d7fae27b-fed6-407d-901c-14a68a93f22b_d85eabf6.png",
+      "status": "ok",
+      "bytes": 11250,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-053",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-053-34e86680-a153-400c-83e9-b5642b7b4155_1ff7683d.jpg",
+      "status": "ok",
+      "bytes": 8212,
+      "format": "WEBP",
+      "width": 500,
+      "height": 499,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-054",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-054-73b2c999-3e87-4f7c-90c1-71fc35fd50c5_c79eb758.jpg",
+      "status": "ok",
+      "bytes": 15946,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-055",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-055-5c5cdb9d-6a9a-46be-8d57-58af97ddb996_c7dfd906.jpg",
+      "status": "ok",
+      "bytes": 7292,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-056",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-056-40eebdfe-3afe-4af4-aca8-e95b4cbb6436_d46291f2.jpg",
+      "status": "ok",
+      "bytes": 13798,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-057",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-057-c49e0149-a538-462e-ac9d-89865a69eb7a_d94c2216.png",
+      "status": "ok",
+      "bytes": 12038,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-058",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-058-d65728bd-85d4-4335-9180-330e0b0a99ff_d84f6157.jpg",
+      "status": "ok",
+      "bytes": 10626,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-059",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-059-1966dffe-3517-4295-9e9c-bf0e26328caa_add264b6.png",
+      "status": "ok",
+      "bytes": 14424,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-060",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-060-e2670a9e-910a-4e1f-a021-a23c9887d522_35959c9e.jpg",
+      "status": "ok",
+      "bytes": 6806,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-061",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-061-75e871f6-a935-4ea4-af8f-ca39a29590b7_8de24abd.png",
+      "status": "ok",
+      "bytes": 8948,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-062",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-062-9ac9bb8b-859e-4e30-95c2-641be05623d0_bbaf2904.png",
+      "status": "ok",
+      "bytes": 10044,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-063",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-063-45f46ecc-a101-4381-ae72-62938071a843_a7a7c5d0.jpg",
+      "status": "ok",
+      "bytes": 9654,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-064",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-064-115bf082-f2df-4974-843a-b57ddbdd04e6_54c4ffaa.png",
+      "status": "ok",
+      "bytes": 11992,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-065",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-065-2000da55-5977-479d-a857-a4ca8d5baf05_c7dbc274.png",
+      "status": "ok",
+      "bytes": 12272,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-066",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-066-3db8d1e8-0a00-4222-9cb8-72b028d17dfb_bb40f13f.jpg",
+      "status": "ok",
+      "bytes": 9842,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-067",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-067-028778db-d080-4f32-81a9-f456929f1ee1_02d057de.jpg",
+      "status": "ok",
+      "bytes": 7724,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-068",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-068-377cf8b5-f351-46a2-b12d-d69a186e0556_31a123ea.png",
+      "status": "ok",
+      "bytes": 10926,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-069",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-069-647bdc83-e826-4f66-be1f-d57f3fae9d1c_9f404ea9.jpg",
+      "status": "ok",
+      "bytes": 8914,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-070",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-070-2796f381-4524-442c-a554-be6141d19966_c0dc7ab7.jpg",
+      "status": "ok",
+      "bytes": 46953,
+      "format": "JPEG",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-071",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-071-305cf126-d188-45ab-93c8-fd5b558e2e92_68c2cfbb.jpg",
+      "status": "ok",
+      "bytes": 7852,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-072",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-072-b1c45154-2be3-4002-ae48-c433c68243f5_f6e5934b.jpg",
+      "status": "ok",
+      "bytes": 8784,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-073",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-073-87d6764e-c5ad-4c92-b348-bbf061127d43_5780961c.jpg",
+      "status": "ok",
+      "bytes": 6770,
+      "format": "WEBP",
+      "width": 500,
+      "height": 333,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-074",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-074-fa8bea7e-5792-40c2-858f-42711a019e8a_f101c893.jpg",
+      "status": "ok",
+      "bytes": 20814,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-075",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-075-4237e33f-b0f6-4cd1-9df2-7c9a0f74b6a8_bc8ef179.jpg",
+      "status": "ok",
+      "bytes": 28184,
+      "format": "WEBP",
+      "width": 499,
+      "height": 499,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-076",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-076-bf477b4a-382d-4efa-8606-992e2e371437_5dbd3c2f.jpg",
+      "status": "ok",
+      "bytes": 20786,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-077",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-077-84aee7ae-a593-4c69-8e6a-32556d90ae6a_eca653c4.jpg",
+      "status": "ok",
+      "bytes": 16414,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-078",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-078-c57d262e-fc36-422b-b2ba-1a650adcb1d9_6d1c5af9.jpg",
+      "status": "ok",
+      "bytes": 13168,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-079",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-079-23b0cd3a-26fb-49c8-b214-d04ff8abc29a_4369476f.jpg",
+      "status": "ok",
+      "bytes": 6254,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-080",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-080-f96ae15f-0433-4fdd-b52a-b638a252ba55_66f42ae5.jpg",
+      "status": "ok",
+      "bytes": 15966,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-081",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-081-8fe0db72-85b9-4992-807b-fb0855277a3d_e52746c3.jpg",
+      "status": "ok",
+      "bytes": 19488,
+      "format": "WEBP",
+      "width": 500,
+      "height": 375,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-082",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-082-48e492f3-47e5-4699-8102-04b78c81b4e5_21fa8ebc.jpg",
+      "status": "ok",
+      "bytes": 16516,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-083",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-083-98763f47-c787-4b62-84cd-608f0895e233_acd41232.jpg",
+      "status": "ok",
+      "bytes": 10672,
+      "format": "WEBP",
+      "width": 499,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-084",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-084-68405b94-147f-4b67-b0ee-9caf2bce7ece_1f1d2edc.jpg",
+      "status": "ok",
+      "bytes": 8870,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-085",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-085-fce9df73-d5e9-48ee-99e7-a9a50a8038dd_86c744b7.jpg",
+      "status": "ok",
+      "bytes": 17048,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-086",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-086-803174cb-9b2e-4f88-9e16-35767f3fe5f5_d2ec379a.jpg",
+      "status": "ok",
+      "bytes": 43252,
+      "format": "JPEG",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-087",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-087-6ff03a1d-3d53-4549-85d3-60a94206cad3_5f7804b4.jpg",
+      "status": "ok",
+      "bytes": 28604,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-088",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-088-12fd2954-75fc-4625-bcc4-1604fee700a0_9e0b6d56.jpg",
+      "status": "ok",
+      "bytes": 17998,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-089",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-089-31a1fd60-68d9-4ac2-85a7-fd2759fd139f_245a9ba3.jpg",
+      "status": "ok",
+      "bytes": 41380,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-090",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-090-0e86fcb6-bbe4-41d0-950b-f0ab6c0a38ce_5edff3d5.jpg",
+      "status": "ok",
+      "bytes": 16136,
+      "format": "WEBP",
+      "width": 500,
+      "height": 472,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-091",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-091-e050558e-cecf-4540-81fc-5360c0741886_3c5a9996.jpg",
+      "status": "ok",
+      "bytes": 17742,
+      "format": "WEBP",
+      "width": 500,
+      "height": 472,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-092",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-092-cab74ad2-beec-4e5b-8f15-1f37ffbda0d6_d7ad7738.jpg",
+      "status": "ok",
+      "bytes": 19462,
+      "format": "WEBP",
+      "width": 500,
+      "height": 375,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-093",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-093-96b003c2-2128-40cd-847e-5560d27fd120_ed67c4e3.jpg",
+      "status": "ok",
+      "bytes": 29576,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-094",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-094-3347002e-a6aa-4600-b555-db001c005b4d_46c806f1.jpg",
+      "status": "ok",
+      "bytes": 17458,
+      "format": "WEBP",
+      "width": 500,
+      "height": 472,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-095",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-095-f83631bd-65e1-42f7-bc74-603bb0c4df47_82143f9c.jpg",
+      "status": "ok",
+      "bytes": 15876,
+      "format": "WEBP",
+      "width": 500,
+      "height": 472,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-096",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-096-08c541f9-47fa-45de-b3e2-7c802d601c5d_78e24e9a.jpg",
+      "status": "ok",
+      "bytes": 11630,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-097",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-097-bea7e294-f4c7-4dfe-b024-e5162d3d49af_f731738d.jpg",
+      "status": "ok",
+      "bytes": 11526,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-098",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-098-07167b5f-c26e-4337-8ddf-5fc25a055262_5d7024e8.jpg",
+      "status": "ok",
+      "bytes": 11526,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-099",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-099-03c06340-71cb-480d-91b4-6962954eeeec_a8976adf.jpg",
+      "status": "ok",
+      "bytes": 22120,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-100",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-100-e1a1309e-68ed-40ac-99b2-049d6708f446_02b35106.jpg",
+      "status": "ok",
+      "bytes": 11438,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-101",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-101-bb5243bd-8692-40af-9a6b-653d96d6fd1f_e8b50790.jpg",
+      "status": "ok",
+      "bytes": 5814,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-102",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-102-c26eea3f-bef7-49bf-9f4e-1e4b89f4670a_8df61274.png",
+      "status": "ok",
+      "bytes": 20372,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-103",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-103-46589320-f226-468c-9fda-45fa666bb40e_fb71218e.jpg",
+      "status": "ok",
+      "bytes": 7716,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-104",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-104-6edcd25f-3d0b-4128-a5fe-5e40f7f34dea_cd1eca61.jpg",
+      "status": "ok",
+      "bytes": 10218,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-105",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-105-5fb75bb9-cce4-4806-aee4-5189babb09b6_2ee0e6f0.jpg",
+      "status": "ok",
+      "bytes": 7754,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-106",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-106-a1ae88ad-3338-4900-8bfd-5abaa21ad23b_9cac0ddf.jpg",
+      "status": "ok",
+      "bytes": 7782,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-107",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-107-cb2663ce-5cca-4b57-8c59-c25dfd0d3c67_2d9388a9.jpg",
+      "status": "ok",
+      "bytes": 7808,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-108",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-108-20a4bb21-8672-431a-9f31-53b1c979e971_c9d4e677.jpg",
+      "status": "ok",
+      "bytes": 7788,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-109",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-109-9adda371-c1de-4459-9859-d03696d5636d_1c3fe218.jpg",
+      "status": "ok",
+      "bytes": 8682,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-110",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-110-04b27d83-ea79-4484-b032-c670e42a6d7d_efef77a3.png",
+      "status": "ok",
+      "bytes": 12840,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-111",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-111-56712c5b-e003-468a-aaa3-2bc48052e208_073c9966.jpg",
+      "status": "ok",
+      "bytes": 7762,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-112",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-112-47844562-40d2-4e8e-b04a-f280a9e6c1fc_24d1c9b9.jpg",
+      "status": "ok",
+      "bytes": 7774,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-113",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-113-79605569-4110-4ed3-baaa-f4d514f86990_4d0e9336.jpg",
+      "status": "ok",
+      "bytes": 8024,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-114",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-114-8f7c33d9-d61b-4013-b081-eb139249611e_d7b07bf8.jpg",
+      "status": "ok",
+      "bytes": 7324,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-115",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-115-caa7431a-6b26-4766-a936-28b6ab48e193_7434349e.jpg",
+      "status": "ok",
+      "bytes": 7722,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-116",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-116-13f1d6e6-6ceb-4f3a-810f-1b89be265d73_56a16468.jpg",
+      "status": "ok",
+      "bytes": 7762,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-117",
+      "imageUrl": "/manus-storage/weej-import-117-900_54453603.webp",
+      "status": "ok",
+      "bytes": 18192,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-118",
+      "imageUrl": "/manus-storage/weej-import-118-900_c099f945.webp",
+      "status": "ok",
+      "bytes": 18192,
+      "format": "WEBP",
+      "width": 900,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-119",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-119-1f1ef3e6-f2f0-450e-9351-6e66ff9a63d3_b4437217.jpg",
+      "status": "ok",
+      "bytes": 37432,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-120",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-120-ffd8ec9f-f1db-4e97-8ada-757940fb01a5_8c0b3ad3.jpg",
+      "status": "ok",
+      "bytes": 6686,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-121",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-121-9488897b-c65b-425f-94f0-99758da2928f_c617c55a.jpg",
+      "status": "ok",
+      "bytes": 35308,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-122",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-122-11497792-958b-4456-a848-493655f10749_85a16d30.jpg",
+      "status": "ok",
+      "bytes": 33582,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-123",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-123-8898110d-4823-4682-86c6-b49c260a510e_35534b0c.jpg",
+      "status": "ok",
+      "bytes": 11596,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-124",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-124-c62c1ad7-fe68-4be9-823f-c8429197562b_c7a0c318.jpg",
+      "status": "ok",
+      "bytes": 29898,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-125",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-125-330d8066-c466-423d-b9d1-d20a70dc66e0_f92c2297.jpg",
+      "status": "ok",
+      "bytes": 6592,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-126",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-126-ba93bcca-3cc3-41b0-b86d-e26070161dfc_fabfdd4d.jpg",
+      "status": "ok",
+      "bytes": 31324,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-127",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-127-5588e853-8a2c-47fb-a6b7-e34ebc7693b0_2f650f5e.jpg",
+      "status": "ok",
+      "bytes": 14394,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-128",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-128-72e8c752-2f4a-4083-938f-89cf931fcf56_154dc607.jpg",
+      "status": "ok",
+      "bytes": 22204,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-129",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-129-1efe833f-43bf-47d6-afa8-9c41d0e755ec_1f40547f.jpg",
+      "status": "ok",
+      "bytes": 16918,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-130",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-130-173bdfc2-d149-42b0-8f5d-b94fb415159e_d8163f5f.jpg",
+      "status": "ok",
+      "bytes": 8984,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-131",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-131-a731363c-216b-4e40-b31e-6f9df6ae752a_6738e16d.jpg",
+      "status": "ok",
+      "bytes": 10484,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-132",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-132-ac069d30-49cd-472f-8163-2e86afbf7ee3_08b29d4f.jpg",
+      "status": "ok",
+      "bytes": 8888,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-133",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-133-8ccd3728-5f91-4973-9867-689d85ead0f2_73284a90.jpg",
+      "status": "ok",
+      "bytes": 31412,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-134",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-134-dbd52a1d-bd63-4c7d-a503-b90da2dd178c_27af254b.jpg",
+      "status": "ok",
+      "bytes": 11368,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-135",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-135-6c23773b-4f53-4357-b94b-999ad5eb3814_32e16b49.jpg",
+      "status": "ok",
+      "bytes": 12682,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-136",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-136-ed39d209-d741-4da1-aea4-d4daa6c55a36_21161790.jpg",
+      "status": "ok",
+      "bytes": 32054,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-137",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-137-a8e4f5e5-545e-42f6-ac6f-6ba34a839edb_9026df5f.jpg",
+      "status": "ok",
+      "bytes": 5996,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-138",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-138-1402554d-3836-4fc9-865e-eae6762f52db_3092b594.jpg",
+      "status": "ok",
+      "bytes": 12388,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-139",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-139-70e4ab55-6aca-451a-b4e9-8a2dd8be9980_5f3a5c15.jpg",
+      "status": "ok",
+      "bytes": 40492,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-140",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-140-b0ddea83-5e1d-42f0-9d65-30864bc7706d_1799266b.jpg",
+      "status": "ok",
+      "bytes": 16548,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-141",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-141-ba5f0239-59c3-4e18-be8c-6e4e94e68609_5199deed.png",
+      "status": "ok",
+      "bytes": 12224,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-142",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-142-2e360139-8c4d-4b7d-aa02-28d073d604c1_9d035679.jpg",
+      "status": "ok",
+      "bytes": 12472,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-143",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-143-0968d464-3780-4c8f-bd82-f405fbbe126d_2284ca08.jpg",
+      "status": "ok",
+      "bytes": 37518,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-144",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-144-f51f0f58-b941-4671-af9e-465dbb4acf4e_c18a8569.jpg",
+      "status": "ok",
+      "bytes": 8778,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-145",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-145-f0917fa5-2aa8-4690-8a38-84df264309ad_1524dbe5.jpg",
+      "status": "ok",
+      "bytes": 14840,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-146",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-146-c7c81a05-245a-466c-9b8b-4f0654900412_bfcc5d49.jpg",
+      "status": "ok",
+      "bytes": 35385,
+      "format": "JPEG",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-147",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-147-cbd2682b-a3a1-40ff-80e0-5e6550661325_c95acdd1.jpg",
+      "status": "ok",
+      "bytes": 16236,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-148",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-148-7bfce82f-7cce-493a-8a78-0afc990f2072_db84b00f.jpg",
+      "status": "ok",
+      "bytes": 16224,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-149",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-149-4076ec04-a594-4aca-9c9f-ccbafdd901ba_f19a9ed0.jpg",
+      "status": "ok",
+      "bytes": 6812,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-150",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-150-e931cc01-97cb-4bf5-8a96-e161616066b9_c9e4af47.jpg",
+      "status": "ok",
+      "bytes": 5466,
+      "format": "WEBP",
+      "width": 497,
+      "height": 499,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-151",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-151-890f4b63-deb3-4449-a963-bdbb0821c9cb_8ef71eee.jpg",
+      "status": "ok",
+      "bytes": 5792,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-152",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-152-c1e4cf58-6cc6-407b-9f03-b71fbfe81535_6495fe5c.jpg",
+      "status": "ok",
+      "bytes": 8668,
+      "format": "WEBP",
+      "width": 500,
+      "height": 482,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-153",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-153-20375a01-ad91-4a21-89a2-627e9db2d545_c25a76b4.jpg",
+      "status": "ok",
+      "bytes": 33365,
+      "format": "JPEG",
+      "width": 375,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-154",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-154-665755e2-8658-4aeb-b61d-8609eb3304e4_25ba3f9d.jpg",
+      "status": "ok",
+      "bytes": 9454,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-155",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-155-3c6608a9-332a-4fbd-b1dc-454d05626d89_8a6d737d.jpg",
+      "status": "ok",
+      "bytes": 6472,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-156",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-156-b4d15240-3cc5-44b1-97d0-1d300b482e52_cf647777.png",
+      "status": "ok",
+      "bytes": 1688,
+      "format": "AVIF",
+      "width": 58,
+      "height": 44,
+      "mode": "RGBA"
+    },
+    {
+      "slug": "weej-import-157",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-157-8e1762fe-2ffc-49d8-a9cf-e4a8fee4d433_820adb0f.png",
+      "status": "ok",
+      "bytes": 9999,
+      "format": "AVIF",
+      "width": 400,
+      "height": 170,
+      "mode": "RGBA"
+    },
+    {
+      "slug": "weej-import-158",
+      "imageUrl": "/manus-storage/weej-import-158-900_f65c31d8.webp",
+      "status": "ok",
+      "bytes": 32918,
+      "format": "WEBP",
+      "width": 506,
+      "height": 900,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-159",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-159-ba0f18c4-9ef1-441f-94f3-e6ce7b591857_86defbe9.png",
+      "status": "ok",
+      "bytes": 35312,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-160",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-160-a283bd68-ea7e-490b-a596-3d6f63fff0b5_df958845.png",
+      "status": "ok",
+      "bytes": 32196,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-161",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-161-1b090955-f63a-44ac-99d7-9f0eae627019_9ae3c550.png",
+      "status": "ok",
+      "bytes": 31648,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-162",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-162-150c386a-2a3f-4d7e-9921-f763d832a7b3_ec2f14c1.png",
+      "status": "ok",
+      "bytes": 31954,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-163",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-163-2c41ebf1-ee6a-448d-9a02-bfc9296a9bf2_07a77c3a.png",
+      "status": "ok",
+      "bytes": 44574,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-164",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-164-ba91d1e4-0952-4f77-994f-48bad975f232_b326df1d.png",
+      "status": "ok",
+      "bytes": 30202,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-165",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-165-e46220ab-9aff-4a1a-b413-24f2ea9d9138_9b4b7580.png",
+      "status": "ok",
+      "bytes": 35252,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-166",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-166-16312965-27d5-4dce-8c3c-e1efcf6eb8d0_ec9b39a6.png",
+      "status": "ok",
+      "bytes": 37114,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-167",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-167-832f4cf8-a2fa-48fa-a9fb-bbe93bc22c63_c6c96cc6.png",
+      "status": "ok",
+      "bytes": 39782,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-168",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-168-faf83e42-8d4f-4534-b0e4-c751862f3d99_0e220042.png",
+      "status": "ok",
+      "bytes": 13846,
+      "format": "PNG",
+      "width": 1022,
+      "height": 436,
+      "mode": "P"
+    },
+    {
+      "slug": "weej-import-169",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-169-4e8f6ac6-cfd2-4314-94d8-6fe364543cd0_72c8f58a.png",
+      "status": "ok",
+      "bytes": 32026,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-170",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-170-0fc83158-84f7-4693-9dbf-aa4a42ddd49d_9bf9bc07.png",
+      "status": "ok",
+      "bytes": 34288,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-171",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-171-78574e97-3b69-42a7-8d58-b7bf4ff0f6bc_cd5528a3.png",
+      "status": "ok",
+      "bytes": 39852,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-172",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-172-ab0fbdcf-70ac-4a9f-8ebc-bca5ce65cb1f_9a8f46b0.png",
+      "status": "ok",
+      "bytes": 39704,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-173",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-173-aef4fc10-dcea-40ef-a211-630dc2c4f974_0c88b5a9.png",
+      "status": "ok",
+      "bytes": 38618,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-174",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-174-3099537f-fbc4-4409-8b48-7de25cc3a337_d554844f.png",
+      "status": "ok",
+      "bytes": 28922,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-175",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-175-c5cd20f6-c6e9-4ac2-bc88-795acc38c36b_9fa79fff.jpg",
+      "status": "ok",
+      "bytes": 34516,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-176",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-176-a6b9621c-38be-429b-94e0-1c3dc7f97780_9d7f38ea.jpg",
+      "status": "ok",
+      "bytes": 28246,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-177",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-177-ae60487f-b34e-4730-a081-86a9949e87c2_37d2e58e.jpg",
+      "status": "ok",
+      "bytes": 16922,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-178",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-178-d20cfde5-63ab-4702-88f2-79f766053f6c_6cb6acde.jpg",
+      "status": "ok",
+      "bytes": 32860,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-179",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-179-1df8e6de-4452-49c3-aae0-ef63d2c75f70_82b95018.jpg",
+      "status": "ok",
+      "bytes": 16972,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-180",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-180-27eda1b6-0f6e-4313-a250-526f18994120_0466b30a.jpg",
+      "status": "ok",
+      "bytes": 28354,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-181",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-181-9e7c0d69-0867-4c92-a056-8aaf872426f8_0b1d417a.jpg",
+      "status": "ok",
+      "bytes": 27144,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-182",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-182-bc96ea80-a2b1-4021-ac28-28cc3ad028f0_c8931431.jpg",
+      "status": "ok",
+      "bytes": 15030,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-183",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-183-bae485be-b8c2-421a-8c14-ffadc7c88030_8aa45da8.jpg",
+      "status": "ok",
+      "bytes": 19786,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-184",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-184-dc20715a-afe1-44d2-a05c-c7f1aab1e927_b1db17d0.jpg",
+      "status": "ok",
+      "bytes": 17558,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-185",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-185-be0f5b6f-06e1-4c37-add1-91d2650b1215_ad24fb78.jpg",
+      "status": "ok",
+      "bytes": 20000,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-186",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-186-8a4d67af-6f2a-4e6a-b350-4c62c2c3aebe_98645439.jpg",
+      "status": "ok",
+      "bytes": 17504,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-187",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-187-698296cf-7146-4c5a-998b-30f25c6188e5_f9b015f1.jpg",
+      "status": "ok",
+      "bytes": 18278,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-188",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-188-32c81a42-d4d2-4334-9b57-bc3e2728ef23_532b412f.jpg",
+      "status": "ok",
+      "bytes": 29422,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-189",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-189-b34f2439-02ba-433e-b199-40437d307c1c_37450547.jpg",
+      "status": "ok",
+      "bytes": 15578,
+      "format": "WEBP",
+      "width": 499,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-190",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-190-bb385acf-073a-4e7c-b915-815d9e2623bd_af95db0a.jpg",
+      "status": "ok",
+      "bytes": 7400,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-191",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-191-0999d4ec-edae-49cc-92dd-f0e7d550f283_f6f456b4.png",
+      "status": "ok",
+      "bytes": 5978,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-192",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-192-b30e7452-09ca-4505-a00f-5c1163b0ea23_0e1ca4ae.jpg",
+      "status": "ok",
+      "bytes": 8552,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-193",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-193-4531b4f1-e04c-46b4-aaad-a3d880affeed_f5e8e278.png",
+      "status": "ok",
+      "bytes": 24360,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-194",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-194-b38904e1-83e7-4db5-9b4f-a973ba61bebe_e1676037.jpg",
+      "status": "ok",
+      "bytes": 11496,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-195",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-195-4520081f-9d02-4468-a379-458529c47b79_a5571958.jpg",
+      "status": "ok",
+      "bytes": 12174,
+      "format": "WEBP",
+      "width": 499,
+      "height": 499,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-196",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-196-95ac7966-c1c1-4565-ba93-b7783e927e65_3f94ac04.jpg",
+      "status": "ok",
+      "bytes": 11648,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-197",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-197-9be06100-48b7-453f-bf3e-30cdbeabda4a_36686e23.png",
+      "status": "ok",
+      "bytes": 14720,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-198",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-198-b3878f6f-f71b-4834-9d6e-9531adda24f0_dcd0ee0a.png",
+      "status": "ok",
+      "bytes": 13614,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-199",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-199-881eec19-a8c3-4572-9823-91ca78551441_2d33527d.jpg",
+      "status": "ok",
+      "bytes": 13968,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-200",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-200-c123dfbb-75b0-4fac-b7a3-a5244c664e32_653f25c4.jpg",
+      "status": "ok",
+      "bytes": 11354,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-201",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-201-0e525fad-c4e5-4aed-b7c0-1a203887d553_943ae98b.jpg",
+      "status": "ok",
+      "bytes": 9174,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-202",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-202-989e3ce7-0b4d-4f17-91ba-472106004b46_04ff7630.jpg",
+      "status": "ok",
+      "bytes": 10274,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-203",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-203-f03b2a56-cd25-4ecc-bf0f-7ee48342137b_33755ce7.jpg",
+      "status": "ok",
+      "bytes": 8182,
+      "format": "WEBP",
+      "width": 499,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-204",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-204-86249ad7-6f7d-4013-8796-394385ed2a57_a7c93e54.jpg",
+      "status": "ok",
+      "bytes": 14988,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-205",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-205-cea8c441-537e-430c-98ba-76cfb3409461_6df63268.jpg",
+      "status": "ok",
+      "bytes": 12770,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-206",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-206-aa12db8c-14fe-41d1-a6e7-3edc2da88aa7_2c5e7c93.jpg",
+      "status": "ok",
+      "bytes": 16554,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-207",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-207-9df92576-1c5e-4760-a567-dad8df600628_3fb730e0.jpg",
+      "status": "ok",
+      "bytes": 13584,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-208",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-208-97854368-8a80-4050-b525-485d80d8fdba_63050bda.jpg",
+      "status": "ok",
+      "bytes": 18852,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-209",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-209-6dd3a5e8-f18b-404f-b274-160546782a3c_89ffa02d.jpg",
+      "status": "ok",
+      "bytes": 17144,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-210",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-210-5df3f6ee-f611-4ac4-82d4-b87fb0561b08_1cc31b1f.jpg",
+      "status": "ok",
+      "bytes": 12296,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-211",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-211-f8abd844-0295-4796-a70c-a9801deab2cf_1b5519a6.jpg",
+      "status": "ok",
+      "bytes": 26790,
+      "format": "WEBP",
+      "width": 499,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-212",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-212-dc4a5056-04de-4224-b098-e35676607efc_8384418f.jpg",
+      "status": "ok",
+      "bytes": 17378,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-213",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-213-0c2ea442-6530-4253-80d2-818f04cbf1f5_ee754260.jpg",
+      "status": "ok",
+      "bytes": 11040,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-214",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-214-cd38693b-2532-4a11-8caa-397578a0a37a_fc294e2a.jpg",
+      "status": "ok",
+      "bytes": 6454,
+      "format": "WEBP",
+      "width": 499,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-215",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-215-a5392a90-616e-4299-9a39-60a277f9b5c8_9bc19510.jpg",
+      "status": "ok",
+      "bytes": 10620,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-216",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-216-de444443-ea25-4967-898f-ef88735098b9_53ad1ab9.jpg",
+      "status": "ok",
+      "bytes": 10994,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-217",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-217-f1332917-f913-439e-abb3-14b532aea1b2_e1beabce.jpg",
+      "status": "ok",
+      "bytes": 14140,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-218",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-218-cf4f9b54-84f4-4f54-b662-df071e9044d6_d6b5164e.jpg",
+      "status": "ok",
+      "bytes": 6242,
+      "format": "WEBP",
+      "width": 499,
+      "height": 499,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-219",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-219-67011767-0cfd-4061-948d-bb8ffff2bc80_0571fdff.jpg",
+      "status": "ok",
+      "bytes": 7750,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-220",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-220-05507c9f-78e3-46d8-b9b1-d3a80a414119_2e2b4cda.jpg",
+      "status": "ok",
+      "bytes": 16434,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-221",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-221-bef45a4f-b8c7-44ee-a757-1b0e7a15b652_7e5d3589.jpg",
+      "status": "ok",
+      "bytes": 18966,
+      "format": "WEBP",
+      "width": 500,
+      "height": 335,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-222",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-222-119eec6f-a964-4669-a1f5-7f24d9c73888_00b18928.jpg",
+      "status": "ok",
+      "bytes": 8968,
+      "format": "WEBP",
+      "width": 500,
+      "height": 375,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-223",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-223-19af3358-7dd9-4882-bda2-65b58a5cb2b6_82cb5207.jpg",
+      "status": "ok",
+      "bytes": 34270,
+      "format": "WEBP",
+      "width": 500,
+      "height": 332,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-224",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-224-7b7a0cba-224a-42a4-bafe-02ca4e1ef331_6c45f509.jpg",
+      "status": "ok",
+      "bytes": 30792,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-225",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-225-11249acf-deee-433e-9448-7c54684c1ffe_5eee2d4c.jpg",
+      "status": "ok",
+      "bytes": 16146,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-226",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-226-3ab8f1c2-39a1-48aa-a246-01deb23b2e28_8fd68c2e.jpg",
+      "status": "ok",
+      "bytes": 15284,
+      "format": "WEBP",
+      "width": 500,
+      "height": 337,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-227",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-227-7cf0c70b-80e5-4a55-b775-fe1d295efee4_fd604bf8.jpg",
+      "status": "ok",
+      "bytes": 31600,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-228",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-228-89c1804a-fc9f-4f89-b720-285552a04000_f4e32ff4.jpg",
+      "status": "ok",
+      "bytes": 20986,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-229",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-229-19ff6838-41d1-4978-bf1f-79732bac8ee4_3ba7bca8.jpg",
+      "status": "ok",
+      "bytes": 21816,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-230",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-230-a796d7f7-83d0-45ff-9b7e-3078df8e712e_ffc1aaab.jpg",
+      "status": "ok",
+      "bytes": 10040,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    },
+    {
+      "slug": "weej-import-231",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-231-e40d4286-0c06-40f9-bf3e-d42b94e8f18f_6b76354f.jpg",
+      "status": "ok",
+      "bytes": 12594,
+      "format": "WEBP",
+      "width": 500,
+      "height": 500,
+      "mode": "RGB"
+    }
+  ]
+}

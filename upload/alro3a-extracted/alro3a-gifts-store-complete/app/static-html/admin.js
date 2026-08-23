@@ -1,0 +1,21 @@
+(() => {
+  const key = "alrawhaa-static-settings";
+  const data = window.RAWAA_CATALOG || { products: [], assets: [], defaults: {} };
+  const stored = JSON.parse(localStorage.getItem(key) || "{}");
+  const settings = { ...data.defaults, ...stored };
+  const $ = id => document.getElementById(id);
+  $("image-count").textContent = String(data.assets?.length || 0);
+  $("product-count").textContent = String(data.products?.length || 0);
+  $("store-name").value = settings.storeName || "مطبعة الروعة للهدايا";
+  $("whatsapp").value = settings.whatsapp || "https://wa.me/971521401021";
+  $("slide-badge").value = settings.heroBadge || "اليوم الوطني الإماراتي";
+  $("slide-title").value = settings.heroTitle || "هدايا اليوم الوطني بطابع إماراتي";
+  $("slide-subtitle").value = settings.heroSubtitle || "أطقم وهدايا مميزة للاحتفال بفخر الإمارات.";
+  const save = (message, fields, status) => { const next = JSON.parse(localStorage.getItem(key) || "{}"); fields.forEach(([name, id]) => next[name] = $(id).value.trim()); localStorage.setItem(key, JSON.stringify(next)); $(status).textContent = message; };
+  $("save-brand").addEventListener("click", () => save("تم الحفظ في هذا المتصفح.", [["storeName", "store-name"], ["whatsapp", "whatsapp"]], "brand-status"));
+  $("save-slide").addEventListener("click", () => save("تم حفظ نص الشريحة محلياً.", [["heroBadge", "slide-badge"], ["heroTitle", "slide-title"], ["heroSubtitle", "slide-subtitle"]], "slide-status"));
+  $("reset-settings").addEventListener("click", () => { localStorage.removeItem(key); location.reload(); });
+  $("export-settings").addEventListener("click", () => { const blob = new Blob([JSON.stringify(JSON.parse(localStorage.getItem(key) || "{}"), null, 2)], { type: "application/json" }); const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = "alrawhaa-static-settings.json"; link.click(); URL.revokeObjectURL(link.href); });
+  const grid = $("image-grid");
+  (data.products || []).forEach(product => { const card = document.createElement("article"); card.className = "image-card"; const image = document.createElement("img"); image.src = product.image; image.alt = product.title; image.loading = "lazy"; const text = document.createElement("p"); text.textContent = product.title; card.append(image, text); grid.append(card); });
+})();

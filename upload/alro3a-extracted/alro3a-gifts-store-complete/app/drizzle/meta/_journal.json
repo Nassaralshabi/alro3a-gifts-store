@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1786633556912,
+      "tag": "0000_normal_fabian_cortez",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1786634943175,
+      "tag": "0001_watery_sally_floyd",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1786642574283,
+      "tag": "0002_serious_terror",
+      "breakpoints": true
+    }
+  ]
+}

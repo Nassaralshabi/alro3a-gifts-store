@@ -1,0 +1,37 @@
+import { startLogin } from "@/const";
+import { useLocale } from "@/contexts/LocaleContext";
+import { trpc } from "@/lib/trpc";
+import { Boxes, ClipboardList, Images, KeyRound, LayoutDashboard, LogOut, Menu, PackagePlus, PanelLeft, PhoneCall, Settings2 } from "lucide-react";
+import { FormEvent, useEffect, useState } from "react";
+import { useLocation } from "wouter";
+import { Avatar, AvatarFallback } from "./ui/avatar";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarInset, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "./ui/sidebar";
+import { DashboardLayoutSkeleton } from "./DashboardLayoutSkeleton";
+
+const adminItems = [{ path: "/admin", icon: LayoutDashboard, ar: "نظرة عامة", en: "Overview" }, { path: "/admin/products", icon: PackagePlus, ar: "المنتجات", en: "Products" }, { path: "/admin/categories", icon: Boxes, ar: "التصنيفات", en: "Categories" }, { path: "/admin/orders", icon: ClipboardList, ar: "الطلبات", en: "Orders" }, { path: "/admin/contact", icon: PhoneCall, ar: "بيانات التواصل", en: "Contact details" }, { path: "/admin/media", icon: Images, ar: "الصور والبانرات", en: "Images & banners" }, { path: "/admin/content", icon: Settings2, ar: "محتوى الموقع", en: "Site content" }, { path: "/admin/access", icon: KeyRound, ar: "بيانات الدخول", en: "Access settings" }];
+
+function LocalAdminLogin() {
+  const { isArabic } = useLocale();
+  const [username, setUsername] = useState(""); const [password, setPassword] = useState("");
+  const login = trpc.auth.localLogin.useMutation({ onSuccess: () => window.location.reload() });
+  function submit(event: FormEvent) { event.preventDefault(); login.mutate({ username, password }); }
+  return <div className="flex min-h-[100dvh] w-screen max-w-full items-center justify-center overflow-x-hidden bg-[#f8f6f0] px-5 py-8"><div className="w-[calc(100vw-2.5rem)] max-w-md rounded-3xl border border-[#dbe7e9] bg-white p-8 text-center shadow-sm"><div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#e5f3f4] text-[#16717d]"><PanelLeft className="h-6 w-6" /></div><h1 className="mt-5 font-display text-2xl text-[#17323b]">{isArabic ? "دخول لوحة التحكم" : "Admin sign in"}</h1><p className="mt-2 text-sm leading-7 text-[#617a80]">{isArabic ? "سجل الدخول بحساب المدير لإدارة الصور والمنتجات والطلبات." : "Sign in with an administrator account to manage images, products and requests."}</p><form onSubmit={submit} className="mt-6 space-y-3 text-start"><Input required autoComplete="username" value={username} onChange={event => setUsername(event.target.value)} placeholder={isArabic ? "اسم المستخدم" : "Username"} /><Input required type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} placeholder={isArabic ? "كلمة المرور" : "Password"} /><Button type="submit" disabled={login.isPending} className="h-11 w-full rounded-md bg-[#16717d] hover:bg-[#105d67]">{login.isPending ? (isArabic ? "جارٍ الدخول..." : "Signing in...") : (isArabic ? "دخول المدير" : "Admin sign in")}</Button>{login.error ? <p className="text-center text-xs font-bold text-[#a64949]">{isArabic ? "بيانات الدخول غير صحيحة." : "The credentials are incorrect."}</p> : null}</form><div className="my-6 border-t border-[#dbe7e9]" /><Button type="button" variant="outline" onClick={() => startLogin()} className="h-10 w-full rounded-md border-[#b8d8dc] text-xs">{isArabic ? "دخول المالك عبر الحساب المرتبط" : "Sign in with the connected owner account"}</Button></div></div>;
+}
+
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const { isArabic } = useLocale(); const [location, setLocation] = useLocation(); const utils = trpc.useUtils();
+  const adminSession = trpc.auth.adminMe.useQuery();
+  const isLocalAdmin = adminSession.data?.openId === "local-admin-console";
+  const localProfile = trpc.auth.localProfile.useQuery(undefined, { enabled: isLocalAdmin });
+  const adminLogout = trpc.auth.adminLogout.useMutation({ onSuccess: () => { void utils.auth.adminMe.invalidate(); window.location.reload(); } });
+  useEffect(() => {
+    if (isLocalAdmin && localProfile.data?.requiresCredentialUpdate && location !== "/admin/access") setLocation("/admin/access");
+  }, [isLocalAdmin, localProfile.data?.requiresCredentialUpdate, location, setLocation]);
+  if (adminSession.isLoading) return <DashboardLayoutSkeleton />;
+  const user = adminSession.data;
+  if (!user) return <LocalAdminLogin />;
+  if (isLocalAdmin && localProfile.data?.requiresCredentialUpdate && location !== "/admin/access") return <DashboardLayoutSkeleton />;
+  return <SidebarProvider><Sidebar side={isArabic ? "right" : "left"} collapsible="icon" className="border-0"><SidebarHeader className="h-20 border-b border-[#dbe7e9] px-3"><button onClick={() => setLocation("/admin")} className="flex w-full items-center gap-3 px-2 text-start"><img src="/manus-storage/alrawhaa-logo_cfae3a03.webp" alt="" className="h-10 w-10 rounded-full" /><div className="group-data-[collapsible=icon]:hidden"><span className="block font-display text-base">{isArabic ? "مطبعة الروعة" : "Al Rawaa"}</span><span className="block text-[10px] font-bold uppercase tracking-[.12em] text-[#1b7b86]">{isArabic ? "لوحة الإدارة" : "ADMIN PANEL"}</span></div></button></SidebarHeader><SidebarContent className="p-2"><SidebarMenu>{adminItems.map(item => <SidebarMenuItem key={item.path}><SidebarMenuButton isActive={location === item.path} onClick={() => setLocation(item.path)} tooltip={isArabic ? item.ar : item.en} className="h-11 rounded-xl"><item.icon className="h-4 w-4" /><span>{isArabic ? item.ar : item.en}</span></SidebarMenuButton></SidebarMenuItem>)}</SidebarMenu></SidebarContent><SidebarFooter className="border-t border-[#dbe7e9] p-3"><div className="flex items-center gap-3 px-2"><Avatar className="h-9 w-9"><AvatarFallback className="bg-[#e5f3f4] text-[#16717d]">{user.name?.slice(0, 1).toUpperCase() || "A"}</AvatarFallback></Avatar><div className="min-w-0 flex-1 group-data-[collapsible=icon]:hidden"><p className="truncate text-xs font-bold">{user.name || (isArabic ? "مدير" : "Admin")}</p><p className="truncate text-[10px] text-[#617a80]">{user.role}</p></div><button onClick={() => adminLogout.mutate()} className="grid h-8 w-8 place-items-center rounded-full text-[#9a6464] hover:bg-[#fff0f0]" aria-label={isArabic ? "تسجيل الخروج" : "Sign out"}><LogOut className="h-4 w-4" /></button></div></SidebarFooter></Sidebar><SidebarInset className="bg-[#f8f6f0]"><div className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-[#dbe7e9] bg-[#f8f6f0]/95 px-4 backdrop-blur"><SidebarTrigger className="rounded-xl" /><Menu className="h-4 w-4 text-[#1b7b86]" /><span className="text-sm font-bold text-[#617a80]">{isArabic ? "إدارة المتجر الداخلي" : "Internal store management"}</span></div><main className="p-4 sm:p-6">{children}</main></SidebarInset></SidebarProvider>;
+}

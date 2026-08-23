@@ -1,0 +1,124 @@
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/chocolate-favor-box-8x5-900.webp (size: 22670 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/chocolate-favor-box-8x5-900_7612afc0.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/coated-business-cards-900.webp (size: 79624 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/coated-business-cards-900_26dd87e5.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/cup-holder-box-10x10-900.webp (size: 15924 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/cup-holder-box-10x10-900_f2344568.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/cup-sweets-box-19x11-900.webp (size: 30984 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/cup-sweets-box-19x11-900_e625e253.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-celebration-stand-900.webp (size: 35238 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/custom-celebration-stand-900_588b6e64.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-cup-sleeve-900.webp (size: 32356 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/custom-cup-sleeve-900_c5002e81.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-gift-boxes-900.webp (size: 84614 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/custom-gift-boxes-900_263e73d0.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-occasion-cards-900.webp (size: 70718 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/custom-occasion-cards-900_35178e22.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-paper-cup-lid-900.webp (size: 44748 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/custom-paper-cup-lid-900_56011585.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-printing-service-900.webp (size: 63844 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/custom-printing-service-900_c0174e88.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-sticker-sheet-a5-900.webp (size: 105378 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/custom-sticker-sheet-a5-900_5963726b.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/favors-box-15x13-900.webp (size: 21192 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/favors-box-15x13-900_8be4e44d.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/folded-special-cut-card-6x16-900.webp (size: 45660 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/folded-special-cut-card-6x16-900_a3da7a1f.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-abaya-900.webp (size: 16734 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-abaya-900_aff1e144.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-19x26-900.webp (size: 16816 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-landscape-19x26-900_45d5c909.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-22x32-900.webp (size: 11696 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-landscape-22x32-900_14eebbaf.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-22x33-900.webp (size: 11588 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-landscape-22x33-900_8dbe2a0f.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-42x22-900.webp (size: 11860 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-landscape-42x22-900_f01ac242.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-30x20-900.webp (size: 10110 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-portrait-30x20-900_24b24aa0.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-40x28-900.webp (size: 17234 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-portrait-40x28-900_81486a00.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-small-900.webp (size: 8720 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-portrait-small-900_967506e7.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-top-flap-900.webp (size: 10038 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/paper-bag-top-flap-900_b57afe4a.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/personalised-gift-details-900.webp (size: 88270 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/personalised-gift-details-900_6a8bf210.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/round-logo-stickers-5cm-900.webp (size: 74316 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/round-logo-stickers-5cm-900_ad171864.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/sliding-gift-box-30x20-900.webp (size: 19738 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/sliding-gift-box-30x20-900_4e7e9b52.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/thank-you-cards-10x7-900.webp (size: 43588 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/thank-you-cards-10x7-900_171cb70e.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/triangle-gift-box-17x15-900.webp (size: 24172 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/triangle-gift-box-17x15-900_12580e8a.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-117-900.webp (size: 18192 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/weej-import-117-900_54453603.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-118-900.webp (size: 18192 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/weej-import-118-900_c099f945.webp
+Uploading file (webdev private): /home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-158-900.webp (size: 32918 bytes)
+File uploaded successfully!
+Storage Path: /manus-storage/weej-import-158-900_f65c31d8.webp
+
+========== Upload Summary ==========
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/chocolate-favor-box-8x5-900.webp -> /manus-storage/chocolate-favor-box-8x5-900_7612afc0.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/coated-business-cards-900.webp -> /manus-storage/coated-business-cards-900_26dd87e5.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/cup-holder-box-10x10-900.webp -> /manus-storage/cup-holder-box-10x10-900_f2344568.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/cup-sweets-box-19x11-900.webp -> /manus-storage/cup-sweets-box-19x11-900_e625e253.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-celebration-stand-900.webp -> /manus-storage/custom-celebration-stand-900_588b6e64.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-cup-sleeve-900.webp -> /manus-storage/custom-cup-sleeve-900_c5002e81.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-gift-boxes-900.webp -> /manus-storage/custom-gift-boxes-900_263e73d0.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-occasion-cards-900.webp -> /manus-storage/custom-occasion-cards-900_35178e22.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-paper-cup-lid-900.webp -> /manus-storage/custom-paper-cup-lid-900_56011585.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-printing-service-900.webp -> /manus-storage/custom-printing-service-900_c0174e88.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/custom-sticker-sheet-a5-900.webp -> /manus-storage/custom-sticker-sheet-a5-900_5963726b.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/favors-box-15x13-900.webp -> /manus-storage/favors-box-15x13-900_8be4e44d.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/folded-special-cut-card-6x16-900.webp -> /manus-storage/folded-special-cut-card-6x16-900_a3da7a1f.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-abaya-900.webp -> /manus-storage/paper-bag-abaya-900_aff1e144.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-19x26-900.webp -> /manus-storage/paper-bag-landscape-19x26-900_45d5c909.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-22x32-900.webp -> /manus-storage/paper-bag-landscape-22x32-900_14eebbaf.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-22x33-900.webp -> /manus-storage/paper-bag-landscape-22x33-900_8dbe2a0f.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-landscape-42x22-900.webp -> /manus-storage/paper-bag-landscape-42x22-900_f01ac242.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-30x20-900.webp -> /manus-storage/paper-bag-portrait-30x20-900_24b24aa0.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-40x28-900.webp -> /manus-storage/paper-bag-portrait-40x28-900_81486a00.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-portrait-small-900.webp -> /manus-storage/paper-bag-portrait-small-900_967506e7.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/paper-bag-top-flap-900.webp -> /manus-storage/paper-bag-top-flap-900_b57afe4a.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/personalised-gift-details-900.webp -> /manus-storage/personalised-gift-details-900_6a8bf210.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/round-logo-stickers-5cm-900.webp -> /manus-storage/round-logo-stickers-5cm-900_ad171864.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/sliding-gift-box-30x20-900.webp -> /manus-storage/sliding-gift-box-30x20-900_4e7e9b52.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/thank-you-cards-10x7-900.webp -> /manus-storage/thank-you-cards-10x7-900_171cb70e.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/triangle-gift-box-17x15-900.webp -> /manus-storage/triangle-gift-box-17x15-900_12580e8a.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-117-900.webp -> /manus-storage/weej-import-117-900_54453603.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-118-900.webp -> /manus-storage/weej-import-118-900_c099f945.webp
+[SUCCESS] /home/ubuntu/webdev-static-assets/alro3a-product-optimized/weej-import-158-900.webp -> /manus-storage/weej-import-158-900_f65c31d8.webp
+=====================================
+Total: 30, Success: 30, Failed: 0
