@@ -113,7 +113,8 @@
     "shopify:probe": "tsx scripts/shopify-probe.runner.ts",
     "start": "NODE_ENV=production node dist/index.js",
     "test": "vitest run",
-    "test:e2e": "node scripts/e2e-isolated.mjs"
+    "test:e2e": "node scripts/e2e-isolated.mjs",
+    "test:mobile-catalog": "node scripts/verify-mobile-catalog-full.mjs"
   },
   "type": "module",
   "version": "1.0.0"
