@@ -64,6 +64,7 @@ const liveSettings = {
   contact: { phone: "0500000000", whatsapp: "971500000000", addressAr: "عنوان اختبار حي", instagram: "alrawhaa.test" },
   hero: { badgeAr: "شارة اختبار حية", titleAr: "عنوان حي معزول", subtitleAr: "وصف حي معزول" },
 };
+const appearance = { headerBackground: "#FFFEFC", headerText: "#17323B", footerBackground: "#102F39", footerText: "#EDF8F8" };
 
 function resultFor(procedure, authenticatedAdmin = null, input = {}) {
   if (procedure === "store.catalog.categories") return categories;
@@ -75,6 +76,7 @@ function resultFor(procedure, authenticatedAdmin = null, input = {}) {
   }
   if (procedure === "store.catalog.suggestions") return { products: [productEntry], categories };
   if (procedure === "store.catalog.contact") return contact;
+  if (procedure === "store.catalog.appearance" || procedure === "store.admin.appearance") return appearance;
   if (procedure === "auth.adminMe") return authenticatedAdmin;
   if (procedure === "auth.me") return null;
   if (procedure === "store.admin.liveSettings") return liveSettings;
@@ -91,10 +93,10 @@ async function installIsolatedApi(page, writes, authenticatedAdmin = null) {
     const path = decodeURIComponent(url.pathname.replace("/api/trpc/", ""));
     const procedures = path.split(",");
     const inputs = JSON.parse(url.searchParams.get("input") || "{}");
-    const writeProcedure = procedures.find(procedure => procedure === "auth.localLogin" || procedure === "auth.adminLogout" || procedure.startsWith("store.orders.") || (procedure.startsWith("store.admin.") && procedure !== "store.admin.liveSettings"));
+    const writeProcedure = route.request().method() === "GET" ? undefined : procedures.find(procedure => procedure === "auth.localLogin" || procedure === "auth.adminLogout" || procedure.startsWith("store.orders.") || procedure.startsWith("store.admin."));
 
     if (writeProcedure) {
-      if (authenticatedAdmin && writeProcedure === "store.admin.saveLiveSettings") {
+      if (authenticatedAdmin && (writeProcedure === "store.admin.saveLiveSettings" || writeProcedure === "store.admin.saveAppearance")) {
         writes.push(`${writeProcedure}:isolated`);
         await route.fulfill({ contentType: "application/json", body: JSON.stringify([{ result: { data: { json: { success: true } } } }]) });
         return;
@@ -160,6 +162,24 @@ async function run() {
     await authenticatedPage.getByText("تم حفظ التغييرات الحية بنجاح.").waitFor();
     assert(writes.includes("store.admin.saveLiveSettings:isolated"), "لم يمر حفظ الإدارة الحية عبر اعتراض البيانات التجريبية المعزول.");
     assert(authenticatedErrors.length === 0, `ظهرت أخطاء في لوحة الإدارة الحية: ${authenticatedErrors.join(" | ")}`);
+
+    const appearancePage = await context.newPage();
+    const appearanceErrors = [];
+    const appearanceFailures = [];
+    appearancePage.on("console", message => { if (message.type() === "error") appearanceErrors.push(message.text()); });
+    appearancePage.on("requestfailed", request => appearanceFailures.push(`${request.method()} ${request.url()}`));
+    await installIsolatedApi(appearancePage, writes, isolatedAdmin);
+    await appearancePage.goto(`${baseUrl}/admin/appearance`, { waitUntil: "networkidle" });
+    await appearancePage.getByRole("heading", { name: "ألوان الرأس والتذييل" }).waitFor();
+    const colorInputs = appearancePage.locator('input[type="color"]');
+    assert(await colorInputs.count() === 4, "لم تظهر حقول التحكم اليدوي الأربعة بألوان الرأس والتذييل.");
+    await colorInputs.nth(0).evaluate(input => { input.value = "#102F39"; input.dispatchEvent(new Event("input", { bubbles: true })); input.dispatchEvent(new Event("change", { bubbles: true })); });
+    await appearancePage.getByRole("button", { name: "حفظ الألوان" }).click();
+    await appearancePage.getByText("تم حفظ ألوان الرأس والتذييل").waitFor();
+    assert(writes.includes("store.admin.saveAppearance:isolated"), "لم يمر حفظ ألوان الرأس والتذييل عبر الإجراء الإداري المعزول.");
+    assert(await appearancePage.getByText("لوحات ألوان مقترحة").count() === 0, "عاد إلى لوحة الإدارة عنصر لوحات الألوان غير المطلوب.");
+    assert(appearanceErrors.length === 0, `ظهرت أخطاء في صفحة ألوان المتجر: ${appearanceErrors.join(" | ")} | طلبات فاشلة: ${appearanceFailures.join(" | ")}`);
+    await appearancePage.close();
 
     const mobileContext = await browser.newContext({ viewport: { width: 375, height: 812 }, isMobile: true });
     const mobilePage = await mobileContext.newPage();

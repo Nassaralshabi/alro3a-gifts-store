@@ -7,13 +7,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useLocale } from "@/contexts/LocaleContext";
 import { trpc } from "@/lib/trpc";
-import { CheckCircle2, ClipboardList, FolderTree, LayoutDashboard, PackagePlus, Pencil, PhoneCall, Plus, Settings2, ShoppingBag } from "lucide-react";
+import { CheckCircle2, ClipboardList, FolderTree, LayoutDashboard, PackagePlus, Palette, Pencil, PhoneCall, Plus, Settings2, ShoppingBag } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 import { useLocation } from "wouter";
 
 type ProductDraft = { id?: number; categoryId: string; slug: string; titleAr: string; titleEn: string; descriptionAr: string; descriptionEn: string; price: string; imageUrl: string; isFeatured: boolean; isAvailable: boolean; sortOrder: string };
 type CategoryDraft = { id?: number; slug: string; titleAr: string; titleEn: string; descriptionAr: string; descriptionEn: string; icon: string; sortOrder: string; isActive: boolean };
+type AppearanceDraft = { headerBackground: string; headerText: string; footerBackground: string; footerText: string };
 const blankProduct: ProductDraft = { categoryId: "", slug: "", titleAr: "", titleEn: "", descriptionAr: "", descriptionEn: "", price: "", imageUrl: "/manus-storage/social-2_de273aa2.jpg", isFeatured: false, isAvailable: true, sortOrder: "0" };
 const blankCategory: CategoryDraft = { slug: "", titleAr: "", titleEn: "", descriptionAr: "", descriptionEn: "", icon: "Sparkles", sortOrder: "0", isActive: true };
 
@@ -23,7 +24,7 @@ export default function Admin() {
   const { isArabic } = useLocale();
   const [location] = useLocation();
   const section = location.split("/")[2] || "overview";
-  return <DashboardLayout>{section === "products" ? <ProductsPanel /> : section === "categories" ? <CategoriesPanel /> : section === "orders" ? <OrdersPanel /> : section === "contact" ? <ContactSettingsPanel /> : section === "media" ? <MediaPanel /> : section === "access" ? <AdminAccessPanel /> : section === "content" ? <ContentPanel /> : <OverviewPanel />}</DashboardLayout>;
+  return <DashboardLayout>{section === "products" ? <ProductsPanel /> : section === "categories" ? <CategoriesPanel /> : section === "orders" ? <OrdersPanel /> : section === "contact" ? <ContactSettingsPanel /> : section === "appearance" ? <AppearancePanel /> : section === "media" ? <MediaPanel /> : section === "access" ? <AdminAccessPanel /> : section === "content" ? <ContentPanel /> : <OverviewPanel />}</DashboardLayout>;
 }
 
 function OverviewPanel() {
@@ -54,6 +55,13 @@ function OrdersPanel() {
 function ContentPanel() {
   const { isArabic } = useLocale(); const utils = trpc.useUtils(); const { data: content = [] } = trpc.store.admin.content.useQuery(); const [key, setKey] = useState("home_note"); const [ar, setAr] = useState(""); const [en, setEn] = useState(""); const save = trpc.store.admin.saveContent.useMutation({ onSuccess: () => { toast.success(isArabic ? "تم حفظ المحتوى" : "Content saved"); setAr(""); setEn(""); void utils.store.admin.content.invalidate(); } });
   return <div className="mx-auto grid max-w-6xl gap-6 xl:grid-cols-[.8fr_1.2fr]"><section className="rounded-3xl border border-[#e9e3d6] bg-white p-6"><Settings2 className="h-5 w-5 text-[#7953a2]" /><h1 className="mt-3 font-display text-2xl">{isArabic ? "نصوص الموقع" : "Website copy"}</h1><form onSubmit={e => { e.preventDefault(); save.mutate({ contentKey: key, valueAr: ar || null, valueEn: en || null }); }} className="mt-5 space-y-3"><Input required value={key} onChange={e => setKey(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, "_"))} placeholder="content_key" /><Textarea value={ar} onChange={e => setAr(e.target.value)} placeholder="النص بالعربية" /><Textarea value={en} onChange={e => setEn(e.target.value)} placeholder="Text in English" /><Button disabled={save.isPending} className="h-11 w-full rounded-xl bg-[#7953a2] hover:bg-[#654287]">{isArabic ? "حفظ النص" : "Save copy"}</Button></form></section><section><p className="text-xs font-black uppercase tracking-[.2em] text-[#a27ab2]">{isArabic ? "المحتوى المحفوظ" : "SAVED CONTENT"}</p><div className="mt-5 space-y-3">{content.map(item => <article key={item.id} className="rounded-3xl border border-[#e9e3d6] bg-white p-5"><h2 className="font-mono text-sm font-bold text-[#7953a2]">{item.contentKey}</h2><div className="mt-3 grid gap-4 text-sm leading-7 text-[#5f5a55] sm:grid-cols-2"><p>{item.valueAr || "—"}</p><p dir="ltr">{item.valueEn || "—"}</p></div></article>)}</div></section></div>;
+}
+
+function AppearancePanel() {
+  const { isArabic } = useLocale(); const utils = trpc.useUtils(); const appearance = trpc.store.admin.appearance.useQuery(); const [draft, setDraft] = useState<AppearanceDraft | null>(null); const fallback: AppearanceDraft = { headerBackground: "#FFFEFC", headerText: "#17323B", footerBackground: "#102F39", footerText: "#EDF8F8" }; const values = draft ?? appearance.data ?? fallback;
+  const save = trpc.store.admin.saveAppearance.useMutation({ onSuccess: () => { toast.success(isArabic ? "تم حفظ ألوان الرأس والتذييل" : "Header and footer colors saved"); setDraft(null); void utils.store.admin.appearance.invalidate(); void utils.store.catalog.appearance.invalidate(); } });
+  const field = (key: keyof AppearanceDraft, label: string) => <label><span className="mb-2 block text-xs font-bold text-[#766f69]">{label}</span><div className="flex items-center gap-3"><Input type="color" value={values[key]} onChange={event => setDraft({ ...values, [key]: event.target.value.toUpperCase() })} className="h-11 w-16 cursor-pointer p-1" /><code className="text-sm font-bold text-[#5f5a55]">{values[key]}</code></div></label>;
+  return <div className="mx-auto max-w-3xl"><div className="flex items-center gap-3"><div className="grid h-11 w-11 place-items-center rounded-2xl bg-[#e5f3f4] text-[#16717d]"><Palette className="h-5 w-5" /></div><div><p className="text-xs font-black uppercase tracking-[.2em] text-[#1b7b86]">{isArabic ? "ألوان المتجر" : "STORE COLORS"}</p><h1 className="font-display text-3xl">{isArabic ? "ألوان الرأس والتذييل" : "Header and footer colors"}</h1></div></div><p className="mt-4 text-sm leading-7 text-[#766f69]">{isArabic ? "عدّل الألوان يدوياً ثم احفظها. يتحقق الخادم من وضوح النص قبل قبول الحفظ، ولا يغيّر هذا القسم تصميم المتجر أو محتواه." : "Edit colors manually and save. The server validates text contrast before saving; this section does not change the store layout or content."}</p><form onSubmit={event => { event.preventDefault(); save.mutate(values); }} className="mt-7 grid gap-5 rounded-3xl border border-[#e9e3d6] bg-white p-6 sm:grid-cols-2">{field("headerBackground", isArabic ? "خلفية الرأس" : "Header background")}{field("headerText", isArabic ? "نص الرأس" : "Header text")}{field("footerBackground", isArabic ? "خلفية التذييل" : "Footer background")}{field("footerText", isArabic ? "نص التذييل" : "Footer text")}<Button type="submit" disabled={save.isPending || appearance.isLoading} className="h-11 rounded-xl bg-[#16717d] hover:bg-[#105d67] sm:col-span-2">{isArabic ? "حفظ الألوان" : "Save colors"}</Button>{save.error ? <p className="sm:col-span-2 text-sm font-bold text-[#a64949]">{isArabic ? "تحقق من تباين اللونين ثم حاول مجدداً." : "Check color contrast and try again."}</p> : null}</form></div>;
 }
 
 function ContactSettingsPanel() {

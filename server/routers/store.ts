@@ -46,6 +46,25 @@ const liveSettingsInput = z.object({
     subtitleAr: z.string().trim().min(2).max(400),
   }),
 });
+const colorHexSchema = z.string().trim().regex(/^#[0-9A-Fa-f]{6}$/, "Use a six-digit hexadecimal color.").transform(value => value.toUpperCase());
+const colorLuminance = (value: string) => {
+  const channels = [1, 3, 5].map(position => Number.parseInt(value.slice(position, position + 2), 16) / 255).map(channel => channel <= 0.03928 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4);
+  return (channels[0] * 0.2126) + (channels[1] * 0.7152) + (channels[2] * 0.0722);
+};
+const colorContrast = (first: string, second: string) => {
+  const [lighter, darker] = [colorLuminance(first), colorLuminance(second)].sort((a, b) => b - a);
+  return (lighter + 0.05) / (darker + 0.05);
+};
+const appearanceInput = z.object({
+  headerBackground: colorHexSchema,
+  headerText: colorHexSchema,
+  footerBackground: colorHexSchema,
+  footerText: colorHexSchema,
+}).superRefine((appearance, context) => {
+  for (const [background, text, path] of [[appearance.headerBackground, appearance.headerText, ["headerText"]], [appearance.footerBackground, appearance.footerText, ["footerText"]]] as const) {
+    if (colorContrast(background, text) < 4.5) context.addIssue({ code: "custom", path: [...path], message: "Text color must have sufficient contrast with its background." });
+  }
+});
 const imageUploadInput = z.object({ dataUrl: z.string().min(32).max(6_000_000), fileName: z.string().trim().min(1).max(160).optional() });
 const archiveUploadInput = z.object({ dataUrl: z.string().min(64).max(80_000_000), fileName: z.string().trim().min(1).max(180).optional(), previewOnly: z.boolean().default(false) });
 const supportedArchiveImages = new Map([
@@ -102,6 +121,7 @@ export const storeRouter = router({
   catalog: router({
     categories: publicProcedure.query(() => db.listPublicCategories()),
     contact: publicProcedure.query(() => db.getPublicContactInfo()),
+    appearance: publicProcedure.query(() => db.getPublicAppearance()),
     homeContent: publicProcedure.query(() => db.getPublicHomeContent()),
     homeCatalog: publicProcedure.query(() => db.getHomeCatalog()),
     products: publicProcedure.input(z.object({ categorySlug: z.string().min(2).optional(), featuredOnly: z.boolean().optional(), limit: z.number().int().positive().max(100).optional() }).optional()).query(({ input }) => db.listPublicProducts(input?.categorySlug, input?.featuredOnly, input?.limit)),
@@ -144,6 +164,17 @@ export const storeRouter = router({
     updateOrderStatus: adminProcedure.input(z.object({ id: z.number().int().positive(), status: z.enum(["new", "contacted", "confirmed", "completed", "cancelled"]) })).mutation(({ input }) => db.updateOrderStatus(input.id, input.status)),
     content: adminProcedure.query(() => db.listContent()),
     saveContent: adminProcedure.input(z.object({ contentKey: z.string().trim().min(2).max(96), valueAr: z.string().max(5000).nullable().optional(), valueEn: z.string().max(5000).nullable().optional() })).mutation(({ input }) => db.saveContent(input)),
+    appearance: adminProcedure.query(() => db.getPublicAppearance()),
+    saveAppearance: adminProcedure.input(appearanceInput).mutation(async ({ input }) => {
+      const entries = [
+        ["appearance_header_background", input.headerBackground],
+        ["appearance_header_text", input.headerText],
+        ["appearance_footer_background", input.footerBackground],
+        ["appearance_footer_text", input.footerText],
+      ] as const;
+      await Promise.all(entries.map(([contentKey, valueAr]) => db.saveContent({ contentKey, valueAr, valueEn: null })));
+      return { success: true } as const;
+    }),
     liveSettings: adminProcedure.query(async () => {
       const content = await db.listContent();
       const values = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));

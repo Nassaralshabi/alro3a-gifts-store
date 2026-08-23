@@ -36,5 +36,9 @@ describe("storefront design refresh", () => {
     expect(smartSearch).toContain("SEARCH_DEBOUNCE_MS");
     expect(smartSearch).toContain("closeOnOutsidePointer");
     expect(smartSearch).toContain("suggestions.isError");
+    expect(shell).toContain("store.catalog.appearance.useQuery");
+    expect(shell).toContain('footerBackground || "#102F39"');
+    expect(shell).not.toContain("appearancePresets");
+    expect(shell).not.toContain("data-preview-header");
   });
 });

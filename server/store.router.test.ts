@@ -34,6 +34,7 @@ vi.mock("./db", () => ({
     heroSubtitleAr: null,
     heroSubtitleEn: null,
   })),
+  getPublicAppearance: vi.fn(async () => ({ headerBackground: "#FFFEFC", headerText: "#17323B", footerBackground: "#102F39", footerText: "#EDF8F8" })),
   getProductBySlug: vi.fn(async () => ({ product: { id: 1, slug: "graduation-photo-board", isAvailable: true } })),
   createOrder: vi.fn(async input => ({ id: 41, ...input, status: "new" })),
   getDashboardStats: vi.fn(async () => ({ products: 1, orders: 1, newOrders: 1, categories: 1 })),
@@ -219,5 +220,17 @@ describe("internal store router", () => {
     expect(db.saveContent).toHaveBeenCalledTimes(7);
     expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "home_hero_title_ar_1", valueAr: "عنوان مباشر", valueEn: null });
     expect(db.saveContent).not.toHaveBeenCalledWith(expect.objectContaining({ contentKey: "unapproved_key" }));
+  });
+
+  it("keeps the restored design colors by default and allows only high-contrast admin color changes", async () => {
+    const publicCaller = appRouter.createCaller(anonymousContext());
+    await expect(publicCaller.store.admin.appearance()).rejects.toMatchObject({ code: "FORBIDDEN" });
+    expect(await publicCaller.store.catalog.appearance()).toEqual({ headerBackground: "#FFFEFC", headerText: "#17323B", footerBackground: "#102F39", footerText: "#EDF8F8" });
+
+    const adminCaller = appRouter.createCaller(localAdminContext());
+    await adminCaller.store.admin.saveAppearance({ headerBackground: "#FFFEFC", headerText: "#17323B", footerBackground: "#102F39", footerText: "#EDF8F8" });
+    expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "appearance_header_background", valueAr: "#FFFEFC", valueEn: null });
+    expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "appearance_footer_text", valueAr: "#EDF8F8", valueEn: null });
+    await expect(adminCaller.store.admin.saveAppearance({ headerBackground: "#FFFFFF", headerText: "#FFFFFF", footerBackground: "#102F39", footerText: "#EDF8F8" })).rejects.toThrow();
   });
 });

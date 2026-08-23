@@ -1,7 +1,7 @@
 import { startLogin } from "@/const";
 import { useLocale } from "@/contexts/LocaleContext";
 import { trpc } from "@/lib/trpc";
-import { Boxes, ClipboardList, Images, KeyRound, LayoutDashboard, LogOut, Menu, PackagePlus, PanelLeft, PhoneCall, Settings2 } from "lucide-react";
+import { Boxes, ClipboardList, Images, KeyRound, LayoutDashboard, LogOut, Menu, PackagePlus, Palette, PanelLeft, PhoneCall, Settings2 } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { useLocation } from "wouter";
 import { Avatar, AvatarFallback } from "./ui/avatar";
@@ -10,7 +10,7 @@ import { Input } from "./ui/input";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarInset, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "./ui/sidebar";
 import { DashboardLayoutSkeleton } from "./DashboardLayoutSkeleton";
 
-const adminItems = [{ path: "/admin", icon: LayoutDashboard, ar: "نظرة عامة", en: "Overview" }, { path: "/admin/products", icon: PackagePlus, ar: "المنتجات", en: "Products" }, { path: "/admin/categories", icon: Boxes, ar: "التصنيفات", en: "Categories" }, { path: "/admin/orders", icon: ClipboardList, ar: "الطلبات", en: "Orders" }, { path: "/admin/contact", icon: PhoneCall, ar: "بيانات التواصل", en: "Contact details" }, { path: "/admin/media", icon: Images, ar: "الصور والبانرات", en: "Images & banners" }, { path: "/admin/content", icon: Settings2, ar: "محتوى الموقع", en: "Site content" }, { path: "/admin/access", icon: KeyRound, ar: "بيانات الدخول", en: "Access settings" }];
+const adminItems = [{ path: "/admin", icon: LayoutDashboard, ar: "نظرة عامة", en: "Overview" }, { path: "/admin/products", icon: PackagePlus, ar: "المنتجات", en: "Products" }, { path: "/admin/categories", icon: Boxes, ar: "التصنيفات", en: "Categories" }, { path: "/admin/orders", icon: ClipboardList, ar: "الطلبات", en: "Orders" }, { path: "/admin/contact", icon: PhoneCall, ar: "بيانات التواصل", en: "Contact details" }, { path: "/admin/appearance", icon: Palette, ar: "ألوان الرأس والتذييل", en: "Header & footer colors" }, { path: "/admin/media", icon: Images, ar: "الصور والبانرات", en: "Images & banners" }, { path: "/admin/content", icon: Settings2, ar: "محتوى الموقع", en: "Site content" }, { path: "/admin/access", icon: KeyRound, ar: "بيانات الدخول", en: "Access settings" }];
 
 function LocalAdminLogin() {
   const { isArabic } = useLocale();

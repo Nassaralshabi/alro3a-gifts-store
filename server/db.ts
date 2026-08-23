@@ -387,6 +387,17 @@ export async function getPublicContactInfo() {
   };
 }
 
+export async function getPublicAppearance() {
+  const content = await listContent();
+  const value = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
+  return {
+    headerBackground: value.appearance_header_background || "#FFFEFC",
+    headerText: value.appearance_header_text || "#17323B",
+    footerBackground: value.appearance_footer_background || "#102F39",
+    footerText: value.appearance_footer_text || "#EDF8F8",
+  };
+}
+
 export async function getPublicHomeContent() {
   const content = await listContent();
   const value = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
