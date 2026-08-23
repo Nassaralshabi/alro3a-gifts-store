@@ -192,4 +192,32 @@ describe("internal store router", () => {
       imageUrl: "/manus-storage/alrawaa-sliding-box-reference_286aefc0.png",
     }));
   });
+
+  it("rejects the focused live-settings contract without an administrator session", async () => {
+    const caller = appRouter.createCaller(anonymousContext());
+    await expect(caller.store.admin.liveSettings()).rejects.toMatchObject({ code: "FORBIDDEN" });
+    await expect(caller.store.admin.saveLiveSettings({
+      contact: { phone: "0521401021", whatsapp: "971521401021", addressAr: "عجمان، الروضة 3", instagram: "alro3a.gifts" },
+      hero: { badgeAr: "شارة اختبار", titleAr: "عنوان اختبار", subtitleAr: "وصف اختبار" },
+    })).rejects.toMatchObject({ code: "FORBIDDEN" });
+  });
+
+  it("returns and saves only the allowlisted live settings for a local administrator", async () => {
+    vi.mocked(db.listContent).mockResolvedValueOnce([
+      { contentKey: "contact_phone", valueAr: "0500000000", valueEn: null },
+      { contentKey: "home_hero_title_ar_1", valueAr: "عنوان محفوظ", valueEn: null },
+    ] as never);
+    const caller = appRouter.createCaller(localAdminContext());
+    const settings = await caller.store.admin.liveSettings();
+    expect(settings.contact.phone).toBe("0500000000");
+    expect(settings.hero.titleAr).toBe("عنوان محفوظ");
+
+    await caller.store.admin.saveLiveSettings({
+      contact: { phone: "0521401021", whatsapp: "971521401021", addressAr: "عجمان، الروضة 3", instagram: "alro3a.gifts" },
+      hero: { badgeAr: "تفاصيل الروعة", titleAr: "عنوان مباشر", subtitleAr: "وصف مباشر" },
+    });
+    expect(db.saveContent).toHaveBeenCalledTimes(7);
+    expect(db.saveContent).toHaveBeenCalledWith({ contentKey: "home_hero_title_ar_1", valueAr: "عنوان مباشر", valueEn: null });
+    expect(db.saveContent).not.toHaveBeenCalledWith(expect.objectContaining({ contentKey: "unapproved_key" }));
+  });
 });

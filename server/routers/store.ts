@@ -33,6 +33,19 @@ const productInput = z.object({
   isAvailable: z.boolean().default(true),
   sortOrder: z.number().int().min(0).max(9999).default(0),
 });
+const liveSettingsInput = z.object({
+  contact: z.object({
+    phone: z.string().trim().min(7).max(32).regex(/^[0-9+\s()-]+$/),
+    whatsapp: z.string().trim().min(7).max(32).regex(/^[0-9+\s()-]+$/),
+    addressAr: z.string().trim().min(2).max(240),
+    instagram: z.string().trim().min(2).max(96).regex(/^[A-Za-z0-9._-]+$/),
+  }),
+  hero: z.object({
+    badgeAr: z.string().trim().min(2).max(100),
+    titleAr: z.string().trim().min(2).max(180),
+    subtitleAr: z.string().trim().min(2).max(400),
+  }),
+});
 const imageUploadInput = z.object({ dataUrl: z.string().min(32).max(6_000_000), fileName: z.string().trim().min(1).max(160).optional() });
 const archiveUploadInput = z.object({ dataUrl: z.string().min(64).max(80_000_000), fileName: z.string().trim().min(1).max(180).optional(), previewOnly: z.boolean().default(false) });
 const supportedArchiveImages = new Map([
@@ -131,6 +144,36 @@ export const storeRouter = router({
     updateOrderStatus: adminProcedure.input(z.object({ id: z.number().int().positive(), status: z.enum(["new", "contacted", "confirmed", "completed", "cancelled"]) })).mutation(({ input }) => db.updateOrderStatus(input.id, input.status)),
     content: adminProcedure.query(() => db.listContent()),
     saveContent: adminProcedure.input(z.object({ contentKey: z.string().trim().min(2).max(96), valueAr: z.string().max(5000).nullable().optional(), valueEn: z.string().max(5000).nullable().optional() })).mutation(({ input }) => db.saveContent(input)),
+    liveSettings: adminProcedure.query(async () => {
+      const content = await db.listContent();
+      const values = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
+      return {
+        contact: {
+          phone: values.contact_phone || "0521401021",
+          whatsapp: values.contact_whatsapp || "971521401021",
+          addressAr: values.contact_address_ar || "عجمان، الروضة 3",
+          instagram: values.contact_instagram || "alro3a.gifts",
+        },
+        hero: {
+          badgeAr: values.home_hero_badge_ar_1 || "هديتك تحكي الكثير",
+          titleAr: values.home_hero_title_ar_1 || "هديتك تبدأ بتفصيلة لا تُنسى",
+          subtitleAr: values.home_hero_subtitle_ar_1 || "اختاري هدية مصممة لمناسبتك.",
+        },
+      };
+    }),
+    saveLiveSettings: adminProcedure.input(liveSettingsInput).mutation(async ({ input }) => {
+      const entries = [
+        ["contact_phone", input.contact.phone],
+        ["contact_whatsapp", input.contact.whatsapp],
+        ["contact_address_ar", input.contact.addressAr],
+        ["contact_instagram", input.contact.instagram],
+        ["home_hero_badge_ar_1", input.hero.badgeAr],
+        ["home_hero_title_ar_1", input.hero.titleAr],
+        ["home_hero_subtitle_ar_1", input.hero.subtitleAr],
+      ] as const;
+      await Promise.all(entries.map(([contentKey, valueAr]) => db.saveContent({ contentKey, valueAr, valueEn: null })));
+      return { success: true } as const;
+    }),
     uploadImage: adminProcedure.input(imageUploadInput).mutation(async ({ input, ctx }) => {
       const image = decodeImage(input.dataUrl);
       const baseName = (input.fileName || "image").replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 72) || "image";

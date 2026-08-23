@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>إدارة حية آمنة | مطبعة الروعة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800&family=Marhey:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root{--ink:#12343d;--teal:#16717d;--soft:#edf7f8;--gold:#f2bd66;--line:#d6e5e7;--danger:#a64949}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#f7f6f1;color:var(--ink);font-family:"Alexandria",Tahoma,Arial,sans-serif}.wrap{max-width:1080px;margin:auto;padding:32px 18px 64px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:52px;height:52px;border-radius:16px}.brand strong{display:block;font-family:"Marhey","Alexandria",sans-serif}.brand small{display:block;margin-top:3px;color:#5b7a80}.tag{margin:28px 0;padding:14px 16px;border:1px solid #efd596;border-radius:14px;background:#fff8df;font-size:.88rem;line-height:1.8}.shell{display:grid;gap:18px;grid-template-columns:280px 1fr}.panel{border:1px solid var(--line);border-radius:20px;background:#fff;padding:24px;box-shadow:0 12px 28px -28px #163c44}.panel h1,.panel h2{margin:0;font-family:"Marhey","Alexandria",sans-serif}.panel h1{font-size:1.65rem}.panel h2{font-size:1.12rem}.panel p{color:#58757b;font-size:.88rem;line-height:1.8}.field{display:grid;gap:7px;margin:14px 0;font-size:.84rem;font-weight:700}.field input,.field textarea{width:100%;border:1px solid #c7dde0;border-radius:11px;background:#fff;padding:11px;font:inherit}.field textarea{min-height:94px;resize:vertical}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;border:0;border-radius:11px;background:var(--teal);color:#fff;padding:10px 16px;font:inherit;font-weight:800;cursor:pointer}.button:disabled{cursor:wait;opacity:.65}.button.alt{border:1px solid #a7cdd1;background:#fff;color:#135d68}.status{min-height:1.5em;margin:12px 0 0;font-size:.84rem;font-weight:700}.status[data-tone="error"]{color:var(--danger)}.status[data-tone="success"]{color:#176b47}.hidden{display:none!important}.readonly{border-inline-start:3px solid var(--gold);padding-inline-start:12px}.grid{display:grid;gap:18px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}@media(max-width:760px){.wrap{padding:22px 14px 46px}.top,.shell{display:block}.top .button{margin-top:12px}.shell{margin-top:18px}.panel{padding:19px}.side{margin-bottom:18px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top"><div class="brand"><img src="/manus-storage/alrawhaa-logo_cfae3a03.webp" alt="شعار مطبعة الروعة"><div><strong>مطبعة الروعة</strong><small>لوحة HTML للإدارة الحية</small></div></div><a class="button alt" href="/admin">لوحة React الكاملة</a></header>
+      <p class="tag"><strong>إدارة حية محمية:</strong> تعمل هذه الصفحة فقط من نطاق المتجر مع جلسة مدير صالحة. لا تحفظ كلمة المرور أو التعديلات في LocalStorage، وتعرض حقولاً محددة فقط للتواصل والشريحة الأولى.</p>
+      <div class="shell">
+        <aside class="panel side"><h2>حالة الوصول</h2><p id="session-summary">يتم التحقق من جلسة المدير…</p><button id="logout-button" class="button alt hidden" type="button">تسجيل الخروج</button><p class="readonly">للمنتجات، الصور، الطلبات وإدارة الحساب استخدم لوحة React الكاملة، حيث تتوفر جميع الضوابط المحمية.</p></aside>
+        <section class="panel">
+          <div id="login-view"><h1>دخول المدير</h1><p>استخدم بيانات المدير المعتمدة. تُرسل كلمة المرور عبر اتصال الموقع فقط ولا تُخزّن في هذه الصفحة.</p><form id="login-form"><label class="field">اسم المستخدم<input id="login-username" autocomplete="username" required maxlength="64"></label><label class="field">كلمة المرور<input id="login-password" type="password" autocomplete="current-password" required maxlength="160"></label><button id="login-button" class="button" type="submit">دخول آمن</button><p id="login-status" class="status" aria-live="polite"></p></form></div>
+          <form id="settings-form" class="hidden"><h1>إعدادات المتجر الحية</h1><p>تُحفظ التغييرات مباشرة في قاعدة بيانات المتجر بعد تحقق صلاحية المدير.</p><div class="grid"><section><h2>التواصل</h2><label class="field">رقم الهاتف<input id="contact-phone" required inputmode="tel" maxlength="32"></label><label class="field">رقم واتساب الدولي<input id="contact-whatsapp" required inputmode="tel" maxlength="32"></label><label class="field">العنوان بالعربية<input id="contact-address" required maxlength="240"></label><label class="field">حساب Instagram بدون @<input id="contact-instagram" required maxlength="96" pattern="[A-Za-z0-9._\-]+"></label></section><section><h2>محتوى الشريحة الأولى</h2><label class="field">الشارة<textarea id="hero-badge" required maxlength="100"></textarea></label><label class="field">العنوان<textarea id="hero-title" required maxlength="180"></textarea></label><label class="field">الوصف<textarea id="hero-subtitle" required maxlength="400"></textarea></label></section></div><div class="actions"><button id="save-button" class="button" type="submit">حفظ التغييرات الحية</button><a class="button alt" href="/">فتح واجهة المتجر</a></div><p id="settings-status" class="status" aria-live="polite"></p></form>
+        </section>
+      </div>
+    </main>
+    <script src="/admin-live.js" defer></script>
+  </body>
+</html>

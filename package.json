@@ -112,7 +112,8 @@
     "format": "prettier --write .",
     "shopify:probe": "tsx scripts/shopify-probe.runner.ts",
     "start": "NODE_ENV=production node dist/index.js",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:e2e": "node scripts/e2e-isolated.mjs"
   },
   "type": "module",
   "version": "1.0.0"
