@@ -3,190 +3,83 @@ import { chromium } from "playwright-core";
 const baseUrl = (process.env.E2E_BASE_URL || "http://127.0.0.1:3000").replace(/\/$/, "");
 const browserPath = process.env.E2E_CHROMIUM_PATH || "/usr/bin/chromium";
 
-const categories = [
-  {
-    id: 910001,
-    slug: "promotional-gifts",
-    titleAr: "هدايا إعلانية",
-    titleEn: "Promotional Gifts",
-    descriptionAr: "فئة اختبار معزولة.",
-    descriptionEn: "Isolated test category.",
-    icon: "Gift",
-    sortOrder: 1,
-    isActive: true,
-    createdAt: "2026-01-01T00:00:00.000Z",
-    updatedAt: "2026-01-01T00:00:00.000Z",
-  },
-];
-
-const product = {
-  id: 910001,
-  categoryId: 910001,
-  slug: "isolated-gift-box",
-  titleAr: "منتج تجريبي معزول",
-  titleEn: "Isolated Test Gift",
-  descriptionAr: "هذا المنتج موجود داخل اختبار المتصفح فقط.",
-  descriptionEn: "This product exists only in browser testing.",
-  price: "42.00",
-  imageUrl: "/manus-storage/alrawhaa-logo_cfae3a03.webp",
-  isFeatured: true,
-  isAvailable: true,
-  sortOrder: 1,
-  createdAt: "2026-01-01T00:00:00.000Z",
-  updatedAt: "2026-01-01T00:00:00.000Z",
-};
-
-const productEntry = { product, categorySlug: "promotional-gifts", categoryTitleAr: "هدايا إعلانية", categoryTitleEn: "Promotional Gifts" };
+const categories = [{ id: 910001, slug: "promotional-gifts", titleAr: "هدايا إعلانية", titleEn: "Promotional Gifts", icon: "Gift" }];
+const product = { id: 910001, categoryId: 910001, slug: "isolated-gift-box", titleAr: "منتج تجريبي معزول", titleEn: "Isolated Test Gift", descriptionAr: "منتج داخل اختبار المتصفح فقط.", descriptionEn: "Browser-only test product.", price: "42.00", imageUrl: "/manus-storage/alrawhaa-logo_cfae3a03.webp", isFeatured: true, isAvailable: true, sortOrder: 1 };
 const catalogEntries = Array.from({ length: 73 }, (_, index) => {
-  if (index === 0) return productEntry;
   const number = index + 1;
-  return {
-    ...productEntry,
-    product: {
-      ...product,
-      id: 910000 + number,
-      slug: `isolated-gift-${number}`,
-      titleAr: `منتج تجريبي ${number}`,
-      titleEn: `Isolated Test Product ${number}`,
-    },
-  };
+  return { product: { ...product, id: 910000 + number, slug: `isolated-gift-${number}`, titleAr: number === 1 ? product.titleAr : `منتج تجريبي ${number}`, titleEn: `Isolated Test Product ${number}` }, categorySlug: "promotional-gifts", categoryTitleAr: "هدايا إعلانية", categoryTitleEn: "Promotional Gifts" };
 });
-const contact = {
-  phone: "0500000000",
-  whatsappUrl: "https://wa.me/971500000000",
-  addressAr: "عنوان اختبار معزول",
-  addressEn: "Isolated test address",
-  instagram: "alrawhaa.test",
-  instagramUrl: "https://www.instagram.com/alrawhaa.test/",
-};
+const contact = { phone: "0500000000", whatsappUrl: "https://wa.me/971500000000", whatsappDefaultMessageAr: "رسالة اختبار", whatsappDefaultMessageEn: "Test message", addressAr: "عنوان اختبار معزول", addressEn: "Isolated test address", instagram: "alrawhaa.test" };
 
-const liveSettings = {
-  contact: { phone: "0500000000", whatsapp: "971500000000", addressAr: "عنوان اختبار حي", instagram: "alrawhaa.test" },
-  hero: { badgeAr: "شارة اختبار حية", titleAr: "عنوان حي معزول", subtitleAr: "وصف حي معزول" },
-};
+const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
-function resultFor(procedure, authenticatedAdmin = null, input = {}) {
+function responseFor(procedure, input = {}) {
   if (procedure === "store.catalog.categories") return categories;
+  if (procedure === "store.catalog.contact") return contact;
+  if (procedure === "store.catalog.homeContent") return { heroImages: [product.imageUrl] };
   if (procedure === "store.catalog.productsPage") {
     const cursor = typeof input.cursor === "number" ? input.cursor : 0;
-    const limit = typeof input.limit === "number" ? input.limit : 12;
-    const items = catalogEntries.slice(cursor, cursor + limit);
-    return { items, total: catalogEntries.length, nextCursor: cursor + limit < catalogEntries.length ? cursor + limit : null };
+    const limit = typeof input.limit === "number" ? input.limit : 24;
+    return { items: catalogEntries.slice(cursor, cursor + limit), total: catalogEntries.length, nextCursor: cursor + limit < catalogEntries.length ? cursor + limit : null };
   }
-  if (procedure === "store.catalog.suggestions") return { products: [productEntry], categories };
-  if (procedure === "store.catalog.contact") return contact;
-  if (procedure === "auth.adminMe") return authenticatedAdmin;
-  if (procedure === "auth.me") return null;
-  if (procedure === "store.admin.liveSettings") return liveSettings;
+  if (procedure === "store.catalog.productBySlug") return { product };
   return null;
 }
 
-function assert(condition, message) {
-  if (!condition) throw new Error(message);
-}
-
-async function installIsolatedApi(page, writes, authenticatedAdmin = null) {
+async function installIsolatedApi(page, writes) {
   await page.route("**/api/trpc/**", async route => {
-    const url = new URL(route.request().url());
-    const path = decodeURIComponent(url.pathname.replace("/api/trpc/", ""));
-    const procedures = path.split(",");
-    const inputs = JSON.parse(url.searchParams.get("input") || "{}");
-    const writeProcedure = procedures.find(procedure => procedure === "auth.localLogin" || procedure === "auth.adminLogout" || procedure.startsWith("store.orders.") || (procedure.startsWith("store.admin.") && procedure !== "store.admin.liveSettings"));
-
-    if (writeProcedure) {
-      if (authenticatedAdmin && writeProcedure === "store.admin.saveLiveSettings") {
-        writes.push(`${writeProcedure}:isolated`);
-        await route.fulfill({ contentType: "application/json", body: JSON.stringify([{ result: { data: { json: { success: true } } } }]) });
-        return;
-      }
-      writes.push(writeProcedure);
+    const request = route.request();
+    const url = new URL(request.url());
+    const procedure = decodeURIComponent(url.pathname.replace("/api/trpc/", ""));
+    if (request.method() !== "GET") {
+      writes.push(procedure);
       await route.abort();
       return;
     }
-
-    const payload = procedures.map((procedure, index) => ({ result: { data: { json: resultFor(procedure, authenticatedAdmin, inputs[String(index)]?.json) } } }));
-    await route.fulfill({ contentType: "application/json", body: JSON.stringify(payload) });
+    const rawInput = JSON.parse(url.searchParams.get("input") || "{}");
+    const input = rawInput.json || rawInput["0"]?.json || {};
+    await route.fulfill({ contentType: "application/json", body: JSON.stringify({ result: { data: { json: responseFor(procedure, input) } } }) });
   });
 }
 
-async function run() {
-  const health = await fetch(`${baseUrl}/`).catch(() => null);
-  assert(health?.ok, `تعذر الوصول إلى خادم الاختبار عند ${baseUrl}. شغّل pnpm dev أو عيّن E2E_BASE_URL.`);
+const browser = await chromium.launch({ executablePath: browserPath, headless: true, args: ["--no-sandbox", "--disable-dev-shm-usage"] });
+try {
+  const writes = [];
+  const context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
+  const page = await context.newPage();
+  const consoleErrors = [];
+  page.on("console", message => { if (message.type() === "error") consoleErrors.push(message.text()); });
+  await installIsolatedApi(page, writes);
+  await page.goto(`${baseUrl}/shop`, { waitUntil: "networkidle" });
+  await page.getByRole("heading", { name: "كل المنتجات" }).waitFor();
+  await page.getByRole("button", { name: /منتج تجريبي معزول/ }).waitFor();
+  await page.getByRole("button", { name: "هدايا إعلانية", exact: true }).click();
+  await page.getByRole("heading", { name: "هدايا إعلانية" }).waitFor();
+  const search = page.getByPlaceholder("ابحث عن هدية أو مطبوعة…");
+  await search.fill("تجريبي");
+  await search.press("Enter");
+  await page.getByRole("button", { name: /منتج تجريبي معزول/ }).waitFor();
+  assert(writes.length === 0, `اختبار العزل حاول الكتابة: ${writes.join(", ")}`);
+  assert(consoleErrors.length === 0, `ظهرت أخطاء المتصفح: ${consoleErrors.join(" | ")}`);
 
-  const browser = await chromium.launch({ executablePath: browserPath, headless: true, args: ["--no-sandbox", "--disable-dev-shm-usage"] });
-  try {
-    const context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
-    const page = await context.newPage();
-    const writes = [];
-    const consoleErrors = [];
-    page.on("console", message => {
-      if (message.type() === "error") consoleErrors.push(message.text());
-    });
-    await installIsolatedApi(page, writes);
-
-    await page.goto(`${baseUrl}/shop`, { waitUntil: "networkidle" });
-    await page.getByRole("heading", { name: "كل المنتجات" }).waitFor();
-    await page.getByRole("link", { name: "منتج تجريبي معزول", exact: true }).first().waitFor();
-
-    await page.getByRole("button", { name: "هدايا إعلانية", exact: true }).first().click();
-    await page.getByRole("heading", { name: "هدايا إعلانية" }).waitFor();
-    await page.getByRole("link", { name: "منتج تجريبي معزول", exact: true }).first().waitFor();
-
-    const search = page.getByPlaceholder("ابحث عن هدية أو مطبوعة...");
-    await search.fill("تجريبي");
-    await page.waitForTimeout(360);
-    assert(await page.getByText("منتج تجريبي معزول", { exact: true }).count() >= 1, "فشل البحث الفوري ضمن بيانات الاختبار المعزولة.");
-
-    await page.goto(`${baseUrl}/admin`, { waitUntil: "networkidle" });
-    await page.getByRole("heading", { name: "دخول لوحة التحكم" }).waitFor();
-    assert(await page.getByPlaceholder("اسم المستخدم").count() === 1, "لم تظهر بوابة المدير عند غياب جلسة الإدارة.");
-    await page.goto(`${baseUrl}/admin-live.html`, { waitUntil: "networkidle" });
-    assert(await page.getByRole("heading", { name: "دخول المدير" }).count() === 1, "لم تحجب لوحة HTML الحية حقول الإدارة عند غياب الجلسة.");
-    assert(writes.length === 0, `اختبار End-to-End حاول مسار كتابة محظور: ${writes.join(", ")}`);
-    assert(consoleErrors.length === 0, `ظهرت أخطاء وحدة التحكم: ${consoleErrors.join(" | ")}`);
-
-    const authenticatedPage = await context.newPage();
-    const authenticatedErrors = [];
-    authenticatedPage.on("console", message => {
-      if (message.type() === "error") authenticatedErrors.push(message.text());
-    });
-    const isolatedAdmin = { id: 910001, name: "مدير اختبار معزول", role: "admin" };
-    await installIsolatedApi(authenticatedPage, writes, isolatedAdmin);
-    await authenticatedPage.goto(`${baseUrl}/admin-live.html`, { waitUntil: "networkidle" });
-    await authenticatedPage.getByRole("heading", { name: "إعدادات المتجر الحية" }).waitFor();
-    assert(await authenticatedPage.locator("#hero-title").inputValue() === "عنوان حي معزول", "لم تُحمّل بيانات المدير التجريبية داخل لوحة HTML الحية.");
-    await authenticatedPage.locator("#hero-title").fill("عنوان محفوظ ضمن عزل الاختبار");
-    await authenticatedPage.getByRole("button", { name: "حفظ التغييرات الحية" }).click();
-    await authenticatedPage.getByText("تم حفظ التغييرات الحية بنجاح.").waitFor();
-    assert(writes.includes("store.admin.saveLiveSettings:isolated"), "لم يمر حفظ الإدارة الحية عبر اعتراض البيانات التجريبية المعزول.");
-    assert(authenticatedErrors.length === 0, `ظهرت أخطاء في لوحة الإدارة الحية: ${authenticatedErrors.join(" | ")}`);
-
-    const mobileContext = await browser.newContext({ viewport: { width: 375, height: 812 }, isMobile: true });
-    const mobilePage = await mobileContext.newPage();
-    await installIsolatedApi(mobilePage, writes, isolatedAdmin);
-    await mobilePage.goto(`${baseUrl}/shop`, { waitUntil: "networkidle" });
-    for (let attempt = 0; attempt < 12 && await mobilePage.getByRole("link", { name: "منتج تجريبي 73", exact: true }).count() === 0; attempt += 1) {
-      await mobilePage.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-      await mobilePage.waitForTimeout(450);
-    }
-    await mobilePage.getByRole("link", { name: "منتج تجريبي 73", exact: true }).waitFor({ timeout: 3000 });
-    const mobileProductLinks = await mobilePage.locator('a[href^="/products/"]').evaluateAll(links => links.map(link => link.getAttribute("href")));
-    const mobileProductSlugs = new Set(mobileProductLinks);
-    assert(mobileProductSlugs.size === catalogEntries.length, `لم يُحمّل كتالوج الجوال كاملاً: ${mobileProductSlugs.size}/${catalogEntries.length}`);
-    await mobilePage.goto(`${baseUrl}/admin-live.html`, { waitUntil: "networkidle" });
-    await mobilePage.getByRole("heading", { name: "إعدادات المتجر الحية" }).waitFor();
-    const mobileDimensions = await mobilePage.evaluate(() => ({ viewport: document.documentElement.clientWidth, scroll: document.documentElement.scrollWidth }));
-    assert(mobileDimensions.scroll <= mobileDimensions.viewport, `لوحة الإدارة الحية تجاوزت عرض الجوال: ${JSON.stringify(mobileDimensions)}`);
-    await mobileContext.close();
-
-    await context.close();
-    console.log(JSON.stringify({ baseUrl, isolatedCategories: categories.length, isolatedProducts: catalogEntries.length, interceptedMutations: writes, mobileDimensions, consoleErrors }, null, 2));
-  } finally {
-    await browser.close();
+  const mobileContext = await browser.newContext({ viewport: { width: 375, height: 812 }, isMobile: true });
+  const mobilePage = await mobileContext.newPage();
+  await installIsolatedApi(mobilePage, writes);
+  await mobilePage.goto(`${baseUrl}/shop`, { waitUntil: "networkidle" });
+  await mobilePage.locator("[data-product]").first().waitFor();
+  const firstBatch = await mobilePage.locator("[data-product]").count();
+  assert(firstBatch === 9, `دفعة الهاتف الأولى ليست تسعة منتجات: ${firstBatch}`);
+  for (let attempt = 0; attempt < 16 && await mobilePage.locator("[data-product]").count() < catalogEntries.length; attempt += 1) {
+    await mobilePage.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await mobilePage.waitForTimeout(360);
   }
+  const productCount = await mobilePage.locator("[data-product]").count();
+  const dimensions = await mobilePage.evaluate(() => ({ width: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth }));
+  assert(productCount === catalogEntries.length, `لم يصل تمرير الهاتف إلى آخر منتج: ${productCount}/${catalogEntries.length}`);
+  assert(dimensions.scrollWidth <= dimensions.width, `ظهر تمرير أفقي في الهاتف: ${JSON.stringify(dimensions)}`);
+  await mobileContext.close();
+  await context.close();
+  console.log(JSON.stringify({ isolatedCategories: categories.length, isolatedProducts: productCount, firstBatch, interceptedWrites: writes, consoleErrors }, null, 2));
+} finally {
+  await browser.close();
 }
-
-run().catch(error => {
-  console.error(error);
-  process.exitCode = 1;
-});

@@ -1,11 +1,15 @@
 import { esc, trpc, whatsapp } from "./api.js";
 
 const app = document.querySelector("#app");
-const state = { categories: [], products: [], contact: null, home: null, cart: JSON.parse(localStorage.getItem("alrawaa-html-cart") || "[]"), language: localStorage.getItem("alrawaa-html-language") || "ar", category: "", query: "", priceOrder: "default", priceRange: "all", occasion: "all", currentProduct: null, nextCursor: null, totalProducts: 0 };
+const MOBILE_CATALOG_PAGE_SIZE = 9;
+const DESKTOP_CATALOG_PAGE_SIZE = 24;
+const state = { categories: [], products: [], contact: null, home: null, cart: JSON.parse(localStorage.getItem("alrawaa-html-cart") || "[]"), language: localStorage.getItem("alrawaa-html-language") || "ar", category: "", query: "", priceOrder: "default", priceRange: "all", occasion: "all", currentProduct: null, nextCursor: null, totalProducts: 0, catalogObserver: null, catalogLoading: false };
 const copy = (ar, en) => state.language === "ar" ? ar : en;
 const title = entry => copy(entry.titleAr, entry.titleEn);
 const price = value => value ? `${Number(value).toLocaleString(state.language === "ar" ? "ar-AE" : "en-AE")} AED` : copy("السعر حسب التفاصيل المطلوبة", "Price on request");
 const saveCart = () => localStorage.setItem("alrawaa-html-cart", JSON.stringify(state.cart));
+const isMobileCatalog = () => window.matchMedia("(max-width: 800px)").matches;
+const catalogPageSize = () => isMobileCatalog() ? MOBILE_CATALOG_PAGE_SIZE : DESKTOP_CATALOG_PAGE_SIZE;
 
 function defaultMessage() { return state.language === "ar" ? state.contact.whatsappDefaultMessageAr : state.contact.whatsappDefaultMessageEn; }
 function showToast(message) { const element = document.createElement("div"); element.className = "toast"; element.textContent = message; document.body.append(element); setTimeout(() => element.remove(), 3200); }
@@ -35,7 +39,7 @@ function renderContact() {
 }
 
 async function loadProducts(append = false) {
-  const input = { categorySlug: state.category || undefined, query: state.query || undefined, priceOrder: state.priceOrder, priceRange: state.priceRange, occasion: state.occasion, cursor: append ? state.nextCursor ?? undefined : 0, limit: 24 };
+  const input = { categorySlug: state.category || undefined, query: state.query || undefined, priceOrder: state.priceOrder, priceRange: state.priceRange, occasion: state.occasion, cursor: append ? state.nextCursor ?? undefined : 0, limit: catalogPageSize() };
   const response = await trpc("store.catalog.productsPage", input);
   state.products = append ? [...state.products, ...(response.items || [])] : (response.items || []);
   state.nextCursor = response.nextCursor ?? null;
@@ -43,11 +47,28 @@ async function loadProducts(append = false) {
 }
 
 async function renderShop(append = false) {
+  if (append && state.catalogLoading) return;
+  state.catalogLoading = true;
+  if (state.catalogObserver) state.catalogObserver.disconnect();
   await loadProducts(append);
+  state.catalogLoading = false;
   const categoryName = state.categories.find(category => category.slug === state.category);
   const resultsLabel = copy(`عرض ${state.products.length} من ${state.totalProducts} منتج`, `Showing ${state.products.length} of ${state.totalProducts} products`);
-  const more = state.nextCursor === null ? "" : `<div class="section"><button class="button secondary" data-load-more>${esc(copy("تحميل المزيد", "Load more"))}</button></div>`;
+  const more = state.nextCursor === null ? "" : `<div class="section catalog-sentinel" data-catalog-sentinel><button class="button secondary" data-load-more>${esc(copy("تحميل 9 منتجات أخرى", "Load 9 more products"))}</button><p class="price">${esc(copy("تابع التمرير لتحميل المزيد تلقائياً", "Keep scrolling to load more automatically"))}</p></div>`;
   renderShell(`<section class="section container"><div class="section-head"><div><span class="eyebrow">${esc(copy("الكتالوج", "CATALOG"))}</span><h1>${esc(categoryName ? title(categoryName) : copy("كل المنتجات", "All products"))}</h1><p>${esc(copy("ابحث، صفِّ النتائج، وأضف المنتجات إلى سلة الطلب.", "Search, filter and add products to your request cart."))}</p><p class="price" aria-live="polite">${esc(resultsLabel)}</p></div></div><div class="toolbar"><input class="input" id="search" value="${esc(state.query)}" placeholder="${esc(copy("ابحث عن هدية أو مطبوعة…", "Search gifts or printing…"))}"><select class="select" id="occasion" aria-label="${esc(copy("مناسبة الهدية", "Gift occasion"))}"><option value="all">${esc(copy("كل المناسبات", "All occasions"))}</option><option value="birthday" ${state.occasion === "birthday" ? "selected" : ""}>${esc(copy("أعياد الميلاد", "Birthdays"))}</option><option value="graduation" ${state.occasion === "graduation" ? "selected" : ""}>${esc(copy("حفلات التخرج", "Graduations"))}</option><option value="wedding" ${state.occasion === "wedding" ? "selected" : ""}>${esc(copy("حفلات الزفاف", "Weddings"))}</option><option value="newborn" ${state.occasion === "newborn" ? "selected" : ""}>${esc(copy("استقبال مولود", "Newborn gifts"))}</option></select><select class="select" id="price-range" aria-label="${esc(copy("نطاق السعر", "Price range"))}"><option value="all">${esc(copy("كل الأسعار", "All prices"))}</option><option value="under-75" ${state.priceRange === "under-75" ? "selected" : ""}>${esc(copy("حتى 75 د.إ", "Up to AED 75"))}</option><option value="75-150" ${state.priceRange === "75-150" ? "selected" : ""}>${esc(copy("من 75 إلى 150 د.إ", "AED 75–150"))}</option><option value="over-150" ${state.priceRange === "over-150" ? "selected" : ""}>${esc(copy("أكثر من 150 د.إ", "Over AED 150"))}</option><option value="on-request" ${state.priceRange === "on-request" ? "selected" : ""}>${esc(copy("السعر حسب الطلب", "Price on request"))}</option></select><select class="select" id="order"><option value="default">${esc(copy("الترتيب الافتراضي", "Default order"))}</option><option value="asc" ${state.priceOrder === "asc" ? "selected" : ""}>${esc(copy("السعر من الأقل", "Price: low first"))}</option><option value="desc" ${state.priceOrder === "desc" ? "selected" : ""}>${esc(copy("السعر من الأعلى", "Price: high first"))}</option></select></div><div class="grid">${state.products.map(card).join("") || `<div class="empty">${esc(copy("لا توجد منتجات مطابقة. جرّب كلمة بحث أو فئة مختلفة.", "No matching products. Try another search or category."))}</div>`}</div>${more}</section>`);
+  observeMobileCatalog();
+}
+
+function observeMobileCatalog() {
+  if (!isMobileCatalog() || state.nextCursor === null || state.catalogLoading || typeof IntersectionObserver === "undefined") return;
+  const sentinel = document.querySelector("[data-catalog-sentinel]");
+  if (!sentinel) return;
+  state.catalogObserver = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    state.catalogObserver?.disconnect();
+    void renderShop(true);
+  }, { rootMargin: "640px 0px" });
+  state.catalogObserver.observe(sentinel);
 }
 
 async function openProduct(slug) {

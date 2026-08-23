@@ -51,4 +51,19 @@ describe("واجهة HTML المستقلة", () => {
     expect(storeSource).toContain("data-confirm-order");
     expect(adminSource).toContain('name="occasionTags"');
   });
+
+  it("يستخدم سطحاً أبيض للواجهة ودفعات تسع منتجات فقط على الجوال مع استمرار التحميل التلقائي", () => {
+    const storeHtml = projectFile("client", "vanilla", "index.html");
+    const adminHtml = projectFile("client", "vanilla", "admin.html");
+    const storeSource = projectFile("client", "vanilla", "store.js");
+    const lightTheme = projectFile("client", "vanilla", "light-theme.css");
+
+    expect(storeHtml).toContain('href="/vanilla/light-theme.css"');
+    expect(adminHtml).toContain('href="/vanilla/light-theme.css"');
+    expect(lightTheme).toContain(".topbar,.footer,.admin-sidebar{background:#fff");
+    expect(lightTheme).toContain(".button{background:#fff");
+    expect(storeSource).toContain("const MOBILE_CATALOG_PAGE_SIZE = 9");
+    expect(storeSource).toContain("data-catalog-sentinel");
+    expect(storeSource).toContain("function observeMobileCatalog()");
+  });
 });

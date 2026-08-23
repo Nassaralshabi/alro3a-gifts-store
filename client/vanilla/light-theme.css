@@ -1,0 +1,17 @@
+:root{--teal:#fff;--deep:#fff;--mist:#fff;--paper:#fff;--line:#dbe8ea;--teal-text:#17323b}
+.topbar,.footer,.admin-sidebar{background:#fff;color:var(--ink);border-color:var(--line)}
+.topbar{border-bottom:1px solid var(--line)}
+.footer{border-top:1px solid var(--line)}
+.topbar a,.footer a{color:var(--ink)}
+.brand small,.eyebrow,.feature strong,.price,.stat b{color:var(--ink)}
+.button{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 18px -16px #17323b}
+.button.secondary{background:#fff;color:var(--ink);border-color:var(--line)}
+.icon-button{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.catalog-nav button.active{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.hero{background:linear-gradient(115deg,#fff,#fffefc)}
+.features,.feature,.admin-panel,.stat{background:#fff}
+.admin-sidebar .brand{color:var(--ink)}
+.admin-sidebar button{color:var(--ink);border:1px solid transparent}
+.admin-sidebar button.active,.admin-sidebar button:hover{background:#fff;color:var(--ink);border-color:var(--line)}
+.admin-login{background:#fff}
+.toast{background:var(--ink);color:#fff}
