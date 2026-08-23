@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ===== Admin user (server-side authentication) =====
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String // bcrypt hash
+  name      String   @default("Administrator")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ===== Product categories (bilingual) =====
+model Category {
+  id        Int       @id @default(autoincrement())
+  slug      String    @unique
+  titleAr   String
+  titleEn   String
+  descAr    String    @default("")
+  descEn    String    @default("")
+  icon      String    @default("Package")
+  image     String?
+  sortOrder Int       @default(0)
+  isActive  Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  products  Product[]
+}
+
+// ===== Products (bilingual) =====
+model Product {
+  id          Int         @id @default(autoincrement())
+  categoryId  Int
+  category    Category    @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  slug        String      @unique
+  titleAr     String
+  titleEn     String
+  descAr      String      @default("")
+  descEn      String      @default("")
+  price       Float?
+  image       String?
+  isFeatured  Boolean     @default(false)
+  isAvailable Boolean     @default(true)
+  sortOrder   Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  orderItems  OrderItem[]
+}
+
+// ===== Orders (real persistent orders) =====
+model Order {
+  id        Int         @id @default(autoincrement())
+  ref       String      @unique
+  name      String
+  phone     String
+  notes     String      @default("")
+  total     Float?
+  status    String      @default("new") // new | confirmed | done
+  lang      String      @default("ar")
+  items     OrderItem[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        Int      @id @default(autoincrement())
+  orderId   Int
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId Int?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  title     String // snapshot of title at order time
+  image     String?
+  price     Float?
+  qty       Int      @default(1)
+}
+
+// ===== Site settings (key-value bilingual) =====
+model Setting {
+  key      String   @id
+  value    String   @default("") // text or JSON
+  valueAr  String?
+  valueEn  String?
+  updatedAt DateTime @updatedAt
+}

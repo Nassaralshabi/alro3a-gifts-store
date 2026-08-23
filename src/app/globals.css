@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  --color-ink: #33393e;
+  --color-ink-2: #45505a;
+  --color-ink-3: #5c6870;
+  --color-gold: #f2bd66;
+  --color-gold-2: #ffd282;
+  --color-gold-ink: #9a6b13;
+  --color-mist: #f2f4f5;
+  --color-mist-2: #f7f8f9;
+  --color-mist-3: #e7eaec;
+  --color-line: #e4e7e9;
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+body {
+  font-family: var(--font-body), Tahoma, Arial, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), var(--font-body), Tahoma, sans-serif;
+}
+
+/* ---------- shared decorative utilities ---------- */
+.btn-solid {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 min-h-11 font-extrabold text-sm text-white transition-all duration-200 shadow-[0_10px_22px_-10px_rgba(69,80,90,.85)] bg-gradient-to-br from-[#45505a] to-[#5d6a74] hover:brightness-110 hover:-translate-y-0.5 hover:shadow-[0_16px_30px_-12px_rgba(69,80,90,.9)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0;
+}
+.btn-gold {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 min-h-11 font-extrabold text-sm text-[#17323b] transition-all duration-200 shadow-[0_10px_22px_-10px_rgba(242,189,102,.9)] bg-gradient-to-br from-[#f2bd66] to-[#ffd282] hover:brightness-105 hover:-translate-y-0.5 disabled:opacity-50;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 min-h-11 font-extrabold text-sm text-[#33393e] border border-[#d2d8db] bg-white transition-all duration-200 hover:bg-[#f4f6f7] disabled:opacity-50;
+}
+.chip {
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-extrabold;
+}
+.chip-new { @apply bg-[#fdf3df] text-[#9a6b13]; }
+.chip-done { @apply bg-[#dfe3e6] text-[#33393e]; }
+.chip-conf { @apply bg-[#e6e9eb] text-[#45505a]; }
+.chip-off { @apply bg-[#fbe9e9] text-[#a33333]; }
+
+/* product card shine */
+.pc-shine { position: relative; overflow: hidden; }
+.pc-shine::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 55%; height: 100%;
+  background: linear-gradient(100deg, transparent 35%, rgba(255,255,255,.55) 50%, transparent 65%);
+  transform: translateX(-170%) skewX(-18deg);
+  z-index: 3; pointer-events: none;
+}
+.pc-shine:hover::before { animation: shine .9s ease; }
+@keyframes shine { to { transform: translateX(320%) skewX(-18deg); } }
+
+/* scroll reveal */
+.rv { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .pc-shine::before { display: none; }
+}
+
+/* marquee */
+@keyframes marq-rtl { from { transform: translateX(0); } to { transform: translateX(50%); } }
+@keyframes marq-ltr { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+[dir="rtl"] .marquee-track { animation: marq-rtl 30s linear infinite; }
+[dir="ltr"] .marquee-track { animation: marq-ltr 30s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none !important; } }
+
+/* hero slide crossfade */
+.hero-slide { transition: opacity .55s ease, transform .55s ease; opacity: 0; transform: scale(1.02); }
+.hero-slide.on { opacity: 1; transform: scale(1); }
+@media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
+
+/* thin scrollbars for rails */
+.rail::-webkit-scrollbar { height: 6px; }
+.rail::-webkit-scrollbar-thumb { background: #d0d6da; border-radius: 99px; }
+
+/* wa fab pulse */
+@keyframes fabPulse { from { transform: scale(1); opacity: .7; } to { transform: scale(1.7); opacity: 0; } }
+.fab-pulse::after {
+  content: ""; position: absolute; inset: 0; border-radius: 999px;
+  border: 2px solid #8a959c; animation: fabPulse 2.2s ease-out infinite; pointer-events: none;
+}
+
+/* input styling shared for admin */
+.fld {
+  @apply w-full h-11 rounded-xl border border-[#dde2e4] bg-white px-3.5 text-sm outline-none transition-colors focus:border-[#45505a];
+}
+.fld-area { @apply w-full min-h-28 rounded-xl border border-[#dde2e4] bg-white px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-[#45505a] resize-y; }
