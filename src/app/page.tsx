@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AppProvider, useHashRoute } from "@/components/core";
+import { ErrorBoundary } from "@/components/error-boundary";
 import Storefront from "@/components/storefront";
 import AdminPanel from "@/components/adminpanel";
 
@@ -18,8 +19,10 @@ function Router() {
 
 export default function Home() {
   return (
-    <AppProvider>
-      <Router />
-    </AppProvider>
+    <ErrorBoundary>
+      <AppProvider>
+        <Router />
+      </AppProvider>
+    </ErrorBoundary>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Alexandria, Marhey } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "sonner";
 
 const alexandria = Alexandria({
   subsets: ["arabic", "latin"],
@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={`${alexandria.variable} ${marhey.variable} font-body antialiased bg-white text-[#33393e]`}>
         {children}
-        <Toaster />
+        <Toaster position="bottom-center" richColors closeButton dir={typeof document !== "undefined" ? (document.documentElement.dir as "rtl" | "ltr") : "rtl"} toastOptions={{ style: { fontFamily: "var(--font-body), Tahoma, sans-serif", fontSize: "13px" } }} />
       </body>
     </html>
   );

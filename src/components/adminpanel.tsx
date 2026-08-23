@@ -7,6 +7,7 @@ import {
   Store as StoreIcon, AlertTriangle,
 } from "lucide-react";
 import { useApp, money, api, Category, Product, Order, HeroSlide, go } from "./core";
+import { toast } from "sonner";
 
 const FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23eef1f3'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.35em' fill='%23a6b0b6' font-family='sans-serif' font-size='16'%3EAl Rawaa%3C/text%3E%3C/svg%3E";
 
@@ -69,8 +70,8 @@ function ImageUploader({ value, onChange, label }: { value: string | null; onCha
     setBusy(true);
     const url = await api.uploadImage(file);
     setBusy(false);
-    if (url) { onChange(url); alert(T("uploadOk")); }
-    else alert(T("uploadErr"));
+    if (url) { onChange(url); toast.success(T("uploadOk")); }
+    else toast.error(T("uploadErr"));
   }, [onChange, T]);
 
   return (
@@ -201,14 +202,14 @@ function ProductsManager({ products, categories, refresh }: { products: Product[
     };
     const { ok, data } = await api.saveProduct(payload, form.id);
     setBusy(false);
-    if (ok) { alert(T("saved")); setForm(null); await refresh(); }
-    else if ((data as { error?: string }).error === "SLUG_EXISTS") alert(isAr ? "المعرّف مستخدم مسبقاً" : "Slug already exists");
-    else alert(isAr ? "تحقق من الحقول (المعرّف بحروف إنجليزية وأرقام فقط)" : "Check fields (slug: lowercase english/hyphens)");
+    if (ok) { toast.success(T("saved")); setForm(null); await refresh(); }
+    else if ((data as { error?: string }).error === "SLUG_EXISTS") toast.error(isAr ? "المعرّف مستخدم مسبقاً" : "Slug already exists");
+    else toast.error(isAr ? "تحقق من الحقول (المعرّف بحروف إنجليزية وأرقام فقط)" : "Check fields (slug: lowercase english/hyphens)");
   }
 
   async function del(p: Product) {
     if (!confirm(T("confirmDel"))) return;
-    if (await api.deleteProduct(p.id)) { alert(T("deleted")); await refresh(); }
+    if (await api.deleteProduct(p.id)) { toast.success(T("deleted")); await refresh(); }
   }
 
   return (
@@ -358,9 +359,9 @@ function CategoriesManager({ categories, refresh }: { categories: Category[]; re
     };
     const { ok, data } = await api.saveCategory(payload, form.id);
     setBusy(false);
-    if (ok) { alert(T("saved")); setForm(null); await refresh(); }
-    else if ((data as { error?: string }).error === "SLUG_EXISTS") alert(isAr ? "المعرّف مستخدم مسبقاً" : "Slug already exists");
-    else alert(isAr ? "تحقق من الحقول" : "Check fields");
+    if (ok) { toast.success(T("saved")); setForm(null); await refresh(); }
+    else if ((data as { error?: string }).error === "SLUG_EXISTS") toast.error(isAr ? "المعرّف مستخدم مسبقاً" : "Slug already exists");
+    else toast.error(isAr ? "تحقق من الحقول" : "Check fields");
   }
 
   async function del(c: Category) {
@@ -368,9 +369,9 @@ function CategoriesManager({ categories, refresh }: { categories: Category[]; re
     if (n > 0 && !confirm(T("confirmDelProducts"))) return;
     if (n === 0 && !confirm(T("confirmDel"))) return;
     const res = await api.deleteCategory(c.id, n > 0);
-    if (res === "ok") { alert(T("deleted")); await refresh(); }
-    else if (res === "not-empty") alert(T("confirmDelProducts"));
-    else alert(isAr ? "فشل الحذف" : "Delete failed");
+    if (res === "ok") { toast.success(T("deleted")); await refresh(); }
+    else if (res === "not-empty") toast.error(T("confirmDelProducts"));
+    else toast.error(isAr ? "فشل الحذف" : "Delete failed");
   }
 
   return (
@@ -467,7 +468,7 @@ function OrdersManager({ orders, refresh }: { orders: Order[]; refresh: () => Pr
   }
   async function del(o: Order) {
     if (!confirm(T("confirmDel"))) return;
-    if (await api.deleteOrder(o.id)) { alert(T("deleted")); await refresh(); }
+    if (await api.deleteOrder(o.id)) { toast.success(T("deleted")); await refresh(); }
   }
 
   return (
@@ -596,8 +597,8 @@ function SettingsManager({ refreshCatalog }: { refreshCatalog: () => Promise<voi
       "hero.slides": { value: JSON.stringify(form.slides.filter((s) => s.image)) },
     });
     setBusy(false);
-    if (ok) { alert(T("saved")); await refreshCatalog(); }
-    else alert(isAr ? "فشل الحفظ" : "Save failed");
+    if (ok) { toast.success(T("saved")); await refreshCatalog(); }
+    else toast.error(isAr ? "فشل الحفظ" : "Save failed");
   }
 
   if (loading) return <div className="grid place-items-center py-20"><Loader2 className="w-7 h-7 animate-spin text-[#45505a]" /></div>;

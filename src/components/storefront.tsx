@@ -7,6 +7,7 @@ import {
   Plus, Minus, Trash2, ArrowUpLeft, ArrowUpRight, ArrowUp, Info, Send, User,
 } from "lucide-react";
 import { useApp, money, go, Category, Product } from "./core";
+import { toast } from "sonner";
 
 const FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23eef1f3'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.35em' fill='%23a6b0b6' font-family='sans-serif' font-size='16'%3EAl Rawaa%3C/text%3E%3C/svg%3E";
 
@@ -552,9 +553,9 @@ function CartDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
       window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
       cartClear(); setCheckout(false); onClose();
       setName(""); setPhone(""); setNotes("");
-      alert(isAr ? `تم حفظ طلبك بنجاح — رقم الطلب: ${res.order.ref}` : `Request saved — ref: ${res.order.ref}`);
+      toast.success(isAr ? `تم حفظ طلبك بنجاح — رقم الطلب: ${res.order.ref}` : `Request saved — ref: ${res.order.ref}`, { duration: 6000 });
     } catch {
-      alert(T("submitErr"));
+      toast.error(T("submitErr"));
     } finally {
       setSending(false);
     }
