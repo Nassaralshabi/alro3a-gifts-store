@@ -45,6 +45,7 @@ vi.mock("./db", () => ({
   updateOrderStatus: vi.fn(),
   listContent: vi.fn(async () => []),
   saveContent: vi.fn(),
+  isLocalAdminUsingDefaultPassword: vi.fn(async () => false),
 }));
 
 vi.mock("./_core/notification", () => ({
@@ -191,6 +192,13 @@ describe("internal store router", () => {
       price: "89.50",
       imageUrl: "/manus-storage/alrawaa-sliding-box-reference_286aefc0.png",
     }));
+  });
+
+  it("blocks store administration until the temporary local password is changed", async () => {
+    vi.mocked(db.isLocalAdminUsingDefaultPassword).mockResolvedValueOnce(true);
+    const caller = appRouter.createCaller(localAdminContext());
+
+    await expect(caller.store.admin.dashboard()).rejects.toMatchObject({ code: "FORBIDDEN" });
   });
 
   it("rejects the focused live-settings contract without an administrator session", async () => {

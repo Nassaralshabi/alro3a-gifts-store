@@ -74,7 +74,15 @@ export async function verifyLocalAdmin(username: string, password: string) {
 
 export async function getLocalAdminProfile() {
   const credential = await ensureLocalAdmin();
-  return { username: credential.username };
+  return {
+    username: credential.username,
+    requiresCredentialUpdate: verifyLocalPassword(DEFAULT_LOCAL_ADMIN_PASSWORD, credential.passwordHash),
+  };
+}
+
+export async function isLocalAdminUsingDefaultPassword() {
+  const credential = await ensureLocalAdmin();
+  return verifyLocalPassword(DEFAULT_LOCAL_ADMIN_PASSWORD, credential.passwordHash);
 }
 
 export async function updateLocalAdminCredentials(input: { currentPassword: string; username: string; password: string }) {

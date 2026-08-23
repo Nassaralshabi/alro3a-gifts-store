@@ -98,6 +98,16 @@ export function decodeImage(dataUrl: string) {
   return { data, mimeType, extension };
 }
 
+const storeAdminProcedure = adminProcedure.use(async ({ ctx, next }) => {
+  if (ctx.adminUser?.openId === "local-admin-console" && await db.isLocalAdminUsingDefaultPassword()) {
+    throw new TRPCError({
+      code: "FORBIDDEN",
+      message: "Change the temporary administrator credentials before managing store data.",
+    });
+  }
+  return next();
+});
+
 export const storeRouter = router({
   catalog: router({
     categories: publicProcedure.query(() => db.listPublicCategories()),
@@ -135,16 +145,16 @@ export const storeRouter = router({
     }),
   }),
   admin: router({
-    dashboard: adminProcedure.query(() => db.getDashboardStats()),
-    categories: adminProcedure.query(() => db.listAllCategories()),
-    saveCategory: adminProcedure.input(categoryInput).mutation(({ input }) => db.saveCategory(input)),
-    products: adminProcedure.query(() => db.listAdminProducts()),
-    saveProduct: adminProcedure.input(productInput).mutation(({ input }) => db.saveProduct(input)),
-    orders: adminProcedure.query(() => db.listOrders()),
-    updateOrderStatus: adminProcedure.input(z.object({ id: z.number().int().positive(), status: z.enum(["new", "contacted", "confirmed", "completed", "cancelled"]) })).mutation(({ input }) => db.updateOrderStatus(input.id, input.status)),
-    content: adminProcedure.query(() => db.listContent()),
-    saveContent: adminProcedure.input(z.object({ contentKey: z.string().trim().min(2).max(96), valueAr: z.string().max(5000).nullable().optional(), valueEn: z.string().max(5000).nullable().optional() })).mutation(({ input }) => db.saveContent(input)),
-    liveSettings: adminProcedure.query(async () => {
+    dashboard: storeAdminProcedure.query(() => db.getDashboardStats()),
+    categories: storeAdminProcedure.query(() => db.listAllCategories()),
+    saveCategory: storeAdminProcedure.input(categoryInput).mutation(({ input }) => db.saveCategory(input)),
+    products: storeAdminProcedure.query(() => db.listAdminProducts()),
+    saveProduct: storeAdminProcedure.input(productInput).mutation(({ input }) => db.saveProduct(input)),
+    orders: storeAdminProcedure.query(() => db.listOrders()),
+    updateOrderStatus: storeAdminProcedure.input(z.object({ id: z.number().int().positive(), status: z.enum(["new", "contacted", "confirmed", "completed", "cancelled"]) })).mutation(({ input }) => db.updateOrderStatus(input.id, input.status)),
+    content: storeAdminProcedure.query(() => db.listContent()),
+    saveContent: storeAdminProcedure.input(z.object({ contentKey: z.string().trim().min(2).max(96), valueAr: z.string().max(5000).nullable().optional(), valueEn: z.string().max(5000).nullable().optional() })).mutation(({ input }) => db.saveContent(input)),
+    liveSettings: storeAdminProcedure.query(async () => {
       const content = await db.listContent();
       const values = Object.fromEntries(content.map(item => [item.contentKey, item.valueAr || item.valueEn || ""]));
       return {
@@ -161,7 +171,7 @@ export const storeRouter = router({
         },
       };
     }),
-    saveLiveSettings: adminProcedure.input(liveSettingsInput).mutation(async ({ input }) => {
+    saveLiveSettings: storeAdminProcedure.input(liveSettingsInput).mutation(async ({ input }) => {
       const entries = [
         ["contact_phone", input.contact.phone],
         ["contact_whatsapp", input.contact.whatsapp],
@@ -174,12 +184,12 @@ export const storeRouter = router({
       await Promise.all(entries.map(([contentKey, valueAr]) => db.saveContent({ contentKey, valueAr, valueEn: null })));
       return { success: true } as const;
     }),
-    uploadImage: adminProcedure.input(imageUploadInput).mutation(async ({ input, ctx }) => {
+    uploadImage: storeAdminProcedure.input(imageUploadInput).mutation(async ({ input, ctx }) => {
       const image = decodeImage(input.dataUrl);
       const baseName = (input.fileName || "image").replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 72) || "image";
       return storagePut(`store-media/${ctx.user.id}/${baseName}-${randomUUID()}.${image.extension}`, image.data, image.mimeType);
     }),
-    importImageArchive: adminProcedure.input(archiveUploadInput).mutation(async ({ input, ctx }) => {
+    importImageArchive: storeAdminProcedure.input(archiveUploadInput).mutation(async ({ input, ctx }) => {
       const archive = decodeArchive(input.dataUrl);
       const products = await db.listAdminProducts();
       const productBySlug = new Map(products.map(entry => [entry.product.slug, entry.product]));
