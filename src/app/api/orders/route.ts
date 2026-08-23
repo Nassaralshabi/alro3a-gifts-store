@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { db } from "@/lib/db";
+import { notifyNewOrder } from "@/lib/mailer";
 
 const bodySchema = z.object({
   name: z.string().trim().min(2).max(160),
@@ -61,6 +62,8 @@ export async function POST(req: Request) {
       },
       include: { items: true },
     });
+    // fire-and-forget email notification (never blocks the response)
+    notifyNewOrder({ ref: order.ref, name, phone, notes, total: order.total, items: rows });
     return NextResponse.json({ ok: true, order: { id: order.id, ref: order.ref, total: order.total } });
   } catch {
     return NextResponse.json({ error: "SERVER_ERROR" }, { status: 500 });

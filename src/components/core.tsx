@@ -212,6 +212,9 @@ const DICT = {
   uploadOk: { ar: "رُفعت الصورة", en: "Image uploaded" },
   uploadErr: { ar: "فشل رفع الصورة", en: "Upload failed" },
   setContact: { ar: "معلومات التواصل", en: "Contact info" },
+  setPhone: { ar: "رقم الهاتف", en: "Phone number" },
+  setWa: { ar: "رقم واتساب (دولي بدون +)", en: "WhatsApp number (intl, no +)" },
+  setIg: { ar: "حساب إنستغرام", en: "Instagram handle" },
   setHero: { ar: "بانرات الصفحة الرئيسية", en: "Homepage banners" },
   setSite: { ar: "هوية الموقع", en: "Site identity" },
   setPromo: { ar: "البانر الترويجي", en: "Promotional banner" },
@@ -241,7 +244,7 @@ export const tr = (key: DictKey, lang: Lang): string => {
   return String(entry);
 };
 export const trArr = (key: "benefits" | "steps", lang: Lang) =>
-  (DICT[key] as Array<{ t: { ar: string; en: string }; d: { ar: string; en: string } }>).map((x) => ({
+  (DICT[key] as unknown as Array<{ t: { ar: string; en: string }; d: { ar: string; en: string } }>).map((x) => ({
     t: x.t[lang],
     d: x.d[lang],
   }));
@@ -473,7 +476,7 @@ export const api = {
     });
     return res.ok;
   },
-  async createOrder(payload: { name: string; phone: string; notes: string; lang: Lang; items: CartItem[] }) {
+  async createOrder(payload: { name: string; phone: string; notes: string; lang: Lang; items: Array<{ productId: number; qty: number }> }) {
     const res = await fetch("/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
