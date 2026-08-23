@@ -77,6 +77,10 @@ describe("واجهة HTML المستقلة", () => {
     expect(adminSource).toContain("ألوان المتجر");
     expect(adminSource).toContain("appearance-form");
     expect(adminSource).toContain("store.admin.saveAppearance");
+    expect(adminSource).toContain("appearancePresets");
+    expect(adminSource).toContain("data-palette");
+    expect(adminSource).toContain("function syncAppearancePreview()");
+    expect(adminSource).toContain("data-preview-header");
     expect(storeRouterSource).toContain("saveAppearance: storeAdminProcedure");
     expect(storeRouterSource).toContain("Text color must have sufficient contrast");
   });

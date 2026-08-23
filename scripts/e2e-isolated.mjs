@@ -13,7 +13,10 @@ const contact = { phone: "0500000000", whatsappUrl: "https://wa.me/971500000000"
 
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
 
-function responseFor(procedure, input = {}) {
+function responseFor(procedure, input = {}, authenticatedAdmin = false) {
+  if (procedure === "auth.adminMe") return authenticatedAdmin ? { id: 910001, name: "مدير اختبار معزول", role: "admin" } : null;
+  if (procedure === "store.admin.dashboard") return { products: 73, orders: 0, newOrders: 0, categories: 1 };
+  if (procedure === "store.admin.appearance") return { headerBackground: "#FFFFFF", headerText: "#17323B", footerBackground: "#FFFFFF", footerText: "#17323B" };
   if (procedure === "store.catalog.categories") return categories;
   if (procedure === "store.catalog.contact") return contact;
   if (procedure === "store.catalog.appearance") return { headerBackground: "#FFFFFF", headerText: "#17323B", footerBackground: "#FFFFFF", footerText: "#17323B" };
@@ -27,19 +30,21 @@ function responseFor(procedure, input = {}) {
   return null;
 }
 
-async function installIsolatedApi(page, writes) {
+async function installIsolatedApi(page, writes, authenticatedAdmin = false) {
   await page.route("**/api/trpc/**", async route => {
     const request = route.request();
     const url = new URL(request.url());
     const procedure = decodeURIComponent(url.pathname.replace("/api/trpc/", ""));
     if (request.method() !== "GET") {
       writes.push(procedure);
-      await route.abort();
+      if (authenticatedAdmin && procedure === "store.admin.saveAppearance") {
+        await route.fulfill({ contentType: "application/json", body: JSON.stringify({ result: { data: { json: { success: true } } } }) });
+      } else await route.abort();
       return;
     }
     const rawInput = JSON.parse(url.searchParams.get("input") || "{}");
     const input = rawInput.json || rawInput["0"]?.json || {};
-    await route.fulfill({ contentType: "application/json", body: JSON.stringify({ result: { data: { json: responseFor(procedure, input) } } }) });
+    await route.fulfill({ contentType: "application/json", body: JSON.stringify({ result: { data: { json: responseFor(procedure, input, authenticatedAdmin) } } }) });
   });
 }
 
@@ -65,6 +70,24 @@ try {
   assert(writes.length === 0, `اختبار العزل حاول الكتابة: ${writes.join(", ")}`);
   assert(consoleErrors.length === 0, `ظهرت أخطاء المتصفح: ${consoleErrors.join(" | ")}`);
 
+  const adminContext = await browser.newContext({ viewport: { width: 1280, height: 720 } });
+  const adminPage = await adminContext.newPage();
+  const adminErrors = [];
+  adminPage.on("console", message => { if (message.type() === "error") adminErrors.push(message.text()); });
+  await installIsolatedApi(adminPage, writes, true);
+  await adminPage.goto(`${baseUrl}/admin`, { waitUntil: "networkidle" });
+  await adminPage.getByRole("button", { name: "ألوان المتجر", exact: true }).click();
+  await adminPage.getByRole("heading", { name: "ألوان الرأس والتذييل" }).waitFor();
+  await adminPage.getByRole("button", { name: "كحلي الروعة" }).click();
+  await adminPage.waitForTimeout(220);
+  const preview = await adminPage.evaluate(() => ({ header: getComputedStyle(document.querySelector("[data-preview-header]")).backgroundColor, footer: getComputedStyle(document.querySelector("[data-preview-footer]")).backgroundColor, selected: document.querySelector('[data-palette="alrawaa-navy"]')?.getAttribute("aria-pressed") }));
+  assert(preview.header === "rgb(23, 50, 59)" && preview.footer === "rgb(16, 47, 57)" && preview.selected === "true", `لم تتحدث المعاينة فور اختيار لوحة الألوان: ${JSON.stringify(preview)}`);
+  await adminPage.getByRole("button", { name: "حفظ ألوان المتجر" }).click();
+  await adminPage.getByText("تم حفظ ألوان الرأس والتذييل. حدّث المتجر لمشاهدة النتيجة.").waitFor();
+  assert(writes.includes("store.admin.saveAppearance"), "لم يمر حفظ الألوان عبر الإجراء الإداري المعزول.");
+  assert(adminErrors.length === 0, `ظهرت أخطاء في معاينة الألوان: ${adminErrors.join(" | ")}`);
+  await adminContext.close();
+
   const mobileContext = await browser.newContext({ viewport: { width: 375, height: 812 }, isMobile: true });
   const mobilePage = await mobileContext.newPage();
   await installIsolatedApi(mobilePage, writes);
@@ -82,7 +105,7 @@ try {
   assert(dimensions.scrollWidth <= dimensions.width, `ظهر تمرير أفقي في الهاتف: ${JSON.stringify(dimensions)}`);
   await mobileContext.close();
   await context.close();
-  console.log(JSON.stringify({ isolatedCategories: categories.length, isolatedProducts: productCount, firstBatch, surfaces, interceptedWrites: writes, consoleErrors }, null, 2));
+  console.log(JSON.stringify({ isolatedCategories: categories.length, isolatedProducts: productCount, firstBatch, surfaces, preview, interceptedWrites: writes, consoleErrors }, null, 2));
 } finally {
   await browser.close();
 }
