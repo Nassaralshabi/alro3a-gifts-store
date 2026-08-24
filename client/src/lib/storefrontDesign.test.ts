@@ -20,12 +20,14 @@ describe("storefront design refresh", () => {
     expect(documentTemplate).toContain("family=Marhey");
     expect(documentTemplate).toContain("display=swap");
     expect(home).toContain("UAE_UNION_DAY_BANNER");
-    expect(home).toContain("alrawhaa-uae-union-day-banner_e748fd2e.webp");
+    expect(home).toContain("alrawhaa-uae-union-day-banner-v2_40631e57.webp");
     expect(home).toContain('fetchPriority="high"');
     expect(home).not.toContain("HeroCarousel");
     expect(home).not.toContain("hero-brand-badge");
     expect(home).toContain("PAPER_CUPS_BRANCHES_BANNER");
     expect(home).toContain("alrawhaa-paper-cups-branches_4d0b6559.webp");
+    expect(home.match(/store-banner-media/g)?.length).toBe(2);
+    expect(css).toContain("aspect-ratio: 2048 / 877");
     expect(home).toContain('max-w-[1440px] px-2 sm:px-3 lg:px-4');
     expect(home).toContain('raed-container py-8 sm:py-10');
     expect(home).toContain('grid gap-4 py-8 sm:py-10');
