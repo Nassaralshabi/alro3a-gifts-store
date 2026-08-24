@@ -12,6 +12,7 @@
     "db:migrate": "prisma migrate dev",
     "db:reset": "prisma migrate reset",
     "backup": "bun run scripts/backup.ts",
+    "brand:images": "python3 scripts/brand-product-images.py",
     "test": "vitest run"
   },
   "dependencies": {

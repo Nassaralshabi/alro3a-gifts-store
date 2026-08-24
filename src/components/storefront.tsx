@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { ShoppingBag, Search, Menu, X, Languages, Phone, MapPin, Instagram, User, ArrowUp } from "lucide-react";
 import { useApp, money } from "./core";
 import { FALLBACK, L } from "./store/bits";
+import { BRAND_WORDMARK } from "./store/brand";
 import { HomeScreen, ShopScreen, ProductScreen, ContactScreen } from "./store/screens";
 import { CartDrawer } from "./store/cart";
 
@@ -71,10 +72,10 @@ export default function Storefront() {
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center gap-2.5 min-h-16 py-2">
           <a href="#/" className="flex items-center gap-2.5 shrink-0">
             { }
-            <img src={logo} alt="logo" className="w-11 h-11 rounded-xl object-cover ring-1 ring-[#e0e4e6] transition-transform hover:rotate-[-8deg] hover:scale-105" />
-            <div className="hidden sm:block leading-tight">
-              <b className="block text-lg">{siteName}</b>
-              <span className="block text-[9px] font-extrabold tracking-[.14em] uppercase text-[#6a757d]">{tagline}</span>
+            <img src={logo} alt={`${siteName} - الهوية`} className="w-11 h-11 rounded-xl object-cover ring-1 ring-[#e0e4e6] transition-transform hover:rotate-[-8deg] hover:scale-105" />
+            <div className="hidden sm:flex flex-col leading-tight">
+              <img src={BRAND_WORDMARK} alt={siteName} className="h-10 w-32 object-contain object-right" />
+              <span className="text-[9px] font-extrabold tracking-[.14em] uppercase text-[#6a757d]">{tagline}</span>
             </div>
           </a>
           {/* desktop search */}

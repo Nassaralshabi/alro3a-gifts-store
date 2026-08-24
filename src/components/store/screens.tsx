@@ -6,7 +6,8 @@ import {
   Truck, Sparkles, Check, Gift, Search, Plus, Minus, Info,
 } from "lucide-react";
 import { useApp, money, go } from "../core";
-import { Reveal, ProductCard, SectionHead, FALLBACK, L, catIcon } from "./bits";
+import { ProductCard, SectionHead, Reveal, L, FALLBACK, catIcon } from "./bits";
+import { BrandWatermark } from "./brand";
 
 /* ================= Static hero banner (replaces slider) ================= */
 function HeroBanner() {
@@ -320,6 +321,7 @@ export function ProductScreen({ slug }: { slug: string }) {
         <div className="relative rounded-3xl border border-[#e1e5e8] overflow-hidden bg-[#f0f2f3] aspect-square md:aspect-auto md:min-h-[480px] shadow-[0_18px_34px_-30px_rgba(35,41,46,.9)] self-start">
           { }
           <img src={p.image ?? FALLBACK} alt={L(lang, p.titleAr, p.titleEn)} className="w-full h-full object-cover" />
+          <BrandWatermark size="md" />
           {p.isFeatured && <span className="absolute start-4 top-4 z-10 inline-flex items-center gap-1 bg-gradient-to-br from-[#e8912d] to-[#f2bd66] text-[#17323b] rounded-full px-3 py-1.5 text-[10px] font-black shadow-lg"><Sparkles className="w-3 h-3 text-[#7c5410]" />{T("pick")}</span>}
         </div>
         <div>

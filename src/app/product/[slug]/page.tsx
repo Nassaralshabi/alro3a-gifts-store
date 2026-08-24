@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import AddToCart from "./AddToCart";
+import { brandedImage } from "@/components/store/brand";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://alrawaa.example.com";
 const FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect width='600' height='600' fill='%23eef1f3'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.35em' fill='%23a6b0b6' font-family='sans-serif' font-size='24'%3EAl Rawaa%3C/text%3E%3C/svg%3E";
@@ -36,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: desc,
       type: "website",
       siteName: "مطبعة الروعة — Al Rawaa Printing",
-      images: p.image ? [{ url: p.image, width: 900, height: 900, alt: p.titleAr }] : undefined,
+      images: p.image ? [{ url: `${SITE}${brandedImage(p.image)}`, width: 900, height: 900, alt: p.titleAr }] : undefined,
     },
     twitter: { card: "summary", title, description: desc },
   };
@@ -83,7 +84,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <header className="border-b border-[#e4e7e9] bg-white sticky top-0 z-40">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between min-h-16">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/uploads/processed-logo-al-rawhaa-png-93d69af7-40c8-4396-8959-4d4b1cc612d7_4c62e8cc.png" alt="شعار مطبعة الروعة" width={44} height={44} className="rounded-xl object-cover" />
+            <Image src="/uploads/alrawaa-brand-mark.png" alt="شعار مطبعة الروعة" width={44} height={44} className="rounded-xl object-cover" />
             <div className="leading-tight">
               <b className="block text-lg">مطبعة الروعة</b>
               <span className="block text-[9px] font-extrabold tracking-[.14em] uppercase text-[#6a757d]">هدايا بطابعك</span>
@@ -106,7 +107,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <div className="grid md:grid-cols-2 gap-8 py-8 sm:py-12">
           <div className="relative rounded-3xl border border-[#e1e5e8] overflow-hidden bg-[#f0f2f3] aspect-square self-start">
             <Image
-              src={p.image ?? FALLBACK}
+              src={brandedImage(p.image) ?? FALLBACK}
               alt={p.titleAr}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -142,7 +143,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {related.map((r) => (
                 <Link key={r.id} href={`/product/${r.slug}`} className="group bg-white border border-[#e1e5e8] rounded-2xl overflow-hidden hover:-translate-y-1 hover:border-[#ccd3d7] transition-all">
                   <div className="relative aspect-square bg-[#f0f2f3]">
-                    <Image src={r.image ?? FALLBACK} alt={r.titleAr} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover group-hover:scale-[1.05] transition-transform duration-500" />
+                    <Image src={brandedImage(r.image) ?? FALLBACK} alt={r.titleAr} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover group-hover:scale-[1.05] transition-transform duration-500" />
                   </div>
                   <div className="p-3.5">
                     <p className="text-[13px] font-extrabold line-clamp-2 leading-relaxed">{r.titleAr}</p>

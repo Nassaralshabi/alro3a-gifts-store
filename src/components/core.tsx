@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { BRAND_MARK } from "./store/brand";
 
 /* ================= Types ================= */
 export type Lang = "ar" | "en";
@@ -345,7 +346,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, [catalog]);
 
   const whatsapp = settingsVal("contact.whatsapp") || "971521401021";
-  const logo = settingsVal("logo") || "/uploads/processed-logo-al-rawhaa-png-93d69af7-40c8-4396-8959-4d4b1cc612d7_4c62e8cc.png";
+  const configuredLogo = settingsVal("logo");
+  const logo = configuredLogo && !configuredLogo.includes("processed-logo-al-rawhaa") ? configuredLogo : BRAND_MARK;
 
   const byId = useMemo(() => new Map((catalog?.products ?? []).map((p) => [p.id, p])), [catalog]);
   const cartTotal = useMemo(

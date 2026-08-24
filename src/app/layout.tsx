@@ -18,7 +18,7 @@ const marhey = Marhey({
 export const metadata: Metadata = {
   title: "مطبعة الروعة | هدايا بطابعك — Al Rawaa Printing",
   description: "مطبوعات وهدايا حسب الطلب تُنفذ بعناية في عجمان وتصل إلى كل الإمارات. متجر إلكتروني متكامل مع لوحة تحكم.",
-  icons: { icon: "/uploads/processed-logo-al-rawhaa-png-93d69af7-40c8-4396-8959-4d4b1cc612d7_4c62e8cc.png" },
+  icons: { icon: "/uploads/alrawaa-brand-mark.png" },
 };
 
 export const viewport: Viewport = {

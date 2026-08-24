@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { db } from "@/lib/db";
+import { brandedImage } from "@/components/store/brand";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://alrawaa.example.com";
 const FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect width='600' height='600' fill='%23eef1f3'/%3E%3C/svg%3E";
@@ -30,7 +31,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
       <header className="border-b border-[#e4e7e9] bg-white sticky top-0 z-40">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between min-h-16">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/uploads/processed-logo-al-rawhaa-png-93d69af7-40c8-4396-8959-4d4b1cc612d7_4c62e8cc.png" alt="شعار مطبعة الروعة" width={44} height={44} className="rounded-xl object-cover" />
+            <Image src="/uploads/alrawaa-brand-mark.png" alt="شعار مطبعة الروعة" width={44} height={44} className="rounded-xl object-cover" />
             <b className="text-lg">مطبعة الروعة</b>
           </Link>
           <Link href="/" className="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-gradient-to-br from-[#45505a] to-[#5d6a74] text-white text-[13px] font-extrabold">الدخول إلى المتجر</Link>
@@ -58,7 +59,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
           {products.map((p) => (
             <Link key={p.id} href={`/product/${p.slug}`} className="group bg-white border border-[#e1e5e8] rounded-2xl overflow-hidden hover:-translate-y-1 hover:border-[#ccd3d7] hover:shadow-lg transition-all">
               <div className="relative aspect-square bg-[#f0f2f3]">
-                <Image src={p.image ?? FALLBACK} alt={p.titleAr} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover group-hover:scale-[1.05] transition-transform duration-500" />
+                <Image src={brandedImage(p.image) ?? FALLBACK} alt={p.titleAr} fill sizes="(max-width: 640px) 50vw, 25vw" className="object-cover group-hover:scale-[1.05] transition-transform duration-500" />
               </div>
               <div className="p-3.5">
                 <p className="text-[10px] font-black tracking-wider text-[#5c6870]">{p.category.titleAr}</p>
