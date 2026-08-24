@@ -2,59 +2,46 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import {
-  ShoppingBag, Phone, MapPin, Instagram, ChevronLeft, ChevronRight,
-  Truck, Sparkles, Check, Gift, Search, Plus, Minus, ArrowUpLeft, ArrowUpRight, Info,
+  ShoppingBag, Phone, MapPin, Instagram, ChevronLeft,
+  Truck, Sparkles, Check, Gift, Search, Plus, Minus, Info,
 } from "lucide-react";
 import { useApp, money, go } from "../core";
 import { Reveal, ProductCard, SectionHead, FALLBACK, L, catIcon } from "./bits";
 import { BranchesSection } from "./branches";
 
-/* ================= Hero carousel (compact — no controls) ================= */
-function HeroCarousel() {
-  const { heroSlides, isAr, T, logo } = useApp();
-  const [idx, setIdx] = useState(0);
-  useEffect(() => {
-    if (heroSlides.length < 2) return;
-    const t = setInterval(() => setIdx((i) => (i + 1) % heroSlides.length), 4500);
-    return () => clearInterval(t);
-  }, [heroSlides.length]);
-  if (!heroSlides.length)
-    return <div className="aspect-[21/8] bg-[#f2f4f5] rounded-2xl" />;
-  const s = heroSlides[idx];
-  // self-contained banner slides (معرّفة بالبادئة banner-) تعرض نصوصها داخل الصورة نفسها
-  const isSelfBanner = (s?.image ?? "").includes("banner-");
+/* ================= Static hero banner (replaces slider) ================= */
+function HeroBanner() {
+  const { logo } = useApp();
   return (
     <div className="rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_34px_68px_-34px_rgba(35,41,46,.45)]">
       <div className="relative h-[240px] sm:h-[330px] lg:h-[360px]">
-        {heroSlides.map((sl, i) => (
-          <div key={i} className={`hero-slide absolute inset-0 ${i === idx ? "on" : ""}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={sl.image ?? FALLBACK} alt={isAr ? sl.titleAr : sl.titleEn} className="w-full h-full object-cover bg-[#f7f8f9]" />
-          </div>
-        ))}
-        {!isSelfBanner && (
-          <>
-            <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-[#1e2328]/88 via-[#1e2328]/30 to-transparent pointer-events-none z-[5]" />
-            <div className="absolute inset-x-0 bottom-0 z-15 p-5 sm:p-7 max-w-2xl pointer-events-none">
-              <span className="inline-flex bg-gradient-to-br from-[#f2bd66] to-[#ffce85] text-[#17323b] text-[10px] font-black uppercase tracking-wide px-3 py-1.5 rounded-full shadow-lg animate-[fadeUp_.5s_.05s_backwards]">{isAr ? s?.badgeAr : s?.badgeEn}</span>
-              <h1 className="mt-2 text-white text-xl sm:text-3xl leading-snug drop-shadow-lg animate-[fadeUp_.55s_.12s_backwards]">{isAr ? s?.titleAr : s?.titleEn}</h1>
-              <p className="mt-1 text-white/95 text-[12px] sm:text-[15px] font-medium max-w-lg leading-relaxed drop-shadow animate-[fadeUp_.55s_.2s_backwards] hidden sm:block">{isAr ? s?.subAr : s?.subEn}</p>
-              <a href="#/shop" className="btn-gold mt-3 pointer-events-auto animate-[fadeUp_.55s_.28s_backwards] !min-h-10 !px-4 !text-[13px]">{T("shopNow")}{isAr ? <ArrowUpLeft className="w-4 h-4" /> : <ArrowUpRight className="w-4 h-4" />}</a>
-            </div>
-          </>
-        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/uploads/hero-uae-banner.webp" alt="عيد الاتحاد الإماراتي — هدايا وتغليف وطباعة حسب الطلب" className="w-full h-full object-cover" />
         <div className="absolute end-4 top-4 z-20 bg-[#282e33]/90 border border-white/30 rounded-xl p-1.5 backdrop-blur-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logo} alt="logo" className="w-11 h-11 rounded-lg object-cover" />
         </div>
-        {/* minimal indicator dots (no nav buttons) */}
-        <div className={`absolute z-20 flex items-center gap-1.5 ${isSelfBanner ? "bottom-3 start-5" : "bottom-4 end-5"}`}>
-          {heroSlides.map((_, i) => (
-            <button key={i} aria-label={`slide ${i + 1}`} onClick={() => setIdx(i)} className={`h-1.5 rounded-full transition-all ${i === idx ? "w-7 bg-[#f2bd66]" : "w-3 bg-white/50 hover:bg-white/80"}`} />
-          ))}
-        </div>
       </div>
     </div>
+  );
+}
+
+/* ================= Cups promo banner (under hero) ================= */
+function CupsBanner() {
+  const { isAr } = useApp();
+  return (
+    <section className="bg-[#f7f8f9]">
+      <div className="container mx-auto px-4 sm:px-6 max-w-7xl pb-6 sm:pb-8">
+        <Reveal>
+          <a href="#/shop" className="block rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_24px_48px_-28px_rgba(35,41,46,.4)] hover:-translate-y-1 hover:shadow-[0_30px_56px_-26px_rgba(35,41,46,.5)] transition-all group">
+            <div className="relative h-[220px] sm:h-[280px] lg:h-[300px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/uploads/banner-cups-promo.webp" alt={isAr ? "أكواب ورقية — طباعة إبداعية بجودة عالية" : "Paper cups — creative high-quality printing"} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+            </div>
+          </a>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
@@ -109,9 +96,11 @@ export function HomeScreen() {
   return (
     <>
       <section className="bg-[#f7f8f9] py-4 sm:py-6">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl"><HeroCarousel /></div>
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl"><HeroBanner /></div>
       </section>
       <Marquee />
+
+      <CupsBanner />
 
       <BranchesSection />
 
