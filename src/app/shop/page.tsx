@@ -28,7 +28,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
   return (
     <div className="min-h-screen bg-white text-[#33393e]">
       <header className="border-b border-[#e4e7e9] bg-white sticky top-0 z-40">
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 flex items-center justify-between min-h-16">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between min-h-16">
           <Link href="/" className="flex items-center gap-2.5">
             <Image src="/uploads/processed-logo-al-rawhaa-png-93d69af7-40c8-4396-8959-4d4b1cc612d7_4c62e8cc.png" alt="شعار مطبعة الروعة" width={44} height={44} className="rounded-xl object-cover" />
             <b className="text-lg">مطبعة الروعة</b>
@@ -37,8 +37,8 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
         </div>
       </header>
 
-      <main className="container mx-auto max-w-6xl px-4 sm:px-6">
-        <nav aria-label="breadcrumb" className="flex items-center gap-1.5 text-[11px] text-[#6c767d] pt-6">
+      <main className="container mx-auto max-w-7xl px-4 sm:px-6">
+        <nav aria-label="breadcrumb" className="flex items-center gap-1.5 text-[11px] text-[#6c767d] pt-6 sm:pt-8">
           <Link href="/" className="hover:text-[#33393e]">الرئيسية</Link>
           <span>›</span>
           <span className="text-[#454f57] font-bold">{active ? active.titleAr : "كل المنتجات"}</span>
@@ -54,7 +54,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
           ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 py-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 py-8 sm:py-12">
           {products.map((p) => (
             <Link key={p.id} href={`/product/${p.slug}`} className="group bg-white border border-[#e1e5e8] rounded-2xl overflow-hidden hover:-translate-y-1 hover:border-[#ccd3d7] hover:shadow-lg transition-all">
               <div className="relative aspect-square bg-[#f0f2f3]">
@@ -72,7 +72,7 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
 
       <footer className="mt-6 bg-gradient-to-b from-[#23282d] to-[#181d21] text-[#a7b1b8] relative">
         <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-l from-[#45505a] via-[#8a959c] to-[#f2bd66]" />
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-8 flex flex-wrap items-center justify-between gap-3 text-[12px]">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-8 flex flex-wrap items-center justify-between gap-3 text-[12px]">
           <p>© {new Date().getFullYear()} مطبعة الروعة — عجمان، الإمارات العربية المتحدة</p>
           <p className="text-[#f2bd66] font-bold" dir="ltr">0521401021</p>
         </div>

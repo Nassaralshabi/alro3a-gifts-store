@@ -39,13 +39,13 @@ export default async function ContactPage() {
     <div className="min-h-screen bg-white text-[#33393e]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="border-b border-[#e4e7e9] bg-white sticky top-0 z-40">
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 flex items-center justify-between min-h-16">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between min-h-16">
           <Link href="/" className="text-lg font-bold">مطبعة الروعة</Link>
           <Link href="/" className="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-gradient-to-br from-[#45505a] to-[#5d6a74] text-white text-[13px] font-extrabold">الدخول إلى المتجر</Link>
         </div>
       </header>
 
-      <main className="container mx-auto max-w-4xl px-4 sm:px-6 py-12">
+      <main className="container mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
         <h1 className="text-3xl">تواصل معنا</h1>
         <p className="text-[14px] text-[#727c83] mt-3 leading-relaxed">فريق مطبعة الروعة جاهز لمساعدتك في اختيار الأنسب لمناسبتك — عجمان، الإمارات العربية المتحدة.</p>
 
@@ -84,7 +84,7 @@ export default async function ContactPage() {
 
       <footer className="mt-6 bg-gradient-to-b from-[#23282d] to-[#181d21] text-[#a7b1b8] relative">
         <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-l from-[#45505a] via-[#8a959c] to-[#f2bd66]" />
-        <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-8 text-center text-[12px]">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-8 text-center text-[12px]">
           © {new Date().getFullYear()} مطبعة الروعة. جميع الحقوق محفوظة.
         </div>
       </footer>

@@ -110,13 +110,13 @@ export function HomeScreen() {
 
   return (
     <>
-      <section className="bg-[#f7f8f9] py-5">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl"><HeroCarousel /></div>
+      <section className="bg-[#f7f8f9] py-6 sm:py-8">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl"><HeroCarousel /></div>
       </section>
       <Marquee />
 
       <section className="bg-white border-b border-[#e5e8ea]">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl py-8">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8 sm:py-12">
           <div className="flex items-end justify-between mb-5">
             <div>
               <p className="text-[11px] font-extrabold tracking-[.18em] uppercase text-[#5c6870]">{isAr ? "تصفح الأقسام" : "BROWSE CATEGORIES"}</p>
@@ -139,10 +139,10 @@ export function HomeScreen() {
       </section>
 
       <section className="bg-[#f6f7f8]">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl grid sm:grid-cols-3">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl grid sm:grid-cols-3">
           {benefits.map((b, i) => (
             <Reveal key={i} delay={i * 90}>
-              <article className={`flex items-center gap-3.5 py-6 ${i > 0 ? "sm:border-s sm:border-[#e5e8ea] sm:ps-6" : ""} ${i < 2 ? "border-b sm:border-b-0" : ""}`}>
+              <article className={`flex items-center gap-3.5 py-8 sm:py-10 ${i > 0 ? "sm:border-s sm:border-[#e5e8ea] sm:ps-6" : ""} ${i < 2 ? "border-b sm:border-b-0" : ""}`}>
                 <span className={`grid place-items-center w-11 h-11 rounded-xl text-white bg-gradient-to-br ${b.g} shadow-md shrink-0`}>{b.icon}</span>
                 <div><h3 className="text-[13px] font-extrabold">{b.t}</h3><p className="text-[11px] text-[#788288] mt-0.5">{b.d}</p></div>
               </article>
@@ -151,8 +151,8 @@ export function HomeScreen() {
         </div>
       </section>
 
-      <section className="py-10">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+      <section className="py-10 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <SectionHead eyebrow={isAr ? "مختارات الروعة" : "AL RAWAA PICKS"} title={isAr ? "اختيارات جاهزة لطلبك" : "Ready-to-request picks"} sub={isAr ? "منتجات مختارة للبدء مع خيارات تخصيص." : "Selected products to start with and customize."} href="#/shop" />
           <div className="rail grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 overflow-x-auto pb-2">
             {featured.map((p, i) => <ProductCard key={p.id} p={p} delay={(i % 5) * 60} />)}
@@ -161,7 +161,7 @@ export function HomeScreen() {
       </section>
 
       <section className="bg-[#f6f7f8]">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl py-9">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8 sm:py-12">
           <Reveal>
             <div className="relative grid md:grid-cols-[1.1fr_.9fr] overflow-hidden rounded-3xl border border-[#e4e7e9] bg-gradient-to-br from-white via-[#f2f4f7] to-[#e9edef] shadow-[0_30px_60px_-30px_rgba(35,41,46,.25)]">
               <div className="p-7 sm:p-10 relative z-10">
@@ -189,7 +189,7 @@ export function HomeScreen() {
         const copy = secCopy[slug];
         return (
           <section key={slug} className={copy.muted ? "bg-[#f6f7f8]" : ""}>
-            <div className="container mx-auto px-4 sm:px-6 max-w-6xl py-10">
+            <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8 sm:py-12">
               <SectionHead eyebrow={copy.e[isAr ? 0 : 1]} title={copy.t[isAr ? 0 : 1]} sub={copy.s[isAr ? 0 : 1]} href={`#/shop?cat=${slug}`} />
               <div className="rail grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 overflow-x-auto pb-2">
                 {byCat(c.id).map((p, i) => <ProductCard key={p.id} p={p} delay={(i % 5) * 60} />)}
@@ -232,8 +232,8 @@ export function ShopScreen({ params }: { params: Record<string, string> }) {
   }, [params.cat, params.q]);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-      <div className="grid lg:grid-cols-[250px_1fr] gap-6 py-8 items-start">
+    <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+      <div className="grid lg:grid-cols-[250px_1fr] gap-6 py-8 sm:py-12 items-start">
         <aside className="bg-white border border-[#e4e7e9] rounded-2xl p-4 lg:sticky lg:top-24">
           <h3 className="text-[12px] font-black tracking-widest uppercase text-[#6c767d] mb-3">{isAr ? "الأقسام" : "Categories"}</h3>
           <div className="grid gap-0.5">
@@ -301,7 +301,7 @@ export function ProductScreen({ slug }: { slug: string }) {
   const p = (catalog?.products ?? []).find((x) => x.slug === slug);
   if (!p)
     return (
-      <div className="container mx-auto px-4 max-w-6xl text-center py-24">
+      <div className="container mx-auto px-4 max-w-7xl text-center py-24">
         <h2 className="text-2xl">404</h2>
         <p className="text-[#6c767d] mt-2">{isAr ? "المنتج غير موجود" : "Product not found"}</p>
         <a href="#/shop" className="btn-solid mt-6">{T("allProducts")}</a>
@@ -311,14 +311,14 @@ export function ProductScreen({ slug }: { slug: string }) {
   const price = money(p.price, lang);
   const related = (catalog?.products ?? []).filter((x) => x.categoryId === p.categoryId && x.id !== p.id && x.isAvailable).slice(0, 8);
   return (
-    <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+    <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
       <nav className="flex items-center flex-wrap gap-1.5 text-[11px] text-[#6c767d] pt-6">
         <a href="#/" className="hover:text-[#33393e]">{T("home")}</a>
         <ChevronLeft className="w-3 h-3 rtl:rotate-0 ltr:rotate-180 opacity-50" />
         {c && (<><a href={`#/shop?cat=${c.slug}`} className="hover:text-[#33393e]">{L(lang, c.titleAr, c.titleEn)}</a><ChevronLeft className="w-3 h-3 rtl:rotate-0 ltr:rotate-180 opacity-50" /></>)}
         <span className="text-[#454f57] font-bold">{L(lang, p.titleAr, p.titleEn)}</span>
       </nav>
-      <div className="grid md:grid-cols-2 gap-7 py-8">
+      <div className="grid md:grid-cols-2 gap-7 py-8 sm:py-12">
         <div className="relative rounded-3xl border border-[#e1e5e8] overflow-hidden bg-[#f0f2f3] aspect-square md:aspect-auto md:min-h-[480px] shadow-[0_18px_34px_-30px_rgba(35,41,46,.9)] self-start">
           { }
           <img src={p.image ?? FALLBACK} alt={L(lang, p.titleAr, p.titleEn)} className="w-full h-full object-cover" />
@@ -359,7 +359,7 @@ export function ProductScreen({ slug }: { slug: string }) {
         </div>
       </div>
       {related.length > 0 && (
-        <section className="py-6 pb-12">
+        <section className="py-8 sm:py-12">
           <SectionHead eyebrow={isAr ? "اكتشف المزيد" : "KEEP EXPLORING"} title={T("related")} href={c ? `#/shop?cat=${c.slug}` : "#/shop"} />
           <div className="rail grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 overflow-x-auto pb-2">
             {related.map((r, i) => <ProductCard key={r.id} p={r} delay={(i % 4) * 60} />)}
@@ -383,7 +383,7 @@ export function ContactScreen() {
     { t: isAr ? "التنفيذ والتوصيل" : "Production & delivery", d: isAr ? "ننفذ طلبك بعناية ونوصله لجميع الإمارات." : "Crafted with care and delivered across the UAE." },
   ];
   return (
-    <div className="container mx-auto px-4 sm:px-6 max-w-6xl grid lg:grid-cols-[1.1fr_.9fr] gap-6 py-10">
+    <div className="container mx-auto px-4 sm:px-6 max-w-7xl grid lg:grid-cols-[1.1fr_.9fr] gap-6 py-10">
       <Reveal>
         <div className="bg-white border border-[#e4e7e9] rounded-3xl p-7 shadow-[0_18px_34px_-30px_rgba(35,41,46,.9)] hover:-translate-y-0.5 transition-transform">
           <p className="text-[11px] font-extrabold tracking-[.18em] uppercase text-[#5c6870]">{isAr ? "نحن هنا لمساعدتك" : "WE ARE HERE TO HELP"}</p>

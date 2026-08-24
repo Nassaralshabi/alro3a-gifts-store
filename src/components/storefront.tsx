@@ -56,7 +56,7 @@ export default function Storefront() {
     <div className="min-h-screen flex flex-col bg-white text-[#33393e]">
       {/* topbar — dark charcoal touch */}
       <div className="bg-gradient-to-l from-[#1e2328] via-[#23282d] to-[#2c343b] border-b border-black/20 text-[#c9d1d6] text-[11.5px] font-semibold py-1.5 shadow-[inset_0_-1px_0_rgba(255,255,255,.04)]">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl flex items-center justify-between gap-3">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center justify-between gap-3">
           <span className="hidden md:inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#f2bd66]" />{addr}</span>
           <div className="flex items-center gap-4">
             <a href="#/contact" className="hover:text-[#f2bd66] transition-colors">{T("policy")}</a>
@@ -68,7 +68,7 @@ export default function Storefront() {
 
       {/* header */}
       <header className="sticky top-0 z-50 bg-white border-b border-[#d5dbdf] shadow-[0_10px_32px_-14px_rgba(30,35,40,.35)]">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl flex items-center gap-2.5 min-h-16 py-2">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl flex items-center gap-2.5 min-h-16 py-2">
           <a href="#/" className="flex items-center gap-2.5 shrink-0">
             { }
             <img src={logo} alt="logo" className="w-11 h-11 rounded-xl object-cover ring-1 ring-[#e0e4e6] transition-transform hover:rotate-[-8deg] hover:scale-105" />
@@ -112,7 +112,7 @@ export default function Storefront() {
         </div>
         {/* desktop nav */}
         <nav className="hidden lg:block border-t border-[#eef0f2] bg-white">
-          <div className="container mx-auto px-6 max-w-6xl flex items-center justify-center gap-1 overflow-x-auto">
+          <div className="container mx-auto px-6 max-w-7xl flex items-center justify-center gap-1 overflow-x-auto">
             <a href="#/shop" className={`px-5 py-3 text-[13px] font-extrabold transition-colors border-b-2 ${seg[0] === "shop" && !params.cat ? "border-[#45505a] text-[#33393e] bg-white" : "border-transparent text-[#566169] hover:bg-white hover:text-[#33393e]"}`}>{T("allProducts")}</a>
             {cats.map((c) => (
               <a key={c.id} href={`#/shop?cat=${c.slug}`} className={`px-4 py-3 text-[13px] font-extrabold transition-colors border-b-2 shrink-0 ${params.cat === c.slug ? "border-[#45505a] text-[#33393e] bg-white" : "border-transparent text-[#566169] hover:bg-white hover:text-[#33393e]"}`}>{L(lang, c.titleAr, c.titleEn)}</a>
@@ -124,7 +124,7 @@ export default function Storefront() {
       {/* main */}
       <main className="flex-1">
         {catalogLoading ? (
-          <div className="container mx-auto px-4 max-w-6xl py-16 grid place-items-center">
+          <div className="container mx-auto px-4 max-w-7xl py-16 grid place-items-center">
             <div className="w-10 h-10 rounded-full border-[3px] border-[#e4e7e9] border-t-[#45505a] animate-spin" />
           </div>
         ) : seg.length === 0 ? (
@@ -136,7 +136,7 @@ export default function Storefront() {
         ) : seg[0] === "contact" ? (
           <ContactScreen />
         ) : (
-          <div className="container mx-auto px-4 max-w-6xl text-center py-24">
+          <div className="container mx-auto px-4 max-w-7xl text-center py-24">
             <h2 className="text-2xl">404</h2>
             <a href="#/" className="btn-solid mt-6">{T("home")}</a>
           </div>
@@ -144,13 +144,13 @@ export default function Storefront() {
       </main>
 
       {/* footer — dark premium redesign */}
-      <footer className="mt-14 bg-gradient-to-b from-[#333a40] via-[#23282d] to-[#181d21] text-[#c9d1d6] relative overflow-hidden">
+      <footer className="mt-12 sm:mt-16 bg-gradient-to-b from-[#333a40] via-[#23282d] to-[#181d21] text-[#c9d1d6] relative overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-l from-[#45505a] via-[#8a959c] to-[#f2bd66]" />
         <div className="absolute -top-24 -end-24 w-72 h-72 rounded-full bg-[radial-gradient(circle,rgba(242,189,102,.12),transparent_70%)] pointer-events-none" />
         <div className="absolute -bottom-28 -start-20 w-80 h-80 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,.05),transparent_70%)] pointer-events-none" />
 
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative">
-          <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative">
+          <div className="grid gap-10 py-10 sm:py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
             <div>
               <div className="flex items-center gap-3">
                 <span className="grid place-items-center w-12 h-12 rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur-sm p-1">
