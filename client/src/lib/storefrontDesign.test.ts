@@ -22,6 +22,9 @@ describe("storefront design refresh", () => {
     expect(home).toContain("hero-panel");
     expect(home).not.toContain("hero-brand-badge");
     expect(home).toContain("object-contain will-change-transform");
+    expect(home).toContain("PAPER_CUPS_BRANCHES_BANNER");
+    expect(home).toContain("alrawhaa-paper-cups-branches_4d0b6559.webp");
+    expect(home).toContain('max-w-[1440px] px-2 sm:px-3 lg:px-4');
     expect(home).toContain('className="border-t border-[#dbe9eb] bg-white"');
     expect(home).not.toContain("raed-gradient-overlay");
     expect(home).not.toContain("Discover products");
@@ -38,6 +41,8 @@ describe("storefront design refresh", () => {
     expect(smartSearch).toContain("suggestions.isError");
     expect(shell).toContain("store.catalog.appearance.useQuery");
     expect(shell).toContain('footerBackground || "#102F39"');
+    expect(shell).toContain('className="mt-8 sm:mt-10"');
+    expect(shell).toContain('grid gap-6 py-8 sm:grid-cols-2 sm:py-9');
     expect(shell).not.toContain("appearancePresets");
     expect(shell).not.toContain("data-preview-header");
   });
