@@ -14,7 +14,7 @@ function HeroBanner() {
   const { logo } = useApp();
   return (
     <div className="rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_34px_68px_-34px_rgba(35,41,46,.45)]">
-      <div className="relative h-[200px] sm:h-[330px] lg:h-[360px]">
+      <div className="relative aspect-[7/3] sm:aspect-auto sm:h-[330px] lg:h-[360px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/uploads/alrawaa-hero-banner.webp"
@@ -37,7 +37,7 @@ function CupsBanner() {
   return (
     <section className="bg-[#f7f8f9]">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl pb-6 sm:pb-8">
-        <Reveal>
+        <Reveal className="in">
           <a href="#/shop" className="block rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_24px_48px_-28px_rgba(35,41,46,.4)] hover:-translate-y-1 hover:shadow-[0_30px_56px_-26px_rgba(35,41,46,.5)] transition-all group">
             <div className="relative h-[198px] sm:h-[280px] lg:h-[300px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -160,7 +160,7 @@ export function HomeScreen() {
 
       <section className="bg-[#f6f7f8]">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8 sm:py-12">
-          <Reveal>
+          <Reveal className="in">
             <div className="relative grid md:grid-cols-[1.1fr_.9fr] overflow-hidden rounded-3xl border border-[#e4e7e9] bg-gradient-to-br from-white via-[#f2f4f7] to-[#e9edef] shadow-[0_30px_60px_-30px_rgba(35,41,46,.25)]">
               <div className="p-7 sm:p-10 relative z-10">
                 <p className="text-[11px] font-extrabold tracking-[.18em] uppercase text-[#9a6b13]">{isAr ? "هدية بطابعك" : "A GIFT, YOUR WAY"}</p>
