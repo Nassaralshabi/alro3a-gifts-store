@@ -1,0 +1,3891 @@
+{
+  "generatedAt": "2026-08-24T21:37:07.875Z",
+  "previewBase": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer",
+  "summary": {
+    "inspected": 231,
+    "edit": 44,
+    "keep": 178,
+    "manualReview": 9
+  },
+  "results": [
+    {
+      "id": 150001,
+      "slug": "weej-import-001",
+      "titleAr": "أوراق مراسلات — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-001-21cbde7b-3253-44ba-9a8b-78d48e33c5c4_b07d133e.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-001-21cbde7b-3253-44ba-9a8b-78d48e33c5c4_b07d133e.jpg",
+      "assessment": {
+        "id": 150001,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "نموك أب عام ولا يظهر شعار ويج أو الروعة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150002,
+      "slug": "weej-import-002",
+      "titleAr": "اكريلك ستاندات ولوحات — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-002-febe7abb-aed7-49cf-aebb-883ab55c6059_732eacb1.png",
+      "categorySlug": "stands-boards",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-002-febe7abb-aed7-49cf-aebb-883ab55c6059_732eacb1.png",
+      "assessment": {
+        "id": 150002,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 98,
+        "evidence": "شعار Al Rawhaa ظاهر بوضوح على الستاند",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150003,
+      "slug": "weej-import-003",
+      "titleAr": "اكريلك ستاندات ولوحات — نموذج 02",
+      "imageUrl": "/manus-storage/weej-stands-002-alrawhaa_3997d4f2.webp",
+      "categorySlug": "stands-boards",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-stands-002-alrawhaa_3997d4f2.webp",
+      "assessment": {
+        "id": 150003,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 98,
+        "evidence": "شعار Al Rawhaa ظاهر على اللوحة المربعة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150004,
+      "slug": "weej-import-004",
+      "titleAr": "اكريلك ستاندات ولوحات — نموذج 03",
+      "imageUrl": "/manus-storage/weej-stands-003-alrawhaa_54c42d2c.webp",
+      "categorySlug": "stands-boards",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-stands-003-alrawhaa_54c42d2c.webp",
+      "assessment": {
+        "id": 150004,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 98,
+        "evidence": "شعار Al Rawhaa ظاهر على اللوحة الدائرية",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150005,
+      "slug": "weej-import-005",
+      "titleAr": "اكياس ورقية — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-005-009d55cf-c217-4d14-adf4-cdec9bfc0941_d68e4424.jpg",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-005-009d55cf-c217-4d14-adf4-cdec9bfc0941_d68e4424.jpg",
+      "assessment": {
+        "id": 150005,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 98,
+        "evidence": "شعار Al Rawhaa مطبوع على الكيس الورقي",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150006,
+      "slug": "weej-import-006",
+      "titleAr": "اكياس ورقية — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-006-fba4db5c-5a70-4b09-a6aa-97574fe703fa_a6aeaf3e.png",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-006-fba4db5c-5a70-4b09-a6aa-97574fe703fa_a6aeaf3e.png",
+      "assessment": {
+        "id": 150006,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 98,
+        "evidence": "شعار Al Rawhaa ظاهر على حقيبة الهدايا",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150007,
+      "slug": "weej-import-007",
+      "titleAr": "اكياس ورقية — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-007-1058642e-d4e6-42cb-9ba0-6db069438374_e637a2ed.jpg",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-007-1058642e-d4e6-42cb-9ba0-6db069438374_e637a2ed.jpg",
+      "assessment": {
+        "id": 150007,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "كلمة 'Weej' ظاهرة مطبوعة على الكيس",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150008,
+      "slug": "weej-import-008",
+      "titleAr": "اكياس ورقية — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-008-3f874340-cbba-4442-b81c-2590778c270f_d9e4a2d5.jpg",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-008-3f874340-cbba-4442-b81c-2590778c270f_d9e4a2d5.jpg",
+      "assessment": {
+        "id": 150008,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج/Weej ظاهر مطبوع على الكيس",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150009,
+      "slug": "weej-import-009",
+      "titleAr": "اكياس ورقية — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-009-075301a1-dc4e-4aca-8af3-cf1cf9083937_d51e6522.png",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-009-075301a1-dc4e-4aca-8af3-cf1cf9083937_d51e6522.png",
+      "assessment": {
+        "id": 150009,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa / الروعة ظاهر بوضوح",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150010,
+      "slug": "weej-import-010",
+      "titleAr": "اكياس ورقية — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-010-0041be23-821a-4143-9c84-10327e257b52_e06af37e.jpg",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-010-0041be23-821a-4143-9c84-10327e257b52_e06af37e.jpg",
+      "assessment": {
+        "id": 150010,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج / Weej واضح على الحقائب",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150011,
+      "slug": "weej-import-011",
+      "titleAr": "اكياس ورقية — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-011-e6d44ae7-5c6c-4bcd-ab1b-6bc0f7c20d80_80209a82.jpg",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-011-e6d44ae7-5c6c-4bcd-ab1b-6bc0f7c20d80_80209a82.jpg",
+      "assessment": {
+        "id": 150011,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج ظاهر مع قياسات على الحقيبة",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150012,
+      "slug": "weej-import-012",
+      "titleAr": "اكياس ورقية — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-012-b169604b-5bfc-4c1e-8302-cb89f6b05681_0aed474a.jpg",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-012-b169604b-5bfc-4c1e-8302-cb89f6b05681_0aed474a.jpg",
+      "assessment": {
+        "id": 150012,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج واضح على الحقيبة البنفسجية",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150013,
+      "slug": "weej-import-013",
+      "titleAr": "اكياس ورقية — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-013-25cd5a68-0b06-4b90-9b79-edf800c8d87e_17d553a1.png",
+      "categorySlug": "paper-bags",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-013-25cd5a68-0b06-4b90-9b79-edf800c8d87e_17d553a1.png",
+      "assessment": {
+        "id": 150013,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج ظاهر على الحقيبة البحرية الداكنة",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150014,
+      "slug": "weej-import-014",
+      "titleAr": "التغليف وملحقاته — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-014-2371a901-4976-4891-8ad5-6582f547ea0f_ef067120.png",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-014-2371a901-4976-4891-8ad5-6582f547ea0f_ef067120.png",
+      "assessment": {
+        "id": 150014,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "نقوش ونصوص عامة بدون علامة ويج أو الروعة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150015,
+      "slug": "weej-import-015",
+      "titleAr": "التغليف وملحقاته — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-015-bf7c80fa-ffc9-4002-bddc-eec3777cc535_7b368449.png",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-015-bf7c80fa-ffc9-4002-bddc-eec3777cc535_7b368449.png",
+      "assessment": {
+        "id": 150015,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa / الروعة ظاهر في التصميم",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150016,
+      "slug": "weej-import-016",
+      "titleAr": "التغليف وملحقاته — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-016-042e7c1a-612d-424d-99a0-431ced352ebe_2ca5b9a2.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-016-042e7c1a-612d-424d-99a0-431ced352ebe_2ca5b9a2.jpg",
+      "assessment": {
+        "id": 150016,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 90,
+        "evidence": "شعار ويج ظاهر على غلاف الكوب إلى جانب Al Rawhaa",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150017,
+      "slug": "weej-import-017",
+      "titleAr": "التغليف وملحقاته — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-017-9c125860-434c-4617-8091-f8ebf68e419c_4bc84407.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-017-9c125860-434c-4617-8091-f8ebf68e419c_4bc84407.jpg",
+      "assessment": {
+        "id": 150017,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نص عام 'mockup' على الورق، لا علامة Weej أو Al Rawhaa",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150018,
+      "slug": "weej-import-018",
+      "titleAr": "التغليف وملحقاته — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-018-1789c894-63f4-4aa4-b325-16d484832349_b908e2cd.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-018-1789c894-63f4-4aa4-b325-16d484832349_b908e2cd.jpg",
+      "assessment": {
+        "id": 150018,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار 'Weej' ظاهر على غطاء العلبة",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150019,
+      "slug": "weej-import-019",
+      "titleAr": "التغليف وملحقاته — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-019-4288c238-ba3c-4f9c-ba64-e97dc2dd3f53_9424f1f1.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-019-4288c238-ba3c-4f9c-ba64-e97dc2dd3f53_9424f1f1.jpg",
+      "assessment": {
+        "id": 150019,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نقش متكرر 'RICHER' على الورق، ليس Weej",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150020,
+      "slug": "weej-import-020",
+      "titleAr": "التغليف وملحقاته — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-020-00902195-74ce-4039-b1ea-8644f59d496c_65e36f29.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-020-00902195-74ce-4039-b1ea-8644f59d496c_65e36f29.jpg",
+      "assessment": {
+        "id": 150020,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "ورق تغليف بنقش مكرر يقرأ 'Weej'",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150021,
+      "slug": "weej-import-021",
+      "titleAr": "التغليف وملحقاته — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-021-9965568a-6a07-4a7d-a5ad-919f9cbec497_f5179cef.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-021-9965568a-6a07-4a7d-a5ad-919f9cbec497_f5179cef.jpg",
+      "assessment": {
+        "id": 150021,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نقش 'Richer Paper' بالخط الكوفي، غير مرتبط بـ Weej",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150022,
+      "slug": "weej-import-022",
+      "titleAr": "التغليف وملحقاته — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-022-080947ce-7075-46ad-a472-4d79baae63d1_0a1dce69.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-022-080947ce-7075-46ad-a472-4d79baae63d1_0a1dce69.jpg",
+      "assessment": {
+        "id": 150022,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "تصاميم نمطية لدفاتر بدون علامة تجارية مرئية",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150023,
+      "slug": "weej-import-023",
+      "titleAr": "التغليف وملحقاته — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-023-26040b0c-d01b-4c68-8d7e-a5a68441468d_6d2d6d30.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-023-26040b0c-d01b-4c68-8d7e-a5a68441468d_6d2d6d30.jpg",
+      "assessment": {
+        "id": 150023,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "شريط بتصميم عام 'HIGH QUALITY' دون شعار Weej",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150024,
+      "slug": "weej-import-024",
+      "titleAr": "التغليف وملحقاته — نموذج 11",
+      "imageUrl": "/manus-storage/weej-packaging-011-alrawhaa_80bc51c7.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-packaging-011-alrawhaa_80bc51c7.webp",
+      "assessment": {
+        "id": 150024,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 98,
+        "evidence": "شعار 'Al Rawhaa' ظاهر على الشريط",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150025,
+      "slug": "weej-import-025",
+      "titleAr": "بطاقات — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-025-ff5df52d-1245-462b-8bed-7037c086e187_06680de6.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-025-ff5df52d-1245-462b-8bed-7037c086e187_06680de6.jpg",
+      "assessment": {
+        "id": 150025,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "نموذج نصي 'MOCKUP' فقط، لا وجود لشعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150026,
+      "slug": "weej-import-026",
+      "titleAr": "بطاقات — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-026-e692af85-14b3-41ea-8175-cd8239356f82_f7827fff.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-026-e692af85-14b3-41ea-8175-cd8239356f82_f7827fff.jpg",
+      "assessment": {
+        "id": 150026,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "تصميم بطاقة تجريبي باسم إنجليزي، لا شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150027,
+      "slug": "weej-import-027",
+      "titleAr": "بطاقات — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-027-57268706-413a-4056-9119-e2a8e323b8e3_99e6e0ac.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-027-57268706-413a-4056-9119-e2a8e323b8e3_99e6e0ac.jpg",
+      "assessment": {
+        "id": 150027,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "نموذج بطاقة بشكل قوس مع كلمة 'MOCKUP' فقط، لا ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150028,
+      "slug": "weej-import-028",
+      "titleAr": "بطاقات — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-028-c8967c8b-d663-47fa-bc9c-4b3146594c2c_8269b3de.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-028-c8967c8b-d663-47fa-bc9c-4b3146594c2c_8269b3de.png",
+      "assessment": {
+        "id": 150028,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 98,
+        "evidence": "شعار مكتوب 'Weej' و'ويج' ظاهر بوضوح على البطاقات.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150029,
+      "slug": "weej-import-029",
+      "titleAr": "بطاقات — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-029-62458b00-ccc1-4f7a-a2bb-64c7c30bf7cd_4c32df00.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-029-62458b00-ccc1-4f7a-a2bb-64c7c30bf7cd_4c32df00.jpg",
+      "assessment": {
+        "id": 150029,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "نموذج كتيب/بطاقة نمطي بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150030,
+      "slug": "weej-import-030",
+      "titleAr": "بطاقات — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-030-dfc61a12-af3e-4f1a-8ada-07ace87bc912_55a31cfb.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-030-dfc61a12-af3e-4f1a-8ada-07ace87bc912_55a31cfb.jpg",
+      "assessment": {
+        "id": 150030,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 98,
+        "evidence": "شعار 'Weej' و'ويج' ظاهر على التصميم الأمامي والبطاقات المكدسة.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150031,
+      "slug": "weej-import-031",
+      "titleAr": "بطاقات — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-031-3e0184aa-1e4b-4362-a807-046c1cebeb19_6f0943ea.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-031-3e0184aa-1e4b-4362-a807-046c1cebeb19_6f0943ea.jpg",
+      "assessment": {
+        "id": 150031,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "نموذج بطاقة باسم 'John Doe' فقط، لا وجود لشعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150032,
+      "slug": "weej-import-032",
+      "titleAr": "بطاقات — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-032-1d366185-f030-486c-9e6b-9f1cca68a291_9a39e0da.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-032-1d366185-f030-486c-9e6b-9f1cca68a291_9a39e0da.jpg",
+      "assessment": {
+        "id": 150032,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "بطاقات زرقاء مع شعار مختلف ('HDR')، ليس ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150033,
+      "slug": "weej-import-033",
+      "titleAr": "بطاقات — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-033-101442aa-7337-4c78-b058-1133d32864a5_840d4e75.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-033-101442aa-7337-4c78-b058-1133d32864a5_840d4e75.jpg",
+      "assessment": {
+        "id": 150033,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا شعار ويج أو Al Rawhaa؛ بطاقة نموذجية.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150034,
+      "slug": "weej-import-034",
+      "titleAr": "بطاقات — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-034-a3db768f-c694-45ab-9c08-6650dd60d83a_e9a101c4.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-034-a3db768f-c694-45ab-9c08-6650dd60d83a_e9a101c4.jpg",
+      "assessment": {
+        "id": 150034,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا ظهور لشعار ويج أو Al Rawhaa؛ تصميم عام.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150035,
+      "slug": "weej-import-035",
+      "titleAr": "بطاقات — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-035-34f61c71-16d4-4418-b9d5-987b33311a25_532e59c7.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-035-34f61c71-16d4-4418-b9d5-987b33311a25_532e59c7.jpg",
+      "assessment": {
+        "id": 150035,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر في أعلى الصورة.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150036,
+      "slug": "weej-import-036",
+      "titleAr": "بطاقات — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-036-d68379c5-d721-45b6-91a3-6d3991d7f583_bf5dca37.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-036-d68379c5-d721-45b6-91a3-6d3991d7f583_bf5dca37.jpg",
+      "assessment": {
+        "id": 150036,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا شعار ويج/Al Rawhaa؛ بطاقة عمل بدون علامة مرئية.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150037,
+      "slug": "weej-import-037",
+      "titleAr": "بطاقات — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-037-aecfef0a-5015-413b-bd9c-cc05cdbff20b_d7e14d25.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-037-aecfef0a-5015-413b-bd9c-cc05cdbff20b_d7e14d25.jpg",
+      "assessment": {
+        "id": 150037,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "يظهر 'weej.sa' بالإضافة إلى نص Al Rawhaa على البطاقة.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150038,
+      "slug": "weej-import-038",
+      "titleAr": "بطاقات — نموذج 14",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-038-c5b95d11-d154-4a8a-85b7-4703b3c2504a_1fcd0c7c.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-038-c5b95d11-d154-4a8a-85b7-4703b3c2504a_1fcd0c7c.jpg",
+      "assessment": {
+        "id": 150038,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا شعار ويج أو Al Rawhaa؛ بطاقة شكر عامة.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150039,
+      "slug": "weej-import-039",
+      "titleAr": "بطاقات — نموذج 15",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-039-73c4bdef-f80e-4636-ad76-bb4d777cb3d2_695b74ea.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-039-73c4bdef-f80e-4636-ad76-bb4d777cb3d2_695b74ea.jpg",
+      "assessment": {
+        "id": 150039,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج واضح (Weej/ويج) على الكرت.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150040,
+      "slug": "weej-import-040",
+      "titleAr": "بكجات و عروض — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-040-6e96050a-b951-4a5e-9333-ba4ed382fe5b_305b48ff.png",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-040-6e96050a-b951-4a5e-9333-ba4ed382fe5b_305b48ff.png",
+      "assessment": {
+        "id": 150040,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار ويج أو Al Rawhaa؛ عرض عبوات/حقيبة تجارية.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150041,
+      "slug": "weej-import-041",
+      "titleAr": "بكجات و عروض — نموذج 02",
+      "imageUrl": "/manus-storage/law-offer-price-removed_a9defd2b.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/law-offer-price-removed_a9defd2b.webp",
+      "assessment": {
+        "id": 150041,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 10,
+        "evidence": "شعار Al Rawhaa واضح في الأعلى وعلى المنتجات",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150042,
+      "slug": "weej-import-042",
+      "titleAr": "بكجات و عروض — نموذج 03",
+      "imageUrl": "/manus-storage/weej-bundle-003-price-removed_67351e37.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-bundle-003-price-removed_67351e37.webp",
+      "assessment": {
+        "id": 150042,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 10,
+        "evidence": "شعار Al Rawhaa مرئي على ملصقات ومنتجات العرض",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150043,
+      "slug": "weej-import-043",
+      "titleAr": "بكجات و عروض — نموذج 04",
+      "imageUrl": "/manus-storage/masabih-bundle-price-removed_05524a81.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/masabih-bundle-price-removed_05524a81.webp",
+      "assessment": {
+        "id": 150043,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 7,
+        "evidence": "لا يظهر شعار Weej أو شعار Al Rawhaa بوضوح",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150044,
+      "slug": "weej-import-044",
+      "titleAr": "بكجات و عروض — نموذج 05",
+      "imageUrl": "/manus-storage/abaya-bundle-price-removed_e698d5c6.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/abaya-bundle-price-removed_e698d5c6.webp",
+      "assessment": {
+        "id": 150044,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 9,
+        "evidence": "نطاق/نص weej.sa ظاهر في أسفل الصورة",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150045,
+      "slug": "weej-import-045",
+      "titleAr": "بكجات و عروض — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-045-74d574ef-d091-45c6-8276-b6b462754d75_b42351f2.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-045-74d574ef-d091-45c6-8276-b6b462754d75_b42351f2.jpg",
+      "assessment": {
+        "id": 150045,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 10,
+        "evidence": "كلمة Weej مطبوعة مرارًا على التغليف (مع وجود Al Rawhaa صغيرًا أيضًا)",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150046,
+      "slug": "weej-import-046",
+      "titleAr": "بكجات و عروض — نموذج 07",
+      "imageUrl": "/manus-storage/wedding-bundle-price-removed_6bfd5341.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/wedding-bundle-price-removed_6bfd5341.webp",
+      "assessment": {
+        "id": 150046,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 10,
+        "evidence": "شعار Al Rawhaa واضح في زاوية الصورة وعلى المنتجات",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150047,
+      "slug": "weej-import-047",
+      "titleAr": "بكجات و عروض — نموذج 08",
+      "imageUrl": "/manus-storage/business-cards-price-removed_4bd10423.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/business-cards-price-removed_4bd10423.webp",
+      "assessment": {
+        "id": 150047,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 10,
+        "evidence": "شعار Al Rawhaa واضح على بطاقات الأعمال في الصورة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150048,
+      "slug": "weej-import-048",
+      "titleAr": "بكجات و عروض — نموذج 09",
+      "imageUrl": "/manus-storage/eid-bundle-price-removed_9aabcb0a.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/eid-bundle-price-removed_9aabcb0a.webp",
+      "assessment": {
+        "id": 150048,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 10,
+        "evidence": "شعار Al Rawhaa ظاهر على الحقيبة والبطاقة المعروضة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150049,
+      "slug": "weej-import-049",
+      "titleAr": "بكجات و عروض — نموذج 10",
+      "imageUrl": "/manus-storage/w03-price-marker-removed_954f3e40.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/w03-price-marker-removed_954f3e40.webp",
+      "assessment": {
+        "id": 150049,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى الصورة وعلى الجهة السفلية",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150050,
+      "slug": "weej-import-050",
+      "titleAr": "بنرات ولوحات — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-050-290a2da9-4e67-4b69-8fff-125aafc6a28a_61716520.jpg",
+      "categorySlug": "stands-boards",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-050-290a2da9-4e67-4b69-8fff-125aafc6a28a_61716520.jpg",
+      "assessment": {
+        "id": 150050,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يوجد شعار ظاهر، قماش/لوحة فارغة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150051,
+      "slug": "weej-import-051",
+      "titleAr": "بنرات ولوحات — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-051-acc3ee18-5954-4b1a-a5b7-060944ad7ce7_c01b5403.jpg",
+      "categorySlug": "stands-boards",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-051-acc3ee18-5954-4b1a-a5b7-060944ad7ce7_c01b5403.jpg",
+      "assessment": {
+        "id": 150051,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "بنر نموذجي بدون شعار Weej أو Al Rawhaa",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150052,
+      "slug": "weej-import-052",
+      "titleAr": "بنرات ولوحات — نموذج 03",
+      "imageUrl": "/manus-storage/weej-banner-003-alrawhaa_c75c32ce.webp",
+      "categorySlug": "stands-boards",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-banner-003-alrawhaa_c75c32ce.webp",
+      "assessment": {
+        "id": 150052,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر على اللوحة العلوية وواجهة المنضدة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150053,
+      "slug": "weej-import-053",
+      "titleAr": "بنرات ولوحات — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-053-34e86680-a153-400c-83e9-b5642b7b4155_1ff7683d.jpg",
+      "categorySlug": "stands-boards",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-053-34e86680-a153-400c-83e9-b5642b7b4155_1ff7683d.jpg",
+      "assessment": {
+        "id": 150053,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "تصميم بنر بدون علامات تجارية ظاهرة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150054,
+      "slug": "weej-import-054",
+      "titleAr": "بوكسات — نموذج 01",
+      "imageUrl": "/manus-storage/weej-boxes-001-alrawhaa_ce64687b.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-001-alrawhaa_ce64687b.webp",
+      "assessment": {
+        "id": 150054,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر على غطاء الصندوق",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150055,
+      "slug": "weej-import-055",
+      "titleAr": "بوكسات — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-055-5c5cdb9d-6a9a-46be-8d57-58af97ddb996_c7dfd906.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-055-5c5cdb9d-6a9a-46be-8d57-58af97ddb996_c7dfd906.jpg",
+      "assessment": {
+        "id": 150055,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "قالب بوكسات بنمط غير معنون بدون شعار",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150056,
+      "slug": "weej-import-056",
+      "titleAr": "بوكسات — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-056-40eebdfe-3afe-4af4-aca8-e95b4cbb6436_d46291f2.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-056-40eebdfe-3afe-4af4-aca8-e95b4cbb6436_d46291f2.jpg",
+      "assessment": {
+        "id": 150056,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "الكلمة العربية 'ويج' واضحة بجانب شعار Al Rawhaa على الغطاء",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150057,
+      "slug": "weej-import-057",
+      "titleAr": "بوكسات — نموذج 04",
+      "imageUrl": "/manus-storage/weej-boxes-004-alrawhaa_4b27a380.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-004-alrawhaa_4b27a380.webp",
+      "assessment": {
+        "id": 150057,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر على واجهة الصندوق.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150058,
+      "slug": "weej-import-058",
+      "titleAr": "بوكسات — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-058-d65728bd-85d4-4335-9180-330e0b0a99ff_d84f6157.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-058-d65728bd-85d4-4335-9180-330e0b0a99ff_d84f6157.jpg",
+      "assessment": {
+        "id": 150058,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 80,
+        "evidence": "لا يظهر شعار واضح على العينة، نقش عام فقط.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150059,
+      "slug": "weej-import-059",
+      "titleAr": "بوكسات — نموذج 06",
+      "imageUrl": "/manus-storage/weej-boxes-006-alrawhaa_34fbb7eb.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-006-alrawhaa_34fbb7eb.webp",
+      "assessment": {
+        "id": 150059,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر على علبتي المناديل.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150060,
+      "slug": "weej-import-060",
+      "titleAr": "بوكسات — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-060-e2670a9e-910a-4e1f-a021-a23c9887d522_35959c9e.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-060-e2670a9e-910a-4e1f-a021-a23c9887d522_35959c9e.jpg",
+      "assessment": {
+        "id": 150060,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 92,
+        "evidence": "نص 'Weej' واضح مطبوع على غطاء العلبة.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150061,
+      "slug": "weej-import-061",
+      "titleAr": "بوكسات — نموذج 08",
+      "imageUrl": "/manus-storage/weej-boxes-008-alrawhaa_9bc84427.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-008-alrawhaa_9bc84427.webp",
+      "assessment": {
+        "id": 150061,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر على جانب الصندوق المفتوح.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150062,
+      "slug": "weej-import-062",
+      "titleAr": "بوكسات — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-062-9ac9bb8b-859e-4e30-95c2-641be05623d0_bbaf2904.png",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-062-9ac9bb8b-859e-4e30-95c2-641be05623d0_bbaf2904.png",
+      "assessment": {
+        "id": 150062,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "كلمة 'ويج' مطبوعة بوضوح على الصندوق بجانب شعار Al Rawhaa.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150063,
+      "slug": "weej-import-063",
+      "titleAr": "بوكسات — نموذج 10",
+      "imageUrl": "/manus-storage/weej-boxes-010-alrawhaa_c96d077f.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-010-alrawhaa_c96d077f.webp",
+      "assessment": {
+        "id": 150063,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر أسفل نافذة العرض.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150064,
+      "slug": "weej-import-064",
+      "titleAr": "بوكسات — نموذج 11",
+      "imageUrl": "/manus-storage/weej-boxes-011-alrawhaa_61a7c65c.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-011-alrawhaa_61a7c65c.webp",
+      "assessment": {
+        "id": 150064,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر على الحاملة الأمامية.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150065,
+      "slug": "weej-import-065",
+      "titleAr": "بوكسات — نموذج 12",
+      "imageUrl": "/manus-storage/weej-boxes-012-alrawhaa_222de056.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-012-alrawhaa_222de056.webp",
+      "assessment": {
+        "id": 150065,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa ظاهر بوضوح على غطاء البوكس.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150066,
+      "slug": "weej-import-066",
+      "titleAr": "بوكسات — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-066-3db8d1e8-0a00-4222-9cb8-72b028d17dfb_bb40f13f.jpg",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-066-3db8d1e8-0a00-4222-9cb8-72b028d17dfb_bb40f13f.jpg",
+      "assessment": {
+        "id": 150066,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 70,
+        "evidence": "نقش أزرق عام ونص أبيض غير مقروء؛ لا يظهر شعار Weej أو Al Rawhaa بوضوح.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150067,
+      "slug": "weej-import-067",
+      "titleAr": "بوكسات — نموذج 14",
+      "imageUrl": "/manus-storage/weej-boxes-014-alrawhaa_e5a20e6b.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-014-alrawhaa_e5a20e6b.webp",
+      "assessment": {
+        "id": 150067,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "اسم وشعار Al Rawhaa واضح على جانب الصندوق.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150068,
+      "slug": "weej-import-068",
+      "titleAr": "بوكسات — نموذج 15",
+      "imageUrl": "/manus-storage/weej-boxes-015-alrawhaa_0096324a.webp",
+      "categorySlug": "boxes-packaging",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-boxes-015-alrawhaa_0096324a.webp",
+      "assessment": {
+        "id": 150068,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار Al Rawhaa مطبوع بوضوح على الصناديق الزرقاء.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150069,
+      "slug": "weej-import-069",
+      "titleAr": "تاقات — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-069-647bdc83-e826-4f66-be1f-d57f3fae9d1c_9f404ea9.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-069-647bdc83-e826-4f66-be1f-d57f3fae9d1c_9f404ea9.jpg",
+      "assessment": {
+        "id": 150069,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "نص 'Brand Mockup' تصميم نموذجي عام، لا شعار Weej أو Al Rawhaa.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150070,
+      "slug": "weej-import-070",
+      "titleAr": "تاقات — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-070-2796f381-4524-442c-a554-be6141d19966_c0dc7ab7.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-070-2796f381-4524-442c-a554-be6141d19966_c0dc7ab7.jpg",
+      "assessment": {
+        "id": 150070,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "بطاقات شكر مزخرفة عامة بدون شعار Weej أو Al Rawhaa.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150071,
+      "slug": "weej-import-071",
+      "titleAr": "تاقات — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-071-305cf126-d188-45ab-93c8-fd5b558e2e92_68c2cfbb.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-071-305cf126-d188-45ab-93c8-fd5b558e2e92_68c2cfbb.jpg",
+      "assessment": {
+        "id": 150071,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "تصميم موك أب للنواشيط (Cardboard...Mockup) نص عام فقط، لا شعار.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150072,
+      "slug": "weej-import-072",
+      "titleAr": "تاقات — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-072-b1c45154-2be3-4002-ae48-c433c68243f5_f6e5934b.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-072-b1c45154-2be3-4002-ae48-c433c68243f5_f6e5934b.jpg",
+      "assessment": {
+        "id": 150072,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "علامة بها 'Your design here' موك أب فارغ؛ لا يظهر شعار.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150073,
+      "slug": "weej-import-073",
+      "titleAr": "تاقات — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-073-87d6764e-c5ad-4c92-b348-bbf061127d43_5780961c.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-073-87d6764e-c5ad-4c92-b348-bbf061127d43_5780961c.jpg",
+      "assessment": {
+        "id": 150073,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "بطاقات نموذجية مع نص عام 'YOUR LOGO'، لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150074,
+      "slug": "weej-import-074",
+      "titleAr": "تاقات — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-074-fa8bea7e-5792-40c2-858f-42711a019e8a_f101c893.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-074-fa8bea7e-5792-40c2-858f-42711a019e8a_f101c893.jpg",
+      "assessment": {
+        "id": 150074,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "تاق دائري يحمل عبارة بالإنجليزية 'Made with Love' دون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150075,
+      "slug": "weej-import-075",
+      "titleAr": "تاقات — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-075-4237e33f-b0f6-4cd1-9df2-7c9a0f74b6a8_bc8ef179.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-075-4237e33f-b0f6-4cd1-9df2-7c9a0f74b6a8_bc8ef179.jpg",
+      "assessment": {
+        "id": 150075,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "ثلاث بطاقات شكر تصميمية بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150076,
+      "slug": "weej-import-076",
+      "titleAr": "تصميم — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-076-bf477b4a-382d-4efa-8606-992e2e371437_5dbd3c2f.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-076-bf477b4a-382d-4efa-8606-992e2e371437_5dbd3c2f.jpg",
+      "assessment": {
+        "id": 150076,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "بطاقة تظهر شعار 'Weej' و'ويج' واضحاً.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150077,
+      "slug": "weej-import-077",
+      "titleAr": "تصميم — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-077-84aee7ae-a593-4c69-8e6a-32556d90ae6a_eca653c4.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-077-84aee7ae-a593-4c69-8e6a-32556d90ae6a_eca653c4.jpg",
+      "assessment": {
+        "id": 150077,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "مجموعة بانرات تصميمية عامة بدون شعار ويج مرئي.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150078,
+      "slug": "weej-import-078",
+      "titleAr": "تصميم — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-078-c57d262e-fc36-422b-b2ba-1a650adcb1d9_6d1c5af9.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-078-c57d262e-fc36-422b-b2ba-1a650adcb1d9_6d1c5af9.jpg",
+      "assessment": {
+        "id": 150078,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 90,
+        "evidence": "موك آب إنستاغرام يظهر شعار 'Weej'/'ويج' صغير أسفل التصميم.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150079,
+      "slug": "weej-import-079",
+      "titleAr": "تصميم — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-079-23b0cd3a-26fb-49c8-b214-d04ff8abc29a_4369476f.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-079-23b0cd3a-26fb-49c8-b214-d04ff8abc29a_4369476f.jpg",
+      "assessment": {
+        "id": 150079,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "صورة مقارنة قبل/بعد تعرض 'Al Rawhaa' و'ويج' مع ظهور واضح لويج.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150080,
+      "slug": "weej-import-080",
+      "titleAr": "تصميم — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-080-f96ae15f-0433-4fdd-b52a-b638a252ba55_66f42ae5.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-080-f96ae15f-0433-4fdd-b52a-b638a252ba55_66f42ae5.jpg",
+      "assessment": {
+        "id": 150080,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 98,
+        "evidence": "ورقة ملصقات تحمل شعار 'Weej' و'ويج' على الملصقات بوضوح.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150081,
+      "slug": "weej-import-081",
+      "titleAr": "تصميمات  جاهزة — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-081-8fe0db72-85b9-4992-807b-fb0855277a3d_e52746c3.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-081-8fe0db72-85b9-4992-807b-fb0855277a3d_e52746c3.jpg",
+      "assessment": {
+        "id": 150081,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "ملصق مكتوب 'مغلق بإحكام' بالإنجليزية - ليس شعار ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150082,
+      "slug": "weej-import-082",
+      "titleAr": "تصميمات  جاهزة — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-082-48e492f3-47e5-4699-8102-04b78c81b4e5_21fa8ebc.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-082-48e492f3-47e5-4699-8102-04b78c81b4e5_21fa8ebc.jpg",
+      "assessment": {
+        "id": 150082,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "ملصق وردي مكتوب 'شكراً لثقتكم بنا' - نص عام، ليس ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150083,
+      "slug": "weej-import-083",
+      "titleAr": "تصميمات  جاهزة — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-083-98763f47-c787-4b62-84cd-608f0895e233_acd41232.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-083-98763f47-c787-4b62-84cd-608f0895e233_acd41232.jpg",
+      "assessment": {
+        "id": 150083,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "ملصق دائري مكتوب 'صنعت بإتقان' - لا يظهر شعار ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150084,
+      "slug": "weej-import-084",
+      "titleAr": "تصميمات  جاهزة — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-084-68405b94-147f-4b67-b0ee-9caf2bce7ece_1f1d2edc.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-084-68405b94-147f-4b67-b0ee-9caf2bce7ece_1f1d2edc.jpg",
+      "assessment": {
+        "id": 150084,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "ملصق أحمر مكتوب 'بالعافية' - عبارة عامة، ليست علامة ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150085,
+      "slug": "weej-import-085",
+      "titleAr": "تصميمات  جاهزة — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-085-fce9df73-d5e9-48ee-99e7-a9a50a8038dd_86c744b7.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-085-fce9df73-d5e9-48ee-99e7-a9a50a8038dd_86c744b7.jpg",
+      "assessment": {
+        "id": 150085,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شريط على الصندوق مكتوب 'Thank you' وجملة بالعربية - لا يظهر ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150086,
+      "slug": "weej-import-086",
+      "titleAr": "تصميمات  جاهزة — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-086-803174cb-9b2e-4f88-9e16-35767f3fe5f5_d2ec379a.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-086-803174cb-9b2e-4f88-9e16-35767f3fe5f5_d2ec379a.jpg",
+      "assessment": {
+        "id": 150086,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شريط زهوري مكتوب 'شكراً لاختيارك منتجاتنا' - نص عام، ليس ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150087,
+      "slug": "weej-import-087",
+      "titleAr": "تصميمات  جاهزة — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-087-6ff03a1d-3d53-4549-85d3-60a94206cad3_5f7804b4.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-087-6ff03a1d-3d53-4549-85d3-60a94206cad3_5f7804b4.jpg",
+      "assessment": {
+        "id": 150087,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 40,
+        "evidence": "صفحة ملصقات بنفسجية تحتوي نص عربي صغير ومطابقات متكررة؛ قد يكون شعار ويج لكنه غير واضح ويحتاج تدقيق يدوي",
+        "action": "manual_review"
+      }
+    },
+    {
+      "id": 150088,
+      "slug": "weej-import-088",
+      "titleAr": "تصميمات  جاهزة — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-088-12fd2954-75fc-4625-bcc4-1604fee700a0_9e0b6d56.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-088-12fd2954-75fc-4625-bcc4-1604fee700a0_9e0b6d56.jpg",
+      "assessment": {
+        "id": 150088,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شريط على الصندوق مكتوب 'منتج جميل' ورمز قلب - لا يظهر شعار ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150089,
+      "slug": "weej-import-089",
+      "titleAr": "تصميمات  جاهزة — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-089-31a1fd60-68d9-4ac2-85a7-fd2759fd139f_245a9ba3.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-089-31a1fd60-68d9-4ac2-85a7-fd2759fd139f_245a9ba3.jpg",
+      "assessment": {
+        "id": 150089,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 50,
+        "evidence": "لا توجد صورة مضمّنة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150090,
+      "slug": "weej-import-090",
+      "titleAr": "تصميمات  جاهزة — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-090-0e86fcb6-bbe4-41d0-950b-f0ab6c0a38ce_5edff3d5.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-090-0e86fcb6-bbe4-41d0-950b-f0ab6c0a38ce_5edff3d5.jpg",
+      "assessment": {
+        "id": 150090,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 50,
+        "evidence": "لا توجد صورة مضمّنة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150091,
+      "slug": "weej-import-091",
+      "titleAr": "تصميمات  جاهزة — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-091-e050558e-cecf-4540-81fc-5360c0741886_3c5a9996.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-091-e050558e-cecf-4540-81fc-5360c0741886_3c5a9996.jpg",
+      "assessment": {
+        "id": 150091,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 50,
+        "evidence": "لا توجد صورة مضمّنة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150092,
+      "slug": "weej-import-092",
+      "titleAr": "تصميمات  جاهزة — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-092-cab74ad2-beec-4e5b-8f15-1f37ffbda0d6_d7ad7738.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-092-cab74ad2-beec-4e5b-8f15-1f37ffbda0d6_d7ad7738.jpg",
+      "assessment": {
+        "id": 150092,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 50,
+        "evidence": "لا توجد صورة مضمّنة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150093,
+      "slug": "weej-import-093",
+      "titleAr": "تصميمات  جاهزة — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-093-96b003c2-2128-40cd-847e-5560d27fd120_ed67c4e3.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-093-96b003c2-2128-40cd-847e-5560d27fd120_ed67c4e3.jpg",
+      "assessment": {
+        "id": 150093,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 50,
+        "evidence": "لا توجد صورة مضمّنة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150094,
+      "slug": "weej-import-094",
+      "titleAr": "تصميمات  جاهزة — نموذج 14",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-094-3347002e-a6aa-4600-b555-db001c005b4d_46c806f1.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-094-3347002e-a6aa-4600-b555-db001c005b4d_46c806f1.jpg",
+      "assessment": {
+        "id": 150094,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 50,
+        "evidence": "لا توجد صورة مضمّنة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150095,
+      "slug": "weej-import-095",
+      "titleAr": "تصميمات  جاهزة — نموذج 15",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-095-f83631bd-65e1-42f7-bc74-603bb0c4df47_82143f9c.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-095-f83631bd-65e1-42f7-bc74-603bb0c4df47_82143f9c.jpg",
+      "assessment": {
+        "id": 150095,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 50,
+        "evidence": "لا توجد صورة مضمّنة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150096,
+      "slug": "weej-import-096",
+      "titleAr": "ستيكر رول ( ورقي - بلاستيك ) — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-096-08c541f9-47fa-45de-b3e2-7c802d601c5d_78e24e9a.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-096-08c541f9-47fa-45de-b3e2-7c802d601c5d_78e24e9a.jpg",
+      "assessment": {
+        "id": 150096,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 90,
+        "evidence": "شعار 'Weej' / 'ويج' ظاهر في زاوية رأس صفحات الستيكير.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150097,
+      "slug": "weej-import-097",
+      "titleAr": "ستيكر رول ( ورقي - بلاستيك ) — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-097-bea7e294-f4c7-4dfe-b024-e5162d3d49af_f731738d.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-097-bea7e294-f4c7-4dfe-b024-e5162d3d49af_f731738d.jpg",
+      "assessment": {
+        "id": 150097,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار Weej أو ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150098,
+      "slug": "weej-import-098",
+      "titleAr": "ستيكر رول ( ورقي - بلاستيك ) — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-098-07167b5f-c26e-4337-8ddf-5fc25a055262_5d7024e8.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-098-07167b5f-c26e-4337-8ddf-5fc25a055262_5d7024e8.jpg",
+      "assessment": {
+        "id": 150098,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار Weej أو ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150099,
+      "slug": "weej-import-099",
+      "titleAr": "ستيكر رول ( ورقي - بلاستيك ) — نموذج 04",
+      "imageUrl": "/manus-storage/sticker-roll-w01-price-removed_200fb1dc.webp",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/sticker-roll-w01-price-removed_200fb1dc.webp",
+      "assessment": {
+        "id": 150099,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار 'Weej' مطبوع على الرول.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150100,
+      "slug": "weej-import-100",
+      "titleAr": "ستيكر رول ( ورقي - بلاستيك ) — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-100-e1a1309e-68ed-40ac-99b2-049d6708f446_02b35106.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-100-e1a1309e-68ed-40ac-99b2-049d6708f446_02b35106.jpg",
+      "assessment": {
+        "id": 150100,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار Weej أو ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150101,
+      "slug": "weej-import-101",
+      "titleAr": "ستيكرات شيت ورقي — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-101-bb5243bd-8692-40af-9a6b-653d96d6fd1f_e8b50790.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-101-bb5243bd-8692-40af-9a6b-653d96d6fd1f_e8b50790.jpg",
+      "assessment": {
+        "id": 150101,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار Weej أو ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150102,
+      "slug": "weej-import-102",
+      "titleAr": "ستيكرات — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-102-c26eea3f-bef7-49bf-9f4e-1e4b89f4670a_8df61274.png",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-102-c26eea3f-bef7-49bf-9f4e-1e4b89f4670a_8df61274.png",
+      "assessment": {
+        "id": 150102,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار Weej ونص Al Rawhaa ظاهران على اللصاقات.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150103,
+      "slug": "weej-import-103",
+      "titleAr": "ستيكرات — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-103-46589320-f226-468c-9fda-45fa666bb40e_fb71218e.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-103-46589320-f226-468c-9fda-45fa666bb40e_fb71218e.jpg",
+      "assessment": {
+        "id": 150103,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار Weej أو ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150104,
+      "slug": "weej-import-104",
+      "titleAr": "ستيكرات — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-104-6edcd25f-3d0b-4128-a5fe-5e40f7f34dea_cd1eca61.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-104-6edcd25f-3d0b-4128-a5fe-5e40f7f34dea_cd1eca61.jpg",
+      "assessment": {
+        "id": 150104,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار Weej أو ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150105,
+      "slug": "weej-import-105",
+      "titleAr": "ستيكرات — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-105-5fb75bb9-cce4-4806-aee4-5189babb09b6_2ee0e6f0.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-105-5fb75bb9-cce4-4806-aee4-5189babb09b6_2ee0e6f0.jpg",
+      "assessment": {
+        "id": 150105,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نموذج دائري '6 CM STICKER' وعبارة 'تصميمك الخاص هنا' — لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150106,
+      "slug": "weej-import-106",
+      "titleAr": "ستيكرات — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-106-a1ae88ad-3338-4900-8bfd-5abaa21ad23b_9cac0ddf.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-106-a1ae88ad-3338-4900-8bfd-5abaa21ad23b_9cac0ddf.jpg",
+      "assessment": {
+        "id": 150106,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نموذج دائري '5 CM STICKER' وعبارة 'تصميمك الخاص هنا' — لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150107,
+      "slug": "weej-import-107",
+      "titleAr": "ستيكرات — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-107-cb2663ce-5cca-4b57-8c59-c25dfd0d3c67_2d9388a9.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-107-cb2663ce-5cca-4b57-8c59-c25dfd0d3c67_2d9388a9.jpg",
+      "assessment": {
+        "id": 150107,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نموذج دائري '10 CM STICKER' وعبارة 'تصميمك الخاص هنا' — لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150108,
+      "slug": "weej-import-108",
+      "titleAr": "ستيكرات — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-108-20a4bb21-8672-431a-9f31-53b1c979e971_c9d4e677.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-108-20a4bb21-8672-431a-9f31-53b1c979e971_c9d4e677.jpg",
+      "assessment": {
+        "id": 150108,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نموذج دائري '8 CM STICKER' وعبارة 'تصميمك الخاص هنا' — لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150109,
+      "slug": "weej-import-109",
+      "titleAr": "ستيكرات — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-109-9adda371-c1de-4459-9859-d03696d5636d_1c3fe218.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-109-9adda371-c1de-4459-9859-d03696d5636d_1c3fe218.jpg",
+      "assessment": {
+        "id": 150109,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "ملصق مستطيل 4x6 مع زهور ونص 'تصميمك الخاص هنا' — لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150110,
+      "slug": "weej-import-110",
+      "titleAr": "ستيكرات — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-110-04b27d83-ea79-4484-b032-c670e42a6d7d_efef77a3.png",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-110-04b27d83-ea79-4484-b032-c670e42a6d7d_efef77a3.png",
+      "assessment": {
+        "id": 150110,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 98,
+        "evidence": "شريط على كيس الإغلاق عليه نص واضح 'Weej' (ويج) على الملصق.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150111,
+      "slug": "weej-import-111",
+      "titleAr": "ستيكرات — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-111-56712c5b-e003-468a-aaa3-2bc48052e208_073c9966.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-111-56712c5b-e003-468a-aaa3-2bc48052e208_073c9966.jpg",
+      "assessment": {
+        "id": 150111,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نموذج دائري '9 CM STICKER' وعبارة 'تصميمك الخاص هنا' — لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150112,
+      "slug": "weej-import-112",
+      "titleAr": "ستيكرات — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-112-47844562-40d2-4e8e-b04a-f280a9e6c1fc_24d1c9b9.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-112-47844562-40d2-4e8e-b04a-f280a9e6c1fc_24d1c9b9.jpg",
+      "assessment": {
+        "id": 150112,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "ملصق مستطيل 3x7 مع زهور ونص 'تصميمك الخاص هنا' — لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150113,
+      "slug": "weej-import-113",
+      "titleAr": "ستيكرات — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-113-79605569-4110-4ed3-baaa-f4d514f86990_4d0e9336.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-113-79605569-4110-4ed3-baaa-f4d514f86990_4d0e9336.jpg",
+      "assessment": {
+        "id": 150113,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار ويج أو الروعة؛ مجرد ورقة ستيكرات",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150114,
+      "slug": "weej-import-114",
+      "titleAr": "ستيكرات — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-114-8f7c33d9-d61b-4013-b081-eb139249611e_d7b07bf8.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-114-8f7c33d9-d61b-4013-b081-eb139249611e_d7b07bf8.jpg",
+      "assessment": {
+        "id": 150114,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج ظاهر أعلى التصميم (Weej ويج)",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150115,
+      "slug": "weej-import-115",
+      "titleAr": "ستيكرات — نموذج 14",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-115-caa7431a-6b26-4766-a936-28b6ab48e193_7434349e.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-115-caa7431a-6b26-4766-a936-28b6ab48e193_7434349e.jpg",
+      "assessment": {
+        "id": 150115,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "نص تجريبي ('4 CM' و'تصميمك الخاص هنا') دون شعار",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150116,
+      "slug": "weej-import-116",
+      "titleAr": "ستيكرات — نموذج 15",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-116-13f1d6e6-6ceb-4f3a-810f-1b89be265d73_56a16468.jpg",
+      "categorySlug": "stickers-labels",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-116-13f1d6e6-6ceb-4f3a-810f-1b89be265d73_56a16468.jpg",
+      "assessment": {
+        "id": 150116,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "نص تجريبي ('3 CM' و'تصميمك الخاص هنا') دون شعار",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150117,
+      "slug": "weej-import-117",
+      "titleAr": "طباعة اكواب — نموذج 01",
+      "imageUrl": "/manus-storage/weej-import-117-900_54453603.webp",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-import-117-900_54453603.webp",
+      "assessment": {
+        "id": 150117,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 96,
+        "evidence": "شعار Al Rawhaa ظاهر على الأكواب ('Al Rawhaa الروعة')",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150118,
+      "slug": "weej-import-118",
+      "titleAr": "طباعة اكواب — نموذج 02",
+      "imageUrl": "/manus-storage/weej-import-118-900_c099f945.webp",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/weej-import-118-900_c099f945.webp",
+      "assessment": {
+        "id": 150118,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 96,
+        "evidence": "شعار Al Rawhaa ظاهر على الأكواب ('Al Rawhaa الروعة')",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150119,
+      "slug": "weej-import-119",
+      "titleAr": "مطبوعات  العيد — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-119-1f1ef3e6-f2f0-450e-9351-6e66ff9a63d3_b4437217.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-119-1f1ef3e6-f2f0-450e-9351-6e66ff9a63d3_b4437217.jpg",
+      "assessment": {
+        "id": 150119,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج ظاهر أعلى الصورة",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150120,
+      "slug": "weej-import-120",
+      "titleAr": "مطبوعات  العيد — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-120-ffd8ec9f-f1db-4e97-8ada-757940fb01a5_8c0b3ad3.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-120-ffd8ec9f-f1db-4e97-8ada-757940fb01a5_8c0b3ad3.jpg",
+      "assessment": {
+        "id": 150120,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر شعار؛ تصميم بطاقة عيدي ونص 'عيد سعيد'",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150121,
+      "slug": "weej-import-121",
+      "titleAr": "مطبوعات  العيد — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-121-9488897b-c65b-425f-94f0-99758da2928f_c617c55a.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-121-9488897b-c65b-425f-94f0-99758da2928f_c617c55a.jpg",
+      "assessment": {
+        "id": 150121,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى الصورة، لا يظهر نص ويج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150122,
+      "slug": "weej-import-122",
+      "titleAr": "مطبوعات  العيد — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-122-11497792-958b-4456-a848-493655f10749_85a16d30.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-122-11497792-958b-4456-a848-493655f10749_85a16d30.jpg",
+      "assessment": {
+        "id": 150122,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى يمين الصورة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150123,
+      "slug": "weej-import-123",
+      "titleAr": "مطبوعات  العيد — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-123-8898110d-4823-4682-86c6-b49c260a510e_35534b0c.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-123-8898110d-4823-4682-86c6-b49c260a510e_35534b0c.jpg",
+      "assessment": {
+        "id": 150123,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا يوجد شعار ظاهر على المنتج",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150124,
+      "slug": "weej-import-124",
+      "titleAr": "مطبوعات  العيد — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-124-c62c1ad7-fe68-4be9-823f-c8429197562b_c7a0c318.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-124-c62c1ad7-fe68-4be9-823f-c8429197562b_c7a0c318.jpg",
+      "assessment": {
+        "id": 150124,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى يسار الصورة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150125,
+      "slug": "weej-import-125",
+      "titleAr": "مطبوعات  العيد — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-125-330d8066-c466-423d-b9d1-d20a70dc66e0_f92c2297.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-125-330d8066-c466-423d-b9d1-d20a70dc66e0_f92c2297.jpg",
+      "assessment": {
+        "id": 150125,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا يوجد شعار ظاهر على البطاقة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150126,
+      "slug": "weej-import-126",
+      "titleAr": "مطبوعات  العيد — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-126-ba93bcca-3cc3-41b0-b86d-e26070161dfc_fabfdd4d.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-126-ba93bcca-3cc3-41b0-b86d-e26070161dfc_fabfdd4d.jpg",
+      "assessment": {
+        "id": 150126,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى يسار الصورة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150127,
+      "slug": "weej-import-127",
+      "titleAr": "مطبوعات  العيد — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-127-5588e853-8a2c-47fb-a6b7-e34ebc7693b0_2f650f5e.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-127-5588e853-8a2c-47fb-a6b7-e34ebc7693b0_2f650f5e.jpg",
+      "assessment": {
+        "id": 150127,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا يوجد شعار ظاهر على الوسم",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150128,
+      "slug": "weej-import-128",
+      "titleAr": "مطبوعات  العيد — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-128-72e8c752-2f4a-4083-938f-89cf931fcf56_154dc607.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-128-72e8c752-2f4a-4083-938f-89cf931fcf56_154dc607.jpg",
+      "assessment": {
+        "id": 150128,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج ظاهر أعلى يسار الصورة",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150129,
+      "slug": "weej-import-129",
+      "titleAr": "مطبوعات  العيد — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-129-1efe833f-43bf-47d6-afa8-9c41d0e755ec_1f40547f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-129-1efe833f-43bf-47d6-afa8-9c41d0e755ec_1f40547f.jpg",
+      "assessment": {
+        "id": 150129,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا توجد كلمة أو شعار 'ويج' أو 'Al Rawhaa' ظاهر.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150130,
+      "slug": "weej-import-130",
+      "titleAr": "مطبوعات  العيد — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-130-173bdfc2-d149-42b0-8f5d-b94fb415159e_d8163f5f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-130-173bdfc2-d149-42b0-8f5d-b94fb415159e_d8163f5f.jpg",
+      "assessment": {
+        "id": 150130,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا توجد كلمة أو شعار 'ويج' أو 'Al Rawhaa' ظاهر.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150131,
+      "slug": "weej-import-131",
+      "titleAr": "مطبوعات  العيد — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-131-a731363c-216b-4e40-b31e-6f9df6ae752a_6738e16d.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-131-a731363c-216b-4e40-b31e-6f9df6ae752a_6738e16d.jpg",
+      "assessment": {
+        "id": 150131,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا توجد كلمة أو شعار 'ويج' أو 'Al Rawhaa' ظاهر.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150132,
+      "slug": "weej-import-132",
+      "titleAr": "مطبوعات  العيد — نموذج 14",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-132-ac069d30-49cd-472f-8163-2e86afbf7ee3_08b29d4f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-132-ac069d30-49cd-472f-8163-2e86afbf7ee3_08b29d4f.jpg",
+      "assessment": {
+        "id": 150132,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا توجد كلمة أو شعار 'ويج' أو 'Al Rawhaa' ظاهر.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150133,
+      "slug": "weej-import-133",
+      "titleAr": "مطبوعات  العيد — نموذج 15",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-133-8ccd3728-5f91-4973-9867-689d85ead0f2_73284a90.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-133-8ccd3728-5f91-4973-9867-689d85ead0f2_73284a90.jpg",
+      "assessment": {
+        "id": 150133,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 75,
+        "evidence": "ظهور كلمة 'Weej' مع شعار Al Rawhaa أعلى الصورة.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150134,
+      "slug": "weej-import-134",
+      "titleAr": "مطبوعات التخرج — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-134-dbd52a1d-bd63-4c7d-a503-b90da2dd178c_27af254b.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-134-dbd52a1d-bd63-4c7d-a503-b90da2dd178c_27af254b.jpg",
+      "assessment": {
+        "id": 150134,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا توجد كلمة أو شعار 'ويج' أو 'Al Rawhaa' ظاهر.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150135,
+      "slug": "weej-import-135",
+      "titleAr": "مطبوعات التخرج — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-135-6c23773b-4f53-4357-b94b-999ad5eb3814_32e16b49.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-135-6c23773b-4f53-4357-b94b-999ad5eb3814_32e16b49.jpg",
+      "assessment": {
+        "id": 150135,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "لا توجد كلمة أو شعار 'ويج' أو 'Al Rawhaa' ظاهر.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150136,
+      "slug": "weej-import-136",
+      "titleAr": "مطبوعات التخرج — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-136-ed39d209-d741-4da1-aea4-d4daa6c55a36_21161790.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-136-ed39d209-d741-4da1-aea4-d4daa6c55a36_21161790.jpg",
+      "assessment": {
+        "id": 150136,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى الوسط؛ لا تظهر كلمة 'ويج'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150137,
+      "slug": "weej-import-137",
+      "titleAr": "مطبوعات التخرج — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-137-a8e4f5e5-545e-42f6-ac6f-6ba34a839edb_9026df5f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-137-a8e4f5e5-545e-42f6-ac6f-6ba34a839edb_9026df5f.jpg",
+      "assessment": {
+        "id": 150137,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج أو Al Rawhaa.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150138,
+      "slug": "weej-import-138",
+      "titleAr": "مطبوعات التخرج — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-138-1402554d-3836-4fc9-865e-eae6762f52db_3092b594.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-138-1402554d-3836-4fc9-865e-eae6762f52db_3092b594.jpg",
+      "assessment": {
+        "id": 150138,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "تصميم مبرد دون شعار ويج أو Al Rawhaa ظاهر.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150139,
+      "slug": "weej-import-139",
+      "titleAr": "مطبوعات التخرج — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-139-70e4ab55-6aca-451a-b4e9-8a2dd8be9980_5f3a5c15.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-139-70e4ab55-6aca-451a-b4e9-8a2dd8be9980_5f3a5c15.jpg",
+      "assessment": {
+        "id": 150139,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 96,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى يسار الصورة؛ لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150140,
+      "slug": "weej-import-140",
+      "titleAr": "مطبوعات التخرج — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-140-b0ddea83-5e1d-42f0-9d65-30864bc7706d_1799266b.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-140-b0ddea83-5e1d-42f0-9d65-30864bc7706d_1799266b.jpg",
+      "assessment": {
+        "id": 150140,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج أو Al Rawhaa على التصميم.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150141,
+      "slug": "weej-import-141",
+      "titleAr": "مطبوعات التخرج — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-141-ba5f0239-59c3-4e18-be8c-6e4e94e68609_5199deed.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-141-ba5f0239-59c3-4e18-be8c-6e4e94e68609_5199deed.png",
+      "assessment": {
+        "id": 150141,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "عنصر زينة/قالب تخرج بدون شعار ويج أو Al Rawhaa.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150142,
+      "slug": "weej-import-142",
+      "titleAr": "مطبوعات التخرج — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-142-2e360139-8c4d-4b7d-aa02-28d073d604c1_9d035679.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-142-2e360139-8c4d-4b7d-aa02-28d073d604c1_9d035679.jpg",
+      "assessment": {
+        "id": 150142,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج أو Al Rawhaa على البنرات المعروضة.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150143,
+      "slug": "weej-import-143",
+      "titleAr": "مطبوعات التخرج — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-143-0968d464-3780-4c8f-bd82-f405fbbe126d_2284ca08.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-143-0968d464-3780-4c8f-bd82-f405fbbe126d_2284ca08.jpg",
+      "assessment": {
+        "id": 150143,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 96,
+        "evidence": "شعار Al Rawhaa ظاهر أعلى يسار الصورة؛ لا يوجد شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150144,
+      "slug": "weej-import-144",
+      "titleAr": "مطبوعات المناسبات — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-144-f51f0f58-b941-4671-af9e-465dbb4acf4e_c18a8569.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-144-f51f0f58-b941-4671-af9e-465dbb4acf4e_c18a8569.jpg",
+      "assessment": {
+        "id": 150144,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "تصميم غلاف/تغليف بدون شعار ويج أو Al Rawhaa.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150145,
+      "slug": "weej-import-145",
+      "titleAr": "مطبوعات المناسبات — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-145-f0917fa5-2aa8-4690-8a38-84df264309ad_1524dbe5.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-145-f0917fa5-2aa8-4690-8a38-84df264309ad_1524dbe5.jpg",
+      "assessment": {
+        "id": 150145,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "لا يوجد شعار مرئي.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150146,
+      "slug": "weej-import-146",
+      "titleAr": "مطبوعات المناسبات — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-146-c7c81a05-245a-466c-9b8b-4f0654900412_bfcc5d49.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-146-c7c81a05-245a-466c-9b8b-4f0654900412_bfcc5d49.jpg",
+      "assessment": {
+        "id": 150146,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار Weej واضح أعلى يسار الصورة.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150147,
+      "slug": "weej-import-147",
+      "titleAr": "مطبوعات المناسبات — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-147-cbd2682b-a3a1-40ff-80e0-5e6550661325_c95acdd1.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-147-cbd2682b-a3a1-40ff-80e0-5e6550661325_c95acdd1.jpg",
+      "assessment": {
+        "id": 150147,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "لا يوجد شعار مرئي.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150148,
+      "slug": "weej-import-148",
+      "titleAr": "مطبوعات المناسبات — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-148-7bfce82f-7cce-493a-8a78-0afc990f2072_db84b00f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-148-7bfce82f-7cce-493a-8a78-0afc990f2072_db84b00f.jpg",
+      "assessment": {
+        "id": 150148,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "لا يوجد شعار مرئي.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150149,
+      "slug": "weej-import-149",
+      "titleAr": "مطبوعات المناسبات — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-149-4076ec04-a594-4aca-9c9f-ccbafdd901ba_f19a9ed0.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-149-4076ec04-a594-4aca-9c9f-ccbafdd901ba_f19a9ed0.jpg",
+      "assessment": {
+        "id": 150149,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "لا يوجد شعار مرئي.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150150,
+      "slug": "weej-import-150",
+      "titleAr": "مطبوعات المناسبات — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-150-e931cc01-97cb-4bf5-8a96-e161616066b9_c9e4af47.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-150-e931cc01-97cb-4bf5-8a96-e161616066b9_c9e4af47.jpg",
+      "assessment": {
+        "id": 150150,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار Weej ظاهر أسفل المنتج.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150151,
+      "slug": "weej-import-151",
+      "titleAr": "مطبوعات المناسبات — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-151-890f4b63-deb3-4449-a963-bdbb0821c9cb_8ef71eee.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-151-890f4b63-deb3-4449-a963-bdbb0821c9cb_8ef71eee.jpg",
+      "assessment": {
+        "id": 150151,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار Weej ظاهر أسفل المنتج.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150152,
+      "slug": "weej-import-152",
+      "titleAr": "مطبوعات المناسبات — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-152-c1e4cf58-6cc6-407b-9f03-b71fbfe81535_6495fe5c.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-152-c1e4cf58-6cc6-407b-9f03-b71fbfe81535_6495fe5c.jpg",
+      "assessment": {
+        "id": 150152,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "لا يوجد شعار مرئي.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150153,
+      "slug": "weej-import-153",
+      "titleAr": "مطبوعات المناسبات — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-153-20375a01-ad91-4a21-89a2-627e9db2d545_c25a76b4.jpg",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150154,
+      "slug": "weej-import-154",
+      "titleAr": "مطبوعات المناسبات — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-154-665755e2-8658-4aeb-b61d-8609eb3304e4_25ba3f9d.jpg",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150155,
+      "slug": "weej-import-155",
+      "titleAr": "مطبوعات المناسبات — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-155-3c6608a9-332a-4fbd-b1dc-454d05626d89_8a6d737d.jpg",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150156,
+      "slug": "weej-import-156",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-156-b4d15240-3cc5-44b1-97d0-1d300b482e52_cf647777.png",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150157,
+      "slug": "weej-import-157",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-157-8e1762fe-2ffc-49d8-a9cf-e4a8fee4d433_820adb0f.png",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150158,
+      "slug": "weej-import-158",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 03",
+      "imageUrl": "/manus-storage/weej-import-158-900_f65c31d8.webp",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150159,
+      "slug": "weej-import-159",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-159-ba0f18c4-9ef1-441f-94f3-e6ce7b591857_86defbe9.png",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150160,
+      "slug": "weej-import-160",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-160-a283bd68-ea7e-490b-a596-3d6f63fff0b5_df958845.png",
+      "categorySlug": "occasion-stationery",
+      "assessment": {
+        "action": "manual_review",
+        "error": "row is not defined"
+      }
+    },
+    {
+      "id": 150161,
+      "slug": "weej-import-161",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-161-1b090955-f63a-44ac-99d7-9f0eae627019_9ae3c550.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-161-1b090955-f63a-44ac-99d7-9f0eae627019_9ae3c550.png",
+      "assessment": {
+        "id": 150161,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150162,
+      "slug": "weej-import-162",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-162-150c386a-2a3f-4d7e-9921-f763d832a7b3_ec2f14c1.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-162-150c386a-2a3f-4d7e-9921-f763d832a7b3_ec2f14c1.png",
+      "assessment": {
+        "id": 150162,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150163,
+      "slug": "weej-import-163",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-163-2c41ebf1-ee6a-448d-9a02-bfc9296a9bf2_07a77c3a.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-163-2c41ebf1-ee6a-448d-9a02-bfc9296a9bf2_07a77c3a.png",
+      "assessment": {
+        "id": 150163,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150164,
+      "slug": "weej-import-164",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-164-ba91d1e4-0952-4f77-994f-48bad975f232_b326df1d.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-164-ba91d1e4-0952-4f77-994f-48bad975f232_b326df1d.png",
+      "assessment": {
+        "id": 150164,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150165,
+      "slug": "weej-import-165",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-165-e46220ab-9aff-4a1a-b413-24f2ea9d9138_9b4b7580.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-165-e46220ab-9aff-4a1a-b413-24f2ea9d9138_9b4b7580.png",
+      "assessment": {
+        "id": 150165,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150166,
+      "slug": "weej-import-166",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-166-16312965-27d5-4dce-8c3c-e1efcf6eb8d0_ec9b39a6.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-166-16312965-27d5-4dce-8c3c-e1efcf6eb8d0_ec9b39a6.png",
+      "assessment": {
+        "id": 150166,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150167,
+      "slug": "weej-import-167",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-167-832f4cf8-a2fa-48fa-a9fb-bbe93bc22c63_c6c96cc6.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-167-832f4cf8-a2fa-48fa-a9fb-bbe93bc22c63_c6c96cc6.png",
+      "assessment": {
+        "id": 150167,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150168,
+      "slug": "weej-import-168",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-168-faf83e42-8d4f-4534-b0e4-c751862f3d99_0e220042.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-168-faf83e42-8d4f-4534-b0e4-c751862f3d99_0e220042.png",
+      "assessment": {
+        "id": 150168,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يظهر نص «ويج» أو شعار Weej؛ يظهر شعار الحملة «عزنا بطبعنا».",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150169,
+      "slug": "weej-import-169",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 14",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-169-4e8f6ac6-cfd2-4314-94d8-6fe364543cd0_72c8f58a.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-169-4e8f6ac6-cfd2-4314-94d8-6fe364543cd0_72c8f58a.png",
+      "assessment": {
+        "id": 150169,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج؛ يظهر شعار الحملة 'عزنا بطبعنا'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150170,
+      "slug": "weej-import-170",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 15",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-170-0fc83158-84f7-4693-9dbf-aa4a42ddd49d_9bf9bc07.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-170-0fc83158-84f7-4693-9dbf-aa4a42ddd49d_9bf9bc07.png",
+      "assessment": {
+        "id": 150170,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج؛ يظهر شعار الحملة 'عزنا بطبعنا'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150171,
+      "slug": "weej-import-171",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 16",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-171-78574e97-3b69-42a7-8d58-b7bf4ff0f6bc_cd5528a3.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-171-78574e97-3b69-42a7-8d58-b7bf4ff0f6bc_cd5528a3.png",
+      "assessment": {
+        "id": 150171,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج؛ يظهر شعار الحملة 'عزنا بطبعنا'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150172,
+      "slug": "weej-import-172",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 17",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-172-ab0fbdcf-70ac-4a9f-8ebc-bca5ce65cb1f_9a8f46b0.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-172-ab0fbdcf-70ac-4a9f-8ebc-bca5ce65cb1f_9a8f46b0.png",
+      "assessment": {
+        "id": 150172,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج؛ يظهر شعار الحملة 'عزنا بطبعنا'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150173,
+      "slug": "weej-import-173",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 18",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-173-aef4fc10-dcea-40ef-a211-630dc2c4f974_0c88b5a9.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-173-aef4fc10-dcea-40ef-a211-630dc2c4f974_0c88b5a9.png",
+      "assessment": {
+        "id": 150173,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج؛ يظهر شعار الحملة 'عزنا بطبعنا' على المنتجات.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150174,
+      "slug": "weej-import-174",
+      "titleAr": "مطبوعات اليوم الوطني — نموذج 19",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-174-3099537f-fbc4-4409-8b48-7de25cc3a337_d554844f.png",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-174-3099537f-fbc4-4409-8b48-7de25cc3a337_d554844f.png",
+      "assessment": {
+        "id": 150174,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج؛ تصاميم وعلامة الحملة فقط.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150175,
+      "slug": "weej-import-175",
+      "titleAr": "مطبوعات رمضان — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-175-c5cd20f6-c6e9-4ac2-bc88-795acc38c36b_9fa79fff.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-175-c5cd20f6-c6e9-4ac2-bc88-795acc38c36b_9fa79fff.jpg",
+      "assessment": {
+        "id": 150175,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار 'Weej Rawhaa' واضح أعلى الصورة ويظهر 'ويج' بالعربية.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150176,
+      "slug": "weej-import-176",
+      "titleAr": "مطبوعات رمضان — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-176-a6b9621c-38be-429b-94e0-1c3dc7f97780_9d7f38ea.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-176-a6b9621c-38be-429b-94e0-1c3dc7f97780_9d7f38ea.jpg",
+      "assessment": {
+        "id": 150176,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار 'Weej Rawhaa' واضح أعلى الصورة ويظهر 'ويج' بالعربية.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150177,
+      "slug": "weej-import-177",
+      "titleAr": "مطبوعات رمضان — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-177-ae60487f-b34e-4730-a081-86a9949e87c2_37d2e58e.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-177-ae60487f-b34e-4730-a081-86a9949e87c2_37d2e58e.jpg",
+      "assessment": {
+        "id": 150177,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 9,
+        "evidence": "لا يظهر شعار ويج؛ صفحة ملصقات فقط",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150178,
+      "slug": "weej-import-178",
+      "titleAr": "مطبوعات رمضان — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-178-d20cfde5-63ab-4702-88f2-79f766053f6c_6cb6acde.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-178-d20cfde5-63ab-4702-88f2-79f766053f6c_6cb6acde.jpg",
+      "assessment": {
+        "id": 150178,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 9,
+        "evidence": "شعار Weej وويج ظاهر في رأس الإعلان (Weej Rawhaa)",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150179,
+      "slug": "weej-import-179",
+      "titleAr": "مطبوعات رمضان — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-179-1df8e6de-4452-49c3-aae0-ef63d2c75f70_82b95018.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-179-1df8e6de-4452-49c3-aae0-ef63d2c75f70_82b95018.jpg",
+      "assessment": {
+        "id": 150179,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 8,
+        "evidence": "تصميم صناديق بدون شعار ويج واضح",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150180,
+      "slug": "weej-import-180",
+      "titleAr": "مطبوعات رمضان — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-180-27eda1b6-0f6e-4313-a250-526f18994120_0466b30a.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-180-27eda1b6-0f6e-4313-a250-526f18994120_0466b30a.jpg",
+      "assessment": {
+        "id": 150180,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 9,
+        "evidence": "شعار Weej وويج ظاهر في رأس الإعلان (Weej Rawhaa)",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150181,
+      "slug": "weej-import-181",
+      "titleAr": "مطبوعات رمضان — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-181-9e7c0d69-0867-4c92-a056-8aaf872426f8_0b1d417a.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-181-9e7c0d69-0867-4c92-a056-8aaf872426f8_0b1d417a.jpg",
+      "assessment": {
+        "id": 150181,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": true,
+        "confidence": 9,
+        "evidence": "شعار Weej وويج ظاهر في رأس الإعلان (Weej Rawhaa)",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150182,
+      "slug": "weej-import-182",
+      "titleAr": "مطبوعات رمضان — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-182-bc96ea80-a2b1-4021-ac28-28cc3ad028f0_c8931431.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-182-bc96ea80-a2b1-4021-ac28-28cc3ad028f0_c8931431.jpg",
+      "assessment": {
+        "id": 150182,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 8,
+        "evidence": "بطاقات تصميمية بدون شعار ويج واضح",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150183,
+      "slug": "weej-import-183",
+      "titleAr": "مطبوعات رمضان — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-183-bae485be-b8c2-421a-8c14-ffadc7c88030_8aa45da8.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-183-bae485be-b8c2-421a-8c14-ffadc7c88030_8aa45da8.jpg",
+      "assessment": {
+        "id": 150183,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 8,
+        "evidence": "صناديق مطبوعة بدون شعار ويج ظاهر",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150184,
+      "slug": "weej-import-184",
+      "titleAr": "مطبوعات رمضان — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-184-dc20715a-afe1-44d2-a05c-c7f1aab1e927_b1db17d0.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-184-dc20715a-afe1-44d2-a05c-c7f1aab1e927_b1db17d0.jpg",
+      "assessment": {
+        "id": 150184,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 8,
+        "evidence": "صناديق عرض بدون شعار ويج واضح",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150185,
+      "slug": "weej-import-185",
+      "titleAr": "مطبوعات رمضان — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-185-be0f5b6f-06e1-4c37-add1-91d2650b1215_ad24fb78.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-185-be0f5b6f-06e1-4c37-add1-91d2650b1215_ad24fb78.jpg",
+      "assessment": {
+        "id": 150185,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يوجد شعار مرئي؛ تصميم رمضاني فقط",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150186,
+      "slug": "weej-import-186",
+      "titleAr": "مطبوعات رمضان — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-186-8a4d67af-6f2a-4e6a-b350-4c62c2c3aebe_98645439.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-186-8a4d67af-6f2a-4e6a-b350-4c62c2c3aebe_98645439.jpg",
+      "assessment": {
+        "id": 150186,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يوجد شعار مرئي؛ علب مطبوعة فقط",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150187,
+      "slug": "weej-import-187",
+      "titleAr": "مطبوعات رمضان — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-187-698296cf-7146-4c5a-998b-30f25c6188e5_f9b015f1.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-187-698296cf-7146-4c5a-998b-30f25c6188e5_f9b015f1.jpg",
+      "assessment": {
+        "id": 150187,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يوجد شعار مرئي؛ أغلفة/بطاقات أدوات مائدة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150188,
+      "slug": "weej-import-188",
+      "titleAr": "مطبوعات رمضان — نموذج 14",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-188-32c81a42-d4d2-4334-9b57-bc3e2728ef23_532b412f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-188-32c81a42-d4d2-4334-9b57-bc3e2728ef23_532b412f.jpg",
+      "assessment": {
+        "id": 150188,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": true,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "شعار WeeAl Rawhaa ظاهر أعلى الصورة",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150189,
+      "slug": "weej-import-189",
+      "titleAr": "مطبوعات رمضان — نموذج 15",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-189-b34f2439-02ba-433e-b199-40437d307c1c_37450547.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-189-b34f2439-02ba-433e-b199-40437d307c1c_37450547.jpg",
+      "assessment": {
+        "id": 150189,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "لا يوجد شعار مرئي؛ تعليقات/بطاقات رمضانية فقط",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150190,
+      "slug": "weej-import-190",
+      "titleAr": "مطبوعات ورقية — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-190-bb385acf-073a-4e7c-b915-815d9e2623bd_af95db0a.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-190-bb385acf-073a-4e7c-b915-815d9e2623bd_af95db0a.jpg",
+      "assessment": {
+        "id": 150190,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "موك أب ورقي بنص عام 'A4' فقط، لا يوجد شعار",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150191,
+      "slug": "weej-import-191",
+      "titleAr": "مطبوعات ورقية — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-191-0999d4ec-edae-49cc-92dd-f0e7d550f283_f6f456b4.png",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-191-0999d4ec-edae-49cc-92dd-f0e7d550f283_f6f456b4.png",
+      "assessment": {
+        "id": 150191,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "موك أب ورقي مع حرف وشعار عام، لا يظهر Weej أو Al Rawhaa",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150192,
+      "slug": "weej-import-192",
+      "titleAr": "مطبوعات ورقية — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-192-b30e7452-09ca-4505-a00f-5c1163b0ea23_0e1ca4ae.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-192-b30e7452-09ca-4505-a00f-5c1163b0ea23_0e1ca4ae.jpg",
+      "assessment": {
+        "id": 150192,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "موك أب كوبون مع نص '50% off'، لا يظهر شعار Weej",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150193,
+      "slug": "weej-import-193",
+      "titleAr": "مطبوعات ورقية — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-193-4531b4f1-e04c-46b4-aaad-a3d880affeed_f5e8e278.png",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-193-4531b4f1-e04c-46b4-aaad-a3d880affeed_f5e8e278.png",
+      "assessment": {
+        "id": 150193,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يظهر شعار ويج؛ يوجد شعار آخر 'Massive Dynamic'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150194,
+      "slug": "weej-import-194",
+      "titleAr": "مطبوعات ورقية — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-194-b38904e1-83e7-4db5-9b4f-a973ba61bebe_e1676037.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-194-b38904e1-83e7-4db5-9b4f-a973ba61bebe_e1676037.jpg",
+      "assessment": {
+        "id": 150194,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا يوجد نص أو شعار تجاري واضح.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150195,
+      "slug": "weej-import-195",
+      "titleAr": "مطبوعات ورقية — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-195-4520081f-9d02-4468-a379-458529c47b79_a5571958.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-195-4520081f-9d02-4468-a379-458529c47b79_a5571958.jpg",
+      "assessment": {
+        "id": 150195,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "نص mockup 'A5 FLYER MOCKUP' عام وغير مرتبط بويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150196,
+      "slug": "weej-import-196",
+      "titleAr": "مطبوعات ورقية — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-196-95ac7966-c1c1-4565-ba93-b7783e927e65_3f94ac04.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-196-95ac7966-c1c1-4565-ba93-b7783e927e65_3f94ac04.jpg",
+      "assessment": {
+        "id": 150196,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "كلمة 'MOCKUP' ونمط نباتي بدون علامة تجارية.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150197,
+      "slug": "weej-import-197",
+      "titleAr": "مطبوعات ورقية — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-197-9be06100-48b7-453f-bf3e-30cdbeabda4a_36686e23.png",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-197-9be06100-48b7-453f-bf3e-30cdbeabda4a_36686e23.png",
+      "assessment": {
+        "id": 150197,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 96,
+        "evidence": "كتيب يظهر 'Weej' و'ويج' على الغلاف والصفحات.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150198,
+      "slug": "weej-import-198",
+      "titleAr": "مطبوعات ورقية — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-198-b3878f6f-f71b-4834-9d6e-9531adda24f0_dcd0ee0a.png",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-198-b3878f6f-f71b-4834-9d6e-9531adda24f0_dcd0ee0a.png",
+      "assessment": {
+        "id": 150198,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 94,
+        "evidence": "تقويم مكتوب عليه 'Weej' بجانب تصميم 2026.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150199,
+      "slug": "weej-import-199",
+      "titleAr": "مطبوعات ورقية — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-199-881eec19-a8c3-4572-9823-91ca78551441_2d33527d.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-199-881eec19-a8c3-4572-9823-91ca78551441_2d33527d.jpg",
+      "assessment": {
+        "id": 150199,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "بروشور/نموذج تصميم داخلي بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150200,
+      "slug": "weej-import-200",
+      "titleAr": "مطبوعات ورقية — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-200-c123dfbb-75b0-4fac-b7a3-a5244c664e32_653f25c4.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-200-c123dfbb-75b0-4fac-b7a3-a5244c664e32_653f25c4.jpg",
+      "assessment": {
+        "id": 150200,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "نموذج 'Table Tent' عام بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150201,
+      "slug": "weej-import-201",
+      "titleAr": "مطبوعات ورقية — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-201-0e525fad-c4e5-4aed-b7c0-1a203887d553_943ae98b.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-201-0e525fad-c4e5-4aed-b7c0-1a203887d553_943ae98b.jpg",
+      "assessment": {
+        "id": 150201,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار Weej/ويج ظاهر على قواعد الأكواب.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150202,
+      "slug": "weej-import-202",
+      "titleAr": "مطبوعات ورقية — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-202-989e3ce7-0b4d-4f17-91ba-472106004b46_04ff7630.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-202-989e3ce7-0b4d-4f17-91ba-472106004b46_04ff7630.jpg",
+      "assessment": {
+        "id": 150202,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "نموك أب A4 بنص تجريبي ولا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150203,
+      "slug": "weej-import-203",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-203-f03b2a56-cd25-4ecc-bf0f-7ee48342137b_33755ce7.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-203-f03b2a56-cd25-4ecc-bf0f-7ee48342137b_33755ce7.jpg",
+      "assessment": {
+        "id": 150203,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "تصميم يوم التأسيس مع شعار الفعالية، لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150204,
+      "slug": "weej-import-204",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-204-86249ad7-6f7d-4013-8796-394385ed2a57_a7c93e54.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-204-86249ad7-6f7d-4013-8796-394385ed2a57_a7c93e54.jpg",
+      "assessment": {
+        "id": 150204,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "بطاقات يوم التأسيس ظاهرة مع رمز الفعالية، بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150205,
+      "slug": "weej-import-205",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-205-cea8c441-537e-430c-98ba-76cfb3409461_6df63268.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-205-cea8c441-537e-430c-98ba-76cfb3409461_6df63268.jpg",
+      "assessment": {
+        "id": 150205,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "عبوات/بوكسات تخص يوم التأسيس، لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150206,
+      "slug": "weej-import-206",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-206-aa12db8c-14fe-41d1-a6e7-3edc2da88aa7_2c5e7c93.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-206-aa12db8c-14fe-41d1-a6e7-3edc2da88aa7_2c5e7c93.jpg",
+      "assessment": {
+        "id": 150206,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "رول أب ليوم التأسيس يظهر شعار الفعالية وليس ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150207,
+      "slug": "weej-import-207",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-207-9df92576-1c5e-4760-a567-dad8df600628_3fb730e0.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-207-9df92576-1c5e-4760-a567-dad8df600628_3fb730e0.jpg",
+      "assessment": {
+        "id": 150207,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "رول أب معلوماتي ليوم التأسيس، لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150208,
+      "slug": "weej-import-208",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-208-97854368-8a80-4050-b525-485d80d8fdba_63050bda.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-208-97854368-8a80-4050-b525-485d80d8fdba_63050bda.jpg",
+      "assessment": {
+        "id": 150208,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 90,
+        "evidence": "مفكرة يوم التأسيس مع رمز الفعالية، بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150209,
+      "slug": "weej-import-209",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-209-6dd3a5e8-f18b-404f-b274-160546782a3c_89ffa02d.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-209-6dd3a5e8-f18b-404f-b274-160546782a3c_89ffa02d.jpg",
+      "assessment": {
+        "id": 150209,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا توجد كلمة أو شعار 'ويج'؛ يظهر شعار حملة غير مرتبط بويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150210,
+      "slug": "weej-import-210",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-210-5df3f6ee-f611-4ac4-82d4-b87fb0561b08_1cc31b1f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-210-5df3f6ee-f611-4ac4-82d4-b87fb0561b08_1cc31b1f.jpg",
+      "assessment": {
+        "id": 150210,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "لا توجد كلمة أو شعار 'ويج' على الصندوق/التغليف.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150211,
+      "slug": "weej-import-211",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-211-f8abd844-0295-4796-a70c-a9801deab2cf_1b5519a6.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-211-f8abd844-0295-4796-a70c-a9801deab2cf_1b5519a6.jpg",
+      "assessment": {
+        "id": 150211,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "الملصقات تحتوي نصوص عامة للحملة فقط ولا تذكر 'ويج'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150212,
+      "slug": "weej-import-212",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-212-dc4a5056-04de-4224-b098-e35676607efc_8384418f.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-212-dc4a5056-04de-4224-b098-e35676607efc_8384418f.jpg",
+      "assessment": {
+        "id": 150212,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "ورق التغليف عليه نمط وشعار الحملة، دون كلمة 'ويج'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150213,
+      "slug": "weej-import-213",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-213-0c2ea442-6530-4253-80d2-818f04cbf1f5_ee754260.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-213-0c2ea442-6530-4253-80d2-818f04cbf1f5_ee754260.jpg",
+      "assessment": {
+        "id": 150213,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "مربعات التوزيع تظهر شعار الحملة وخطوط تصميم فقط، لا كلمة 'ويج'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150214,
+      "slug": "weej-import-214",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 12",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-214-cd38693b-2532-4a11-8caa-397578a0a37a_fc294e2a.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-214-cd38693b-2532-4a11-8caa-397578a0a37a_fc294e2a.jpg",
+      "assessment": {
+        "id": 150214,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "حقيبة بها شعار الحملة ونص 'يوم بدينا' وليس 'ويج'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150215,
+      "slug": "weej-import-215",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 13",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-215-a5392a90-616e-4299-9a39-60a277f9b5c8_9bc19510.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-215-a5392a90-616e-4299-9a39-60a277f9b5c8_9bc19510.jpg",
+      "assessment": {
+        "id": 150215,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "صناديق عرض عليها صور ونمط الحملة فقط، لا يظهر شعار أو اسم 'ويج'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150216,
+      "slug": "weej-import-216",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 14",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-216-de444443-ea25-4967-898f-ef88735098b9_53ad1ab9.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-216-de444443-ea25-4967-898f-ef88735098b9_53ad1ab9.jpg",
+      "assessment": {
+        "id": 150216,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 92,
+        "evidence": "صناديق بألوان الحملة وشعار عام، لا توجد إشارة إلى 'ويج'.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150217,
+      "slug": "weej-import-217",
+      "titleAr": "مطبوعات يوم التأسيس — نموذج 15",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-217-f1332917-f913-439e-abb3-14b532aea1b2_e1beabce.jpg",
+      "categorySlug": "occasion-stationery",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-217-f1332917-f913-439e-abb3-14b532aea1b2_e1beabce.jpg",
+      "assessment": {
+        "id": 150217,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "تصميم يوم التأسيس دون ظهور واضح لشعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150218,
+      "slug": "weej-import-218",
+      "titleAr": "مفكرات ودفاتر — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-218-cf4f9b54-84f4-4f54-b662-df071e9044d6_d6b5164e.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-218-cf4f9b54-84f4-4f54-b662-df071e9044d6_d6b5164e.jpg",
+      "assessment": {
+        "id": 150218,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شريط على الغلاف يحمل نص وشعار 'Weej | ويج' واضح.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150219,
+      "slug": "weej-import-219",
+      "titleAr": "مفكرات ودفاتر — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-219-67011767-0cfd-4061-948d-bb8ffff2bc80_0571fdff.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-219-67011767-0cfd-4061-948d-bb8ffff2bc80_0571fdff.jpg",
+      "assessment": {
+        "id": 150219,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج ظاهر على غلاف الدفتر.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150220,
+      "slug": "weej-import-220",
+      "titleAr": "مفكرات ودفاتر — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-220-05507c9f-78e3-46d8-b9b1-d3a80a414119_2e2b4cda.jpg",
+      "categorySlug": "custom-printing",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-220-05507c9f-78e3-46d8-b9b1-d3a80a414119_2e2b4cda.jpg",
+      "assessment": {
+        "id": 150220,
+        "visible_weej_brand": true,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": true,
+        "confidence": 95,
+        "evidence": "شعار ويج ظاهر على الغلاف والصفحات.",
+        "action": "edit"
+      }
+    },
+    {
+      "id": 150221,
+      "slug": "weej-import-221",
+      "titleAr": "منتجات جاهزة — نموذج 01",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-221-bef45a4f-b8c7-44ee-a757-1b0e7a15b652_7e5d3589.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-221-bef45a4f-b8c7-44ee-a757-1b0e7a15b652_7e5d3589.jpg",
+      "assessment": {
+        "id": 150221,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "غلاف برسوم ضفدع ونص عام بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150222,
+      "slug": "weej-import-222",
+      "titleAr": "منتجات جاهزة — نموذج 02",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-222-119eec6f-a964-4669-a1f5-7f24d9c73888_00b18928.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-222-119eec6f-a964-4669-a1f5-7f24d9c73888_00b18928.jpg",
+      "assessment": {
+        "id": 150222,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "نماذج صغيرة بنقوش سحابية/برق بدون علامة تجارية.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150223,
+      "slug": "weej-import-223",
+      "titleAr": "منتجات جاهزة — نموذج 03",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-223-19af3358-7dd9-4882-bda2-65b58a5cb2b6_82cb5207.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-223-19af3358-7dd9-4882-bda2-65b58a5cb2b6_82cb5207.jpg",
+      "assessment": {
+        "id": 150223,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "غطاء فراولة ورسومات داخلية بدون شعار.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150224,
+      "slug": "weej-import-224",
+      "titleAr": "منتجات جاهزة — نموذج 04",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-224-7b7a0cba-224a-42a4-bafe-02ca4e1ef331_6c45f509.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-224-7b7a0cba-224a-42a4-bafe-02ca4e1ef331_6c45f509.jpg",
+      "assessment": {
+        "id": 150224,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 85,
+        "evidence": "غلاف وحزام بنص عام (NOTE BOOK) ولا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150225,
+      "slug": "weej-import-225",
+      "titleAr": "منتجات جاهزة — نموذج 05",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-225-11249acf-deee-433e-9448-7c54684c1ffe_5eee2d4c.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-225-11249acf-deee-433e-9448-7c54684c1ffe_5eee2d4c.jpg",
+      "assessment": {
+        "id": 150225,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "نص عام 'Note Book' ورسومات (K-pop) بدون شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150226,
+      "slug": "weej-import-226",
+      "titleAr": "منتجات جاهزة — نموذج 06",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-226-3ab8f1c2-39a1-48aa-a246-01deb23b2e28_8fd68c2e.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-226-3ab8f1c2-39a1-48aa-a246-01deb23b2e28_8fd68c2e.jpg",
+      "assessment": {
+        "id": 150226,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "كلمة 'NOTES' على الغلاف كنص عام، لا يوجد شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150227,
+      "slug": "weej-import-227",
+      "titleAr": "منتجات جاهزة — نموذج 07",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-227-7cf0c70b-80e5-4a55-b775-fe1d295efee4_fd604bf8.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-227-7cf0c70b-80e5-4a55-b775-fe1d295efee4_fd604bf8.jpg",
+      "assessment": {
+        "id": 150227,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "صفحة ملصقات برسوم وكلمات تشجيعية عامة، لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150228,
+      "slug": "weej-import-228",
+      "titleAr": "منتجات جاهزة — نموذج 08",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-228-89c1804a-fc9f-4f89-b720-285552a04000_f4e32ff4.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-228-89c1804a-fc9f-4f89-b720-285552a04000_f4e32ff4.jpg",
+      "assessment": {
+        "id": 150228,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "غلاف مزخرف بكلمة 'NOTE BOOK' ونقوش زهور، لا يوجد شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150229,
+      "slug": "weej-import-229",
+      "titleAr": "منتجات جاهزة — نموذج 09",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-229-19ff6838-41d1-4978-bf1f-79732bac8ee4_3ba7bca8.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-229-19ff6838-41d1-4978-bf1f-79732bac8ee4_3ba7bca8.jpg",
+      "assessment": {
+        "id": 150229,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "غلاف فراشات ونص صغير كنموذج، بدون علامة ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150230,
+      "slug": "weej-import-230",
+      "titleAr": "منتجات جاهزة — نموذج 10",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-230-a796d7f7-83d0-45ff-9b7e-3078df8e712e_ffc1aaab.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-230-a796d7f7-83d0-45ff-9b7e-3078df8e712e_ffc1aaab.jpg",
+      "assessment": {
+        "id": 150230,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "غلاف يونيكورن مع نص 'note book' عام، لا يظهر شعار ويج.",
+        "action": "keep"
+      }
+    },
+    {
+      "id": 150231,
+      "slug": "weej-import-231",
+      "titleAr": "منتجات جاهزة — نموذج 11",
+      "imageUrl": "/manus-storage/store-media/390001/bulk-weej-import-231-e40d4286-0c06-40f9-bf3e-d42b94e8f18f_6b76354f.jpg",
+      "categorySlug": "promotional-gifts",
+      "publicImageUrl": "https://3000-i58cnep6q8ttrwnafmdzp-1b69fec6.us3.manus.computer/manus-storage/store-media/390001/bulk-weej-import-231-e40d4286-0c06-40f9-bf3e-d42b94e8f18f_6b76354f.jpg",
+      "assessment": {
+        "id": 150231,
+        "visible_weej_brand": false,
+        "visible_alrawhaa_brand": false,
+        "needs_semantic_edit": false,
+        "confidence": 95,
+        "evidence": "غلاف أسود بنص 'Note Book' وتصميم نيوني، لا يوجد شعار ويج.",
+        "action": "keep"
+      }
+    }
+  ]
+}
