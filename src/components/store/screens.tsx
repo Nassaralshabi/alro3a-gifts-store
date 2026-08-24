@@ -17,11 +17,10 @@ function HeroBanner() {
       <div className="relative h-[200px] sm:h-[330px] lg:h-[360px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/uploads/hero-uae-banner-mobile.webp"
-          srcSet="/uploads/hero-uae-banner-mobile.webp 900w, /uploads/hero-uae-banner.webp 1600w"
+          src="/uploads/alrawaa-hero-banner.webp"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
           alt="عيد الاتحاد الإماراتي — هدايا وتغليف وطباعة حسب الطلب"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute end-4 top-4 z-20 bg-[#282e33]/90 border border-white/30 rounded-xl p-1.5 backdrop-blur-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
