@@ -93,11 +93,6 @@ export function HomeScreen() {
     "paper-bags": { e: ["جاهزة للحمل والإهداء", "READY TO CARRY AND GIFT"], t: ["أكياس ورقية", "Paper bags"], s: ["مقاسات وتصاميم مناسبة لكل طلب.", "Choose the right size and design for your order."] },
     "promotional-gifts": { e: ["هدية تترك انطباعاً", "GIFTS THAT LEAVE AN IMPRESSION"], t: ["هدايا إعلانية", "Promotional gifts"], s: ["حلول مطبوعة تناسب العلامات والمناسبات.", "Printed solutions for brands and occasions."], muted: true },
   };
-  const benefits = [
-    { icon: <Truck className="w-5 h-5" />, t: isAr ? "توصيل لجميع الإمارات" : "UAE-wide delivery", d: isAr ? "نجهز طلبك بعناية ونوصله" : "Prepared with care and delivered", g: "from-[#8d98a0] to-[#6e7981]" },
-    { icon: <Sparkles className="w-5 h-5" />, t: isAr ? "تصاميم حسب الطلب" : "Made to order", d: isAr ? "تفاصيل ومقاسات حسب الطلب" : "Choose the details and size", g: "from-[#b0bac1] to-[#939ea5]" },
-    { icon: <Check className="w-5 h-5" />, t: isAr ? "جودة في كل تفصيلة" : "Care in every detail", d: isAr ? "مطبوعات وتغليف بعناية" : "Thoughtful printing and wrapping", g: "from-[#7e8991] to-[#5f6a72]" },
-  ];
   const promoImg = settingsVal("promo.image");
   const promoTitle = isAr ? "تحويل الفكرة إلى هدية ملموسة" : "Turn your idea into a tangible gift";
   const promoBody = isAr ? "تتوفر خيارات للمنتج والمقاس والمناسبة والكمية؛ تُرتب تفاصيل الطلب بعناية." : "Choose a product, then share the size, occasion, or quantity so we can prepare your request.";
@@ -131,19 +126,6 @@ export function HomeScreen() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="bg-[#f6f7f8]">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl grid sm:grid-cols-3">
-          {benefits.map((b, i) => (
-            <Reveal key={i} delay={i * 90}>
-              <article className={`flex items-center gap-3.5 py-8 sm:py-10 ${i > 0 ? "sm:border-s sm:border-[#e5e8ea] sm:ps-6" : ""} ${i < 2 ? "border-b sm:border-b-0" : ""}`}>
-                <span className={`grid place-items-center w-11 h-11 rounded-xl text-white bg-gradient-to-br ${b.g} shadow-md shrink-0`}>{b.icon}</span>
-                <div><h3 className="text-[13px] font-extrabold">{b.t}</h3><p className="text-[11px] text-[#788288] mt-0.5">{b.d}</p></div>
-              </article>
-            </Reveal>
-          ))}
         </div>
       </section>
 
