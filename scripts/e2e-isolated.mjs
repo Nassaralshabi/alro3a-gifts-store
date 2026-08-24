@@ -96,6 +96,9 @@ function assert(condition, message) {
 }
 
 async function installIsolatedApi(page, writes, authenticatedAdmin = null) {
+  await page.route("https://manus-analytics.com/api/send**", async route => {
+    await route.fulfill({ status: 204, body: "" });
+  });
   await page.route("**/api/trpc/**", async route => {
     const url = new URL(route.request().url());
     const path = decodeURIComponent(url.pathname.replace("/api/trpc/", ""));

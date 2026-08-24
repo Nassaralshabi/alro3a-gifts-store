@@ -86,7 +86,7 @@
   .raed-kicker::before { content: ""; display: inline-block; width: 2.7rem; height: 0.45rem; margin-inline-end: 0.5rem; border-radius: 999px; background: linear-gradient(90deg, #00a9c7 0 25%, #c54991 25% 50%, #e7b83b 50% 75%, #17323b 75% 100%); vertical-align: middle; }
   .raed-section { border-block: 1px solid #e4ecee; background: #fff; }
   .raed-section-muted { background: linear-gradient(180deg, #fbfaf5 0%, #f8f6f0 100%); }
-  .raed-section-head { position: relative; border-bottom: 1px solid #e5eeee; padding-bottom: 1.25rem; }
+  .raed-section-head { position: relative; border-bottom: 1px solid #e5eeee; padding-bottom: 1rem; }
   .raed-section-head h2 { letter-spacing: -0.025em; }
   .raed-section-head::after { content: ""; position: absolute; inset-inline-start: 0; bottom: -1px; width: 4.5rem; height: 3px; border-radius: 999px; background: linear-gradient(90deg, #16717d, #5aaeb6); }
   .raed-section-link { display: inline-flex; align-items: center; gap: 0.375rem; border: 1px solid #c9e0e3; border-radius: 999px; background: #f6fbfb; padding: 0.55rem 0.85rem; color: #12616c; font-size: 0.75rem; font-weight: 800; transition: 160ms cubic-bezier(0.23, 1, 0.32, 1); }
@@ -98,8 +98,6 @@
 
 @media (min-width: 640px) { .raed-container { padding-inline: 2rem; } }
 @media (max-width: 639px) {
-  .hero-panel { min-height: 372px; }
-  .hero-panel .hero-brand-badge { inset-inline-end: 0.8rem; top: 0.8rem; }
   .raed-section-head h2 { font-size: 1.65rem; line-height: 1.42; }
 }
 @media (prefers-reduced-motion: no-preference) {
