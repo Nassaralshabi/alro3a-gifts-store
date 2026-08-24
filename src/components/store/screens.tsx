@@ -39,29 +39,13 @@ function CupsBanner() {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl pb-6 sm:pb-8">
         <Reveal className="in">
           <a href="#/shop" className="block rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_24px_48px_-28px_rgba(35,41,46,.4)] hover:-translate-y-1 hover:shadow-[0_30px_56px_-26px_rgba(35,41,46,.5)] transition-all group">
-            <div className="relative h-auto sm:h-[280px] lg:h-[300px]">
-              <div className="sm:hidden grid grid-cols-1 gap-1.5 bg-[#f7f8f9]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/uploads/banner-cups-promo.webp"
-                  alt={isAr ? "أكواب ورقية — طباعة إبداعية بجودة عالية" : "Paper cups — creative high-quality printing"}
-                  className="block w-full aspect-[9/5] object-cover object-left transition-transform duration-700"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/uploads/banner-cups-promo.webp"
-                  alt={isAr ? "عناوين وفروع مطبعة الروعة" : "Al Rawaa Printing branches and contact details"}
-                  className="block w-full aspect-[9/5] object-cover object-right transition-transform duration-700"
-                />
-              </div>
-              <div className="hidden sm:block relative h-[280px] lg:h-[300px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/uploads/banner-cups-promo.webp"
-                  alt={isAr ? "أكواب ورقية وعناوين مطبعة الروعة" : "Paper cups and Al Rawaa Printing contact details"}
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                />
-              </div>
+            <div className="relative aspect-[7/3] sm:aspect-auto sm:h-[330px] lg:h-[360px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/uploads/banner-cups-promo.webp"
+                alt={isAr ? "أكواب ورقية وعناوين مطبعة الروعة" : "Paper cups and Al Rawaa Printing contact details"}
+                className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
+              />
             </div>
           </a>
         </Reveal>
