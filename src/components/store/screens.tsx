@@ -13,9 +13,15 @@ function HeroBanner() {
   const { logo } = useApp();
   return (
     <div className="rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_34px_68px_-34px_rgba(35,41,46,.45)]">
-      <div className="relative h-[240px] sm:h-[330px] lg:h-[360px]">
+      <div className="relative h-[200px] sm:h-[330px] lg:h-[360px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/uploads/hero-uae-banner.webp" alt="عيد الاتحاد الإماراتي — هدايا وتغليف وطباعة حسب الطلب" className="w-full h-full object-cover" />
+        <img
+          src="/uploads/hero-uae-banner-mobile.webp"
+          srcSet="/uploads/hero-uae-banner-mobile.webp 900w, /uploads/hero-uae-banner.webp 1600w"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
+          alt="عيد الاتحاد الإماراتي — هدايا وتغليف وطباعة حسب الطلب"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute end-4 top-4 z-20 bg-[#282e33]/90 border border-white/30 rounded-xl p-1.5 backdrop-blur-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logo} alt="logo" className="w-11 h-11 rounded-lg object-cover" />
@@ -33,9 +39,15 @@ function CupsBanner() {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl pb-6 sm:pb-8">
         <Reveal>
           <a href="#/shop" className="block rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_24px_48px_-28px_rgba(35,41,46,.4)] hover:-translate-y-1 hover:shadow-[0_30px_56px_-26px_rgba(35,41,46,.5)] transition-all group">
-            <div className="relative h-[220px] sm:h-[280px] lg:h-[300px]">
+            <div className="relative h-[198px] sm:h-[280px] lg:h-[300px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/uploads/banner-cups-promo.webp" alt={isAr ? "أكواب ورقية — طباعة إبداعية بجودة عالية" : "Paper cups — creative high-quality printing"} className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+              <img
+                src="/uploads/banner-cups-promo-mobile.webp"
+                srcSet="/uploads/banner-cups-promo-mobile.webp 900w, /uploads/banner-cups-promo.webp 1600w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
+                alt={isAr ? "أكواب ورقية — طباعة إبداعية بجودة عالية" : "Paper cups — creative high-quality printing"}
+                className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+              />
             </div>
           </a>
         </Reveal>
