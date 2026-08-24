@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import { useApp, money, go } from "../core";
 import { Reveal, ProductCard, SectionHead, FALLBACK, L, catIcon } from "./bits";
-import { BranchesSection } from "./branches";
 
 /* ================= Static hero banner (replaces slider) ================= */
 function HeroBanner() {
@@ -101,8 +100,6 @@ export function HomeScreen() {
       <Marquee />
 
       <CupsBanner />
-
-      <BranchesSection />
 
       <section className="bg-white border-b border-[#e5e8ea]">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8 sm:py-12">
