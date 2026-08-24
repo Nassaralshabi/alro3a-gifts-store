@@ -20,7 +20,7 @@ describe("storefront design refresh", () => {
     expect(documentTemplate).toContain("family=Marhey");
     expect(documentTemplate).toContain("display=swap");
     expect(home).toContain("hero-panel");
-    expect(home).toContain("hero-brand-badge");
+    expect(home).not.toContain("hero-brand-badge");
     expect(home).toContain("object-contain will-change-transform");
     expect(home).toContain('className="border-t border-[#dbe9eb] bg-white"');
     expect(home).not.toContain("raed-gradient-overlay");

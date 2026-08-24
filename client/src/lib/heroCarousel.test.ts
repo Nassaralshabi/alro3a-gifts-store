@@ -22,16 +22,13 @@ describe("hero carousel controls", () => {
     expect(shouldAutoAdvance(5, false, true)).toBe(false);
   });
 
-  it("keeps the approved Al Rawaa badge above every active hero banner", () => {
+  it("keeps hero banners clear of the overlaid logo badge while preserving slider media and controls", () => {
     const homeSource = readFileSync(resolve(process.cwd(), "client/src/pages/Home.tsx"), "utf8");
-    const activeSlideTransitionEnd = homeSource.indexOf("</AnimatePresence>");
-    const brandBadgePosition = homeSource.indexOf("src={HERO_BRAND_LOGO}");
 
     expect(homeSource).toContain("const HERO_BRAND_LOGO");
-    expect(homeSource).toContain("absolute right-4 top-4 z-20");
-    expect(homeSource).toContain('alt={isArabic ? "شعار مطبعة الروعة" : "Al Rawaa Printing logo"}');
     expect(homeSource).toContain("object-contain will-change-transform");
+    expect(homeSource).not.toContain("hero-brand-badge");
+    expect(homeSource).not.toContain("src={HERO_BRAND_LOGO} alt={isArabic ? \"شعار مطبعة الروعة\"");
     expect(homeSource).not.toContain("raed-gradient-overlay");
-    expect(brandBadgePosition).toBeGreaterThan(activeSlideTransitionEnd);
   });
 });
