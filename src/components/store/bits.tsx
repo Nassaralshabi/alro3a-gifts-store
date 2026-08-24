@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { ShoppingBag, Heart, Sparkles, ChevronLeft, ChevronRight, Gift } from "lucide-react";
 import { useApp, money, Product } from "../core";
-import { BrandWatermark } from "./brand";
+import { brandedImage } from "./brand";
 
 export const FALLBACK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' fill='%23eef1f3'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.35em' fill='%23a6b0b6' font-family='sans-serif' font-size='16'%3EAl Rawaa%3C/text%3E%3C/svg%3E";
 
@@ -49,8 +49,7 @@ export function ProductCard({ p, delay = 0 }: { p: Product; delay?: number }) {
       <article className={`group relative flex flex-col bg-white border border-[#e1e5e8] rounded-2xl overflow-hidden shadow-[0_18px_34px_-30px_rgba(35,41,46,.9)] transition-all duration-300 hover:-translate-y-1 hover:border-[#ccd3d7] ${!p.isAvailable ? "opacity-55" : ""}`}>
         <a href={`#/product/${p.slug}`} className="relative block aspect-square overflow-hidden bg-[#f0f2f3] pc-shine">
           { }
-          <img src={p.image ?? FALLBACK} alt={L(lang, p.titleAr, p.titleEn)} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.07]" />
-          <BrandWatermark />
+          <img src={brandedImage(p.image) ?? FALLBACK} alt={L(lang, p.titleAr, p.titleEn)} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.07]" />
           {p.isFeatured && (
             <span className="absolute start-3 top-3 z-[4] inline-flex items-center gap-1 bg-gradient-to-br from-[#e8912d] to-[#f2bd66] text-[#17323b] rounded-full px-2.5 py-1 text-[10px] font-black shadow-lg">
               <Sparkles className="w-3 h-3 text-[#7c5410]" />{T("pick")}

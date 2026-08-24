@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { useApp, money, go } from "../core";
 import { ProductCard, SectionHead, Reveal, L, FALLBACK, catIcon } from "./bits";
-import { BrandWatermark } from "./brand";
+import { brandedImage } from "./brand";
 
 /* ================= Static hero banner (replaces slider) ================= */
 function HeroBanner() {
@@ -15,7 +15,6 @@ function HeroBanner() {
   return (
     <div className="rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_34px_68px_-34px_rgba(35,41,46,.45)]">
       <div className="relative aspect-[7/3] sm:aspect-auto sm:h-[330px] lg:h-[360px]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/uploads/alrawaa-hero-banner.webp"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1280px"
@@ -23,7 +22,6 @@ function HeroBanner() {
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute end-4 top-4 z-20 bg-[#282e33]/90 border border-white/30 rounded-xl p-1.5 backdrop-blur-sm">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logo} alt="logo" className="w-11 h-11 rounded-lg object-cover" />
         </div>
       </div>
@@ -40,7 +38,6 @@ function CupsBanner() {
         <Reveal className="in">
           <a href="#/shop" className="block rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_24px_48px_-28px_rgba(35,41,46,.4)] hover:-translate-y-1 hover:shadow-[0_30px_56px_-26px_rgba(35,41,46,.5)] transition-all group">
             <div className="relative aspect-[7/3] sm:aspect-auto sm:h-[330px] lg:h-[360px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/uploads/banner-cups-promo.webp"
                 alt={isAr ? "أكواب ورقية وعناوين مطبعة الروعة" : "Paper cups and Al Rawaa Printing contact details"}
@@ -299,8 +296,7 @@ export function ProductScreen({ slug }: { slug: string }) {
       <div className="grid md:grid-cols-2 gap-7 py-8 sm:py-12">
         <div className="relative rounded-3xl border border-[#e1e5e8] overflow-hidden bg-[#f0f2f3] aspect-square md:aspect-auto md:min-h-[480px] shadow-[0_18px_34px_-30px_rgba(35,41,46,.9)] self-start">
           { }
-          <img src={p.image ?? FALLBACK} alt={L(lang, p.titleAr, p.titleEn)} className="w-full h-full object-cover" />
-          <BrandWatermark size="md" />
+          <img src={brandedImage(p.image) ?? FALLBACK} alt={L(lang, p.titleAr, p.titleEn)} className="w-full h-full object-cover" />
           {p.isFeatured && <span className="absolute start-4 top-4 z-10 inline-flex items-center gap-1 bg-gradient-to-br from-[#e8912d] to-[#f2bd66] text-[#17323b] rounded-full px-3 py-1.5 text-[10px] font-black shadow-lg"><Sparkles className="w-3 h-3 text-[#7c5410]" />{T("pick")}</span>}
         </div>
         <div>
