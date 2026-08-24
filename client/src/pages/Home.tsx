@@ -6,7 +6,7 @@ import { useContactInfo } from "@/hooks/useContactInfo";
 import { getHeroSlideIndex, HERO_AUTOPLAY_DELAY, shouldAutoAdvance } from "@/lib/heroCarousel";
 import { trpc } from "@/lib/trpc";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpLeft, Check, ChevronLeft, ChevronRight, Pause, Play, Sparkles, Truck, type LucideIcon } from "lucide-react";
+import { ArrowUpLeft, Check, Sparkles, Truck, type LucideIcon } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
 
@@ -30,9 +30,7 @@ const sectionCopy: Record<string, SectionCopy> = {
 
 function HeroCarousel({ slides, isArabic }: { slides: HeroSlide[]; isArabic: boolean }) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isManuallyPaused, setIsManuallyPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const isPaused = isManuallyPaused;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -43,10 +41,10 @@ function HeroCarousel({ slides, isArabic }: { slides: HeroSlide[]; isArabic: boo
   }, []);
   useEffect(() => setActiveIndex(index => slides.length ? index % slides.length : 0), [slides.length]);
   useEffect(() => {
-    if (!shouldAutoAdvance(slides.length, isPaused, prefersReducedMotion)) return;
+    if (!shouldAutoAdvance(slides.length, false, prefersReducedMotion)) return;
     const timer = window.setInterval(() => setActiveIndex(index => getHeroSlideIndex(index, 1, slides.length)), HERO_AUTOPLAY_DELAY);
     return () => window.clearInterval(timer);
-  }, [isPaused, prefersReducedMotion, slides.length]);
+  }, [prefersReducedMotion, slides.length]);
   useEffect(() => {
     if (slides.length < 2 || prefersReducedMotion) return;
     const timer = window.setTimeout(() => {
@@ -62,16 +60,15 @@ function HeroCarousel({ slides, isArabic }: { slides: HeroSlide[]; isArabic: boo
   if (!slides.length) return null;
   const activeSlide = slides[activeIndex] ?? slides[0];
   const goTo = (index: number) => setActiveIndex(getHeroSlideIndex(index, 0, slides.length));
-  const toggleLabel = isManuallyPaused ? (isArabic ? "تشغيل العرض" : "Play slideshow") : (isArabic ? "إيقاف العرض" : "Pause slideshow");
 
   return <div className="hero-panel bg-[#f6f8f4]">
-    <div className="relative min-h-[350px] overflow-hidden sm:min-h-[430px]">
+    <div className="relative min-h-[250px] overflow-hidden sm:min-h-[330px]">
       <AnimatePresence initial={false}>
         <motion.img key={activeSlide.src} src={activeSlide.src} alt={isArabic ? activeSlide.altAr : activeSlide.altEn} width={1920} height={880} loading="eager" decoding="async" fetchPriority="high" initial={{ opacity: 0, scale: 1.02 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.01 }} transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }} className="absolute inset-0 h-full w-full bg-[#f6f8f4] object-contain will-change-transform" />
       </AnimatePresence>
       <div className="sr-only"><p>{isArabic ? activeSlide.badgeAr : activeSlide.badgeEn}</p><h1>{isArabic ? activeSlide.titleAr : activeSlide.titleEn}</h1><p>{isArabic ? activeSlide.subtitleAr : activeSlide.subtitleEn}</p></div>
     </div>
-    <div className="border-t border-[#dbe9eb] bg-white"><div className="raed-container flex min-h-14 items-center justify-between gap-4 py-2"><div className="flex items-center gap-2" role="tablist" aria-label={isArabic ? "صور الغلاف" : "Hero images"}>{slides.map((slide, index) => <button key={`${slide.src}-dot`} type="button" role="tab" aria-selected={index === activeIndex} aria-label={`${isArabic ? "الصورة" : "Image"} ${index + 1}`} onClick={() => goTo(index)} className={`h-1.5 rounded-full transition-all ${index === activeIndex ? "w-9 bg-[#16717d]" : "w-4 bg-[#bbd5d8] hover:bg-[#78aeb4]"}`} />)}</div><div className="flex items-center gap-1.5"><button type="button" onClick={() => goTo(activeIndex - 1)} aria-label={isArabic ? "الصورة السابقة" : "Previous image"} className="grid h-9 w-9 place-items-center rounded-md border border-[#c9e0e3] bg-white text-[#17323b]"><ChevronRight className="h-4 w-4" /></button><button type="button" onClick={() => goTo(activeIndex + 1)} aria-label={isArabic ? "الصورة التالية" : "Next image"} className="grid h-9 w-9 place-items-center rounded-md border border-[#c9e0e3] bg-white text-[#17323b]"><ChevronLeft className="h-4 w-4" /></button><button type="button" onClick={() => setIsManuallyPaused(paused => !paused)} aria-label={toggleLabel} className="grid h-9 w-9 place-items-center rounded-md border border-[#c9e0e3] bg-white text-[#17323b]">{isManuallyPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}</button></div></div></div>
+    <div className="border-t border-[#dbe9eb] bg-white"><div className="raed-container flex min-h-11 items-center justify-center py-1.5"><div className="flex items-center gap-2" role="tablist" aria-label={isArabic ? "صور الغلاف" : "Hero images"}>{slides.map((slide, index) => <button key={`${slide.src}-dot`} type="button" role="tab" aria-selected={index === activeIndex} aria-label={`${isArabic ? "الصورة" : "Image"} ${index + 1}`} onClick={() => goTo(index)} className={`h-1.5 rounded-full transition-all ${index === activeIndex ? "w-9 bg-[#16717d]" : "w-4 bg-[#bbd5d8] hover:bg-[#78aeb4]"}`} />)}</div></div></div>
   </div>;
 }
 

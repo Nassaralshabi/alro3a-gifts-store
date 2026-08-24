@@ -29,6 +29,11 @@ describe("hero carousel controls", () => {
     expect(homeSource).toContain("object-contain will-change-transform");
     expect(homeSource).not.toContain("hero-brand-badge");
     expect(homeSource).not.toContain("src={HERO_BRAND_LOGO} alt={isArabic ? \"شعار مطبعة الروعة\"");
+    expect(homeSource).toContain("min-h-[250px]");
+    expect(homeSource).toContain("sm:min-h-[330px]");
+    expect(homeSource).not.toContain("الصورة السابقة");
+    expect(homeSource).not.toContain("الصورة التالية");
+    expect(homeSource).not.toContain("إيقاف العرض");
     expect(homeSource).not.toContain("raed-gradient-overlay");
   });
 });
