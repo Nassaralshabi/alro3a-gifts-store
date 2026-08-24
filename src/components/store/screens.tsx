@@ -2,58 +2,50 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import {
-  ShoppingBag, Phone, MapPin, Instagram, ChevronLeft, ChevronRight, Pause, Play,
+  ShoppingBag, Phone, MapPin, Instagram, ChevronLeft, ChevronRight,
   Truck, Sparkles, Check, Gift, Search, Plus, Minus, ArrowUpLeft, ArrowUpRight, Info,
 } from "lucide-react";
 import { useApp, money, go } from "../core";
 import { Reveal, ProductCard, SectionHead, FALLBACK, L, catIcon } from "./bits";
+import { BranchesSection } from "./branches";
 
-/* ================= Hero carousel ================= */
+/* ================= Hero carousel (compact — no controls) ================= */
 function HeroCarousel() {
   const { heroSlides, isAr, T, logo } = useApp();
   const [idx, setIdx] = useState(0);
-  const [paused, setPaused] = useState(false);
   useEffect(() => {
-    if (paused || heroSlides.length < 2) return;
+    if (heroSlides.length < 2) return;
     const t = setInterval(() => setIdx((i) => (i + 1) % heroSlides.length), 4500);
     return () => clearInterval(t);
-  }, [paused, heroSlides.length]);
+  }, [heroSlides.length]);
   if (!heroSlides.length)
-    return <div className="aspect-[21/9] bg-[#f2f4f5] rounded-2xl" />;
+    return <div className="aspect-[21/8] bg-[#f2f4f5] rounded-2xl" />;
   const s = heroSlides[idx];
   return (
     <div className="rounded-3xl overflow-hidden border border-[#dde2e5] bg-white shadow-[0_34px_68px_-34px_rgba(35,41,46,.45)]">
-      <div className="relative min-h-[340px] sm:min-h-[440px]">
+      <div className="relative h-[240px] sm:h-[330px] lg:h-[360px]">
         {heroSlides.map((sl, i) => (
           <div key={i} className={`hero-slide absolute inset-0 ${i === idx ? "on" : ""}`}>
-            { }
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={sl.image ?? FALLBACK} alt={isAr ? sl.titleAr : sl.titleEn} className="w-full h-full object-cover bg-[#f7f8f9]" />
           </div>
         ))}
-        <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-[#1e2328]/85 via-[#1e2328]/30 to-transparent pointer-events-none z-[5]" />
+        <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-[#1e2328]/88 via-[#1e2328]/30 to-transparent pointer-events-none z-[5]" />
         <div className="absolute end-4 top-4 z-20 bg-[#282e33]/90 border border-white/30 rounded-xl p-1.5 backdrop-blur-sm">
-          { }
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={logo} alt="logo" className="w-11 h-11 rounded-lg object-cover" />
         </div>
-        <div className="absolute inset-x-0 bottom-0 z-15 p-5 sm:p-8 max-w-2xl pointer-events-none">
+        <div className="absolute inset-x-0 bottom-0 z-15 p-5 sm:p-7 max-w-2xl pointer-events-none">
           <span className="inline-flex bg-gradient-to-br from-[#f2bd66] to-[#ffce85] text-[#17323b] text-[10px] font-black uppercase tracking-wide px-3 py-1.5 rounded-full shadow-lg animate-[fadeUp_.5s_.05s_backwards]">{isAr ? s?.badgeAr : s?.badgeEn}</span>
-          <h1 className="mt-2.5 text-white text-2xl sm:text-4xl leading-snug drop-shadow-lg animate-[fadeUp_.55s_.12s_backwards]">{isAr ? s?.titleAr : s?.titleEn}</h1>
-          <p className="mt-1.5 text-white/95 text-[13px] sm:text-base font-medium max-w-lg leading-relaxed drop-shadow animate-[fadeUp_.55s_.2s_backwards]">{isAr ? s?.subAr : s?.subEn}</p>
-          <a href="#/shop" className="btn-gold mt-4 pointer-events-auto animate-[fadeUp_.55s_.28s_backwards]">{T("shopNow")}{isAr ? <ArrowUpLeft className="w-4 h-4" /> : <ArrowUpRight className="w-4 h-4" />}</a>
+          <h1 className="mt-2 text-white text-xl sm:text-3xl leading-snug drop-shadow-lg animate-[fadeUp_.55s_.12s_backwards]">{isAr ? s?.titleAr : s?.titleEn}</h1>
+          <p className="mt-1 text-white/95 text-[12px] sm:text-[15px] font-medium max-w-lg leading-relaxed drop-shadow animate-[fadeUp_.55s_.2s_backwards] hidden sm:block">{isAr ? s?.subAr : s?.subEn}</p>
+          <a href="#/shop" className="btn-gold mt-3 pointer-events-auto animate-[fadeUp_.55s_.28s_backwards] !min-h-10 !px-4 !text-[13px]">{T("shopNow")}{isAr ? <ArrowUpLeft className="w-4 h-4" /> : <ArrowUpRight className="w-4 h-4" />}</a>
         </div>
-      </div>
-      <div className="border-t border-[#e0e4e7] bg-white">
-        <div className="flex items-center justify-between gap-4 min-h-14 px-4">
-          <div className="flex items-center gap-1.5">
-            {heroSlides.map((_, i) => (
-              <button key={i} aria-label={`slide ${i + 1}`} onClick={() => setIdx(i)} className={`h-1.5 rounded-full transition-all ${i === idx ? "w-9 bg-gradient-to-l from-[#45505a] to-[#6e7981]" : "w-4 bg-[#c6cdd2] hover:bg-[#a4aeb5]"}`} />
-            ))}
-          </div>
-          <div className="flex gap-1.5">
-            <button aria-label="prev" onClick={() => setIdx((i) => (i - 1 + heroSlides.length) % heroSlides.length)} className="grid place-items-center w-9 h-9 rounded-lg border border-[#d2d8db] bg-white text-[#33393e] hover:bg-[#f4f6f7]"><ChevronRight className="w-4 h-4" /></button>
-            <button aria-label="next" onClick={() => setIdx((i) => (i + 1) % heroSlides.length)} className="grid place-items-center w-9 h-9 rounded-lg border border-[#d2d8db] bg-white text-[#33393e] hover:bg-[#f4f6f7]"><ChevronLeft className="w-4 h-4" /></button>
-            <button aria-label="pause" onClick={() => setPaused((p) => !p)} className="grid place-items-center w-9 h-9 rounded-lg border border-[#d2d8db] bg-white text-[#33393e] hover:bg-[#f4f6f7]">{paused ? <Play className="w-3.5 h-3.5" /> : <Pause className="w-3.5 h-3.5" />}</button>
-          </div>
+        {/* minimal indicator dots (no nav buttons) */}
+        <div className="absolute bottom-4 end-5 z-20 flex items-center gap-1.5">
+          {heroSlides.map((_, i) => (
+            <button key={i} aria-label={`slide ${i + 1}`} onClick={() => setIdx(i)} className={`h-1.5 rounded-full transition-all ${i === idx ? "w-7 bg-[#f2bd66]" : "w-3 bg-white/50 hover:bg-white/80"}`} />
+          ))}
         </div>
       </div>
     </div>
@@ -110,10 +102,12 @@ export function HomeScreen() {
 
   return (
     <>
-      <section className="bg-[#f7f8f9] py-6 sm:py-8">
+      <section className="bg-[#f7f8f9] py-4 sm:py-6">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl"><HeroCarousel /></div>
       </section>
       <Marquee />
+
+      <BranchesSection />
 
       <section className="bg-white border-b border-[#e5e8ea]">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl py-8 sm:py-12">
